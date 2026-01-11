@@ -46,12 +46,14 @@ export const generatePdf = async (req, res) => {
 
         // Launch browser with more robust args for container environments
         const browser = await puppeteer.launch({
+            executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || null,
             headless: 'new',
             args: [
                 '--no-sandbox',
                 '--disable-setuid-sandbox',
-                '--disable-dev-shm-usage', // Critical for Docker/Railway
-                '--disable-gpu'
+                '--disable-dev-shm-usage',
+                '--disable-gpu',
+                '--font-render-hinting=none',
             ]
         });
         const page = await browser.newPage();
