@@ -1,21 +1,28 @@
-# Dependencies
-node_modules/
-
-# Environment Variables
-# .env
-# .env.*
-
-# Logs & Debug
+# Logs
 logs
 *.log
 npm-debug.log*
-debug_pdf.txt
-debug_*.js
-test_*.js
-verify_*.js
-temp_*.*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# OS files
+node_modules
+dist
+dist-ssr
+*.local
+.env*
 .DS_Store
 Thumbs.db
-.vercel
+*.log
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
