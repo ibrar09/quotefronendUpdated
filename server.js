@@ -8,51 +8,63 @@ dotenv.config();
 
 const app = express();
 
-// 1. GLOBAL CORS (MUST BE FIRST)
+// 1. BULLETPROOF CORS (MUST BE FIRST)
 app.use(cors({
-    origin: true, // Echoes the requesting origin - most robust for cross-domain
+    origin: true,
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 
-// 2. LOGGING
+// 2. PARSERS
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
+
+// 3. SAFE LOGGING
 app.use((req, res, next) => {
     console.log(`📡 [${new Date().toISOString()}] ${req.method} ${req.url}`);
     next();
 });
 
-// 3. PARSERS
-app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ limit: '50mb', extended: true }));
-
-// 4. TOP-LEVEL HEALTH CHECK (VERIFIES SERVER IS ALIVE)
+// 4. HEALTH CHECKS
 app.get('/health', (req, res) => {
-    res.status(200).json({ status: 'UP', message: 'Server is running', database: sequelize.options.host });
+    res.status(200).json({ status: 'UP', message: 'API is running' });
 });
 
-// 5. API ROUTES
+app.get('/', (req, res) => {
+    res.send('Quotation System API is Online');
+});
+
+// 5. ROUTES
 app.use('/api', apiRouter);
 
-// 6. DB CONNECTION & START
+// 6. GLOBAL ERROR HANDLER (PREVENTS 500 CRASHES)
+app.use((err, req, res, next) => {
+    console.error('💥 SERVER ERROR:', err);
+    res.status(err.status || 500).json({
+        error: true,
+        message: err.message || 'Server Error'
+    });
+});
+
 const PORT = process.env.PORT || 8080;
 
 sequelize.authenticate()
     .then(() => {
-        console.log('✅ Database connected');
+        console.log('✅ Database Connected');
         return sequelize.sync({ alter: true });
     })
     .then(() => {
-        console.log('✅ Tables synced');
+        console.log('✅ Tables Synced');
         app.listen(PORT, () => {
             console.log(`🚀 Server listening on port ${PORT}`);
         });
     })
     .catch(err => {
-        console.error('❌ Critical Error:', err);
-        // Still start the server so we can get 500 errors instead of timeout/404
+        console.error('❌ Database Initialization Failed:', err.message);
+        // Start server anyway to provide error feedback
         app.listen(PORT, () => {
-            console.log(`🚀 Server listening on port ${PORT} (DB FAILED)`);
+            console.log(`🚀 Server listening on port ${PORT} (DB ERROR MODE)`);
         });
     });
 
