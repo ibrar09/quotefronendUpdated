@@ -151,14 +151,19 @@ router.post('/upload-pricelist', upload.single('file'), async (req, res) => {
         .on('data', (data) => results.push(Object.values(data)))
         .on('end', async () => {
             console.log(`Parsed ${results.length} raw rows from CSV (PriceList).`);
+            if (results.length > 0) {
+                console.log('Sample Row 0:', results[0]);
+                console.log('Sample Row 1:', results[1]);
+                console.log('Sample Row 2:', results[2]);
+            }
 
             try {
                 const aliases = {
-                    code: ['code', 'item_code', 'part_number', 'sku', 'id', 'item_id', 'service_code'],
+                    code: ['code', 'item_code', 'part_number', 'sku', 'id', 'item_id', 'service_code', 'serial_no', 'sr_no', 'sl_no'],
                     type: ['type', 'category', 'group', 'class', 'item_type', 'service_type'],
-                    description: ['description', 'decription', 'details', 'item_description', 'specification', 'item_name', 'item', 'name', 'work_description', 'task_description', 'scope_of_work', 'service_description'],
+                    description: ['description', 'decription', 'details', 'item_description', 'specification', 'item_name', 'item', 'name', 'work_description', 'task_description', 'scope_of_work', 'service_description', 'material_description'],
                     unit: ['unit', 'uom', 'measure', 'qty_unit'],
-                    material_price: ['material_price', 'material', 'materials', 'mat_price', 'supply', 'unit_price', 'rate'],
+                    material_price: ['material_price', 'material', 'materials', 'mat_price', 'supply', 'unit_price', 'rate', 'unit_rate'],
                     labor_price: ['labor_price', 'labor', 'labour', 'lab_price', 'installation', 'fitting'],
                     total_price: ['total_price', 'total', 'grand_total', 'total_amount', 'sum'],
                     remarks: ['remarks', 'remark', 'note', 'notes'],
