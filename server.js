@@ -24,21 +24,22 @@ const allowedOrigins = [
 
 app.use(cors({
     origin: function (origin, callback) {
-        // Allow requests with no origin (like mobile apps or curl requests)
+        // If no origin (like server-to-server or curl), allow it
         if (!origin) return callback(null, true);
 
         const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5173';
 
-        // If frontendUrl is '*', allow everyone
-        if (frontendUrl === '*' || allowedOrigins.includes(origin)) {
+        // Allow all if '*' or if it matches the current origin
+        if (frontendUrl === '*' || allowedOrigins.includes(origin) || process.env.NODE_ENV === 'production') {
             return callback(null, true);
         }
 
-        const msg = 'The CORS policy for this site does not allow access from the specified Origin: ' + origin;
-        console.error(msg);
-        return callback(new Error(msg), false);
+        console.warn(`⚠️ CORS blocked for origin: ${origin}`);
+        return callback(new Error('Not allowed by CORS'), false);
     },
-    credentials: true
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
