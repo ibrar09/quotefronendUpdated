@@ -10,14 +10,18 @@ const dbUrl = process.env.DB_URL || process.env.DATABASE_URL;
 let sequelize;
 
 if (dbUrl) {
-  console.log('📡 [DB] Connecting via Connection String...');
+  const url = new URL(dbUrl);
+  console.log(`📡 [DB] Connecting to host: ${url.hostname}`);
+
+  const isInternal = url.hostname.includes('.internal');
+
   sequelize = new Sequelize(dbUrl, {
     dialect: 'postgres',
     logging: false,
     dialectOptions: {
-      ssl: {
+      ssl: isInternal ? false : {
         require: true,
-        rejectUnauthorized: false // Required for Railway/Render/AWS RDS
+        rejectUnauthorized: false
       }
     }
   });
