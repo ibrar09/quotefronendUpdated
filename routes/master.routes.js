@@ -1,0 +1,105 @@
+import express from 'express';
+import multer from 'multer';
+import csv from 'csv-parser';
+import stream from 'stream';
+import db from '../models/index.js';
+
+const router = express.Router();
+const upload = multer({ storage: multer.memoryStorage() });
+const { Store, PriceList, sequelize } = db;
+
+// Helper to clean price strings (e.g., "$1,200.50" -> 1200.50)
+const parsePrice = (val) => {
+    if (!val) return 0;
+    const cleaned = String(val).replace(/[^0-9.-]+/g, "");
+    return parseFloat(cleaned) || 0;
+};
+
+// 1. UPLOAD MASTER STORES
+router.post('/upload-stores', upload.single('file'), async (req, res) => {
+    if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
+
+    const results = [];
+    const bufferStream = new stream.PassThrough();
+    bufferStream.end(req.file.buffer);
+
+    bufferStream
+        .pipe(csv())
+        .on('data', (data) => results.push(data))
+        .on('end', async () => {
+            try {
+                const transaction = await sequelize.transaction();
+
+                // Cleanup and format data
+                const formatted = results.map(row => ({
+                    oracle_ccid: row.oracle_ccid || row.CCID || row['Store CCID'],
+                    region: row.region || row.Region,
+                    city: row.city || row.City,
+                    mall: row.mall || row.Mall,
+                    division: row.division || row.Division,
+                    brand: row.brand || row.Brand,
+                    store_name: row.store_name || row['Store Name'],
+                    fm_supervisor: row.fm_supervisor || row.Supervisor,
+                    fm_manager: row.fm_manager || row.Manager,
+                    store_status: row.store_status || row.Status || 'ACTIVE'
+                })).filter(r => r.oracle_ccid);
+
+                await Store.bulkCreate(formatted, {
+                    updateOnDuplicate: ['region', 'city', 'mall', 'division', 'brand', 'store_name', 'fm_supervisor', 'fm_manager', 'store_status'],
+                    transaction
+                });
+
+                await transaction.commit();
+                res.json({ message: `Successfully synced ${formatted.length} stores.` });
+            } catch (error) {
+                console.error('CSV Sync Error:', error);
+                res.status(500).json({ error: 'Sync failed: ' + error.message });
+            }
+        });
+});
+
+// 2. UPLOAD PRICE LIST
+router.post('/upload-pricelist', upload.single('file'), async (req, res) => {
+    if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
+
+    const results = [];
+    const bufferStream = new stream.PassThrough();
+    bufferStream.end(req.file.buffer);
+
+    bufferStream
+        .pipe(csv())
+        .on('data', (data) => results.push(data))
+        .on('end', async () => {
+            try {
+                const transaction = await sequelize.transaction();
+
+                const formatted = results.map(row => {
+                    const matPrice = parsePrice(row.material_price || row.Material);
+                    const labPrice = parsePrice(row.labor_price || row.Labor);
+                    const total = parsePrice(row.total_price || row.Total) || (matPrice + labPrice);
+                    return {
+                        code: row.code || row.Code,
+                        description: row.description || row.Description,
+                        unit: row.unit || row.Unit,
+                        material_price: matPrice,
+                        labor_price: labPrice,
+                        total_price: total,
+                        remarks: row.remarks || row.Remarks
+                    };
+                }).filter(r => r.code);
+
+                await PriceList.bulkCreate(formatted, {
+                    updateOnDuplicate: ['description', 'unit', 'material_price', 'labor_price', 'total_price', 'remarks'],
+                    transaction
+                });
+
+                await transaction.commit();
+                res.json({ message: `Successfully synced ${formatted.length} price items.` });
+            } catch (error) {
+                console.error('Price List Sync Error:', error);
+                res.status(500).json({ error: 'Sync failed: ' + error.message });
+            }
+        });
+});
+
+export default router;

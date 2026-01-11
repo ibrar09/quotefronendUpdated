@@ -1,0 +1,368 @@
+Country,Region,City,Mall,Division,Brand,Store Name,Oracle Ccid,Type,Store Status,Store Type,Opening Date,Trading Days,Size (sqm),FS - new
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Riyadh Office, Riyadh",RB2-2338-STA,Standalone,LFL,Others,3/20/2016,147,85,Abu Shahid
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Wellness,West Elm,The Riyadh Park,RB2-S953-WES,Standalone,LFL,Mall Location,8/1/2018,147,1053,Antony
+KSA,Central,Hail,Othaim Mall Hail,Apparel,Next,"Othaim Mall, Hail",RB2-S649-NEX,Standalone,LFL,Mall Location,9/3/2016,147,402,Antony
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Wellness,Boots,The Riyadh Park,RB2-S961-BOO,Standalone,LFL,Mall Location,8/14/2018,147,155,Antony
+KSA,Central,Hail,Othaim Mall Hail,Apparel,Claire's,"Othaim Mall, Hail",RB2-S643-CLA,Standalone,LFL,Mall Location,9/3/2016,147,60,Antony
+KSA,Central,Onaizah,"Othaim Mall,Onizah",Apparel,Next,"Othaim Mall, Onizah",RB2-S674-NEX,Standalone,LFL,Mall Location,4/30/2016,147,350,Antony
+KSA,Central,Buraidah,Othaim Mall Buraidah Qassim,Apparel,Milano,"Othaim Mall Buraidah, Qassim",RB2-S743-MIL,Standalone,LFL,Mall Location,12/24/2016,147,120,Antony
+KSA,Central,Hail,Othaim Mall Hail,Wellness,MAC,"Othaim Mall, Hail",RB2-S646-MAC,Standalone,LFL,Mall Location,9/3/2016,147,55,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Jarir exit 25,RB2-S982-STA,Standalone,LFL,Plaza,2/14/2019,147,170,Abu Shahid
+KSA,Central,Onaizah,"Othaim Mall,Onizah",Wellness,Bath and Body Works,"Othaim Mall, Onizah",RB2-S671-BAT,Standalone,LFL,Mall Location,5/7/2016,147,144,Antony
+KSA,Central,Buraidah,Othaim Mall Buraidah Qassim,Wellness,Bath and Body Works,Othaim Mall,RB2-H018-BAT,Standalone,LFL,Mall Location,12/13/2018,147,132,Antony
+KSA,Central,Riyadh,"Hayat Mall, Riyadh",Wellness,MAC,"Hayat Mall, Riyadh",RB2-2127-MAC,Standalone,LFL,Mall Location,3/22/2014,147,75,Abu Shahid
+KSA,Central,Riyadh,"Hayat Mall, Riyadh",Wellness,Jo Malone,"Hayat Mall, Riyadh",RB2-2118-JOM,Standalone,LFL,Mall Location,5/16/2015,147,56,Abu Shahid
+KSA,Central,Riyadh,Qasr Mall,Apparel,Milano,Qasr Mall,RB2-S367-MIL,Standalone,LFL,Mall Location,10/13/2012,147,145,Abu Shahid
+KSA,Central,Riyadh,"Khorais Plaza, Riyadh",Apparel,Mothercare,"Khorais Road, Riyadh",RB2-2061-MOT,Standalone,LFL,High Street,9/1/1998,147,395,Abdul Rahman
+KSA,Central,Riyadh,Riyadh Gallery,Apparel,Claire's,"Riyadh Gallery, Riyadh",RB2-1876-CLA,Standalone,LFL,Mall Location,9/22/2008,147,87,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,PNU Library Riyadh (New),RB2-H484-STA,Standalone,LFL,Institution,2/27/2022,147,80,Abdul Rahman
+KSA,Central,Onaizah,Stand Alone,Starbucks,Starbucks,"Onaiza Plaza UPM - DT, Onaiza",RB2-H109-STA,Standalone,LFL,Drive-Thru,12/19/2019,147,180,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Marvella Plaza,RB2-S981-STA,Standalone,LFL,High Street,6/4/2019,147,250,abu Shahid
+KSA,Central,Riyadh,"Othaim Mall, Rabwa",Wellness,NYX,Othaim Mall Rabwa,RB2-H019-NYX,Standalone,LFL,Mall Location,3/3/2019,147,140,Antony
+KSA,Central,Hail,Othaim Mall Hail,Apparel,Milano,"Othaim Mall, Hail",RB2-S647-MIL,Standalone,LFL,Mall Location,9/3/2016,147,100,Antony
+KSA,Central,Riyadh,"Tafaseel BP, Riyadh",Starbucks,Starbucks,"Tafaseel BP, Riyadh",RB2-S853-STA,Standalone,LFL,Plaza,7/17/2018,147,222,Abu Shahid
+KSA,Central,Riyadh,Qasr Mall,Apparel,Next,Qasr Mall,RB2-S364-NEX,Standalone,LFL,Mall Location,10/20/2012,147,456,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Jarir Exit 11, Riyadh",RB2-H068-STA,Standalone,LFL,Plaza,10/24/2019,147,122,Abu Shahid
+KSA,Central,Riyadh,"Robeen Plaza, Riyadh",Starbucks,Starbucks,"Robeen Plaza, Riyadh",RB2-S047-STA,Standalone,LFL,Plaza,1/7/2017,147,138,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Rabwa Plaza, Riyadh",RB2-2167-STA,Standalone,LFL,Plaza,6/18/2016,147,252,Antony
+KSA,Central,Riyadh,"Faisaliah Centre, Riyadh",Apparel,Foot Locker,"Faisaliah Centre, Riyadh",RB2-2459-FOO,Standalone,LFL,Plaza,7/23/2016,147,148,Abdul Rahman
+KSA,Central,Riyadh,"Granada Center, Riyadh",Apparel,Claire's,"Granada Centre, Riyadh",RB2-2246-CLA,Standalone,LFL,Mall Location,9/3/2005,147,52,Abdul Rahman
+KSA,Central,Onaizah,"Othaim Mall,Onizah",Starbucks,Starbucks,"Othaim Mall, Onizah",RB2-S939-STA,Standalone,LFL,Mall Location,10/31/2018,147,169,Antony
+KSA,Central,Riyadh,Qasr Mall,Wellness,MAC,Qasr Mall,RB2-S355-MAC,Standalone,LFL,Mall Location,12/22/2012,147,71,Abu Shahid
+KSA,Central,Riyadh,Riyadh Gallery,Starbucks,Starbucks,"Riyadh Gallery 2, Riyadh",RB2-S555-STA,Standalone,LFL,Mall Location,2/20/2016,147,114,Abu Shahid
+KSA,Central,Riyadh,"Othaim Mall, Rabwa",Wellness,MAC,"Othaim Mall, Rabwa",RB2-2268-MAC,Standalone,LFL,Mall Location,11/29/2014,147,70,Antony
+KSA,Central,Riyadh,"Othaim Mall, Khurais",Wellness,Bath and Body Works,"Othaim Mall, Khurais",RB2-2013-BAT,Standalone,LFL,Mall Location,1/31/2015,147,123,Antony
+KSA,Central,Riyadh,KKIA Riyadh,Wellness,Bath and Body Works,KKIA-T5,RB2-H015-BAT,Standalone,LFL,"Others, Airport",7/30/2019,147,55,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Centro Anas,RB2-S942-STA,Standalone,LFL,Plaza,5/17/2018,147,200,Antony
+KSA,Central,Riyadh,"Hayat Mall, Riyadh",Wellness,NYX,"Hayat Mall, Riyadh",RB2-S934-NYX,Standalone,LFL,Mall Location,3/8/2018,147,90,Abu Shahid
+KSA,Central,Riyadh,Atyaf Mall,Wellness,Bath and Body Works,Atyaf Mall,RB2-S779-BAT,Standalone,LFL,Mall Location,9/26/2019,147,100,Antony
+KSA,Central,Riyadh,Qasr Mall,Wellness,NYX,Qasr Mall,RB2-S359-NYX,Standalone,LFL,Mall Location,2/1/2018,147,107,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Jarir Khurais, Riyadh",RB2-2660-STA,Standalone,LFL,Plaza,2/24/2009,147,133,Antony
+KSA,Central,Riyadh,Stand Alone,Apparel,Foot Locker,Dughaither Building,RB2-S863-FOO,Standalone,LFL,Plaza,3/18/2017,147,236,Abu Shahid
+KSA,Central,Onaizah,Stand Alone,Starbucks,Starbucks,"Tamimi Onaizah -DT, Onaizah",RB2-S892-STA,Standalone,LFL,Drive-Thru,9/14/2018,147,200,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Ebdaa Tower,RB2-S941-STA,Standalone,LFL,High Street,7/29/2018,147,190,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"ITCC RD 01, Riyadh",RB2-S905-STA,Standalone,LFL,Others,9/30/2018,147,10,Antony
+KSA,Central,Riyadh,"Othaim Mall, Rabwa",Apparel,Milano,"Othaim Mall, Rabwa",RB2-2255-MIL,Standalone,LFL,Mall Location,10/31/2009,147,95,Antony
+KSA,Central,Riyadh,Wadi Square Riyadh,Hospitality,Pinkberry,"Wadi Square, Riyadh",RB2-S746-PIN,Standalone,LFL,Plaza,8/27/2016,147,90,Abdul Rahman
+KSA,Central,Riyadh,"Othaim Mall, Rabwa",Apparel,Next,"Othaim Mall, Rabwa",RB2-S814-NEX,Standalone,LFL,Mall Location,3/11/2017,147,350,Antony
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Wellness,Jo Malone,The Riyadh Park,RB2-S957-JOM,Standalone,LFL,Mall Location,8/27/2018,147,60,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Fraser Suites Hotel, Riyadh",RB2-H103-STA,Standalone,LFL,Others,12/19/2019,147,206,Abu Shahid
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Wellness,Le Labo,The Riyadh Park,RB2-S956-LEL,Standalone,LFL,Mall Location,8/14/2018,147,40,Antony
+KSA,Central,Riyadh,"Othaim Mall, Rabwa",Apparel,Mothercare,"Othaim Mall, Rabwa",RB2-2264-MOT,Standalone,LFL,Mall Location,10/24/2009,147,284,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Serwat Building, Riyadh",RB2-S818-STA,Standalone,LFL,Plaza,4/29/2017,147,200,Abu Shahid
+KSA,Central,Hail,Othaim Mall Hail,Wellness,Bath and Body Works,"Othaim Mall, Hail",RB2-S640-BAT,Standalone,LFL,Mall Location,9/3/2016,147,128,Antony
+KSA,Central,Riyadh,Hamad Mall,Starbucks,Starbucks,Hamad Mall,RB2-S836-STA,Standalone,LFL,Mall Location,10/10/2019,147,157,Antony
+KSA,Central,Riyadh,"Sahara Mall, Riyadh",Apparel,Claire's,Sahara Center,RB2-H352-CLA,Standalone,LFL,Mall Location,2/4/2021,147,57,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Silver Plaza, Riyadh",RB2-2079-STA,Standalone,LFL,Plaza,12/6/2016,147,215,Abu Shahid
+KSA,Central,Riyadh,Qasr Mall,Apparel,American Eagle,Qasr Mall,RB2-S935-AME,Standalone,LFL,Mall Location,8/10/2018,147,331,Abu Shahid
+KSA,Central,Hail,Othaim Mall Hail,Apparel,Victoria's Secret International-BA,"Othaim Mall, Hail-BA",RB2-S651-VIF,Standalone,LFL,Mall Location,9/3/2016,147,73,Antony
+KSA,Central,Riyadh,Riyadh Gallery,Wellness,MAC,"Riyadh Gallery, Riyadh",RB2-S259-MAC,Standalone,LFL,Mall Location,8/23/2011,147,73,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Irqa Plaza, Riyadh",RB2-2138-STA,Standalone,LFL,Plaza,10/24/2015,147,187,Abu Shahid
+KSA,Central,Riyadh,"Sahara Mall, Riyadh",Wellness,Bath and Body Works,"Sahara Mall, Riyadh",RB2-2635-BAT,Standalone,LFL,Mall Location,7/23/2011,147,285,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Business Gate Riyadh,RB2-2063-STA,Standalone,LFL,High Street,5/10/2014,147,147,Abu Shahid
+KSA,Central,Riyadh,"Othaim Mall, Rabwa",Wellness,Bath and Body Works,"Othaim Mall, Rabwa",RB2-S724-BAT,Standalone,LFL,Mall Location,5/21/2016,147,177,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Jarir Al Thagher Plaza,RB2-S806-STA,Standalone,LFL,Plaza,4/29/2017,147,123,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"SASCO Airport Road 3 DT,Riyadh",RB2-S894-STA,Standalone,LFL,Drive-Thru,3/8/2018,147,160,Abdul Rahman
+KSA,Central,Riyadh,"Kingdom Center, Riyadh",Wellness,MAC,"Kingdom Centre, Riyadh (Relocated)",RB2-2335-MAC,Standalone,LFL,Mall Location,4/4/2015,147,65,Abdul Rahman
+KSA,Central,Riyadh,"Othaim Mall, Rabwa",Apparel,Victoria's Secret International-BA,"Othaim Mall, Rabwa-BA",RB2-2269-VIF,Standalone,LFL,Mall Location,11/29/2014,147,50,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Jarir Exit 7, Riyadh",RB2-2184-STA,Standalone,LFL,Plaza,6/18/2016,147,154,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Jazeera Ghadeer, Riyadh",RB2-2384-STA,Standalone,LFL,Plaza,10/28/2018,147,153,Antony
+KSA,Central,Riyadh,KKIA Riyadh,Apparel,Foot Locker,"KKIA T5, Riyadh",RB2-S855-FOO,Standalone,LFL,"Others, Airport",5/28/2019,147,99,Abdul Rahman
+KSA,Central,Riyadh,Wadi Square Riyadh,Starbucks,Starbucks,"Wadi Square, Riyadh",RB2-2329-STA,Standalone,LFL,Plaza,8/27/2016,147,146,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Jarrir Hamra, Riyadh",RB2-2181-STA,Standalone,LFL,Plaza,7/30/2001,147,180,Abu Shahid
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Apparel,Claire's,The Riyadh Park,RB2-S960-CLA,Standalone,LFL,Mall Location,8/16/2018,147,50,Antony
+KSA,Central,Riyadh,Bustan Centre,Hospitality,Pinkberry,"Bustan Centre, Riyadh",RB2-S772-PIN,Standalone,LFL,High Street,1/28/2017,147,69,Abu Shahid
+KSA,Central,Riyadh,Atyaf Mall,Starbucks,Starbucks,Atyaf Mall,RB2-S095-STA,Standalone,LFL,Mall Location,9/5/2019,147,160,Antony
+KSA,Central,Riyadh,"Faisaliah Centre, Riyadh",Starbucks,Starbucks,"Faisaliah Centre, Riyadh",RB2-2445-STA,Standalone,LFL,Plaza,2/20/2016,147,138,Abdul Rahman
+KSA,Central,Riyadh,"Granada Center, Riyadh",Apparel,Milano,"Granada Centre, Riyadh - 2",RB2-S239-MIL,Standalone,LFL,Mall Location,8/24/2009,147,128,Abdul Rahman
+KSA,Central,Riyadh,The Landmark  Riyadh,Starbucks,Starbucks,"The Landmark, Riyadh",RB2-2430-STA,Standalone,LFL,Mall Location,12/19/2016,147,157,Abu Shahid
+KSA,Central,Riyadh,Riyadh Gallery,Apparel,American Eagle,"Riyadh Gallery, Riyadh",RB2-S322-AME,Standalone,LFL,Mall Location,12/10/2011,147,628,Abu Shahid
+KSA,Central,Riyadh,"Aliah Plaza, Riyadh",Starbucks,Starbucks,"Aliah Plaza, Riyadh",RB2-2077-STA,Standalone,LFL,Plaza,5/9/2015,147,194,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Jazeera Sulimanya DT, Riyadh",RB2-H105-STA,Standalone,LFL,Drive-Thru,12/23/2019,147,160,Abu Shahid
+KSA,Central,Riyadh,Riyadh Gallery,Apparel,Milano,"Riyadh Gallery, Riyadh",RB2-1882-MIL,Standalone,LFL,Mall Location,2/21/2009,147,126,Abu Shahid
+KSA,Central,Riyadh,Qasr Mall,Apparel,Victoria's Secret International-BA,Qasr Mall-BA,RB2-S365-VIF,Standalone,LFL,Mall Location,11/10/2012,147,81,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Al Ehssa Street, Riyadh",RB2-2015-STA,Standalone,LFL,High Street,3/31/2007,147,567,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Centro Nakheel, Riyadh",RB2-2159-STA,Standalone,LFL,Plaza,11/5/2016,147,167,Antony
+KSA,Central,Riyadh,"Hayat Mall, Riyadh",Apparel,Victoria's Secret International-BA,"Hayat Mall, Riyadh-BA",RB2-2124-VIF,Standalone,LFL,Mall Location,1/1/2012,147,108,Abu Shahid
+KSA,Central,Riyadh,"Sahara Mall, Riyadh",Starbucks,Starbucks,"Sahara Mall ,Riyadh -1",RB2-2095-STA,Standalone,LFL,Mall Location,11/29/2006,147,110,Abu Shahid
+KSA,Central,Riyadh,"Nadah Plaza, Riyadh",Starbucks,Starbucks,Nadah Plaza  Riyadh,RB2-S461-STA,Standalone,LFL,Plaza,8/27/2013,147,162,Antony
+KSA,Central,Riyadh,"Granada Center, Riyadh",Wellness,NYX,"Granada Center, Riyadh",RB2-2250-NYX,Standalone,LFL,Mall Location,12/7/2017,147,151,Abdul Rahman
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Hospitality,Pinkberry,The Riyadh Park,RB2-1795-PIN,Standalone,LFL,Mall Location,8/2/2018,147,51,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Sulaiman Habib Hospital Khurais, Riyadh",RB2-2375-STA,Standalone,LFL,"Others, Hospital",11/27/2016,147,20,Antony
+KSA,Central,Riyadh,"Granada Center, Riyadh",Apparel,Mothercare,"Granada Centre, Riyadh",RB2-2239-MOT,Standalone,LFL,Mall Location,9/3/2005,147,864,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Mateen Plaza, Riyadh",RB2-2139-STA,Standalone,LFL,Plaza,2/20/2016,147,362,Antony
+KSA,Central,Riyadh,"Al Khayama Mall, Riyadh",Starbucks,Starbucks,"Khayama Mall, Riyadh (New)",RB2-2467-STA,Standalone,LFL,Mall Location,3/26/2015,147,229,Antony
+KSA,Central,Al Kharj,Hudaithy Mall Al Kharj,Starbucks,Starbucks,"Hudaithy Mall, Al Kharj",RB2-2694-STA,Standalone,LFL,Mall Location,2/14/2007,147,259,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Khalid Hospital, Riyadh",RB2-2452-STA,Standalone,LFL,"Others, Hospital",12/13/2015,147,39,Abu Shahid
+KSA,Central,Riyadh,Riyadh Gallery,Apparel,Next,"Riyadh Gallery, Riyadh",RB2-1879-NEX,Standalone,LFL,Mall Location,2/21/2009,147,329,Abu Shahid
+KSA,Central,Riyadh,"Granada Center, Riyadh",Apparel,Victoria's Secret International-BA,"Granada Center, Riyadh-BA",RB2-2230-VIF,Standalone,LFL,Mall Location,11/16/2013,147,82,Abdul Rahman
+KSA,Central,Riyadh,Qasr Mall,Hennes and Mauritz,Hennes and Mauritz,Qasr Mall,RB2-S362-HEN,Standalone,LFL,Mall Location,10/13/2012,147,1452,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Sulaiman Habib Hospital Swaidi, Riyadh",RB2-S922-STA,Standalone,LFL,"Others, Hospital",3/3/2018,147,23,Abu Shahid
+KSA,Central,Riyadh,Riyadh Gallery,Apparel,Foot Locker,"Riyadh Gallery, Riyadh",RB2-S341-FOO,Standalone,LFL,Mall Location,5/3/2014,147,336,Abu Shahid
+KSA,Central,Riyadh,"Tamimi Dabbab, Riyadh",Starbucks,Starbucks,"Tamimi Dabbab, Riyadh",RB2-2089-STA,Standalone,LFL,Plaza,11/1/2015,147,190,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Jarir Rabwa Riyadh,RB2-H212-STA,Standalone,LFL,Plaza,9/29/2020,147,100,Antony
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Starbucks,Starbucks,The Riyadh Park - 2,RB2-S964-STA,Standalone,LFL,Mall Location,9/21/2018,147,169,Antony
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Hospitality,Raising Cane's,The Riyadh Park,RB2-H005-RAI,Standalone,LFL,Mall Location,4/21/2019,147,69,Antony
+KSA,Central,Riyadh,"Hayat Mall, Riyadh",Wellness,Bath and Body Works,"Hayat Mall, Riyadh",RB2-2125-BAT,Standalone,LFL,Mall Location,2/18/2012,147,185,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Louloua Building, Riyadh",RB2-2600-STA,Standalone,LFL,High Street,2/25/2017,147,167,Abu Shahid
+KSA,Central,Riyadh,Riyadh Gallery,Apparel,Victoria's Secret International-BA,"Riyadh Gallery, Riyadh-BA",RB2-S487-VIF,Standalone,LFL,Mall Location,11/23/2013,147,107,Abu Shahid
+KSA,Central,Riyadh,"Faisaliah Centre, Riyadh",Hospitality,Shake Shack,"Faisaliah Centre, Riyadh",RB2-2085-SHA,Standalone,LFL,Plaza,9/3/2016,147,277,Abdul Rahman
+KSA,Central,Al Kharj,Stand Alone,Starbucks,Starbucks,"Prince Sultan Air Force, Al Kharj",RB2-H225-STA,Standalone,LFL,Others,9/3/2020,147,21,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Telal Plaza, Riyadh",RB2-2078-STA,Standalone,LFL,Plaza,5/5/2015,147,240,Abdul Rahman
+KSA,Central,Riyadh,"Granada Center, Riyadh",Hennes and Mauritz,Collection of Style,Granada Riyadh,RB2-H216-COL,Standalone,LFL,Mall Location,7/23/2020,147,482,Abdul Rahman
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Apparel,Milano,The Riyadh Park,RB2-1787-MIL,Standalone,LFL,Mall Location,8/9/2018,147,150,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Special Medical Center2 Riyadh,RB2-H214-STA,Standalone,LFL,"Others, Hospital",8/8/2020,147,32,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"KSU Bldg 25,Riyadh",RB2-H149-STA,Standalone,LFL,Others,10/15/2020,147,110,Abu Shahid
+KSA,Central,Riyadh,Atyaf Mall,Hennes and Mauritz,Hennes and Mauritz,Atyaf Mall,RB2-S088-HEN,Standalone,LFL,Mall Location,3/12/2020,147,1643,Antony
+KSA,Central,Riyadh,Qasr Mall,Starbucks,Starbucks,Qasr Mall,RB2-S379-STA,Standalone,LFL,Mall Location,7/8/2015,147,16,Abu Shahid
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Apparel,Muji,The Riyadh Park,RB2-S954-MUJ,Standalone,LFL,Mall Location,7/19/2018,147,369,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Hokair Time, Riyadh",RB2-S979-STA,Standalone,LFL,Plaza,10/31/2018,147,188,Abdul Rahman
+KSA,Central,Buraidah,Stand Alone,Starbucks,Starbucks,"Tamimi Plaza, Buraidah-New",RB2-H135-STA,Standalone,LFL,Plaza,11/3/2019,147,237,Antony
+KSA,Central,Riyadh,Riyadh Gallery,Hospitality,Raising Cane's,"Riyadh Gallery, Riyadh",RB2-1890-RAI,Standalone,LFL,Mall Location,2/1/2018,147,155,Abu Shahid
+KSA,Central,Riyadh,KKIA Riyadh,Starbucks,Starbucks,KKIA T5 Departure Landside,RB2-S857-STA,Standalone,LFL,"Others, Airport",10/31/2017,147,68,Abdul Rahman
+KSA,Central,Riyadh,"Granada Center, Riyadh",Apparel,Next,"Granada Centre, Riyadh",RB2-2232-NEX,Standalone,LFL,Mall Location,9/3/2005,147,926,Abdul Rahman
+KSA,Central,Riyadh,Riyadh Gallery,Starbucks,Starbucks,"Riyadh Gallery, Riyadh",RB2-1883-STA,Standalone,LFL,Mall Location,12/6/2008,147,119,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Elegant Centre-DT,RB2-S075-STA,Standalone,LFL,Drive-Thru,7/11/2019,147,350,Abu Shahid
+KSA,Central,Riyadh,Riyadh Gallery,Wellness,Bath and Body Works,"Riyadh Gallery, Riyadh",RB2-2468-BAT,Standalone,LFL,Mall Location,11/1/2018,147,160,Abu Shahid
+KSA,Central,Riyadh,"Granada Center, Riyadh",Apparel,Muji,Granada Centre,RB2-H316-MUJ,Standalone,LFL,Mall Location,6/17/2021,147,362,Abdul Rahman
+KSA,Central,Riyadh,"Sahara Mall, Riyadh",Wellness,West Elm,"Sahara Mall, Riyadh",RB2-S766-WES,Standalone,LFL,Mall Location,10/22/2016,147,1531,Abu Shahid
+KSA,Central,Riyadh,"Al Khayama Mall, Riyadh",Starbucks,Starbucks,"Al Khayma Mall 2,Riyadh",RB2-H142-STA,Standalone,LFL,Mall Location,9/5/2020,147,229,Antony
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Wellness,Bath and Body Works,The Riyadh Park,RB2-S962-BAT,Standalone,LFL,Mall Location,10/2/2018,147,150,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Imam Saud Road Land,RB2-S889-STA,Standalone,LFL,Drive-Thru,4/9/2019,147,160,Abdul Rahman
+KSA,Central,Riyadh,Riyadh Front,Apparel,Foot Locker,Riyadh Front,RB2-H358-FOO,Standalone,LFL,Plaza,8/19/2021,147,163,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Derab Land, Riyadh",RB2-S801-STA,Standalone,LFL,Drive-Thru,11/28/2018,147,200,Abu Shahid
+KSA,Central,Riyadh,Narjs Square - DT Riyadh,Starbucks,Starbucks,"Narjs Square - DT, Riyadh",RB2-S052-STA,Standalone,LFL,Drive-Thru,11/20/2019,147,160,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Jarir Khurais 2, Riyadh",RB2-H166-STA,Standalone,LFL,Plaza,11/5/2020,147,223,Antony
+KSA,Central,Riyadh,KKIA Riyadh,Apparel,New Balance,Departure side-Riyadh,RB2-H680-NEW,Standalone,LFL,Airport,7/27/2023,147,99,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,King Abdulaziz DT,RB2-S876-STA,Standalone,LFL,Drive-Thru,7/18/2019,147,200,Abu Shahid
+KSA,Central,Hail,Othaim Mall Hail,Hennes and Mauritz,Hennes and Mauritz,"Othaim Mall, Hail",RB2-S645-HEN,Standalone,LFL,Mall Location,9/3/2016,147,1508,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Masif DT,RB2-S974-STA,Standalone,LFL,Drive-Thru,10/19/2019,147,160,Abdul Rahman
+KSA,Central,Mozahmiah,Stand Alone,Starbucks,Starbucks,Solidere Muzahimiyah DT,RB2-2744-STA,Standalone,LFL,Drive-Thru,5/26/2018,147,225,Abdul Rahman
+KSA,Central,Riyadh,"Faisaliah Centre, Riyadh",Wellness,Le Labo,Faisaliah Center,RB2-H028-LEL,Standalone,LFL,Plaza,12/23/2021,147,41,Abdul Rahman
+KSA,Central,Riyadh,"Granada Center, Riyadh",Starbucks,Starbucks,"Granada Center 3, Riyadh",RB2-H211-STA,Standalone,LFL,Mall Location,9/7/2020,147,163,Abdul Rahman
+KSA,Central,Riyadh,"Robeen Plaza, Riyadh",Hospitality,Raising Cane's,"Robeen Plaza, Riyadh",RB2-S046-RAI,Standalone,LFL,Plaza,3/18/2017,147,224,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Olayan Plaza, Riyadh",RB2-2284-STA,Standalone,LFL,Drive-Thru,7/26/2018,147,213,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Euromarhe Waha Riyadh,RB2-H215-STA,Standalone,LFL,Others,12/8/2020,147,278,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Takamul Plaza, Riyadh",RB2-H165-STA,Standalone,LFL,Plaza,11/25/2020,147,248,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Jarir king Abdul Aziz Road ,Riyadh",RB2-H233-STA,Standalone,LFL,Plaza,4/2/2021,147,229,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Olaya Plaza DT, Riyadh",RB2-H070-STA,Standalone,LFL,Drive-Thru,1/30/2020,147,250,Abu Shahid
+KSA,Central,Riyadh,Tamimi KF Riyadh,Starbucks,Starbucks,"Tamimi KF DT, Riyadh",RB2-H115-STA,Standalone,LFL,Drive-Thru,12/12/2019,147,374,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Green Oasis, Riyadh",RB2-2150-STA,Standalone,LFL,Drive-Thru,1/26/2018,147,174,Antony
+KSA,Central,Riyadh,"Sahara Mall, Riyadh",Starbucks,Starbucks,"Sahara Mall, Riyadh",RB2-H112-STA,Standalone,LFL,Mall Location,12/30/2020,147,233,Abu Shahid
+KSA,Central,Riyadh,"Granada Center, Riyadh",Wellness,Dr. Vranjes,"Granada Mall, Riyadh",RB2-H350-DRV,Standalone,LFL,Mall Location,9/7/2021,147,103,Abdul Rahman
+KSA,Central,Riyadh,Maather Plaza Riyadh,Starbucks,Starbucks,"Maather Plaza, Riyadh",RB2-2137-STA,Standalone,LFL,Drive-Thru,2/20/2016,147,135,Abu Shahid
+KSA,Central,Riyadh,"Granada Center, Riyadh",Wellness,Bath and Body Works,"Granada Center, Riyadh",RB2-2229-BAT,Standalone,LFL,Mall Location,12/14/2013,147,189,Abdul Rahman
+KSA,Central,Riyadh,"SIDRA, Riyadh",Hospitality,Pinkberry,"SIDRA, Riyadh",RB2-S006-PIN,Standalone,LFL,Plaza,4/26/2018,147,66,Abdul rahman
+KSA,Central,Riyadh,Riyadh Front,Wellness,Bath and Body Works,Riyadh Front,RB2-H315-BAT,Standalone,LFL,Plaza,3/25/2021,147,84,Abdul Rahman
+KSA,Central,Riyadh,Narjs Square - DT Riyadh,Hospitality,Raising Cane's,"Najrs Square - DT, Riyadh",RB2-S053-RAI,Standalone,LFL,Drive-Thru,12/26/2019,147,215,Abdul Rahman
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Starbucks,Starbucks,The Riyadh Park,RB2-S952-STA,Standalone,LFL,Mall Location,3/23/2019,147,281,Antony
+KSA,Central,Al Kharj,Stand Alone,Starbucks,Starbucks,"Panorama Plaza-DT, Kharj",RB2-S084-STA,Standalone,LFL,Drive-Thru,1/14/2019,147,204,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Sulaiman Habib Hospital, Olaya, Madina",RB2-H323-STA,Standalone,LFL,"Others, Hospital",6/22/2021,147,50,Abu Shahid
+KSA,Central,Riyadh,"Aliah Plaza, Riyadh",Hospitality,Raising Cane's,"Aliah Plaza, Riyadh",RB2-S051-RAI,Standalone,LFL,Plaza,11/19/2017,147,167,Antony
+KSA,Central,Riyadh,"Kingdom Center, Riyadh",Hennes and Mauritz,Hennes and Mauritz,"Kingdom Centre, Riyadh",RB2-S258-HEN,Standalone,LFL,Mall Location,10/29/2011,147,1318,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Nuzha DT,RB2-S993-STA,Standalone,LFL,Drive-Thru,6/27/2020,147,120,Abdul Rahman
+KSA,Central,Riyadh,"Granada Center, Riyadh",Apparel,American Eagle,"Granada Centre, Riyadh",RB2-S740-AME,Standalone,LFL,Mall Location,11/12/2016,147,487,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"The Plaza II ,Riyadh",RB2-H235-STA,Standalone,LFL,Plaza,2/3/2021,147,240,Abdul Rahman
+KSA,Central,Riyadh,"Faisaliah Centre, Riyadh",Wellness,NYX,Faisaliah Centre,RB2-2530-NYX,Standalone,LFL,Plaza,12/23/2021,147,77,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Rabea Plaza-DT,RB2-S988-STA,Standalone,LFL,Drive-Thru,1/23/2019,147,337,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Yarmouk Square Drive-Thru, Riyadh",RB2-2333-STA,Standalone,LFL,Drive-Thru,12/10/2016,147,283,Abdul Rahman
+KSA,Central,Riyadh,"Faisaliah Centre, Riyadh",Wellness,Jo Malone,Faisaliah Centre,RB2-2086-JOM,Standalone,LFL,Plaza,12/23/2021,147,41,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Othaim Saadeh Plaza DT, Riyadh",RB2-H173-STA,Standalone,LFL,Drive-Thru,4/20/2021,147,200,Abu Shahid
+KSA,Central,Riyadh,"Othaim Mall, Rabwa",Hennes and Mauritz,Hennes and Mauritz,"Othaim Mall, Rabwa",RB2-2267-HEN,Standalone,LFL,Mall Location,4/17/2010,147,1851,Antony
+KSA,Central,Riyadh,"Granada Center, Riyadh",Hospitality,Pinkberry,"Granada Centre, Riyadh",RB2-S313-PIN,Standalone,LFL,Mall Location,8/11/2012,147,92,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Ajlan & Bros Holding Group, Riyadh",RB2-H641-STA,Standalone,LFL,Shopping Mall / Center,12/29/2022,147,20,Abu Shahid
+KSA,Central,Riyadh,Riyadh City Boulevard,Starbucks,Starbucks,"Boulevard 2, Riyadh",RB2-H415-STA,Standalone,LFL,Plaza,11/1/2021,147,42,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Kayan Square DT, Riyadh",RB2-H167-STA,Standalone,LFL,Drive-Thru,10/19/2020,147,172,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Oruba Square (New),RB2-S871-STA,Standalone,LFL,Drive-Thru,8/12/2017,147,160,Abu Shahid
+KSA,Central,Riyadh,Riyadh Front,Starbucks,Starbucks,"Riyadh Front 1, Riyadh",RB2-H292-STA,Standalone,LFL,Plaza,2/6/2021,147,371,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Rakaa Plaza-DT,RB2-H030-STA,Standalone,LFL,Drive-Thru,2/19/2020,147,200,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Hazm Plaza,Riyadh",RB2-H247-STA,Standalone,LFL,Drive-Thru,4/15/2021,147,210,Abu Shahid
+KSA,Central,Riyadh,"Granada Center, Riyadh",Apparel,New Balance,Granada Center  Riyadh,RB2-H351-NEW,Standalone,LFL,Shopping Mall / Center,10/27/2022,147,174,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"River Walk DT,Riyadh",RB2-H152-STA,Standalone,LFL,Drive-Thru,7/16/2020,147,332,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Home Mart, Riyadh",RB2-2191-STA,Standalone,LFL,Mall Location,1/1/2002,147,550,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Dallah Hospital,Riyadh",RB2-H398-STA,Standalone,LFL,"Others, Hospital",12/4/2021,147,54,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Oud Square, Riyadh",RB2-S041-STA,Standalone,LFL,Plaza,12/17/2017,147,214,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,SAAD Square-DT,RB2-S916-STA,Standalone,LFL,Drive-Thru,1/12/2019,147,253,Abu Shahid
+KSA,Central,Riyadh,"Sahara Mall, Riyadh",Wellness,Pottery Barn - Kids,"Sahara Mall, Riyadh",RB2-S290-PBK,Standalone,LFL,Mall Location,4/27/2011,147,1034,Abu Shahid
+KSA,Central,Riyadh,"Hayat Mall, Riyadh",Starbucks,Starbucks,"Hayat Mall-2, Riyadh",RB2-H418-STA,Standalone,LFL,Mall Location,12/15/2021,147,109,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Sharqi Avenues DT, Riyadh",RB2-H114-STA,Standalone,LFL,Drive-Thru,9/28/2020,147,200,Abu Shahid
+KSA,Central,Riyadh,Panorama Mall Riyadh,Starbucks,Starbucks,"Panorama Mall , Riyadh",RB2-H385-STA,Standalone,LFL,Mall Location,8/26/2021,147,151,Abu Shahid
+KSA,Central,Riyadh,Hamra Mall Riyadh,Starbucks,Starbucks,Al Hamra Mall Riyadh,RB2-H618-STA,Standalone,LFL,Shopping Mall / Center,11/30/2022,147,20,Abu Shahid
+KSA,Central,Riyadh,"Granada Center, Riyadh",Apparel,Victoria's Secret International-FA,"Granada Center, Riyadh-FA",RB2-2224-VIF,Standalone,LFL,Mall Location,12/6/2014,147,925,Abdul Rahman
+KSA,Central,Riyadh,Nakheel Mall Riyadh,Starbucks,Starbucks,Nakheel Mall Riyadh,RB2-H360-STA,Standalone,LFL,Mall Location,7/15/2021,147,205,Abdul Rahman
+KSA,Central,Riyadh,Riyadh Gallery,Hennes and Mauritz,Hennes and Mauritz,"Riyadh Gallery, Riyadh",RB2-1886-HEN,Standalone,LFL,Mall Location,4/4/2009,147,1576,Abu Shahid
+KSA,Central,Riyadh,Riyadh City Boulevard,Hospitality,Pinkberry,Riyadh City Boulevard (temp)-Riyadh,RB2-H681-PIN,Standalone,LFL,Entertainment / Leasure,9/19/2023,147,48,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,STC Building Riyadh,RB2-H620-STA,Standalone,LFL,Shopping Mall / Center,12/28/2022,147,25,Abdul Rahman
+KSA,Central,Riyadh,Bustan Centre,Hospitality,Raising Cane's,"Bustan Centre, Riyadh",RB2-S774-RAI,Standalone,LFL,High Street,2/18/2017,147,309,Abu Shahid
+KSA,Central,Hail,Stand Alone,Starbucks,Starbucks,Grand Mall  Hail,RB2-H599-STA,Standalone,LFL,Shopping Mall / Center,11/30/2022,147,55,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Exit 28 Land DT, Riyadh",RB2-H174-STA,Standalone,LFL,Drive-Thru,12/17/2020,147,210,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Qurtuba Plaza Riyadh,RB2-H213-STA,Standalone,LFL,Drive-Thru,4/2/2021,147,178,Abu Shahid
+KSA,Central,Riyadh,"Faisaliah Centre, Riyadh",Apparel,American Eagle,Faisaliah Centre,RB2-H146-AME,Standalone,LFL,Plaza,12/29/2021,147,320,Abdul Rahman
+KSA,Central,Buraidah,Stand Alone,Starbucks,Starbucks,Qassim Airport Ladnside,RB2-H394-STA,Standalone,LFL,Airport,10/16/2022,147,20,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Sahafa Plaza, Riyadh",RB2-H410-STA,Standalone,LFL,Plaza,11/25/2021,147,204,Abu Shahid
+KSA,Central,Riyadh,"Al Khayama Mall, Riyadh",Hennes and Mauritz,Hennes and Mauritz,Khayama Mall  Riyadh,RB2-2480-HEN,Standalone,LFL,Mall Location,11/2/2013,147,2094,Antony
+KSA,Central,Riyadh,Qasr Mall,Wellness,Bath and Body Works,Qasr Mall,RB2-S366-BAT,Standalone,LFL,Mall Location,10/13/2012,147,223,Abu Shahid
+KSA,Central,Riyadh,"Othaim Mall, Khurais",Starbucks,Starbucks,Othaim Mall Khurais,RB2-S079-STA,Standalone,LFL,Mall Location,12/23/2021,147,144,Antony
+KSA,Central,Riyadh,Salam Mall-Riyadh,Starbucks,Starbucks,Salam Mall Gate 3-Riyadh,RB2-H730-STA,Standalone,LFL,Shopping Mall / Center,10/20/2023,147,20,Abu Shahid
+KSA,Central,Riyadh,Panorama Mall Riyadh,Wellness,Bath and Body Works,"Panorama Mall ,Riyadh",RB2-H399-BAT,Standalone,LFL,Mall Location,12/14/2021,147,123,Abu Shahid
+KSA,Central,Riyadh,"Othaim Mall, Rabwa",Starbucks,Starbucks,"Othaim Mall, Rabwa",RB2-2260-STA,Standalone,LFL,Mall Location,5/8/2016,147,126,Antony
+KSA,Central,Riyadh,Stand Alone,Wellness,Bath and Body Works,Al Ghadeer Square Riyadh,RB2-H489-BAT,Standalone,LFL,Shopping Mall / Center,11/10/2022,147,140,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Boulevard,Riyadh",RB2-H143-STA,Standalone,LFL,Plaza,8/23/2020,147,800,Abdul Rahman
+KSA,Central,Riyadh,"Sahara Mall, Riyadh",Wellness,Pottery Barn,"Sahara Mall, Riyadh",RB2-S290-POT,Standalone,LFL,Mall Location,4/27/2011,147,1487,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Farsi Land DT, Riyadh",RB2-H179-STA,Standalone,LFL,Drive-Thru,6/7/2021,147,190,Abu Shahid
+KSA,Central,Riyadh,"Granada Center, Riyadh",Apparel,Foot Locker,Granada mall,RB2-H359-FOO,Standalone,LFL,Mall Location,7/1/2021,147,434,Abdul Rahman
+KSA,Central,Riyadh,"Kingdom Center, Riyadh",Apparel,Victoria's Secret International-FA,"Kingdom Centre, Riyadh-FA",RB2-2221-VIF,Standalone,LFL,Mall Location,12/20/2014,147,1015,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,GACA HQ-Riyadh,RB2-H750-STA,Standalone,LFL,Residential / Commercial Bldg,9/25/2023,147,50,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Prince Mohamed Ibn Salman Road DT,Riyadh",RB2-H249-STA,Standalone,LFL,Drive-Thru,11/11/2021,147,180,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Tala Mall, Riyadh",RB2-H541-STA,Standalone,LFL,Shopping Mall / Center,9/17/2022,147,123,Antony
+KSA,Central,Riyadh,Stand Alone,Wellness,Bath and Body Works,Oruba Square Riyadh,RB2-H493-BAT,Standalone,LFL,Shopping Mall / Center,11/13/2022,147,112,Abu Shahid
+KSA,Central,Riyadh,"Granada Center, Riyadh",Wellness,Jo Malone,"Granada Center, Riyadh",RB2-2228-JOM,Standalone,LFL,Mall Location,12/28/2013,147,61,Abdul Rahman
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Apparel,New Balance,Riyadh Park Riyadh,RB2-H576-NEW,Standalone,LFL,Shopping Mall / Center,1/26/2023,147,100,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,North industrial complex DT,RB2-H299-STA,Standalone,LFL,Drive-Thru,12/19/2021,147,168,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Riyadh Magrabi Medical Center Granada-Riyadh,RB2-H733-STA,Standalone,LFL,Hospital,10/30/2023,147,47,Abdul Rahman
+KSA,Central,Riyadh,"Faisaliah Centre, Riyadh",Wellness,Bath and Body Works,Faisaliah Centre,RB2-S945-BAT,Standalone,LFL,Plaza,12/30/2021,147,158,Abdul Rahman
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Hennes and Mauritz,Hennes and Mauritz,The Riyadh Park,RB2-S967-HEN,Standalone,LFL,Mall Location,8/2/2018,147,2308,Antony
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Wellness,MAC,The Riyadh Park,RB2-S955-MAC,Standalone,LFL,Mall Location,8/14/2018,147,60,Antony
+KSA,Central,Riyadh,Nakheel Mall Riyadh,Wellness,Bath and Body Works,Nakheel Mall Extension Riyadh,RB2-H574-BAT,Standalone,LFL,Shopping Mall / Center,11/15/2022,147,91,Abdul Rahman
+KSA,Central,Riyadh,"Granada Center, Riyadh",Wellness,Boots,Granada Mall (New),RB2-H610-BOO,Standalone,LFL,Shopping Mall / Center,6/20/2023,147,200,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"King Abdullah Road Land DT – Al Hamra , Riyadh",RB2-H382-STA,Standalone,LFL,Drive-Thru,6/1/2022,147,120,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Hamra Plaza-Riyadh,RB2-H757-STA,Standalone,LFL,Shopping Mall / Center,10/29/2023,147,76,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Riyadh Magrabi Hospital Exit 14,RB2-H732-STA,Standalone,LFL,Hospital,11/16/2023,147,44,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Granada Plaza-Riyadh,RB2-H696-STA,Standalone,LFL,Residential / Commercial Bldg,6/29/2023,147,95,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,King Fahad Jomaiah Road DT,RB2-H340-STA,Standalone,LFL,Drive-Thru,12/23/2021,147,200,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Al Waha Square-Riyadh,RB2-H688-STA,Standalone,LFL,Shopping Mall / Center,6/20/2023,147,106,Abdul Rahman
+KSA,Central,Riyadh,Nakheel Mall Riyadh,Wellness,Jo Malone,Nakheel Mall  Riyadh,RB2-H525-JOM,Standalone,LFL,Shopping Mall / Center,11/23/2022,147,79,Abdul Rahman
+KSA,Central,Hail,Stand Alone,Starbucks,Starbucks,Saudi German Hospital Hail-Hail,RB2-H736-STA,Standalone,PTL,Hospital,12/29/2023,147,50,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Adnoc Juhi Abu Baker Sdiq Road-Riyadh,RB2-H929-STA,Standalone,PTL,Drive-Thru,12/23/2024,147,102,Antony
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Hennes and Mauritz,Collection of Style,The Riyadh Park,RB2-1765-COL,Standalone,LFL,Mall Location,8/10/2018,147,482,Antony
+KSA,Central,Riyadh,"Faisaliah Centre, Riyadh",Hennes and Mauritz,Collection of Style,Faisaliah Centre,RB2-2443-COL,Standalone,LFL,Plaza,12/30/2021,147,418,Abdul Rahman
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Hospitality,PF Chang's,The Riyadh Park,RB2-S951-PFC,Standalone,LFL,Mall Location,3/14/2019,147,624,Antony
+KSA,Central,Riyadh,"Granada Center, Riyadh",Starbucks,Starbucks,"Granada Centre, Riyadh (New)",RB2-1906-STA,Standalone,LFL,Mall Location,9/22/2012,147,85,Abdul Rahman
+KSA,Central,Riyadh,"Granada Center, Riyadh",Wellness,MAC,"Granada Centre, Riyadh",RB2-2238-MAC,Standalone,LFL,Mall Location,9/3/2005,147,80,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Al Majd Station DT-Riyadh,RB2-H710-STA,Standalone,LFL,Drive-Thru,6/7/2023,147,76,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,KSU King Salman Library  Riyadh,RB2-H761-STA,Standalone,PTL,Institution,4/15/2024,147,112,Abu Shahid
+KSA,Central,Riyadh,Hamra Mall Riyadh,Wellness,Bath and Body Works,Hamra Mall  Riyadh,RB2-H491-BAT,Standalone,LFL,Shopping Mall / Center,10/10/2022,147,170,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"King Abdulah Road Err DT ,Riyadh",RB2-H238-STA,Standalone,LFL,Drive-Thru,12/2/2021,147,200,Abu Shahid
+KSA,Central,Riyadh,The View Mall,Starbucks,Starbucks,The view mall  Riyadh,RB2-H533-STA,Standalone,LFL,Shopping Mall / Center,9/22/2022,147,184,Antony
+KSA,Central,Buraidah,Nakheel plaza Buraidah,Wellness,Bath and Body Works,Nakheel plaza  Buraidah,RB2-H490-BAT,Standalone,LFL,Shopping Mall / Center,12/28/2022,147,138,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,SAAB Bank tower  Riyadh,RB2-H528-STA,Standalone,PTL,Institution,2/4/2024,147,24,Abdul Rahman
+KSA,Central,Riyadh,Salam Mall-Riyadh,Wellness,Bath and Body Works,Salam Mall  Riyadh,RB2-H494-BAT,Standalone,LFL,Shopping Mall / Center,11/9/2022,147,183,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,RADEN CENTER OLAYA-Riyadh,RB2-H742-STA,Standalone,LFL,Shopping Mall / Center,10/26/2023,147,111,Abu Shahid
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Apparel,American Eagle,The Riyadh Park,RB2-S963-AME,Standalone,LFL,Mall Location,7/22/2018,147,359,Antony
+KSA,Central,Riyadh,Riyadh Front,Hennes and Mauritz,Hennes and Mauritz,Riyadh Front,RB2-H370-HEN,Standalone,LFL,Plaza,11/25/2021,147,1031,Abdul Rahman
+KSA,Central,Riyadh,The View Mall,Wellness,Bath and Body Works,The View Mall,RB2-H492-BAT,Standalone,LFL,Shopping Mall / Center,9/29/2022,147,170,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Rabwa Square-Riyadh,RB2-H698-STA,Standalone,LFL,Residential / Commercial Bldg,6/22/2023,147,118,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Hassan IBN Hussain AlMunsiyah-Riyadh,RB2-H670-STA,Standalone,LFL,Shopping Mall / Center,5/11/2023,147,110,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Fuel Way King Fahad Road DT,RB2-H605-STA,Standalone,LFL,Drive-Thru,4/5/2023,147,100,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Eastern Ring Road DT Rawda  Riyadh,RB2-H433-STA,Standalone,LFL,Drive-Thru,11/17/2022,147,92,Abu Shahid
+KSA,Central,Buraidah,Othaim Mall Buraidah Qassim,Starbucks,Starbucks,Othaim Mall Buraidah- Gate 3,RB2-H603-STA,Standalone,LFL,Shopping Mall / Center,12/26/2022,147,200,Antony
+KSA,Central,Buraidah,Nakheel Plaza Buraidah,Starbucks,Starbucks,Nakheel Plaza  Buraidah,RB2-H540-STA,Standalone,LFL,Shopping Mall / Center,10/21/2022,147,148,Antony
+KSA,Central,Buraidah,Stand Alone,Starbucks,Starbucks,Alfayziyyah Plaza-Buraidah,RB2-H728-STA,Standalone,LFL,Shopping Mall / Center,8/29/2023,147,190,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Parisiana Complex-Riyadh,RB2-H697-STA,Standalone,LFL,Residential / Commercial Bldg,6/22/2023,147,137,Abu Shahid
+KSA,Central,Buraidah,Stand Alone,Starbucks,Starbucks,Break DT Qassim,RB2-H499-STA,Standalone,LFL,Drive-Thru,10/2/2022,147,175,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Blvd World Spain Zone, Riyadh",RB2-H909-STA,Standalone,LFL,Entertainment / Leasure,12/26/2023,147,142,Abdul Rahman
+KSA,Central,Riyadh,"Granada Center, Riyadh",Apparel,American Eagle,Granada Mall - Aerie,RB2-H547-AME,Standalone,LFL,Shopping Mall / Center,8/24/2023,147,210,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Imam Shafie Al Manar Square, Riyadh",RB2-H820-STA,Standalone,PTL,Shopping Mall / Center,4/15/2024,147,165,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Ishbiliya - Exit 9 DT  Riyadh,RB2-H530-STA,Standalone,LFL,Drive-Thru,11/30/2022,147,200,Abu Shahid
+KSA,Central,Riyadh,Nakheel Mall,Wellness,NYX,Nakheel Mall  Riyadh,RB2-H832-NYX,Standalone,PTL,Shopping Mall / Center,5/30/2024,147,123,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Qairwan Gate DT  Riyadh,RB2-H501-STA,Standalone,LFL,Drive-Thru,10/7/2022,147,150,Abdul Rahman
+KSA,Central,Riyadh,"Faisaliah Centre, Riyadh",Hennes and Mauritz,Hennes and Mauritz,Faisaliah Centre,RB2-S918-HEN,Standalone,LFL,Plaza,12/27/2021,147,1370,Abdul Rahman
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Apparel,Victoria's Secret International-FA,The Riyadh Park-FA,RB2-S965-VIF,Standalone,LFL,Mall Location,9/13/2018,147,773,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,King Abdulaziz Rd Al Arid DT  Riyadh,RB2-H764-STA,Standalone,LFL,Drive-Thru,9/30/2023,147,166,Abdul Rahman
+KSA,Central,Riyadh,Oruba Street Riyadh,Starbucks,Starbucks,"Oruba Street, Riyadh",RB2-1966-STA,Standalone,LFL,High Street,4/29/2008,147,230,Abu Shahid
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Hospitality,The Cheesecake Factory,The Riyadh Park,RB2-S950-CHE,Standalone,LFL,Mall Location,6/5/2019,147,1185,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Santorini Sq. Takhassusi -Riyadh,RB2-H726-STA,Standalone,LFL,Shopping Mall / Center,8/31/2023,147,223,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,AL Suwaidi Al Am Riyadh DT  Riyadh,RB2-H514-STA,Standalone,LFL,Drive-Thru,12/22/2022,147,150,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Prince Bander Road DT,RB2-H570-STA,Standalone,LFL,Drive-Thru,8/3/2023,147,100,Abu Shahid
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Wellness,NYX,The Riyadh Park,RB2-S932-NYX,Standalone,LFL,Mall Location,8/1/2018,147,90,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Arcadia Square-Riyadh,RB2-H695-STA,Standalone,LFL,Residential / Commercial Bldg,6/26/2023,147,223,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Riyadh Century Corner  Riyadh,RB2-H771-STA,Standalone,LFL,Shopping Mall / Center,12/24/2023,147,260,Abu Shahid
+KSA,Central,Riyadh,"Kingdom Center, Riyadh",Starbucks,Starbucks,"Kingdom Center, Riyadh",RB2-H414-STA,Standalone,LFL,Shopping Mall / Center,7/21/2022,147,121,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Northern Ring Road Land DT - AlMasif  Riyadh,RB2-H429-STA,Standalone,LFL,Drive-Thru,12/15/2022,147,240,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Najm Eldin Road DT Riyadh,RB2-H566-STA,Standalone,LFL,Drive-Thru,9/14/2023,147,100,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Al Waha Riyadh DT  Riyadh,RB2-H515-STA,Standalone,LFL,Drive-Thru,11/17/2022,147,180,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Alsadhan Station DT, Riyadh",RB2-H427-STA,Standalone,LFL,Drive-Thru,6/27/2022,147,200,Abdul Rahman
+KSA,Central,Al Kharj,Stand Alone,Starbucks,Starbucks,Kaizen Gas Station DT  Al Kharj,RB2-H535-STA,Standalone,LFL,Drive-Thru,8/24/2023,147,100,Abdul Rahman
+KSA,Central,Riyadh,"Kingdom Center, Riyadh",Wellness,Jo Malone,Kingdom Centre  Riyadh-New,RB2-H807-JOM,Standalone,PTL,Standalone,1/18/2024,147,129,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"King Abdullah Rd Khalij, Riyadh",RB2-H708-STA,Standalone,PTL,Drive-Thru,12/26/2024,147,150,Abu Shahid
+KSA,Central,Riyadh,Thumamah Rd Munsiyah DT,Starbucks,Starbucks,Thumamah Rd Munsiyah DT,RB2-H594-STA,Standalone,LFL,Drive-Thru,12/28/2022,147,207,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Exit 24 DT,RB2-H557-STA,Standalone,LFL,Drive-Thru,11/30/2023,147,100,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Shifa Derab Road DT  Riyadh,RB2-H536-STA,Standalone,LFL,Drive-Thru,4/5/2023,147,100,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Granada Square DT   Riyadh,RB2-H503-STA,Standalone,LFL,Drive-Thru,11/30/2022,147,140,Abdul Rahman
+KSA,Central,Riyadh,Nakheel Mall Riyadh,Starbucks,Starbucks,Nakheel Mall Extension  Riyadh,RB2-H505-STA,Standalone,LFL,Shopping Mall / Center,10/23/2022,147,231,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Boulevard 2030-Riyadh,RB2-H689-STA,Standalone,LFL,Shopping Mall / Center,5/6/2023,147,206,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Yasmeen Building Thumamah Rd-Riyadh,RB2-H756-STA,Standalone,LFL,Shopping Mall / Center,10/5/2023,147,222,Abdul Rahman
+KSA,Central,Hail,Stand Alone,Starbucks,Starbucks,"Blue Walk DT, Hail",RB2-H436-STA,Standalone,LFL,Drive-Thru,7/21/2022,147,387,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Hassan Bin Thabet Rd DT-Riyadh,RB2-H694-STA,Standalone,LFL,Drive-Thru,5/22/2023,147,110,Abu Shahid
+KSA,Central,Riyadh,Takhassusi Riyadh,Starbucks,Starbucks,"Takhassusi, Riyadh",RB2-2044-STA,Standalone,LFL,Plaza,3/1/2002,147,280,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Southern Ring Road Namar DT  Riyadh,RB2-H517-STA,Standalone,LFL,Drive-Thru,12/24/2022,147,120,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Al Mursilat DT,RB2-H616-STA,Standalone,LFL,Drive-Thru,6/20/2023,147,120,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Centro Yasmin DT, Riyadh",RB2-2519-STA,Standalone,LFL,Drive-Thru,11/29/2017,147,168,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Aldress Uptown Station DT-Riyadh,RB2-H783-STA,Standalone,PTL,Drive-Thru,5/16/2024,147,135,Antony
+KSA,Central,Riyadh,Riyadh Front,Starbucks,Starbucks,Riyadh Front Gate 5-Riyadh,RB2-H735-STA,Standalone,LFL,Shopping Mall / Center,10/5/2023,147,257,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"IBN Taymeeyah Rd DT, Riyadh",RB2-H819-STA,Standalone,PTL,Drive-Thru,12/25/2024,147,160,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Al Munsiyah DT  Riyadh,RB2-H426-STA,Standalone,LFL,Drive-Thru,10/19/2022,147,200,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Wadi Laban Taif St. East DT  Riyadh,RB2-H707-STA,Standalone,PTL,Drive-Thru,2/28/2024,147,200,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Thumamah Road Sahafa DT,RB2-H607-STA,Standalone,LFL,Drive-Thru,5/8/2023,147,160,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Al Nasr Road DT,RB2-H307-STA,Standalone,LFL,Drive-Thru,8/31/2023,147,180,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,King Fahad Road Sahafa DT  Riyadh,RB2-H516-STA,Standalone,LFL,Drive-Thru,12/27/2022,147,200,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Imam Muslim Road DT, Riyadh",RB2-H766-STA,Standalone,LFL,Drive-Thru,11/24/2023,147,150,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Tuwaiq DT-Riyadh,RB2-H794-STA,Standalone,LFL,Drive-Thru,11/24/2023,147,175,Abu Shahid
+KSA,Central,Riyadh,"SIDRA, Riyadh",Starbucks,Starbucks,"SIDRA, Riyadh - Drive Thru",RB2-S010-STA,Standalone,LFL,Drive-Thru,4/26/2018,147,234,Abdul rahman
+KSA,Central,Buraidah,Stand Alone,Starbucks,Starbucks,Fuel Way Qassim-Madinah DT  Qassim,RB2-H534-STA,Standalone,LFL,Drive-Thru,12/27/2023,147,100,Antony
+KSA,Central,Riyadh,KKIA Riyadh,Starbucks,Starbucks,KKIA T3 Arrival Landside,RB2-H563-STA,Standalone,LFL,Airport,5/24/2023,147,48,Abdul Rahman
+KSA,Central,Riyadh,Riyadh City Boulevard,Starbucks,Starbucks,Riyadh City Boulevard-2,RB2-H659-STA,Standalone,LFL,Entertainment / Leasure,1/19/2023,147,113,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Exit 9 Al Mughrizat DT Riyadh,RB2-H511-STA,Standalone,LFL,Drive-Thru,6/25/2023,147,200,Abdul Rahman
+KSA,Central,Riyadh,KKIA Riyadh,Starbucks,Starbucks,KKIA T3 Departure Airside,RB2-H564-STA,Standalone,LFL,Airport,8/10/2023,147,52,Abdul Rahman
+KSA,Central,Riyadh,Nakhlah Plaza Riyadh,Starbucks,Starbucks,"Nakhlah Plaza, Riyadh (Drive Thru)",RB2-S503-STA,Standalone,LFL,Drive-Thru,4/11/2015,147,223,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,SASCO Dirab Plaza DT-Riyadh,RB2-H797-STA,Standalone,PTL,Drive-Thru,6/13/2024,147,188,Abu Shahid
+KSA,Central,Riyadh,KKIA Riyadh,Starbucks,Starbucks,KKIA T4 Departure Airside,RB2-H580-STA,Standalone,LFL,Airport,10/26/2023,147,41,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Sawary Plaza Drive Thru, Riyadh",RB2-H773-STA,Standalone,PTL,Drive-Thru,12/26/2024,147,172,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Wadi Laban Najd Street DT,RB2-H768-STA,Standalone,PTL,Drive-Thru,7/1/2024,147,175,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Southern Ring Road Shubra DT, Riyadh",RB2-H767-STA,Standalone,PTL,Drive-Thru,12/26/2024,147,210,Abu Shahid
+KSA,Central,Majmah,--,Starbucks,Starbucks,Karam Mall Drive Thru-Al Majmah,RB2-H928-STA,Standalone,PTL,Drive-Thru,9/19/2024,147,200,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Tal Plaza DT Al Malqa Anas Ibn Malek Road,RB2-H913-STA,Standalone,PTL,Drive-Thru,7/5/2024,147,343,Abu Shahid
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Apparel,Mothercare,Riyadh Park-Riyadh-(New-2),RB2-H700-MOT,Standalone,LFL,Shopping Mall / Center,10/4/2023,147,511,Antony
+KSA,Central,Hail,Stand Alone,Starbucks,Starbucks,Beirut DT,RB2-H598-STA,Standalone,LFL,Drive-Thru,5/17/2023,147,180,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Qurtubah Dammam Road DT  Riyadh,RB2-H544-STA,Standalone,LFL,Drive-Thru,5/31/2023,147,249,Antony
+KSA,Central,Riyadh,--,Starbucks,Starbucks,"PNU S1 DT, Riyadh",RB2-H604-STA,Standalone,PTL,Drive-Thru,9/5/2024,147,46,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Al Yasmin District DT-Riyadh,RB2-H693-STA,Standalone,LFL,Drive-Thru,5/26/2023,147,280,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Tamimi Shaikh Jaber DT-Riyadh,RB2-H712-STA,Standalone,LFL,Drive-Thru,8/2/2023,147,227,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Thumamah Road Land DT  Riyadh,RB2-H521-STA,Standalone,LFL,Drive-Thru,12/1/2022,147,202,Antony
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Hospitality,Shake Shack,Riyadh Park-Riyadh,RB2-H683-SHA,Standalone,LFL,Shopping Mall / Center,10/9/2023,147,113,Antony
+KSA,Central,Riyadh,"SIDRA, Riyadh",Hospitality,Shake Shack,"SIDRA, Riyadh",RB2-S008-SHA,Standalone,LFL,Plaza,4/26/2018,147,590,Abdul rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"King Abdullah Financial District (KAFD), Riyadh",RB2-2402-STA,Standalone,LFL,Tall,8/4/2022,147,284,Abu Shahid
+KSA,Central,Riyadh,"SIDRA, Riyadh",Hospitality,Raising Cane's,"SIDRA, Riyadh",RB2-S007-RAI,Standalone,LFL,Drive-Thru,4/26/2018,147,310,Abdul rahman
+KSA,Central,Al Kharj,Stand Alone,Starbucks,Starbucks,Al Faisaliah Districts DT-Al Kharj,RB2-H711-STA,Standalone,LFL,Drive-Thru,6/26/2023,147,265,Abdul Rahman
+KSA,Central,Al Rass,Stand Alone,Starbucks,Starbucks,Ar Rass Ar Rawda Square DT-Al Rass,RB2-H714-STA,Standalone,LFL,Drive-Thru,6/29/2023,147,175,Antony
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Apparel,Foot Locker,Riyadh Park New (FL Powerdoor) Riyadh,RB2-H575-FOO,Standalone,LFL,Shopping Mall / Center,1/26/2023,147,785,Antony
+KSA,Central,Az zulfi,Stand Alone,Starbucks,Starbucks,Az Zulfi Front DT Az zulfi,RB2-H781-STA,Standalone,PTL,Drive-Thru,10/24/2024,147,200,Antony
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,Wadi Laban Taif St. West DT-Riyadh,RB2-H795-STA,Standalone,LFL,Drive-Thru,12/17/2023,147,150,Abu Shahid
+KSA,Central,Al Kharj,Stand Alone,Starbucks,Starbucks,King Abdulaziz RD DT-Al Kharj,RB2-H777-STA,Standalone,PTL,Drive-Thru,1/16/2024,147,200,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,East Boulevard Plaza DT  Riyadh,RB2-H690-STA,Standalone,LFL,Drive-Thru,5/15/2023,147,397,Antony
+KSA,Central,Riyadh,"Granada Center, Riyadh",Hennes and Mauritz,Hennes and Mauritz,"Granada Centre, Riyadh",RB2-S227-HEN,Standalone,LFL,Mall Location,8/8/2009,147,3248,Abdul Rahman
+KSA,Central,Riyadh,Riyadh City Boulevard,Hospitality,Shake Shack,Riyadh City Boulevard (temp)-Riyadh,RB2-H682-SHA,Standalone,PTL,Entertainment / Leasure,1/11/2024,147,250,Abdul Rahman
+KSA,Central,Riyadh,Riyadh City Boulevard,Hospitality,Raising Cane's,Riyadh City Boulevard,RB2-H660-RAI,Standalone,LFL,Entertainment / Leasure,9/14/2023,147,214,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Hospitality,Raising Cane's,Al Munisyah DT,RB2-H497-RAI,Standalone,LFL,Drive-Thru,4/21/2023,147,200,Antony
+KSA,Central,Riyadh,"Granada Center, Riyadh",Wellness,Charlotte Tilbury,Granada Mall  Riyadh,RB2-H613-CHA,Standalone,PTL,Shopping Mall / Center,4/4/2024,147,139,Abdul Rahman
+KSA,Central,Riyadh,"Riyadh Park,Riyadh",Wellness,Charlotte Tilbury,Riyadh park Mall-Riyadh,RB2-H727-CHA,Standalone,LFL,Shopping Mall / Center,11/22/2023,147,140,Antony
+KSA,Central,Riyadh,"SIDRA, Riyadh",Hospitality,PF Chang's,"SIDRA, Riyadh",RB2-S005-PFC,Standalone,LFL,Plaza,4/26/2018,147,595,Abdul rahman
+KSA,Central,Riyadh,"SIDRA, Riyadh",Hospitality,Texas Roadhouse,"SIDRA, Riyadh",RB2-S009-TEX,Standalone,LFL,Plaza,5/10/2018,147,910,Abdul rahman
+KSA,Central,Riyadh,Thumamah Rd Munsiyah DT,Hospitality,Raising Cane's,Thumamah Rd Munsiyah DT,RB2-H595-RAI,Standalone,LFL,Drive-Thru,10/19/2023,147,219,Antony
+KSA,Central,Riyadh,"Granada Center, Riyadh",Wellness,West Elm,Granada Center,RB2-H217-WES,Standalone,LFL,Shopping Mall / Center,8/3/2023,147,833,Abdul Rahman
+KSA,Central,Riyadh,The View Mall,Apparel,Victoria's Secret International-FA,The View Mall-FA,RB2-H661-VIF,Standalone,LFL,Shopping Mall / Center,9/15/2023,147,396,Antony
+KSA,Central,Riyadh,Stand Alone,Hospitality,Raising Cane's,"Taif Street Wadi Laban DT, Riyadh",RB2-H747-RAI,Standalone,PTL,Drive-Thru,6/6/2024,147,150,Abu Shahid
+KSA,Central,Al Kharj,Stand Alone,Hospitality,Raising Cane's,King Abdulaziz RD DT-Al Kharj,RB2-H800-RAI,Standalone,PTL,Drive-Thru,2/14/2024,147,150,Abdul Rahman
+KSA,Central,Riyadh,"Granada Center, Riyadh",Wellness,Pottery Barn,Granada Center,RB2-H218-POT,Standalone,LFL,Shopping Mall / Center,8/3/2023,147,915,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Hospitality,Raising Cane's,"Southern Ring Road Shobra DT, Riyadh",RB2-H810-RAI,Standalone,PTL,Drive-Thru,12/6/2024,147,160,Abu Shahid
+KSA,Central,Riyadh,Stand Alone,Hospitality,Raising Cane's,Tamimi Shaikh Jaber DT-Riyadh,RB2-H801-RAI,Standalone,PTL,Drive-Thru,4/10/2024,147,227,Antony
+KSA,Central,Riyadh,"Faisaliah Centre, Riyadh",Apparel,Victoria's Secret International-FA,Faisaliah Centre-FA,RB2-2444-VIF,Standalone,LFL,Shopping Mall / Center,3/24/2022,147,1254,Abdul Rahman
+KSA,Central,Riyadh,"SIDRA, Riyadh",Hospitality,The Cheesecake Factory,"SIDRA, Riyadh",RB2-S003-CHE,Standalone,LFL,Plaza,4/26/2018,147,1688,Abdul rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,"Safarat -DQ, Riyadh",RB2-2163-STA,Standalone,LFL,High Street,1/7/2005,147,135,Abu Shahid
+KSA,Central,Riyadh,Other,Starbucks,Starbucks,Riyadh Y Line Square Drive Thru,RB2-H825-STA,Standalone,New,Drive-Thru,4/24/2025,29,165,Abdul Rahman
+KSA,Central,Riyadh,Stand Alone,Starbucks,Starbucks,U walk Riyadh,RB2-H507-STA,Standalone,LFL,Shopping Mall / Center,11/7/2022,210,199,Abu Shahid
+KSA,Central,Riyadh,,Starbucks,Starbucks,Hamza Road Swaidi DT  Riyadh,RB2-H537-STA,Standalone,New,Drive-Thru,6/17/2025,38,170,Abu Shahid
+KSA,Central,Riyadh,,Starbucks,Starbucks,KKIA T1 Arrivals Landside,RB2-H951-STA,Standalone,New,Shopping Mall / Center,6/4/2025,51,71,Abdul Rahman
+KSA,Central,Riyadh,,Apparel,Foot Locker,Nakheel Mall Riyadh,RB2-H956-FOO,Standalone,New,Shopping Mall / Center,5/29/2025,57,560,Abdul Rahman
+KSA,Central,Riyadh,,Starbucks,Starbucks,Food Truck 1,RB2-H850-STA,Standalone,New,Drive-Thru,,,,Abu Shahid
+KSA,Central,Riyadh,,Starbucks,Starbucks,Food Truck 2,RB2-H851-STA,Standalone,New,Drive-Thru,,,,Abu Shahid

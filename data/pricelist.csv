@@ -1,0 +1,586 @@
+
+,SN,TYPE,CODE,DECRIPTION,UNIT,QTY,"Material 
+Price","Labor
+Price ",Total,REMARKS,COMMENTS
+,1,CARPENTRY,CA00001,ALUMENIUM DOOR HINGES - HEAVY DUTY,PC,1,75,100,175,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,2,CARPENTRY,CA00002,ANGLE BAR PROVISIONING AND FIXING (WHITE/BLACK/SILVER/GOLDEN) ,MTR,1,20,100,120,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,UPDATED PRICE
+,3,CARPENTRY,CA00003,CUPBOARD DOOR HANDLE - HEAVY DUTY,PC,1,15,100,115,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,4,CARPENTRY,CA00004,CUPBOARDS DOOR LOCK - HEAVY DUTY,PC,1,30,100,130,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,5,CARPENTRY,CA00005,ALUMENIUM DOOR LOCK -MADE IN ITALY,PC,1,75,100,175,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,6,CARPENTRY,CA00006,GLASS DOOR LOCK BOTTOM  - YALE,PC,1,90,100,190,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,7,CARPENTRY,CA00007,GLASS DOOR LOCK BOTTOM - STANLEY,PC,1,85,100,185,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,8,CARPENTRY,CA00008,GLASS DOOR LOCK COMPLETE SET - MAB,PC,1,350,200,550,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,9,CARPENTRY,CA00009,WOODEN DOOR LOCK CYLINDER  -YALE,PC,1,65,100,165,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,10,CARPENTRY,CA00010,ALUMIUM DOOR LOCK MACHINE SET - MADE IN CHINA,PC,1,145,150,295,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,11,CARPENTRY,CA00011,ALUMIUM DOOR LOCK MACHINE SET - MADE IN ITALY,PC,1,180,150,330,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,12,CARPENTRY,CA00012,CURTAIN BLIND FABRIC,MTR^2,1,,85,85,,
+,13,CARPENTRY,CA00013,CURTAIN BLIND FABRICS ( SERIES 3000 ) OR ANY STANDARD COLOR,MTR^2,1,,85,85,,
+,14,CARPENTRY,CA00014,CURTAIN BLIND NEW MOTOR REPLACEMNET- SOMFY BRAND / 5 YEARS WARANTEE,PC,1,850,200,1050,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,15,CARPENTRY,CA00015,CURTAIN BLIND - BRACKET REPLACEMENT,PC,1,50,100,150,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,16,CARPENTRY,CA00016,CURTAIN BLIND - FABRIC LEVELING & MAINTENANCE VISIT,VISIT,1,,150,150,,
+,17,CARPENTRY,CA00017,CURTAIN BLIND - FABRIC TRIMMING FACTORY WORK,VISIT,1,,250,250,,
+,18,CARPENTRY,CA00018,CURTAIN BLIND - SOMFY MOTOR REMOTE CONTROL NEW INSTALLATION/REPLACEMENT WORK,PC,1,50,250,300,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,19,CARPENTRY,CA00019,CURTAIN BLIND -CYLINDER BASE FOR BLIND CURTAIN AT FAMILY SECTION ENTRACNE (BRAND = ASSAF),PC,1,50,100,150,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,20,CARPENTRY,CA00020,CURTAIN BLIND CONVERSION FROM  MANUAL TO MOTORIZED - LABOR CHARGED ONLY,VISIT,1,,250,250,,
+,21,CARPENTRY,CA00021,CURTAIN BLIND PLASTIC CLUCH,PC,1,50,100,150,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,22,CARPENTRY,CA00022,DOOR CLOSER - LOGIC / 6 MONTHS WARANTEE,PC,1,200,150,350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,23,CARPENTRY,CA00023,DOOR CLOSER - RAYOBI TAIWAN / 6 MONTHS WARANTEE,PC,1,150,150,300,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,24,CARPENTRY,CA00024,DOOR CLOSER DORMA 8900 SERIES  (HEAVY DUTY) / 6 MONTHS WAARNTEE,PC,1,850,150,1000,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,25,CARPENTRY,CA00025,DOOR CLOSER -HM /6 MONTHS WAARNTEE,PC,1,90,150,240,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,26,CARPENTRY,CA00026,DOOR CLOSER -SOFAB/6 MONTHS WAARNTEE,PC,1,115,150,265,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,27,CARPENTRY,CA00027,DOOR CLOSER - HM (60KG TO 70KG)6 MONTH WARNTEE,PC,1,110,150,260,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,28,CARPENTRY,CA00028,DOOR CLOSER - HM (80KG TO 100KG)6 MONTH WARNTEE,PC,1,180,150,330,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,29,CARPENTRY,CA00029,DOOR CLOSER - HM (110KG TO 140KG)6 MONTH WARNTEE,PC,1,280,150,430,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,30,CARPENTRY,CA00030,DOOR CLOSER - HM (150KG TO 180KG)6 MONTH WARNTEE,PC,1,380,150,530,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,31,CARPENTRY,CA00031,DOOR DRAUGHT EXCLUDER / NYLON BRUSH,PC,1,45,100,145,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,32,CARPENTRY,CA00032,DOOR FLOOR MAT - 3M  MODEL 8150 USA SUPPLY + INSTALL,FT^2,1,,115,115,,
+,33,CARPENTRY,CA00033,DOOR KICK PLATE STAINLESS STEEL/ALOCOBOND FOR WOODEN DOOR 40X120CM,PC,1,130,150,280,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,34,CARPENTRY,CA00034,DOOR STAINLESS SHEET - FULL DOOR ,PC,1,250,150,400,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,35,CARPENTRY,CA00035,DOOR STOPPER -HEAVY DUTY - FABRICATED ,PC,1,50,100,150,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,36,CARPENTRY,CA00036,DRAWER HANDLE - HEAVY DUTY,PC,1,15,100,115,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,37,CARPENTRY,CA00037,DRAWER LOCK - HEAVY DUTY,PC,1,40,100,140,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,38,CARPENTRY,CA00038,DRAWER RUNNERS / RAILING (PER PAIR) - HEAVY DUTY,PC,1,40,100,140,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,39,CARPENTRY,CA00039,EMERGENCY DOOR PUSH BAR COMPLETE SET WITH LOCK-SPAIN - 1 YEAR WARANTEE,PC,1,1150,200,1350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,40,CARPENTRY,CA00040,EMERGENCY DOOR PUSH BAR COMPLETE SET WITH LOCK- ITALY- 1 YEAR WARANTEE,PC,1,1350,200,1550,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,41,CARPENTRY,CA00041,EMERGENCY DOOR PUSH BAR COMPLETE SET WITH LOCK- CHINA-6 MONTHS WARANTEE,PC,1,690,200,890,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,42,CARPENTRY,CA00042,EMERGENCY DOOR PUSH BAR - SPAIN (WITHOUT LOCK)-1 YEAR WARANTEE,PC,1,750,200,950,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,43,CARPENTRY,CA00043,FIREFIGHTING - ONE SIDED FIRE BLANKET SIGNAGE WITH INSTALLATION,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,44,CARPENTRY,CA00044,FIREFIGHTING -ONE SIDED FIRE EXTINGUISHER SIGNAGE WITH INSTALLATION,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,45,CARPENTRY,CA00045,FIREFIGHTING -STAINLESS STEEL CUSTOMIZED HOOKS FOR FIRE EXTINGUISHER WITH INSTALLATION,PC,1,45,100,145,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,46,CARPENTRY,CA00046,FIREFIGHTING -WOODEN SUPPORT FOR FIRE EXTINGUISHER WITH INSTALLATION,PC,1,45,100,145,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,47,CARPENTRY,CA00047,FIXTURE/FURNITURE SPRAY PAINT WITH SANDING (MATERIAL + LABOR + TRANSPORTATION),PC,1,,150,150,Minimum SR 150 for Small Job follow the CODE,
+,48,CARPENTRY,CA00048,BLACK SPRAY PAINT ON HANDLE OF CABINET (WORKHSOP WORK),PC,1,50,100,150,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,49,CARPENTRY,CA00049,HANDLE FOR PATIO CABINET (INCLUDING BLACK SPRAY PAINT)(SPECIFIC HANDLE WILL BE MADE IN WORKSHOP),PC,1,100,100,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,50,CARPENTRY,CA00050,FIXTURE/FURNITURE WOODEN POLISH WITH VARNISH + LACQUER  (MATERIAL + LABOR + TRANSPORTATION),PC,1,,150,150,Minimum SR 150 for Small Job follow the CODE,
+,51,CARPENTRY,CA00051,FROSTING - REMOVE DAMAGED FILM - LABOR ONLY,MTR^2,1,,25,25,,
+,52,CARPENTRY,CA00052,FROSTING - SUPPLY AND INSTALL NEW FILM  - DESIGN BY ALSHAYA. BRAND: 3M.,MTR^2,1,,150,150,,
+,53,CARPENTRY,CA00053,GLASS DOOR - AUTOMATICH  HYDRAULIC HINGE CLOSER - DORMA- 6 MONTHS WARANTEE,PC,1,350,200,550,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,54,CARPENTRY,CA00054,GLASS DOOR - AUTOMATICH  HYDRAULIC HINGE CLOSER -HICOO- 6 MONTHS WARANTEE,PC,1,350,200,550,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,55,CARPENTRY,CA00055,GLASS DOOR - AUTOMATICH  HYDRAULIC HINGE CLOSER -STANLEY- 6 MONTHS WARANTEE,PC,1,150,150,300,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,56,CARPENTRY,CA00056,GLASS DOOR BEADING (SET),PC,1,50,125,175,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,57,CARPENTRY,CA00057,GLASS DOOR BOTTOM LOCK -HICOO,PC,1,45,100,145,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,58,CARPENTRY,CA00058,GLASS DOOR CENTRAL LOCK  -HICOO,PC,1,55,100,155,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,59,CARPENTRY,CA00059,GLASS DOOR HANDLE  -HICOO,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,60,CARPENTRY,CA00060,GLASS DOOR HANDLE STAINLESS STEEL - HEAVY DUTY,PC,1,70,100,170,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,61,CARPENTRY,CA00061,GLASS DOOR COMPLETE LOCK SET - STANLEY,PC,1,350,200,550,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,62,CARPENTRY,CA00062,GLASS DOOR SEAL FULL DOOR - HEAVY DUTY  (POLYCARBONATE),PC,1,15,50,65,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,63,CARPENTRY,CA00063,GLASS STICKER REMOVING & FIXING  - GRAPHICS SUPPLIED BY ALSHAYA,MTR^2,1,,25,25,,
+,64,CARPENTRY,CA00064,HINGES CUPBOARD T DOOR  - HEAVY DUTY,PC,1,20,100,120,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,65,CARPENTRY,CA00065,HINGES CUPBOARD WOODEN TYPE - HEAVY DUTY,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,66,CARPENTRY,CA00066,HINGES GLASS DOOR -HICOO,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,67,CARPENTRY,CA00067,HINGES WOODEN DOOR - HEAVY DUTY,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,68,CARPENTRY,CA00068,"LEXON CLEAR SHEET  SIZE 2*3 METER , THICKNESS 3 MM",PC,1,390,150,540,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,69,CARPENTRY,CA00069,"LEXON CLEAR SHEET  SIZE 2*3 METER , THICKNESS 4 MM",PC,1,480,150,630,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,70,CARPENTRY,CA00070,"LEXON CLEAR SHEET  SIZE 2*3 METER , THICKNESS 5 MM",PC,1,580,150,730,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,71,CARPENTRY,CA00071,MOVING SHELVES REPAIR WORK / MOBILE RACKING SYSTEM ,PC,1,,200,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,72,CARPENTRY,CA00072,MOVING SHELVES REPAIR WORK FIXED  RACKING SYSTEM ,PC,1,,150,150,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,73,CARPENTRY,CA00073,SMALL JOB - ANGLE BAR STANDARD CORNER PROTECTOR FIXING,VISIT,1,,150,150,,
+,74,CARPENTRY,CA00074,SMALL JOB - CARPENTRY WORK ,VISIT,1,,150,150,,
+,75,CARPENTRY,CA00075,SMALL JOB - EXISTING DOOR HANDLE FIXING ,VISIT,1,,150,150,,
+,76,CARPENTRY,CA00076,SMALL JOB - FIXING OF DETACHED WOODEN ,VISIT,1,,150,150,,
+,77,CARPENTRY,CA00077,SMALL JOB - GLASS DOOR  - ALIGNMENTS WITH FRAME OR FRAME LESS - ,VISIT,1,,200,200,,
+,78,CARPENTRY,CA00078,SMALL JOB - METAL STRIP FIXING WITH MINOR MATERIAL,VISIT,1,,150,150,,
+,79,CARPENTRY,CA00079,SMALL JOB - REPAIR OF UMBRELLAS ,VISIT,1,,200,200,,
+,80,CARPENTRY,CA00080,SMALL JOB - WELDING REPAIR WORSHOP WORK ,VISIT,1,,200,200,,
+,81,CARPENTRY,CA00081,STAINLESS STEEL PLATFORM FOR MILK STORAGE 120X80CM MATERIAL + LABOR,PC,1,,750,750,,UPDATED PRICE
+,82,CARPENTRY,CA00082,WOODEN BEADING,FT,10,15,50,337.5,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,83,CARPENTRY,CA00083,WOODEN DOOR  LOCK - HASP,PC,1,40,100,140,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,UPDATED PRICE
+,84,CARPENTRY,CA00084,"WOODEN DOOR COMPLETE LOCK SET - YALE (HANDLE,LOK ,ALL ACCESSORIES)",PC,1,165,150,315,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,85,CARPENTRY,CA00085,WOODEN DOOR HANDLE - HEAVY DUTY,PC,1,50,100,150,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,86,CARPENTRY,CA00086,WOODEN DOOR NUMERIC LOCK-CHINA,PC,1,150,200,350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,87,CARPENTRY,CA00087,SUPPLY & INSTALLATION OF WHEELS FOR CONDIMENT BAR - HEAVY DUTY,JOB,1,150,100,250,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,88,CARPENTRY,CA00088,WOODEN SHELF FOR FILES STORAGE IN BOH 80X85X40CM ,PC,1,550,200,750,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,89,CARPENTRY,CA00089,SUPPLY & INSTALLATION OF WOODEN FORMICA SHEET 6MM THICKNESS (MATERIAL + LABOR),FT^2,1,,150,150,,
+,90,CARPENTRY,CA00090,INSTALLATION OF SOAP DISPENSER SUPPLIED BY ALSHAYA,PC,1,,100,100,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,91,CARPENTRY,CA00091,ROLLER SHUTTER - LOCK FOR SHUTTER KEY BOX MADE IN THAILAND MATERIAL + INSTALLATION,PC,1,,150,150,,
+,92,CARPENTRY,CA00092,PLASTIC ADJUSTER SUPPORTS FOR TABLE LEG BOTTOM,JOB,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,93,CARPENTRY,CA00093,SMALL JOB - STEEL PIECE FOR TILL COUNTER TOP EDGES + LABOUR,VISIT,1,,200,200,,
+,94,CARPENTRY,CA00094,METAL SHELVES FOR STOCK ROOM RACKS (SIZE = 30CMX90CM),PC,1,45,100,145,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,UPDATED PRICE
+,95,CARPENTRY,CA00095,SMALL JOB - FIXING OF RACKS WITH ACCOSSORIES FOR PROPER INSTALLATION OF SHELVES IN RACKS,VISIT,1,,200,200,,
+,96,CARPENTRY,CA00096,SMALL JOB - WOODEN PIECE FOR WOODEN FRAME + INSTALLATION,VISIT,1,,200,200,,
+,97,CARPENTRY,CA00097,SMALL JOB GLUE FOR FIXATION OF PIPE & ACCESSORIES,VISIT,1,,150,150,,
+,98,CARPENTRY,CA00098,ACRYLIC COVERS FOR  AC THERMOSTATS (SIZE = 20CMX20CM),PC,1,120,100,220,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,99,CARPENTRY,CA00099,STAINLESS STEEL SHELVES FOR STARBUCLS BOH (SIZE = 100CMX45CM),PC,1,500,200,700,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,100,CARPENTRY,CA00100,GLASS DOOR CENTRAL LOCK SUPPORT,PC,1,40,100,140,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,101,CARPENTRY,CA00101,STAINLESS STEEL SHELVES FOR STARBUCLS BOH (SIZE = 120CMX45CM),PC,1,500,200,700,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,102,CARPENTRY,CA00102,STAINLESS STEEL SHELVES FOR STARBUCLS BOH (SIZE = 150CMX45CM),PC,1,550,200,750,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,103,CARPENTRY,CA00103,STAINLESS STEEL SHELVES FOR STARBUCLS BOH (SIZE = 180CMX45CM),PC,1,600,200,800,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,104,CARPENTRY,CA00104,STAINLESS STEEL SHELVES S BOH (SIZE = 250CMX45CM),PC,1,650,200,850,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,105,CARPENTRY,CA00105,MDF SUPPORT FOR EXTINGUISHER (SIZE = 10CMX30CM),PC,1,30,100,130,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,106,CARPENTRY,CA00106,SUPPLY & INSTALLATION OF CORIAN MARBLE WITH OTHER ACCESSORIES,FT^2,10,100,150,1562.5,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,107,CARPENTRY,CA00107,HANDLE FOR ENTRANCE ALUMINIUM DOOR (MADE IN ITALY),PC,1,120,100,220,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,108,CARPENTRY,CA00108,BLACK STICKER FOR ENTRANCE AREA GLASS WALL ,MTR^2,1,40,100,140,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,109,CARPENTRY,CA00109,IPAD HOLDER FOR BACK OFFICE WALL,PC,1,250,100,350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,110,CARPENTRY,CA00110,PLASTIC SUPPORTS FOR CHAIR BOTTOMS ,JOB,1,20,100,120,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,111,CARPENTRY,CA00111,DOOR SPRING MACHINE FOR SINGLE SECTION ENTRANCE GLASS DOOR (BRAND = DORMA)-6 MONTH WARANTEE,PC,1,250,200,450,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,112,CARPENTRY,CA00112,BLACK POLISH ON WOODEN TABLE WOODEN TOP MATERIAL + LABOR,PC,1,,150,150,,UPDATED PRICE
+,113,CARPENTRY,CA00113,PROGRAMMING & SERVICE OF COMPLETE SLIDING DOOR,JOB,1,,500,500,,
+,114,CARPENTRY,CA00114,"STAINLESS STEEL CORNER ANGLE 2CMX2CM, LENGTH = 100CM TO 180CM",MTR,1,100,100,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,115,CARPENTRY,CA00115,STAINLESS STEEL DOOR STOPPER FOR EQUIPMENT - HEIGHT 10CM,PC,1,70,100,170,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,116,CARPENTRY,CA00116,DRAWER RAILING PAIR (BIG SIZE) - HEAVY DUTY,JOB,1,100,150,250,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,117,CARPENTRY,CA00117,GLASS DOOR - AUTOMATIC  HYDRAULIC HINGE CLOSER - SMALL - MAB 1 YEAR WARNTEE,PC,1,550,300,850,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,118,CARPENTRY,CA00118,GLASS DOOR - AUTOMATIC  HYDRAULIC HINGE CLOSER - BIG - MAB 1 YEAR WARNTEE,PC,1,750,300,1050,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,119,CARPENTRY,CA00119,GLASS DOOR - AUTOMATIC  HYDRAULIC HINGE CLOSER - ZEMCO 1 YEAR WARNTEE,PC,1,450,300,750,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,120,CARPENTRY,CA00120,GLASS DOOR BOTTOM LOCK (COMPLETE) - ZEMCO,PC,1,90,150,240,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,121,CARPENTRY,CA00121,GLASS DOOR CENTRAL LOCK (COMPLETE SET) - ZEMCO,PC,1,120,150,270,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,122,CARPENTRY,CA00122,GLASS DOOR CENTRAL LOCK CYLINDER - ZEMCO,PC,1,50,150,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,123,CARPENTRY,CA00123,HASP LOCK FOR ALUMINIUM DOOR - MADE IN CHINA,PC,1,70,150,220,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,124,CARPENTRY,CA00124,HASP LOCK FOR ALUMINIUM DOOR - MADE IN ITALY,PC,1,120,150,270,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,125,CARPENTRY,CA00125,GLASS DOOR HINGES - ZEMCO,PC,1,55,150,205,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,126,CARPENTRY,CA00126,LEATHER FOR CHAIR - BRAND = GOLD LILAC,PC,1,,250,250,,NEW ITEM
+,127,CARPENTRY,CA00127,WOODEN DOOR  LOCK CYLINDER- HASP (LARGE),PC,2,90,150,405,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,128,CARPENTRY,CA00128,STAINLESS STEEL HINGES FOR WOODEN DOOR,PC,1,45,150,195,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,129,CARPENTRY,CA00129,UPHOLSTERY (LEATHER) COVER FOR CAFE CHAIR MATERIAL + LABOR,PC,1,,200,200,,
+,130,CARPENTRY,CA00130,UPHOLSTERY (FABIC) COVER FOR BIG CHAIR /SINGLE SOFA MATERIAL+ LABOR,PC,1,,400,400,,
+,131,CARPENTRY,CA00131,UPHOLSTERY (FABRIC) COVER FOR - DOUBLE SOFA MATERIAL + LABOR,PC,1,,750,750,,UPDATED PRICE
+,132,CARPENTRY,CA00132,UPHOLSTERY (LEATHER) COVER FOR - SINGLE SOFA MATERIAL + LABOR,PC,1,,550,550,,UPDATED PRICE
+,133,CARPENTRY,CA00133,UPHOLSTERY (LEATHER) COVER FOR - DOUBLE SOFA MATERIAL + LABOR,PC,1,,850,850,,UPDATED PRICE
+,134,CARPENTRY,CA00134,SMALL JOB- SOFA CLOTH STITCHING OR REPAIR WORK,PC,1,,200,200,,UPDATED PRICE
+,135,CIVIL,CI00001,ACRYLIC SHEET SUPPLY & INSTALL 6MM (WHILE/TRANSPARENT) MATERIAL + LABOR,MTR,1,,200,200,,
+,136,CIVIL,CI00002,ACRYLIC SHEET SUPPLY & INSTALL 8MM (WHILE/TRANSPARENT) MATERIAL + LABOR,MTR,1,,300,300,,
+,137,CIVIL,CI00003,CEILING 60X60 CM TILES PROVISIONING AND FIXING,BOX,2,100,200,500,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,138,CIVIL,CI00004,CEILING 60X60 CM TILES PROVISIONING AND FIXING MATERIAL + FIXING,PC,1,15,50,65,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,139,CIVIL,CI00005,CHECKERED PLATE STAINLESS STEEL FIXING ON WALL - MATERIAL + FIXING,MTR,1,,150,150,,
+,140,CIVIL,CI00006,DRAIN MANHOLES - NET GREASE TRAPS WITH 50X50 CM RINGS ROUND FOR - MATERIAL + INSTALATION,VISIT,1,,350,350,,UPDATED PRICE
+,141,CIVIL,CI00007,DRIVE THRU SPEED BUMPS/BREAKER - HEAVY DUTY,PC,1,220,100,320,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,142,CIVIL,CI00008,FLOORING - CERAMIC TILES (20CMX20CM) -SUPPLIED BY ALSHAYA,PC,1,,50,50,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,"NOTE: These codes for repairing of existing damaged tiles and price is applied up to 5-10 tiles pcs or FT/MTR only . 
+However the contractor has to agree with the local FM team for bigger scope before buying the tiles &  cost for labor etc."
+,143,CIVIL,CI00009,FLOORING -CERAMIC TILES (20CMX20CM) -TILES ARRANGE BY SUPPLIER,PC,1,30,50,80,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,"NOTE: These codes for repairing of existing damaged tiles and price is applied up to 5-10 tiles pcs or FT/MTR only . 
+However the contractor has to agree with the local FM team for bigger scope before buying the tiles &  cost for labor etc."
+,144,CIVIL,CI00010,FLOORING -CERAMIC TILES (30CMX30CM) -SUPPLIED BY ALSHAYA,PC,1,,50,50,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,"NOTE: These codes for repairing of existing damaged tiles and price is applied up to 5-10 tiles pcs or FT/MTR only . 
+However the contractor has to agree with the local FM team for bigger scope before buying the tiles &  cost for labor etc."
+,145,CIVIL,CI00011,FLOORING -CERAMIC TILES (30CMX30CM) TILES ARRANGE BY SUPPLIER,PC,1,40,50,90,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,"NOTE: These codes for repairing of existing damaged tiles and price is applied up to 5-10 tiles pcs or FT/MTR only . 
+However the contractor has to agree with the local FM team for bigger scope before buying the tiles &  cost for labor etc."
+,146,CIVIL,CI00012,FLOORING -CERAMIC TILES (60CMX60CM) -SUPPLIED BY ALSHAYA,PC,1,,50,50,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,"NOTE: These codes for repairing of existing damaged tiles and price is applied up to 5-10 tiles pcs or FT/MTR only . 
+However the contractor has to agree with the local FM team for bigger scope before buying the tiles &  cost for labor etc."
+,147,CIVIL,CI00013,FLOORING -CERAMIC TILES (60CMX60CM) TILES ARRANGE BY SUPPLIER,PC,1,55,50,105,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,"NOTE: These codes for repairing of existing damaged tiles and price is applied up to 5-10 tiles pcs or FT/MTR only . 
+However the contractor has to agree with the local FM team for bigger scope before buying the tiles &  cost for labor etc."
+,148,CIVIL,CI00014,FLOORING -CERAMIC TILES SKIRTING (TILES PROVIDED BY ALSHAYA),PC,1,,50,50,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,"NOTE: These codes for repairing of existing damaged tiles and price is applied up to 5-10 tiles pcs or FT/MTR only . 
+However the contractor has to agree with the local FM team for bigger scope before buying the tiles &  cost for labor etc."
+,149,CIVIL,CI00015,FLOORING -CERAMIC TILES SKIRTING (TILES PROVIDED BY SUPPLIER),FT,1,30,50,80,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,150,CIVIL,CI00016,FLOORING -FLOOR WOODEN TILES INSTALLATION -  ARRANGE BY SUPPLIER,MTR,1,45,50,95,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,151,CIVIL,CI00017,FLOORING -FLOOR WOODEN TILES INSTALLATION - SUPPLIED BY ALSHAYA,MTR,1,,50,50,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,"NOTE: These codes for repairing of existing damaged tiles and price is applied up to 5-10 tiles pcs or FT/MTR only . 
+However the contractor has to agree with the local FM team for bigger scope before buying the tiles &  cost for labor etc."
+,152,CIVIL,CI00018,MULTI PURPOSE SEALANT (TUBE) - HEAVY DUTY ,PC,1,15,50,65,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,153,CIVIL,CI00019,"PAINTING -  (STANDARD COLOURS) JOTUN, SHERWIN WILLIAMS, DULUX, JAZEERAH - 19 LTR ",PC,1,200,,200,,
+,154,CIVIL,CI00020,PAINTING -  MATT/GLOSSY FINISH ALJAZEERAH PAINTS COLOR/WHITE,MTR^2,1,,20,20,,UPDATED PRICE
+,155,CIVIL,CI00021,"PAINTING - (SPECIAL COLOURS) JOTUN, SHERWIN WILLIAMS, DULUX, JAZEERAH - 19 LTR ",PC,1,500,,500,,
+,156,CIVIL,CI00022,PAINTING - MATT/GLOSSY FINISH DULUX COLOR/WHITE MATERIAL + LABOR,MTR^2,1,,20,20,,UPDATED PRICE
+,157,CIVIL,CI00023,PAINTING - MATT/GLOSSY FINISH JOTUN - EMULSION COLOR/WHITE MATERIAL + LABOR,MTR^2,1,,20,20,,UPDATED PRICE
+,158,CIVIL,CI00024,PAINTING - MATT/GLOSSY FINISH SHERWIN WILLIAMS COLOR/WHITE -MATERIAL + LABOR,MTR^2,1,,20,20,,UPDATED PRICE
+,159,CIVIL,CI00025,PAINTING - OIL/ SPRAY PAINT FOR SINGLE SIDED DOOR WITH FRAME AFTER PROPER REPAIR & SANDING - MATERIAL + LABOR ,PC,1,,200,200,,UPDATED PRICE
+,160,CIVIL,CI00026,PAINTING - PRIMER/UNDERCOAT - MATERIAL + LABOR,MTR^2,1,,22,22,,UPDATED PRICE
+,161,CIVIL,CI00027,PAINTING - WALLS OR CEILING - REMOTE LOCATIONS - MATERIAL + LABOR,MTR^2,1,,24,24,,UPDATED PRICE
+,162,CIVIL,CI00028,PAINTING - OIL / SPRAY PAINT FOR DOUBLE SIDED DOOR WITH FRAME AFTER PROPER REPAIR & SANDING - MATERIAL + LABOR,PC,1,,400,400,,UPDATED PRICE
+,163,CIVIL,CI00029,"MAKING OF HOLES ON CEILING, REPAIR OF DAMAGED PARTS OF CEILING USING GYPSUM BOARD, GYPSUM PUTTY & SAND PAPERS & PAINT ON REPAIRED PARTS OF CEILING (UP TO 15 MTR SQR AREA)",JOB,1,250,200,450,,
+,164,CIVIL,CI00030,SMALL JOB -  REPAIR OF DAMAGED PARTS OF WALLS USING GYPSUM PUTTY & SAND PAPERS + PAINTING,VISIT,1,,200,200,,
+,165,CIVIL,CI00031,MAKING OF NEW CEILING ACCESS PANEL USING NEW GYPSUM BOARD AND METAL ANGLES + PAINTING  (60*60 ) CM PUSH / PULL FRAME,JOB,1,150,200,350,,UPDATED PRICE
+,166,CIVIL,CI00032,SMALL JOB - OIL /SPRAY PAINTING ON ANY OBJECT  + LABOUR,VISIT,1,,150,150,,
+,167,CIVIL,CI00033,EPOXY PAINT GALLON (4 LTR)- JOTUN,PC,1,450,,450,,
+,168,CIVIL,CI00034,SPRAY PAINT ON SINGLE SIDED DOOR (INSIDE + OUTSIDE),PC,1,,350,350,,NEW ITEM
+,169,CIVIL,CI00035,SPRAY PAINT ON DOUBLE SIDED DOOR (INSIDE + OUTSIDE),PC,1,,500,500,,NEW ITEM
+,170,CIVIL,CI00036,RUSTFREE STEEL SKIRTING - MATERIAL + FIXING,MTR,1,,150,150,,
+,171,CIVIL,CI00037,SMALL JOB - SILICON WORK/ FILLING OF GAPS ,VISIT,1,,150,150,,
+,172,CIVIL,CI00038,SMALL JOB REINSTATE - CONCRETE WORK INCLUDING MATERIAL (VISIT + LABOR + MATERIAL),VISIT,1,,200,200,,
+,173,CIVIL,CI00039,"PROPER FIXATION OF LOOSE ITEM, FILLING WITH SILICON (VISIT + LABOR + MATERIAL)",VISIT,1,,200,200,,
+,174,CIVIL,CI00040,SUPPLY & INSTALLATION OF NEW INTERLOCK PAVER TILES (OTHER MATERIAL INCLUSIVE + LABOR),MTR^2,1,,125,125,,
+,175,CIVIL,CI00041,REMOVING/LIFTING UP THE EXISTING INTERLOCK PAVER TILES AND REFIXING PROPERLY (OTHER MATERIAL INCLUSIVE + LABOR),MTR^2,1,,75,75,,
+,176,CIVIL,CI00042,MARBLE PIECE (SIZE = 5CMX100CM),PC,1,140,100,240,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,177,CIVIL,CI00043,MARBLE PIECE (SIZE = 15CMX100CM),PC,1,150,100,250,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,178,CIVIL,CI00044,"SMALL JOB- MARBLE WITH CUTTING, INSTALLLATION AND POLISHING",VISIT,1,,250,250,,
+,179,CIVIL,CI00045,"REPAIR OF DAMAGED MARBLE CORNERS OF TABLES (WORK INCLUDES REPAIR OF CORNERS USING SPECIFIC MARBLE FILLER, SANDING ON CORNERS AND POLISH OF REPAIRED PARTS)(WORKSHOP WORK)",JOB,1,100,200,300,,
+,180,CIVIL,CI00046,FAOM SPRAY TO FILL THE HOLES ,VISIT,1,,200,200,,
+,181,CIVIL,CI00047,"ACRYLIC SHEET - 120CMX240CM, 2MM (INCLUDING SILICON & SCREWS) (INCLUDING CUTTING FOR REQUIRED SIZE)",PC,1,180,150,330,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,182,CIVIL,CI00048,"ACRYLIC SHEET - 200CMX300CM, 3MM (INCLUDING SILICON & SCREWS) (INCLUDING CUTTING FOR REQUIRED SIZE)",PC,1,340,150,490,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,183,CIVIL,CI00049,"ACRYLIC SHEET - 200CMX300CM, 4MM (INCLUDING SILICON & SCREWS) (INCLUDING CUTTING FOR REQUIRED SIZE)",PC,1,420,150,570,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,184,CIVIL,CI00050,"ACRYLIC SHEET - 200CMX300CM, 5MM (INCLUDING SILICON & SCREWS) (INCLUDING CUTTING FOR REQUIRED SIZE)",PC,1,510,150,660,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,185,CIVIL,CI00051,CEILING TILES (60X60) - FOAM BASE (10PC IN BOX),BOX,1,280,200,480,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,186,CIVIL,CI00052,CEILING TILES (60X60) - FOAM BASE ,PC,1,35,50,85,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,187,CIVIL,CI00053,CEILING TILE (60X60) - ALUMINIUM TYPE (10PC IN BOX),BOX,1,240,200,440,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,188,CIVIL,CI00054,CEILING TILE (60X60) - ALUMINIUM TYPE,PC,1,30,50,80,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,189,CIVIL,CI00055,METAL ANGLE FOR CEILING 60CM * 60 CM - WITH ROD SUPPORT,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,190,CIVIL,CI00056,CEILING TILES PERFORATED METAL  (SIZE = 60CMX60CM),PC,1,25,50,75,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,191,CIVIL,CI00057,CEILING REPAIR - ALIGNMENT OF 60X60 CEILING BY FIXATION OF CEILING WITH UPPER CONCRETE CEILING USING METAL WIRE (AREA = UP TO 5SQM),JOB,1,,350,350,,NEW ITEM
+,192,CIVIL,CI00058,CUTTING OF GYPSUM CEILING FOR SUPPORT WORK (ONLY CUTTING) (60CM TO 200CM),JOB,1,,350,350,,NEW ITEM
+,193,CIVIL,CI00059,KOREAN MARBLE TOP FOR TABLE (60CM) INCLUDING LABOR CHARGE,PC,1,,700,700,,NEW ITEM
+,194,CIVIL,CI00060,SCRATCHING OF TABLE TOP BY SCRATHING MACHINES AND NEW LAMINATION OF TABLES (SIZE = 183CMX76CM) (WORKSHOP WORK),PC,1,,700,700,,NEW ITEM
+,195,CIVIL,CI00061,BUFFING OF KOREAN MARBLE TOP USING BUFFING MACHINE AND POLISH OF MARBLE TOP (SIZE = 100CMX200CM) (WORKSHOP WORK),PC,1,,800,800,,NEW ITEM
+,196,CIVIL,CI00062,TABLE TOP KORIAN MARBLE REPAIR USING NEW MARBLE FILLER & POLISH OF REPAIRED PART 60X60 ROUND,PC,1,,380,380,,NEW ITEM
+,197,CIVIL,CI00063,"REMOVAL OF MARBLE TOP OF TABLE, PROPER FIXATION OF LEGS OF TABLE WITH TABLE TOP FRAME USING NEW FITTING ACCESSORIES (SCREWS, WASHERS, SUPPORT ANGLES ETC) AND RE-INSTALLATION OF MARBLE TOP OF TABLE",PC,1,,400,400,,NEW ITEM
+,198,CIVIL,CI00064,"GYPSUM BOARD CUTTING, PROVISIONING AND FIXING",MTR^2,1,,150,150,,
+,199,ELECTRICAL,EL00001,SUPPLY AND INSTALL MIC WITH ADAPTOR - (BRAND = SHOW),PC,1,650,100,750,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,200,ELECTRICAL,EL00002,ABB DISTRIBUTION BOARD - 12 POLE -SURFACE MOUNTAN ,PC,1,335,350,685,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,201,ELECTRICAL,EL00003,ABB DISTRIBUTION BOARD - 18 POLE,PC,1,435,350,785,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,202,ELECTRICAL,EL00004,ABB DISTRIBUTION BOARD - 24 POLE,PC,1,525,350,875,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,203,ELECTRICAL,EL00005,ABB DISTRIBUTION BOARD - 36 POLE,PC,1,700,350,1050,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,204,ELECTRICAL,EL00006,GE DISTRIBUTION BOARD - 12 POLE,PC,1,510,350,860,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,205,ELECTRICAL,EL00007,GE DISTRIBUTION BOARD - 18 POLE,PC,1,675,350,1025,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,206,ELECTRICAL,EL00008,GE DISTRIBUTION BOARD - 24 POLE,PC,1,990,350,1340,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,207,ELECTRICAL,EL00009,SCHNEIDER DISTRIBUTION BOARD - 12 POLE,PC,1,585,350,935,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,208,ELECTRICAL,EL00010,SCHNEIDER DISTRIBUTION BOARD - 18 POLE,PC,1,1250,350,1600,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,209,ELECTRICAL,EL00011,SCHNEIDER DISTRIBUTION BOARD - 24 PANEL,PC,1,750,350,1100,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,210,ELECTRICAL,EL00012,SCHNEIDER DISTRIBUTION BOARD - 36 PANEL,PC,1,1175,350,1525,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,211,ELECTRICAL,EL00013,ABB DOUBLE POLE BREAKER - 30 AMPS,PC,1,55,100,155,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,212,ELECTRICAL,EL00014,ABB DOUBLE POLE BREAKER - 60 AMPS,PC,1,75,100,175,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,213,ELECTRICAL,EL00015,ABB DOUBLE POLE BREAKER -100 AMPS,PC,1,155,100,255,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,214,ELECTRICAL,EL00016,ABB MAIN BREAKER - 100 AMPS - 3 POLE,PC,1,180,100,280,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,215,ELECTRICAL,EL00017,ABB MAIN BREAKER - 200 AMPS - 3 POLE,PC,1,545,100,645,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,216,ELECTRICAL,EL00018,ABB MAIN BREAKER - 60 AMPS- 3 POLE,PC,1,170,100,270,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,217,ELECTRICAL,EL00019,ABB SINGLE POLE BREAKER - 100 AMPS,PC,1,90,100,190,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,218,ELECTRICAL,EL00020,ABB SINGLE POLE BREAKER - 30 AMPS,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,219,ELECTRICAL,EL00021,ABB SINGLE POLE BREAKER - 60 AMPS,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,220,ELECTRICAL,EL00022,ABB TRIPPLE POLE BREAKER - 100 AMPS,PC,1,190,100,290,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,221,ELECTRICAL,EL00023,ABB TRIPPLE POLE BREAKER - 40 AMPS,PC,1,140,100,240,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,222,ELECTRICAL,EL00024,ABB TRIPPLE POLE BREAKER - 60 AMPS,PC,1,175,100,275,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,223,ELECTRICAL,EL00025,SCHNEIDER DOUBLE BREAKER - 100 AMPS,PC,1,145,100,245,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,224,ELECTRICAL,EL00026,SCHNEIDER DOUBLE BREAKER - 20 AMPS,PC,1,70,100,170,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,225,ELECTRICAL,EL00027,SCHNEIDER DOUBLE BREAKER - 40 AMPS,PC,1,92,100,192,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,226,ELECTRICAL,EL00028,SCHNEIDER MAIN BREAKER - 100 AMPS - 3POLE ,PC,1,515,100,615,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,227,ELECTRICAL,EL00029,SCHNEIDER MAIN BREAKER - 160 AMPS- 3POLE,PC,1,915,100,1015,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,228,ELECTRICAL,EL00030,SCHNEIDER MAIN BREAKER - 60 AMPS- 3POLE,PC,1,155,100,255,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,229,ELECTRICAL,EL00031,SCHNEIDER SINGLE BREAKER - 40 AMPS,PC,1,23,100,123,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,230,ELECTRICAL,EL00032,SCHNEIDER SINGLE BREAKER - 60 AMPS,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,231,ELECTRICAL,EL00033,SCHNEIDER SINGLE BREAKER -20 AMPS,PC,1,32,100,132,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,232,ELECTRICAL,EL00034,SCHNEIDER TRIPLE BREAKER - 100 AMPS,PC,1,448,100,548,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,233,ELECTRICAL,EL00035,SCHNEIDER TRIPLE BREAKER - 40 AMPS,PC,1,142,100,242,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,234,ELECTRICAL,EL00036,SCHNEIDER TRIPLE BREAKER - 60 AMPS,PC,1,135,100,235,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,235,ELECTRICAL,EL00037,GE 03 POLE BREAKER - 100 AMPS,PC,1,135,100,235,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,236,ELECTRICAL,EL00038,GE 03 POLE BREAKER - 40 AMPS,PC,1,80,100,180,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,237,ELECTRICAL,EL00039,GE 03 POLE BREAKER - 60 AMPS,PC,1,120,100,220,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,238,ELECTRICAL,EL00040,GE DOUBLE BREAKER - 20 AMPS,PC,1,40,100,140,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,239,ELECTRICAL,EL00041,GE DOUBLE BREAKER - 30 AMPS,PC,1,40,100,140,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,240,ELECTRICAL,EL00042,GE DOUBLE BREAKER - 60 AMPS,PC,1,133,100,233,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,241,ELECTRICAL,EL00043,GE SINGLE BREAKER - 100 AMPS,PC,1,22,100,122,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,242,ELECTRICAL,EL00044,GE SINGLE BREAKER - 20 AMPS,PC,1,16,100,116,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,243,ELECTRICAL,EL00045,GE SINGLE BREAKER - 60 AMPS,PC,1,22,100,122,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,244,ELECTRICAL,EL00046,LG BREAKER 20A DOUBLE,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,245,ELECTRICAL,EL00047,ABL 45 AMPS/ DP SWITCH ENGLAND REPLACEMENT,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,246,ELECTRICAL,EL00048,ABL SOCKET OUTLETS DOUBLE REPLACEMENT,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,247,ELECTRICAL,EL00049,ABL SOCKET OUTLETS SINGLE REPLACEMENT,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,248,ELECTRICAL,EL00050,ADAPTOR 12V 10A,PC,1,185,100,285,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,249,ELECTRICAL,EL00051,ADAPTOR 12V 150W WATERPROOF - HYUNDAI BRAND,PC,1,185,100,285,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,250,ELECTRICAL,EL00052,ADAPTOR 12V 15A,PC,1,240,100,340,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,251,ELECTRICAL,EL00053,ADAPTOR 12V 200W WATER PROOF HYUNDAI BRAND,PC,1,195,100,295,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,252,ELECTRICAL,EL00054,ADAPTOR 12V 20A,PC,1,207,100,307,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,253,ELECTRICAL,EL00055,ADAPTOR 12V 300W WATERPROOF HYUNDAI BRAND,PC,1,315,100,415,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,254,ELECTRICAL,EL00056,ADAPTOR 12V 30A,PC,1,275,100,375,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,255,ELECTRICAL,EL00057,ADAPTOR 24V 10A,PC,1,207,100,307,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,256,ELECTRICAL,EL00058,ADAPTOR 24V 15A,PC,1,225,100,325,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,257,ELECTRICAL,EL00059,ADAPTOR 24V 20A,PC,1,250,100,350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,258,ELECTRICAL,EL00060,AIR CURTAIN - FRESH AIR HAC-3509 900MM 1 YEAR WARANTEE,PC,1,1500,250,1750,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,259,ELECTRICAL,EL00061,AIR CURTAIN - FRESH AIR HAC-3512 1200MM 1 YEAR WARANTEE,PC,1,1800,250,2050,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,260,ELECTRICAL,EL00062,AIR CURTAIN - FRESH AIR HAC-3515 1500MM 1 YEAR WARANTEE,PC,1,2000,250,2250,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,261,ELECTRICAL,EL00063,AIR CURTAIN - FRESH AIR FM-3009-X-Y 900MM 1 YEAR WARANTEE,PC,1,1100,250,1350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,262,ELECTRICAL,EL00064,AIR CURTAIN - FRESH AIR FM-3012-X-Y 1200MM 1 YEAR WARANTEE,PC,1,1325,250,1575,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,263,ELECTRICAL,EL00065,AIR CURTAIN - FRESH AIR FM-3015-X-Y 1500MM 1 YEAR WARANTEE,PC,1,1550,250,1800,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,264,ELECTRICAL,EL00066,AIR CURTAIN - FRESH AIR FM-4509LY 900MM 1 YEAR WARANTEE,PC,1,1475,250,1725,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,265,ELECTRICAL,EL00067,AIR CURTAIN 1200 MM - ZAMIL 1 YEAR WARANTEE,PC,1,800,250,1050,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,266,ELECTRICAL,EL00068,AIR CURTAIN - FRESH AIR FM-4512LY 1200MM 1 YEAR WARANTEE,PC,1,1700,250,1950,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,267,ELECTRICAL,EL00069,AIR CURTAIN - FRESH AIR FM-4515LY 1500MM 1 YEAR WARANTEE,PC,1,1900,250,2150,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,268,ELECTRICAL,EL00070,AIR CURTAIN HYUNDAI BRAND  - 90 CM -1  YEAR WARANTEE,PC,1,740,250,990,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,269,ELECTRICAL,EL00071,AIR CURTAIN HYUNDAI BRAND - 120 CM- 1 YEAR WARANTEE,PC,1,820,250,1070,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,270,ELECTRICAL,EL00072,AIR CURTAIN HYUNDAI BRAND - 150 CM - 1 YEAR WARANTEE,PC,1,1030,250,1280,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,271,ELECTRICAL,EL00073,BULB HOLDER E27 PORCELAIN,PC,1,10,50,60,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,272,ELECTRICAL,EL00074,BULB HOLDER G12 ,PC,1,10,100,110,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,273,ELECTRICAL,EL00075,BULB HOLDER GU 10  JASON,PC,1,10,100,110,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,274,ELECTRICAL,EL00076,BULB HOLDER MK 16 HALOGEN - WITH FIRE PROOF CABLE,PC,1,10,100,110,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,275,ELECTRICAL,EL00077,CFL BULB 20W UV E27 220V FOR IN KILLER,PC,1,51,100,151,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,276,ELECTRICAL,EL00078,CFL BULB 22W 830 E27 220V PHILIPS,PC,1,23,100,123,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,277,ELECTRICAL,EL00079,CFL BULB 23W 22 E27 ,PC,1,15,100,115,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,278,ELECTRICAL,EL00080,CFL BULB U-TYPE 11W 2 PIN BLUE BULB,PC,1,40,100,140,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,279,ELECTRICAL,EL00081,EMERGENCY LED LIGHT WITH DOUBLE BULB ON THE TOP - MADE IN JAPAN,PC,1,415,100,515,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,280,ELECTRICAL,EL00082,ILLUS LED BULBS 3W 220V E27 ,PC,1,15,100,115,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,281,ELECTRICAL,EL00083,ILLUS LED BULBS 7.5W 22V E27,PC,1,15,100,115,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,282,ELECTRICAL,EL00084,CMH BULB 20 W 830 GU 6.5 BRAND GE,PC,1,85,100,185,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,283,ELECTRICAL,EL00085,LED BULB 5.5W 3000K GU10 ,PC,1,28,100,128,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,284,ELECTRICAL,EL00086,LED BULB 9W 3000K E27,PC,1,28,100,128,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,285,ELECTRICAL,EL00087,LED BULB HALO PIN 4W/9W 220V G9 3000K - OSRAM,PC,1,45,100,145,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,286,ELECTRICAL,EL00088,BULB - 35W 930 GU 6.5,PC,1,110,100,210,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,287,ELECTRICAL,EL00089,BULB - 20W 3000K GU 6.5,PC,1,105,100,205,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,288,ELECTRICAL,EL00090,BULB HALO STAR 12V 50W - GE,PC,1,10,50,60,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,289,ELECTRICAL,EL00091,BULB PAR 20 50W 220V E27 -GE,PC,1,20,50,70,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,290,ELECTRICAL,EL00092,BULB HOLDER GU 10 - JASON,PC,1,10,50,60,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,291,ELECTRICAL,EL00093,BULB - 70W 3000K GU 8.5,PC,1,90,100,190,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,292,ELECTRICAL,EL00094,60*60 LED LIGHT PANEL PHILIPS,PC,1,150,100,250,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,293,ELECTRICAL,EL00095,DATA CABLE (CAT6)-3M,MTR,1,8,10,18,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,294,ELECTRICAL,EL00096,DATA SOCKET - 3M WITH FACEPLATE 7X7,PC,1,40,100,140,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,295,ELECTRICAL,EL00097,DOOR BELL - GOOD QUALITY,PC,1,60,150,210,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,296,ELECTRICAL,EL00098,"EMERGENCY EXIT LIGHT, ONE SIDED IN ENGLISH AND ARABIC",PC,1,100,100,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,297,ELECTRICAL,EL00099,"EMERGENCY LED EXIT LIGHTS, DOUBLE SIDED, IN ENGLISH AND ARABIC",PC,1,100,100,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,298,ELECTRICAL,EL00100,"EMERGENCY LED EXIT LIGHTS, DOUBLE SIDED, WITH DIRECTIONAL IN ENGLISH AND ARABIC",PC,1,100,100,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,299,ELECTRICAL,EL00101,EMERGENCY LIGHT POWER BANK 10W,PC,1,200,100,300,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,300,ELECTRICAL,EL00102,EMERGENCY LIGHT POWER BANK 20W,PC,1,230,100,330,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,301,ELECTRICAL,EL00103,EMERGENCY LIGHT T8 10W 6500K,PC,1,80,100,180,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,302,ELECTRICAL,EL00104,EMERGENCY LIGHTS - SINGLE LED GREEN/WHITE MICROLIGHTS,PC,1,450,100,550,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,303,ELECTRICAL,EL00105,EXHAUST FAN STANDARD SIZE FOR TOILTE  ,PC,1,120,100,220,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,304,ELECTRICAL,EL00106,"KDK CEILING MOUNTED EXHAUST FAN  30*30 CM, 109 CFM ",PC,1,400,100,500,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,305,ELECTRICAL,EL00107,"KDK CEILING MOUNTED EXHAUST FAN 40*40 CM , 344 CFM",PC,1,892,100,992,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,306,ELECTRICAL,EL00108,FLEXIBLE EMT CONDUIT MATERIAL + INSTALLATION,MTR,1,10,10,20,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,307,ELECTRICAL,EL00109,FLEXIBLE PVC CONDUIT MATERIAL + INSTALLATION,MTR,1,8,10,18,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,308,ELECTRICAL,EL00110,FLOOR SOCKET MULTI STAINLESS STEEL COVER PACK HEAVY DUTY - ENGLAND.,PC,1,276,100,376,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,309,ELECTRICAL,EL00111,FLOOR SOCKET OUTLET. HEAVY DUTY  ABB/HI TECH,PC,1,250,100,350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,310,ELECTRICAL,EL00112,ILLUS LED 6W 220V 3000K E27,PC,1,15,100,115,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,311,ELECTRICAL,EL00113,INSECT KILLER / IN KILLER STICKY PADS,PC,1,33,100,133,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,312,ELECTRICAL,EL00114,INSECT KILLER LIGHT T12 18W UV  - KHIND,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,313,ELECTRICAL,EL00115,INSECT KILLERS - KHIND HEAVY DUTY,PC,1,400,100,500,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,314,ELECTRICAL,EL00116,INSECT KILLERS GENUS LIBERATOR - ITALY,PC,1,350,100,450,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,315,ELECTRICAL,EL00117,INSECT KILLERS KOYO - ITALY,PC,1,295,100,395,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,316,ELECTRICAL,EL00118,INSECT KILLERS SAMMIC - ITALY,PC,1,400,100,500,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,317,ELECTRICAL,EL00119,"INSECT KILLER BULB (ULTRAVIOLET EFFECT BLACK LIGHT 22W 220V)
+(BRAND: JUPITER)",PC,1,90,100,190,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,318,ELECTRICAL,EL00120,"UV CFL LAMP , E27 , 20 WLAMP FOR IN KILLER",PC,1,80,100,180,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,319,ELECTRICAL,EL00121,LED DECOSTAR LIGHT 4W 220V,PC,1,30,100,130,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,320,ELECTRICAL,EL00122,LED FIXTURE T5 - 10W,PC,1,28,100,128,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,321,ELECTRICAL,EL00123,LED HALOSPOT 15W 12V 830 ,PC,1,80,100,180,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,322,ELECTRICAL,EL00124,LED LIGHT 15CM COMPLETE RECESSED TYPE,PC,1,55,100,155,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,323,ELECTRICAL,EL00125,LED LIGHT 20CM DIAMETER 220V RECESSED TYPE (4000K) - COMPLETE FIXTURE ,PC,1,100,100,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,324,ELECTRICAL,EL00126,LED LIGHT 6W 220V 3000K E27 - DURA,PC,1,125,100,225,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,325,ELECTRICAL,EL00127,LED LIGHT 7W 220V GU10 DIMABLE,PC,1,63,100,163,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,326,ELECTRICAL,EL00128,LED LIGHT T8 15W 6500K FOR STARBUCKS PASTRY CASE- GE,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,327,ELECTRICAL,EL00129,LED LIGHT RECESSED TYPE 60X60 CM,PC,1,150,100,250,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,328,ELECTRICAL,EL00130,LED LIGHT RECESSED TYPE 7CM 220V 830,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,329,ELECTRICAL,EL00131,LED LIGHT WH 12V 1X5M,PC,1,185,100,285,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,330,ELECTRICAL,EL00132,LED LIGHT WWH 12V 1X5M,PC,1,185,100,285,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,331,ELECTRICAL,EL00133,LED STRIP 220V 1M - WHI,PC,1,40,100,140,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,332,ELECTRICAL,EL00134,LED STRIP/ROPE LIGHT FOR COVE LIGHTING 220V OSRAM,MTR,1,15,10,25,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,333,ELECTRICAL,EL00135,MIC WITH ADAPTOR -BOSE,PC,1,550,100,650,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,334,ELECTRICAL,EL00136,MK 3 PIN WATER PROF FLOOR SOCKET 13 AMPS,PC,1,125,100,225,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,335,ELECTRICAL,EL00137,MK DOUBLE LIGHT SWITCH,PC,1,30,100,130,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,336,ELECTRICAL,EL00138,MK DOUBLE LIGHT SWITCH/10 AMPS,PC,1,30,100,130,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,337,ELECTRICAL,EL00139,MK DOUBLE LIGHT SWITCH/20 AMPS,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,338,ELECTRICAL,EL00140,MK DOUBLE SOCKET OUTLETS/13 AMPS/220V,PC,1,55,100,155,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,339,ELECTRICAL,EL00141,MK DP SWITCH/32 AMPS,PC,1,75,100,175,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,340,ELECTRICAL,EL00142,MK LIGHT SWITCH COVER PLATE 1X4,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,341,ELECTRICAL,EL00143,MK MULTI SWITCH/10 AMPS,PC,1,23,100,123,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,342,ELECTRICAL,EL00144,MK MULTI SWITCH/20 AMPS,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,343,ELECTRICAL,EL00145,MK OUTLET 13AMP 3PIN DOUBLE USB OPTION,PC,1,165,100,265,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,344,ELECTRICAL,EL00146,MK OUTLET 13AMP 3PIN SINGLE USB OPTION,PC,1,130,100,230,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,345,ELECTRICAL,EL00147,MK SIGLE SWITCH 20A,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,346,ELECTRICAL,EL00148,MK SINGLE LIGHT SWITCH,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,347,ELECTRICAL,EL00149,MK SINGLE LIGHT SWITCH/10 AMPS,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,348,ELECTRICAL,EL00150,MK SINGLE SOCKET (7X7CM) OUTLETS 13 AMPS/ 220V,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,349,ELECTRICAL,EL00151,MK TRIPLE LIGHT SWITCH/10 AMPS,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,350,ELECTRICAL,EL00152,MK TRIPLE LIGHT SWITCH/20 AMPS,PC,1,45,100,145,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,351,ELECTRICAL,EL00153,MK WATER HEATER SWITCH/20 AMPS/220V,PC,1,45,100,145,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,352,ELECTRICAL,EL00154,POWER CONNECTOR FOR LED ,PC,1,15,100,115,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,353,ELECTRICAL,EL00155,POWER CONNECTORS 10MM PVC  - FRANCE,PC,1,15,100,115,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,354,ELECTRICAL,EL00156,POWER CONNECTORS 2.5MM PVC   - FRANCE,PC,1,20,100,120,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,355,ELECTRICAL,EL00157,POWER CONNECTORS 4MM PVC  - FRANCE,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,356,ELECTRICAL,EL00158,POWER CONNECTORS 6MM PVC  - FRANCE,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,357,ELECTRICAL,EL00159,POWER EXTENSION - 3M - CHINA,PC,1,50,100,150,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,358,ELECTRICAL,EL00160,POWER EXTENSION - 5M  HEAVY DUTY,PC,1,100,100,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,359,ELECTRICAL,EL00161,RIYADH CABLE 1.5MM 3 CORE,MTR,1,6,10,16,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,360,ELECTRICAL,EL00162,RIYADH CABLE 10MM 4 CORE,MTR,1,15,20,35,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,361,ELECTRICAL,EL00163,RIYADH CABLE 16MM 4 CORE,MTR,1,20,30,50,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,362,ELECTRICAL,EL00164,RIYADH CABLE 2.5MM 3 CORE,MTR,1,7,10,17,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,363,ELECTRICAL,EL00165,RIYADH CABLE 25MM 4 CORE,MTR,1,35,30,65,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,364,ELECTRICAL,EL00166,RIYADH CABLE 4MM 2 CORE ,MTR,1,10,10,20,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,365,ELECTRICAL,EL00167,RIYADH CABLE 4MM 3 CORE,MTR,1,10,10,20,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,366,ELECTRICAL,EL00168,RIYADH CABLE 6MM 3 CORE,MTR,1,10,12,22,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,367,ELECTRICAL,EL00169,RIYADH CABLE  2.5MM 2 CORE ,MTR,1,7,10,17,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,368,ELECTRICAL,EL00170,"RIYADH CABLE FLEXIBLE NYMHY-CUPVCPV- 1.5 MM , 3 CORE",ROLL,1,175,,175,,NEW ITEM
+,369,ELECTRICAL,EL00171,"RIYADH CABLE FLEXIBLE NYMHY-CUPVCPV- 10 MM , 4CORE",ROLL,1,1400,,1400,,NEW ITEM
+,370,ELECTRICAL,EL00172,"RIYADH CABLE FLEXIBLE NYMHY-CUPVCPV- 16MM , 4 CORE",ROLL,1,2070,,2070,,NEW ITEM
+,371,ELECTRICAL,EL00173,"RIYADH CABLE FLEXIBLE NYMHY-CUPVCPV- 2.5MM ,4 CORE",ROLL,1,370,,370,,NEW ITEM
+,372,ELECTRICAL,EL00174,"RIYADH CABLE FLEXIBLE NYMHY-CUPVCPV- 2.5 MM , 3 CORE",ROLL,1,287,,287,,NEW ITEM
+,373,ELECTRICAL,EL00175,"RIYADH CABLE   XLP- 25 MM , 4 CORE",MTR,1,36,,36,,NEW ITEM
+,374,ELECTRICAL,EL00176,"RIYADH CABLE FLEXIBLE NYMHY-CUPVCPV- 4MM , 2CORE",ROLL,1,318,,318,,NEW ITEM
+,375,ELECTRICAL,EL00177,"RIYADH CABLE FLEXIBLE NYMHY-CUPVCPV- 4 MM , 3 CORE",ROLL,1,425,,425,,NEW ITEM
+,376,ELECTRICAL,EL00178,"RIYADH CABLE FLEXIBLE NYMHY-CUPVCPV- 6 MM , 3 CORE",ROLL,1,598,,598,,NEW ITEM
+,377,ELECTRICAL,EL00179,"RIYADH CABLE FLEXIBLE NYMHY-CUPVCPV- 2.5 MM , 2 CORE",ROLL,1,213,,213,,NEW ITEM
+,378,ELECTRICAL,EL00180,SIGNAGE - ACRYLIC TYPE -MALE & FEMALE OR FAMILY ONLY ,PC,1,50,100,150,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,379,ELECTRICAL,EL00181,SIGNAGE TIMER SWITCH 30A / 220V / NORMAL JAPAN - MATERIAL + INSTALATION,PC,1,90,100,190,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,380,ELECTRICAL,EL00182,SMALL JOB - LED TRACK  LIGHT 18W REPAIRING ,VISIT,1,,150,150,,
+,381,ELECTRICAL,EL00183,SMALL JOB - LIGHTING JOB,VISIT,1,,150,150,,
+,382,ELECTRICAL,EL00184,SMALL JOB - LOBOR COST FOR MINOR LIGHTING WORK,VISIT,1,,150,150,,
+,383,ELECTRICAL,EL00185,SMALL JOB - RE-ARRANGEMENT OF ELECTRICAL WIRES,VISIT,1,,150,150,,
+,384,ELECTRICAL,EL00186,3 GUNG SWITCH,PC,1,30,100,130,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,385,ELECTRICAL,EL00187,TUBELIGHT  T5 LED TYPE,PC,1,20,100,120,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,386,ELECTRICAL,EL00188,TUBELIGHT FIXTURE 1X36W 220V,PC,1,80,100,180,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,387,ELECTRICAL,EL00189,TUBELIGHT FIXTURE 2X36W 220V,PC,1,125,100,225,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,388,ELECTRICAL,EL00190,TUBLEIGHT T8 LED TYPE,PC,1,20,100,120,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,389,ELECTRICAL,EL00191,"WIRE 12AWG USA, PC 500 FEET",PC,1,200,150,350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,390,ELECTRICAL,EL00192,WIRE SAUDI CABLE 10AWG ,MTR,1,10,10,20,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,391,ELECTRICAL,EL00193,MK STAINLESS STEEL OUTLET 3 PIN 13 AMPS 7X7CM,PC,1,65,100,165,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,392,ELECTRICAL,EL00194,MK 3 PIN PLUG 13 AMPS,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,393,ELECTRICAL,EL00195,CAPACITOR FOR WATER MOTOR 20 MF MADE IN GERMANY,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,394,ELECTRICAL,EL00196,LED 20X20 CM LIGHT 6500K,PC,1,60,100,160,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,395,ELECTRICAL,EL00197,BALLAST - 35W 220V BIG SIZE,PC,1,145,100,245,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,396,ELECTRICAL,EL00198,BALLAST - 35W 220V SMALL SIZE,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,397,ELECTRICAL,EL00199,T5 28W 6500K COMPLETE FIXTURE WITH ROD,PC,1,45,100,145,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,398,ELECTRICAL,EL00200,BALLAST - 70W 220V,PC,1,145,100,245,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,399,ELECTRICAL,EL00201,TBX 15W 3000K 220V E27 -GE,PC,1,25,50,75,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,400,ELECTRICAL,EL00202,MK POWER SWITCH - WATER PROOF,PC,1,150,100,250,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,401,ELECTRICAL,EL00203,MIC WITH ADAPTOR  (BRAND = SHOW),PC,1,650,100,750,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,402,ELECTRICAL,EL00204,AUX AUDIO CABLE FOR MUSIC PLAYER/ AMPLIFIER,PC,1,50,100,150,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,403,ELECTRICAL,EL00205,STEEL BOX FOR SOCKET INSTALLATION SIZE 7X14 CM OR 7X7CM,PC,1,25,50,75,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,404,ELECTRICAL,EL00206,3  PIN MALE & FEMALE OUTLET/INDUSTRAIL PLUG 32 AMPS 220 V ,PC,1,150,100,250,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,405,ELECTRICAL,EL00207,PAR30 35/70W 3000K E27,PC,1,90,100,190,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,406,ELECTRICAL,EL00208,CMH 20W 3000/4200K GU6.5,PC,1,105,100,205,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,407,ELECTRICAL,EL00209,MR16 CMH 20/35W 3000K GX10,PC,1,95,100,195,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,408,ELECTRICAL,EL00210,BLS 20W 220V,PC,1,90,100,190,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,409,ELECTRICAL,EL00211,ELECTRONIC BALLAST 12V FOR LED HALOSPOT  (NVC),PC,1,110,100,210,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,410,ELECTRICAL,EL00212,EXIT SIGNAGE (NVC),PC,1,195,100,295,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,411,ELECTRICAL,EL00213,"LED T5 3000/6500K 220V (SIZE: 30,60,90 & 120 CM)",PC,1,45,100,145,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,412,ELECTRICAL,EL00214,LED PANEL LIGHT 40W 6500K 220V (SIZE: 10X120 CM),PC,1,150,100,250,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,413,ELECTRICAL,EL00215,LED CANDLE BULB 5W 220V E14,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,414,ELECTRICAL,EL00216,DULUX BULB 5W 220V E27,PC,1,30,100,130,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,415,ELECTRICAL,EL00217,LED LIGHT REPAIRING 30-52W (MATERIAL ELECTRONIC BALLAST & LED CHIP),PC,1,240,100,340,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,416,ELECTRICAL,EL00218,HCI TC 35/70W 3000K G8.5,PC,1,120,100,220,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,417,ELECTRICAL,EL00219,HCI T 35/70W 3000K G12,PC,1,85,100,185,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,418,ELECTRICAL,EL00220,HCI TS 70W 3000/4200K,PC,1,95,100,195,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,419,ELECTRICAL,EL00221,LED LIGHT U-SHAPE 24W 3000/4000/6500K (ULTRA LIGHT),PC,1,100,100,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,420,ELECTRICAL,EL00222,LED BULB 40-50W 6500K 220V E27,PC,1,70,100,170,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,421,ELECTRICAL,EL00223,T8 36W BLUE (GE),PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,422,ELECTRICAL,EL00224,LED DECOSTAR 3W 3000/6500K 220V,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,423,ELECTRICAL,EL00225,LED STRIP 220V (BLUE) (ROLL),PC,1,400,100,500,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,424,ELECTRICAL,EL00226,STEEL GANG (1X4) FOR ON/OFF SWITCH BUTTON SHEET,PC,1,60,100,160,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,425,ELECTRICAL,EL00227,QTI 2X26W 220V (BRAND: OSTAM),PC,1,90,100,190,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,426,ELECTRICAL,EL00228,T8 30-36W 3000/4000/6500K (GE),PC,1,20,100,120,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,427,ELECTRICAL,EL00229,TBX/DBX 18-42W 3000/4000/6500K 2P-4P,PC,1,75,100,175,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,428,ELECTRICAL,EL00230,LED LIGTH 15-20W 3000K/6500K (SIZE:21.5X21.5),PC,1,125,100,225,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,429,ELECTRICAL,EL00231,LED STRIP 3000/6500K (ROLL),PC,1,520,100,620,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,430,ELECTRICAL,EL00232,DRIVE THRU LIGHT POLE,PC,1,250,100,350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,431,ELECTRICAL,EL00233,T8 LIGHT HOLDER,PC,1,15,100,115,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,432,ELECTRICAL,EL00234,GU10 LIGHT FIXTURE,PC,1,135,100,235,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,433,ELECTRICAL,EL00235,CAPSULE BULB 40W 220V E27,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,434,ELECTRICAL,EL00236,SCAFFOLDING REQUIRED TO EXECUTE THE JOB,PC,1,250,100,350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,435,ELECTRICAL,EL00237,BALLAST 2X18W (36W) 220V,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,436,ELECTRICAL,EL00238,ELECTRONIC BALLAST 2X55W 220V,PC,1,100,100,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,437,ELECTRICAL,EL00239,DATA SOCKET (2 PORTS)(BRAND = 3M),PC,1,65,100,165,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,438,ELECTRICAL,EL00240,FLOOR OUTLET 3PIN 13AMP (10X10),PC,1,320,100,420,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,439,ELECTRICAL,EL00241,VETONIT GLUE,PC,1,55,100,155,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,440,ELECTRICAL,EL00242,BOX 7X7CM FOR OUTLETS,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,441,ELECTRICAL,EL00243,ON/OFF SWITCH SHEET(1X3) (STEEL) (7X7CM),PC,1,60,100,160,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,442,ELECTRICAL,EL00244,OUTLET 3PIN 13AMP 7X14CM WATERPROOF,PC,1,190,100,290,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,443,ELECTRICAL,EL00245, BOX OF SWITCH SHEETS (10X10 CM) (MK),PC,1,100,100,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,444,ELECTRICAL,EL00246,HALOSPOT 12V 50W,PC,1,30,100,130,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,445,ELECTRICAL,EL00247,CAM SWITCH 32/63AMP/4 PHASE (MK),PC,1,215,100,315,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,446,ELECTRICAL,EL00248,IN-KILLERS BRAND: MOEL (MADE: ITALY),PC,1,515,100,615,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,447,ELECTRICAL,EL00249,LED T8 FIXTURE 2X16W 3000/6500K,PC,1,145,100,245,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,448,ELECTRICAL,EL00250,CABLE 4MM SINGLE CORE,PC,1,105,100,205,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,449,ELECTRICAL,EL00251,LED PAR20 8.5W 220V E27 (GE),PC,1,110,100,210,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,450,ELECTRICAL,EL00252,BULB 7W UTL SPT GU5.3 2700K,PC,1,30,100,130,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,451,ELECTRICAL,EL00253,"LED DURA BULB 6W, 220V, 3000K, E27,",PC,1,85,100,185,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,452,ELECTRICAL,EL00254,STEEL OUTLET 3PIN 13AMP (7X7),PC,1,55,100,155,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,453,ELECTRICAL,EL00255,STEET OUTLET 3PIN 13AMP (7X14),PC,1,110,100,210,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,454,ELECTRICAL,EL00256,PVC BOXES FOR SOCKETS (7X14 CM),PC,1,15,100,115,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,455,ELECTRICAL,EL00257,LED 1X3W 12V 3000/6500K (PIECES),PC,1,70,100,170,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,456,ELECTRICAL,EL00258,LED STRIP 24V 3000/6500K (ROLL),PC,1,375,100,475,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,457,ELECTRICAL,EL00259,LED STICK BULB 12W/2700K/220V/E27 (GE),PC,1,30,100,130,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,458,ELECTRICAL,EL00260,LIQUID FLEXIBLE CONDUIT,PC,1,55,100,155,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,459,ELECTRICAL,EL00261,AIR CURTAIN SENSOR -MAGNTIC SENSOR,PC,1,70,100,170,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,460,ELECTRICAL,EL00262,BUSTED T8 10W/6500K,PC,1,20,100,120,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,461,ELECTRICAL,EL00263,"STARTER (S2,S10)",PC,1,30,50,80,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,462,ELECTRICAL,EL00264,"ACCESSORIES(COUPLING, BANDS, CLIPS,ADAPTORS,FISCHERS,SCREW,JOINTS,NUTS,WASHERS,RAWAL BOLTS)",PC,1,175,100,275,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,463,ELECTRICAL,EL00265,PVC BOX WITH COVER 10X10 CM,PC,1,15,100,115,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,464,ELECTRICAL,EL00266,DECOSTAR 12V 50W G5.3 (GE),PC,1,45,100,145,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,465,ELECTRICAL,EL00267,BALLAST 12V 50W FOR DECOSTAR,PC,1,80,100,180,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,466,ELECTRICAL,EL00268,POWER CONNECTORS 10MM,PC,1,15,100,115,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,467,ELECTRICAL,EL00269,SOLID WIRE SINGLE CORE 1.5MM (MTR)ROLL,PC,1,250,100,350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,468,ELECTRICAL,EL00270,T8 18/36W 3000/6500K (GE),PC,1,10,100,110,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,469,ELECTRICAL,EL00271,G9 HOLDER FOR HALOPIN,PC,1,10,100,110,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,470,ELECTRICAL,EL00272,LIGHTS T8 58-WATT 640,PC,1,120,100,220,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,471,GENERAL,GE00001,EMERGENCY SUPPORT VISIT CHARGES WHERE NO MATERAIL / SPARE PARTS INVOLVED,VISIT,1,,200,200,,"NOTE: The contractor cannot use this code if there is any material & spare parts involved. In that case, only spare parts & associated labor as per Rate Card will be chargeable. "
+,472,GENERAL,GE00003,DELIVERY OF ITEMS FROM ONE ALSHAYA STORE TO THE OTHER STORE USING PICKUP INCLUDING LABOR AND WRAPING,VISIT,1,,250,250,,
+,473,GENERAL,GE00005,DELIVERY OF ITEMS FROM ONE ALSHAYA STORE TO THE OTHER STORE OR VERSES USING BIG TRUCK INCLUDING LABOR AND WRAPING,VISIT,1,,800,800,,
+,474,GENERAL,GE00007,"SUPPLY & INSTALLATION OF ARTIFICIAL PLANTS FOR THE PLANTER BOXES INCLUDING BASE FOAM, GLUE, & GRAVE FOR PLANTERS BOX & INSTALLATION OF MATERIAL",PC,1,30,50,80,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,475,GENERAL,GE00009,CARANE CHARGE FOR GENERAL WORK IN ROOF TOP,JOB,1,,500,500,,
+,476,PLUMBING,PL00001,ANGLE VALVE ½” CROM CHINESSE BRAND,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,477,PLUMBING,PL00002,"ANGLE VALVE ½” GROHI, HESANIT OR K&K GERMANY",PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,478,PLUMBING,PL00003,ANGLE VALVE ½” MADE IN SPAIN,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,479,PLUMBING,PL00004,AUTOMATIC PRESSURE SWITCH FOR WATER PUMP (BRAND -SAMNAN),PC,1,300,100,400,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,480,PLUMBING,PL00005,REPAIR OF WATER PUMP INCLUDING VISIT CHARGES AND MINOR  ACCESSORIES (EMERGENCY VISIT),VISIT,1,,200,200,,
+,481,PLUMBING,PL00006,AUTOMATIC PRESSURE SWITCH FOR WATER PUMP (MADE IN CHINA),PC,1,250,100,350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,482,PLUMBING,PL00007,SUBMERSIBLE WATER PUMP FOR UNDERGROUND WATER TANK INSIDE (2.2HP)(BRAND = SAMNAN),PC,1,2640,250,2890,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,483,PLUMBING,PL00008,SAMNAN PUMP- 1.5HP- 1 YEAR WARANTEE,PC,1,1370,250,1620,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,484,PLUMBING,PL00009,GRUNDFOS HORIZONTAL  PUMP NS6-30/ 1.5HP - 1 YEAR WARANTEE,PC,1,1100,250,1350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,485,PLUMBING,PL00010,SUMBMERSIBLE PUMP - SAMNAN- 1.5 HP -1 YEAR WARANTEE,PC,1,1870,250,2120,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,486,PLUMBING,PL00011,SUMBMERSIBLE PUMP - GRUNDFOS SP 3-45A/-1 HP -1 YEAR WARANTEE,PC,1,1500,250,1750,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,487,PLUMBING,PL00012,SAMNAN PUMP- 1HP-1 YEAR WARANTEE,PC,1,1200,250,1450,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,488,PLUMBING,PL00013,GRUNDFOS HORIZONTAL  PUMP NS5-33/1HP-1 YEAR WARANTEE,PC,1,950,250,1200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,489,PLUMBING,PL00014,ALZAMIL COVER PUMP GUARD  SCALA 2 PUMP-1 YEAR WARANTEE,PC,1,200,200,400,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,490,PLUMBING,PL00015,SAMNAN PUMP-2 HP-1 YEAR WARANTEE,PC,1,1970,250,2220,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,491,PLUMBING,PL00016,GRUNDFOS HORIZONTALPUMP NS6-40/ 2.5 HP-1 YEAR WARANTEE,PC,1,1500,250,1750,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,492,PLUMBING,PL00017,GRUNDFOS WATER BOOSTER PF1-30/0.4HP-1 YEAR WARANTEE,PC,1,350,250,600,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,493,PLUMBING,PL00018,AUTOMATIC HYDROMATIC PRESURRE SWITCH FROM 1-3 BAR PRIMO BRAND - ITALY,PC,1,700,200,900,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,494,PLUMBING,PL00019,COPPER IMMERSION HEATER HOT WATER CYLINDER ELEMENT + THERMOSTAT - ITALY,PC,1,75,150,225,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,495,PLUMBING,PL00020,BRIOTANK - PRESSURE SWITCH  ITALY 10 BAR MAX 12 AMP,PC,1,500,200,700,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,496,PLUMBING,PL00021,DRAIN FLOOR BOX WITH COVER STAINLESS STEEL 15X15- ITALY,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,497,PLUMBING,PL00022,DRAIN FLOOR BOX WITH COVER STAINLESS STEEL 15X15 REPLACMENT - HEAVY DUTY,PC,1,30,100,130,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,498,PLUMBING,PL00023,DRAIN FLOOR BOX WITH COVER STAINLESS STEEL 20 X20 REPLACEMENT- ITALY,PC,1,45,100,145,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,499,PLUMBING,PL00024,DRAIN FLOOR BOX WITH COVER STAINLESS STEEL 20/20 -  CHINA,PC,1,30,100,130,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,500,PLUMBING,PL00025,DRAINAGE  (INCLUDING MALL EXTERNAL LINE ) CLEANING MAJOR COMPLETE WORK - LABOUR + MATERIAL + CO2 BY USING HIGH PRESSURE COMPRESSOR / INDUSTRIAL CLEANING EUIPMENT (STORE + MAIN DRAINAGE),VISIT,1,,550,550,,
+,501,PLUMBING,PL00026,DRAINAGE  CLEANING COMPLETE WORK IN THE STORE - LABOUR + MATERIAL + CO2 BY USING PRESSURE / INDUSTRIAL CLEANING EUIPMENT,VISIT,1,,350,350,,
+,502,PLUMBING,PL00027,DRAINAGE METAL COVER 60X60 - HEAVY DUTY FOR DRIVE WAY WITH REMOVING & FIXING NEW COVER,PC,1,300,250,550,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,503,PLUMBING,PL00028,ELEMENT FOR HEATER,PC,1,75,150,225,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,504,PLUMBING,PL00029,SINK FAUCET SINGLE HANDLE - GROHI,PC,1,300,100,400,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,505,PLUMBING,PL00030,TAP FOR MOP SINK GROHI (MADE IN ITALY),PC,1,300,150,450,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,506,PLUMBING,PL00031,"FLOAT VALVE - BALL TYPE 1""BRASS",PC,1,70,150,220,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,507,PLUMBING,PL00032,FOGGING SYSTEM DAMAGED NOZZEL REPLACEMENT,PC,1,40,100,140,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,508,PLUMBING,PL00033,"MAIN PIPE VALVE 1"" - GERMANY",PC,1,70,100,170,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,509,PLUMBING,PL00034, SAFETY VALVE FOR WATER HEATERS - ITALY,PC,1,50,100,150,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,510,PLUMBING,PL00035,"PPR GREEN COLOR HOT WATER SUPPLY PIPE 1.5"" ",MTR,1,20,10,30,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,511,PLUMBING,PL00036,"FLEXIBLE WATER HOSE PIPE FOR EXTERNAL DT CLEANING USE 1""/2""INCH + INSTALLATION ON SITE",MTR,1,,10,10,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,512,PLUMBING,PL00037,CABINET FOR WATER HOSE EXTERNAL DT CLEANING USE. SUPPLY & INSTALLATION,PC,1,550,200,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,513,PLUMBING,PL00038,SINK FAUCET FOR CBS SINK -LUTZ ,PC,1,250,100,350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,514,PLUMBING,PL00039,SINK FLANGE - NOVA (BIG),PC,1,55,100,155,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,515,PLUMBING,PL00040,SINK FLANGE - NOVA (SMALL),PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,UPDATED PRICE
+,516,PLUMBING,PL00041,SINK LINE U-TRAP STAINLESS STEEL  - HEAVY DUTY WITH SERVICE POINT,PC,1,100,100,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,517,PLUMBING,PL00042,SINK P-TRAP  - VEIGA,PC,1,100,100,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,518,PLUMBING,PL00043,SINK PVC FLEXIBLE SINK DRAIN LINE,PC,1,15,100,115,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,519,PLUMBING,PL00044,SINK STRAINER FOR SINK - AQUA PLAST,PC,1,50,150,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,520,PLUMBING,PL00045,SMALL JOB - LABOUR COST FOR PLUMBING,VISIT,1,,150,150,,
+,521,PLUMBING,PL00046,TIOLET FLUSH SYSTEM WALL MOUNTED TYPE - AMERICAN STANDARDS,PC,1,550,200,750,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,522,PLUMBING,PL00047,TIOLET FLUSH SYSTEM WALL RECESSED TYPE - AMERICAN STANDARDS,PC,1,850,250,1100,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,523,PLUMBING,PL00048,TOILET FLUSH MECHANISM FOR  RECESSED TYPE -ROCCA,PC,1,600,250,850,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,UPDATED PRICE
+,524,PLUMBING,PL00049,FLUSH WALL RECESSED CHROME/STAINLESS STEEL-GROHI,PC,1,450,200,650,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,525,PLUMBING,PL00050,TOILET FLUSH MECHANISM PARTS INDROESPANIA MADE IN SPAIN,PC,1,150,150,300,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,UPDATED PRICE
+,526,PLUMBING,PL00051,TOILET FLUSH MECHANISM SQUATE TYPE,PC,1,150,150,300,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,UPDATED PRICE
+,527,PLUMBING,PL00052,TOILET SEAT COVER - HEAVY DUTY,PC,1,125,100,225,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,528,PLUMBING,PL00053,TOILTE SEAT- SAUDI CERAMICE ENGLISH/WESTERN TYPE,PC,1,350,200,550,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,529,PLUMBING,PL00054,TOILTE SQUAT TYPE - SAUDI CERAMICE ARABIC,PC,1,175,250,425,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,530,PLUMBING,PL00055,WASH BASIN -SAUDI CERAMIC,PC,1,250,100,350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,531,PLUMBING,PL00056,WATER FLEXI HOSE STAINLESS STEEL - SPAIN,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,532,PLUMBING,PL00057,WATER HAND SPRAY & HOSES - GROHI,PC,1,100,100,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,533,PLUMBING,PL00058,WATER HAND SPRAY & HOSES - HEAVY DUTY,PC,1,30,100,130,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,534,PLUMBING,PL00059,WATER HAND SPRAY & HOSES - ITALY,PC,1,55,100,155,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,535,PLUMBING,PL00060,WATER HAND SPRAY & HOSES - NIAGRA,PC,1,105,100,205,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,536,PLUMBING,PL00061,WATER HAND SPRAY & HOSES - SPAIN,PC,1,50,100,150,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,537,PLUMBING,PL00062,WATER HEATER 50 LTR 220V/110V SAUDI CERAMIC SLEEPING TYPE (INCL. ALL ACCESSORIES)-1 YEAR WARANTEE,PC,1,520,250,770,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,UPDATED PRICE
+,538,PLUMBING,PL00063,WATER HEATER 50 LTR 220V/110V SAUDI CERAMIC STANDING TYPE. (INCL. ALL ACCESSORIES) -1 YEAR WARANTEE,PC,1,410,250,660,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,UPDATED PRICE
+,539,PLUMBING,PL00064,WATER HEATER 80 LTR 220V/110V SAUDI CERAMIC HORIZONTAL TYPE (INCL. ALL ACCESSORIES)-1 YEAR WARANTEE,PC,1,600,250,850,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,UPDATED PRICE
+,540,PLUMBING,PL00065,WATER HEATER 80 LTR 220V/110V SAUDI CERAMIC STANDING TYPE. (INCL. ALL ACCESSORIES)-1 YEAR WARANTEE,PC,1,450,250,700,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,UPDATED PRICE
+,541,PLUMBING,PL00066,WATER HEATER 100 LTR 220V/110V SAUDI CERAMIC STANDING TYPE. (INCL. ALL ACCESSORIES)-1 YEAR WARANTEE,PC,1,500,250,750,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,542,PLUMBING,PL00067,WATER HEATER 100 LTR 220V/110V SAUDI CERAMIC HORIZONTAL E. (INCL. ALL ACCESSORIES)-1 YEAR WARANTEE,PC,1,650,250,900,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,543,PLUMBING,PL00068,WATER SUPPLY PIPE FOR TAP - GERMANY (UPTO 10 METERS PC),PC,1,75,100,175,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,544,PLUMBING,PL00069,AUTOMATIC PRESSURE SWITCH GRUNDFOS - MADE IN ITALY ,PC,1,350,150,500,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,545,PLUMBING,PL00070,SUPPLY & INSTALLATION OF PRESSURE GAUGE,PC,1,50,150,200,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,546,PLUMBING,PL00071,SUPPLY & INSTALLATION OF WATER TAP - LUTZ,PC,1,300,150,450,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,547,PLUMBING,PL00072,REPAIR THE FLUSH/SYPHON MECHANISM OF THE TOILET (MINOR ACCESSORIES INCH).,PC,1,,150,150,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,548,PLUMBING,PL00073,OVERHEAD TANK CLEANING/FLUSHING 1400 LTS & BELOW  (LABOR + MATERIAL),PC,1,,300,300,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,UPDATED PRICE
+,549,PLUMBING,PL00074,OVERHEAD TANK CLEANING/FLUSHING 1401- 2500 LTS (LABOR + MATERIAL),PC,1,,300,300,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,UPDATED PRICE
+,550,PLUMBING,PL00075,OVERHEAD TANK CLEANING/FLUSHING 2501 & ABOVE  LTS (LABOR + MATERIAL),PC,1,,450,450,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,UPDATED PRICE
+,551,PLUMBING,PL00076,PRESSURE TANK 100 LITERS - ITALY ,PC,1,1050,250,1300,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,552,PLUMBING,PL00077,WATER TANK 2000 LITERS ZAMIL  - 10 YEARS WARANTEE,PC,1,1200,350,1550,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,553,PLUMBING,PL00078,WATER TANK 2500 LITERS ZAMIL-10 YEARS WARANTEE,PC,1,1500,350,1850,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,554,PLUMBING,PL00079,WATER TANK 5000- 6000 LITERS ZAMIL-10 YEARS WARANTEE,PC,1,3600,350,3950,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,555,PLUMBING,PL00080,FLOAT SWITCH -ELECTRIC  FOR WATER TANK,PC,1,100,150,250,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,556,PLUMBING,PL00081,STAINLESS STEEL COVERS FOR HOLES ON BAR AREA SINK,PC,1,25,50,75,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,557,PLUMBING,PL00082,DRAINAGE METAL COVER 75X75 - HEAVY DUTY FOR DRIVE WAY WITH REMOVING & FIXING NEW COVER,PC,1,350,250,600,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,558,PLUMBING,PL00083,TOILET SEAT COVER - ROCA,PC,1,450,100,550,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,559,PLUMBING,PL00084,UNION FOR SINK WATER PIPE LINE ALL SIZES ,PC,1,70,50,120,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,560,PLUMBING,PL00085,PIPE CONNECTOR (FOR WASH BASIN),PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,561,PLUMBING,PL00086,PIPE SOCKET CONNECTOR ALL SIZES,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,562,PLUMBING,PL00087,PIPE ELBOW CONNECTOR,PC,1,25,100,125,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,563,PLUMBING,PL00088,PIPE NOZZLE,PC,1,15,100,115,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,564,PLUMBING,PL00089,"STAINLESS STEEL MOP SINK FOR BOH (SIZE = 77CMX95CM, HEIGHT = 13CM) (INCLUDING ALL ACCESSORIES + INSTALLATION)",PC,1,1700,350,2050,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,565,PLUMBING,PL00090,INSTANT WATER HEATER (BRAND = ARISTON)(CAPACITY = 10 LTR),PC,1,450,200,650,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,566,PLUMBING,PL00091,GASKET RUBBERS FOR SINK,PC,1,20,100,120,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,567,PLUMBING,PL00092,PIPE ELBOW (ANY SIZE) ,PC,1,35,100,135,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,568,PLUMBING,PL00093,SINK FAUCET FOR CBS SINK -KURT,PC,1,300,100,400,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,569,PLUMBING,PL00094,HAND WASH SINK FAUCET BRAND = GROHI ,PC,1,230,150,380,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,570,PLUMBING,PL00095,TOILET RECESSED SYSTEM WALL RECESSED MODEL : 3874500D GROHI + LABOR,PC,1,250,100,350,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,571,PLUMBING,PL00096,FLOAT VALVE - WALL MOUNTER FLUSH BRAND = GEBERIT,PC,1,320,150,470,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,
+,572,PLUMBING,PL00097,GASKET RUBBERS FOR DRAINAGE COVER,PC,1,20,50,70,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM
+,573,PLUMBING,PL00098,"PVC PIPE - 3/4"" INSTALLATION + MATERIAL + DELIVERY",MTR,1,10,50,60,50% labor cost will be added on additional 02 units/piece and 25% labor charge will be added upon 04 and above quantity,NEW ITEM

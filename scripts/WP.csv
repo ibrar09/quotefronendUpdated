@@ -1,0 +1,265 @@
+Region,City,Mall,Division,Brand,Store Name,Oracle Ccid,Code,Store Type,Store Status,Opening Date,Closure, SQM , FM  , FS  
+Western,Jeddah,Corniche Jeddah,Starbucks,Starbucks,Corniche Jeddah,RB2-2002-STA,2002,High Street,LFL,27-May-2014,,100,Bassem ,Rayan 
+Western,Jeddah,"Herra Mall, Jeddah",Apparel,American Eagle,"Heraa Mall, Jeddah",RB2-S839-AME,S839,Mall Location,LFL,6-May-2017,,850,Bassem ,Rayan 
+Western,Jeddah,"Herra Mall, Jeddah",Apparel,Mothercare,"Herra Mall, Jeddah (New)",RB2-S349-MOT,S349,Mall Location,LFL,1-Mar-2012,,476,Bassem ,Rayan 
+Western,Jeddah,"Herra Mall, Jeddah",Apparel,Next,"Herra Mall, Jeddah (Kids)",RB2-1778-NEX,1778,Mall Location,LFL,25-Oct-2002,,260,Bassem ,Rayan 
+Western,Jeddah,"Herra Mall, Jeddah",Starbucks,Starbucks,"Herra Mall, Jeddah",RB2-S426-STA,S426,Mall Location,LFL,17-Jun-2013,,120,Bassem ,Rayan 
+Western,Jeddah,"Herra Mall, Jeddah",Wellness,Bath and Body Works,"Herra Mall, Jeddah",RB2-S435-BAT,S435,Mall Location,LFL,23-Mar-2013,,200,Bassem ,Rayan 
+Western,Jizan,Kady Mall Jizan,Starbucks,Starbucks,"Kady Mall, Jizan",RB2-H642-STA,H642,Shopping Mall / Center,LFL,26-Dec-2022,,44,Bassem ,Rayan 
+Western,Khamis Mushait,Khamies Avenue,Starbucks,Starbucks,"Khamis Avenue mall, Khamis mushait",RB2-H069-STA,H069,Mall Location,LFL,24-Nov-2019,,159,Bassem ,Rayan 
+Western,Khamis Mushait,Khamies Avenue,Starbucks,Starbucks,Khamies Avenue,RB2-H799-STA,H799,Drive-Thru,PTL,5-Sep-2024,,212,Bassem ,Rayan 
+Western,Jeddah,"Mall of Arabia, Jeddah",Wellness,Bath and Body Works,Mall of Arabia-Jeddah,RB2-H804-BAT,H804,Shopping Mall / Center,PTL,3-Apr-2024,,135,Bassem ,Rayan 
+Western,Jeddah,"Mall of Arabia, Jeddah",Hennes and Mauritz,Hennes and Mauritz,"Mall of Arabia, Jeddah",RB2-1992-HEN,1992,Mall Location,LFL,13-Sep-2008,,2277,Bassem ,Rayan 
+Western,Jeddah,"Mall of Arabia, Jeddah",Wellness,MAC,"Mall of Arabia, Jeddah",RB2-H361-MAC,H361,Mall Location,LFL,17-Sep-2021,,60,Bassem ,Rayan 
+Western,Jeddah,"Mall of Arabia, Jeddah",Starbucks,Starbucks,Mall of Arabia,RB2-H364-STA,H364,Mall Location,LFL,9-Sep-2021,,163,Bassem ,Rayan 
+Western,Jeddah,"Mall of Arabia, Jeddah",Apparel,Victoria's Secret International-FA,Mall of Arabia-Jeddah-FA,RB2-H676-VIF,H676,Shopping Mall / Center,LFL,18-Sep-2023,,498,Bassem ,Rayan 
+Western,Abha,Rashid Mall Abha,Apparel,American Eagle,"Rashid Mall, Abha",RB2-S605-AME,S605,Mall Location,LFL,22-Dec-2017,,369,Bassem ,Rayan 
+Western,Abha,Rashid Mall Abha,Wellness,Bath and Body Works,"Rashid Mall, Abha",RB2-S606-BAT,S606,Mall Location,LFL,8-Dec-2017,,137,Bassem ,Rayan 
+Western,Alula,Stand Alone,Starbucks,Starbucks,AlUla AlJadedah,RB2-H049-STA,H049,Plaza,PTL,25-Feb-2024,,64,Bassem ,Abdulrhman 
+Western,Arar,Stand Alone,Starbucks,Starbucks,Arar Park Regional Road DT,RB2-H774-STA,H774,Drive-Thru,PTL,9-May-2024,,484,Bassem ,Abdulrhman 
+Western,Jeddah,"Tahlia Street, Jeddah",Apparel,American Eagle,"Tahlia Street, Jeddah",RB2-2294-AME,2294,High Street,LFL,26-Apr-2012,,845,Bassem ,Rajeev
+Western,Jeddah,"Red Sea Mall, Jeddah",Apparel,American Eagle,Red Sea Mall (New),RB2-H608-AME,H608,Shopping Mall / Center,LFL,27-Dec-2023,,670,Bassem ,Abdulrhman 
+Western,Abha,Rashid Mall Abha,Apparel,Foot Locker,"Rashid Mall, Abha",RB2-S612-FOO,S612,Mall Location,LFL,8-Dec-2017,,144,Bassem ,Rayan 
+Western,Abha,Rashid Mall Abha,Hennes and Mauritz,Hennes and Mauritz,"Rashid Mall, Abha",RB2-S613-HEN,S613,Mall Location,LFL,30-Dec-2017,,2791,Bassem ,Rayan 
+Western,Jeddah,"Andalus Mall, Jeddah",Apparel,American Eagle,"Andalus Mall, Jeddah",RB2-S163-AME,S163,Mall Location,LFL,13-May-2017,,328,Hakeem ,Sultan 
+Western,Abha,Rashid Mall Abha,Wellness,MAC,"Rashid Mall, Abha",RB2-S614-MAC,S614,Mall Location,LFL,10-Feb-2018,,66,Bassem ,Rayan 
+Western,Jeddah,Jeddah Walk Mall,Apparel,American Eagle,Jeddah Walk Mall,RB2-H849-AME,H849,Mall Location,PTL,27-Jun-2024,,406,Bassem ,Rajeev
+Western,Jeddah,"Tahlia Mall, Jeddah",Wellness,Bath and Body Works,"Tahlia Mall, Jeddah",RB2-2423-BAT,2423,Mall Location,LFL,13-Apr-2013,,160,Hakeem ,Sultan 
+Western,Jeddah,"Red Sea Mall, Jeddah",Wellness,Bath and Body Works,"Red Sea Mall, Jeddah",RB2-2727-BAT,2727,Mall Location,LFL,15-Oct-2018,,163,Bassem ,Abdulrhman 
+Western,Jeddah,Yasmin Mall Jeddah,Wellness,Bath and Body Works,Yasmin Mall  Jeddah,RB2-H488-BAT,H488,Shopping Mall / Center,LFL,27-Oct-2022,,98,Hakeem ,Sultan 
+Western,Jeddah,"Aziz Mall, Jeddah",Wellness,Bath and Body Works,Aziz Mall-Jeddah,RB2-H662-BAT,H662,Shopping Mall / Center,LFL,16-Feb-2023,,131,Hakeem ,Sultan 
+Western,Abha,Rashid Mall Abha,Apparel,Milano,"Rashid Mall, Abha",RB2-S615-MIL,S615,Mall Location,LFL,8-Dec-2017,,120,Bassem ,Rayan 
+Western,Jeddah,Salam Mall-Jeddah,Wellness,Bath and Body Works,Salam Mall-Jeddah,RB2-H701-BAT,H701,Shopping Mall / Center,LFL,21-Aug-2023,,135,Hakeem ,Sultan 
+Western,Jeddah,Jeddah Walk Mall,Wellness,Bath and Body Works,Jeddah Walk Mall,RB2-H805-BAT,H805,Mall Location,PTL,30-May-2024,,134,Bassem ,Rajeev
+Western,Jeddah,"Andalus Mall, Jeddah",Wellness,Bath and Body Works,Andalus Mall-Jeddah,RB2-S164-BAT,S164,Mall Location,LFL,3-Mar-2020,,186,Hakeem ,Sultan 
+Western,Abha,Rashid Mall Abha,Starbucks,Starbucks,"Rashid Mall 2, Abha",RB2-S623-STA,S623,Mall Location,LFL,22-Mar-2018,,150,Bassem ,Rayan 
+Western,Jeddah,"Red Sea Mall, Jeddah",Wellness,Boots,"Red Sea Mall, Jeddah (BB)",RB2-2706-BOO,2706,Mall Location,LFL,27-Dec-2018,,167,Bassem ,Abdulrhman 
+Western,Jeddah,"Red Sea Mall, Jeddah",Wellness,Charlotte Tilbury,"Red Sea Mall, Jeddah",RB2-H721-CHA,H721,Shopping Mall / Center,LFL,10-Aug-2023,,92,Bassem ,Abdulrhman 
+Western,Jeddah,"Red Sea Mall, Jeddah",Apparel,Claire's,"Red Sea Mall, Jeddah",RB2-2707-CLA,2707,Mall Location,LFL,5-Mar-2008,,64,Bassem ,Abdulrhman 
+Western,Jeddah,"Red Sea Mall, Jeddah",Hennes and Mauritz,Collection of Style,"Red Sea Mall, Jeddah",RB2-S059-COL,S059,Mall Location,LFL,21-Sep-2018,,497,Bassem ,Abdulrhman 
+Western,Jeddah,"Red Sea Mall, Jeddah",Wellness,Dr. Vranjes,Red Sea Mall,RB2-H336-DRV,H336,Mall Location,LFL,8-Jul-2021,,66,Bassem ,Abdulrhman 
+Western,Jeddah,"Red Sea Mall, Jeddah",Apparel,Foot Locker,Red sea mall-Jeddah New,RB2-H789-FOO,H789,Shopping Mall / Center,PTL,17-Apr-2024,,774,Bassem ,Abdulrhman 
+Western,Jeddah,Jeddah Walk Mall,Apparel,Foot Locker,Jeddah Walk Mall,RB2-H835-FOO,H835,Mall Location,PTL,2-Jul-2024,,491,Bassem ,Rajeev
+Western,Jizan,Rashid Mall Jizan,Hennes and Mauritz,Hennes and Mauritz,"Rashid Mall, Jizan",RB2-S690-HEN,S690,Mall Location,LFL,25-Feb-2017,,1226,Bassem ,Rayan 
+Western,Jeddah,"Tahlia Mall, Jeddah",Hennes and Mauritz,Hennes and Mauritz,"Tahlia Mall, Jeddah",RB2-2142-HEN,2142,Mall Location,LFL,31-Mar-2012,,1922,Hakeem ,Sultan 
+Western,Jeddah,"Andalus Mall, Jeddah",Hennes and Mauritz,Hennes and Mauritz,"Andalus Mall, Jeddah",RB2-S177-HEN,S177,Mall Location,LFL,28-May-2011,,1318,Hakeem ,Sultan 
+Western,Jeddah,"Red Sea Mall, Jeddah",Hennes and Mauritz,Hennes and Mauritz,"Red Sea Mall, Jeddah (Family)",RB2-S289-HEN,S289,Mall Location,LFL,26-Mar-2011,,2566,Bassem ,Abdulrhman 
+Western,Jeddah,"Red Sea Mall, Jeddah",Wellness,Jo Malone,"Red Sea Mall, Jeddah",RB2-2729-JOM,2729,Mall Location,LFL,24-May-2014,,60,Bassem ,Abdulrhman 
+Western,Jeddah,"Andalus Mall, Jeddah",Wellness,Jo Malone,"Andalus Mall, Jeddah",RB2-S179-JOM,S179,Mall Location,LFL,16-May-2015,,60,Hakeem ,Sultan 
+Western,Jeddah,"Red Sea Mall, Jeddah",Wellness,Le Labo,"Red Sea Mall, Jeddah-New",RB2-H133-LEL,H133,Mall Location,LFL,21-Nov-2019,,64,Bassem ,Abdulrhman 
+Western,Jeddah,"Red Sea Mall, Jeddah",Wellness,MAC,"Red Sea Mall, Jeddah",RB2-2710-MAC,2710,Mall Location,LFL,5-Mar-2008,,102,Bassem ,Abdulrhman 
+Western,Jizan,Rashid Mall Jizan,Starbucks,Starbucks,"Rashid Mall, Jizan",RB2-H368-STA,H368,Mall Location,LFL,18-Nov-2021,,245,Bassem ,Rayan 
+Western,Jeddah,"Andalus Mall, Jeddah",Wellness,MAC,"Andalus Mall, Jeddah",RB2-S180-MAC,S180,Mall Location,LFL,28-Mar-2015,,70,Hakeem ,Sultan 
+Western,Jeddah,Jeddah Walk Mall,Wellness,MAC,Jeddah Walk Mall,RB2-H834-MAC,H834,Mall Location,PTL,30-May-2024,,64,Bassem ,Rajeev
+Western,Jeddah,"Tahlia Mall, Jeddah",Apparel,Milano,"Tahlia Mall, Jeddah",RB2-1931-MIL,1931,Mall Location,LFL,1-Mar-2003,,120,Hakeem ,Sultan 
+Western,Jeddah,"Red Sea Mall, Jeddah",Apparel,Milano,"Red Sea Mall, Jeddah",RB2-2711-MIL,2711,Mall Location,LFL,5-Apr-2008,,214,Bassem ,Abdulrhman 
+Western,Jeddah,"Andalus Mall, Jeddah",Apparel,Milano,"Andalus Mall, Jeddah",RB2-S167-MIL,S167,Mall Location,LFL,2-Jan-2016,,131,Hakeem ,Sultan 
+Western,Jeddah,"Red Sea Mall, Jeddah",Apparel,Mothercare,"Red Sea Mall, Jeddah (New)",RB2-2722-MOT,2722,Mall Location,LFL,13-Aug-2011,,1067,Bassem ,Abdulrhman 
+Western,Jeddah,"Andalus Mall, Jeddah",Apparel,Mothercare,"Andalus Mall, Jeddah (New)",RB2-S348-MOT,S348,Mall Location,LFL,5-Nov-2011,,411,Hakeem ,Sultan 
+Western,Abha,Stand Alone,Starbucks,Starbucks,"Abha Airport,Abha",RB2-H229-STA,H229,"Others, Airport",LFL,12-Jan-2021,,94,Bassem ,Rayan 
+Western,Jeddah,"Red Sea Mall, Jeddah",Apparel,New Balance,Red Sea Mall  Jeddah-Jeddah,RB2-H788-NEW,H788,Shopping Mall / Center,LFL,15-Dec-2023,,134,Bassem ,Abdulrhman 
+Western,Jeddah,Jeddah Walk Mall,Apparel,New Balance,Jeddah Walk Mall,RB2-H836-NEW,H836,Mall Location,PTL,2-Jul-2024,,136,Bassem ,Rajeev
+Western,Abha,Stand Alone,Starbucks,Starbucks,Hizam RD DT  Abha,RB2-H434-STA,H434,Drive-Thru,LFL,27-Dec-2022,,200,Bassem ,Rayan 
+Western,Jeddah,"Ben Homran, Jeddah",Apparel,Next,"Ben Homran, Jeddah",RB2-1885-NEX,1885,Mall Location,LFL,28-Feb-2009,,516,Hakeem ,Sultan 
+Western,Jeddah,"Tahlia Street, Jeddah",Apparel,Next,"Tahlia Street,Jeddah",RB2-2144-NEX,2144,High Street,LFL,1-Oct-2016,,845,Bassem ,Rajeev
+Western,Jeddah,"Red Sea Mall, Jeddah",Apparel,Next,"Red Sea Mall, Jeddah",RB2-2702-NEX,2702,Mall Location,LFL,5-Mar-2008,,488,Bassem ,Abdulrhman 
+Western,Jeddah,"Red Sea Mall, Jeddah",apparel,Next,"Red Sea Mall, Riyadh",RB2-H946-NEX,H946,Mall Location,PTL,11-Dec-2024,,493,Bassem ,Abdulrhman 
+Western,Jeddah,"Andalus Mall, Jeddah",Wellness,NYX,"Andalus Mall, Jeddah",RB2-2340-NYX,2340,Mall Location,LFL,17-Sep-2018,,137,Hakeem ,Sultan 
+Western,Jeddah,"Red Sea Mall, Jeddah",Wellness,NYX,"Red Sea Mall, Jeddah-New",RB2-H134-NYX,H134,Mall Location,LFL,5-Dec-2019,,99,Bassem ,Abdulrhman 
+Western,Jeddah,Jeddah Walk Mall,Wellness,NYX,Jeddah Walk Mall,RB2-H837-NYX,H837,Mall Location,PTL,3-Jun-2024,,134,Bassem ,Rajeev
+Western,Jeddah,"Le Mall, Jeddah",Hospitality,PF Chang's,"Le Mall, Jeddah",RB2-S442-PFC,S442,Mall Location,LFL,14-Dec-2013,,601,Hakeem ,Rajeev
+Western,Jeddah,"Andalus Mall, Jeddah",Hospitality,Pinkberry,"Andalus Mall, Jeddah",RB2-S196-PIN,S196,Mall Location,LFL,25-Aug-2012,,89,Hakeem ,Sultan 
+Western,Jeddah,"Red Sea Mall, Jeddah",Hospitality,Pinkberry,"Red Sea Mall, Jeddah",RB2-S327-PIN,S327,Mall Location,LFL,26-Oct-2011,,108,Bassem ,Abdulrhman 
+Western,Jeddah,Yasmin Mall Jeddah,Hospitality,Pinkberry,Yasmin Mall  Jeddah,RB2-H831-PIN,H831,Mall Location,PTL,16-Jul-2024,,128,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Hospitality,Raising Cane's,King Road - Abihour DT,RB2-H170-RAI,H170,Drive-Thru,LFL,16-Sep-2021,,200,Bassem ,Rayan 
+Western,Jeddah,Sari Gate Jeddah,Hospitality,Raising Cane's,"Sari Gate, Jeddah",RB2-S068-RAI,S068,Plaza,LFL,16-Nov-2018,,271,Hakeem ,Sultan 
+Western,Jeddah,"Red Sea Mall, Jeddah",Hospitality,Raising Cane's,"Red Sea Mall, Jeddah",RB2-S782-RAI,S782,Mall Location,LFL,21-Sep-2018,,256,Bassem ,Abdulrhman 
+Western,Jeddah,Liwan Center Jeddah,Hospitality,Raising Cane's,"Liwan Center, Jeddah",RB2-S784-RAI,S784,Plaza,LFL,28-Sep-2018,,300,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Hospitality,Raising Cane's,"Al Rehab Zengabar St, Jeddah",RB2-H809-RAI,H809,Drive-Thru,PTL,5-Apr-2024,,180,Hakeem ,Sultan 
+Western,Abha,Stand Alone,Starbucks,Starbucks,"Bin Jalalah Square DT, Abha",RB2-H435-STA,H435,Drive-Thru,LFL,6-Jul-2022,,80,Bassem ,Rayan 
+Western,Jeddah,"Red Sea Mall, Jeddah",Hospitality,Shake Shack,"Red Sea Mall, Jeddah",RB2-S768-SHA,S768,Mall Location,LFL,21-Dec-2017,,347,Bassem ,Abdulrhman 
+Western,Jeddah,Falasteen Mall Jeddah,Starbucks,Starbucks,"Falasteen Mall, Jeddah",RB2-1891-STA,1891,Mall Location,LFL,1-Jun-2002,,377,Hakeem ,Sultan 
+Western,Abha,Stand Alone,Starbucks,Starbucks,Lavanda Park-Abha,RB2-H738-STA,H738,#N/A,PTL,25-Jul-2024,,253,Bassem ,Rayan 
+Western,Jeddah,Dara Center Jeddah,Starbucks,Starbucks,"Dara Center, Jeddah",RB2-2334-STA,2334,Plaza,LFL,7-Dec-2016,,277,Bassem ,Rajeev
+Western,Jeddah,"Jarrir Book Store, North Ring Road",Starbucks,Starbucks,"Jarrir Book Store, Jeddah",RB2-2411-STA,2411,Plaza,LFL,1-Apr-2003,,65,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Iceland Sultan Street, Jeddah",RB2-2431-STA,2431,High Street,LFL,1-Mar-2003,,300,Bassem ,Rajeev
+Western,Jeddah,"Serafi Mega Mall, Jeddah",Starbucks,Starbucks,"Serafi Mega Mall, Jeddah",RB2-2500-STA,2500,Mall Location,LFL,1-Sep-2013,,60,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Attalah Commercial Centre, Jeddah",RB2-2601-STA,2601,Plaza,LFL,2-Mar-2006,,256,Bassem ,Abdulrhman 
+Western,Jeddah,"Sulaimania Plaza, Jeddah",Starbucks,Starbucks,"Sulaimania Plaza, Jeddah",RB2-2661-STA,2661,Plaza,LFL,28-Jan-2007,,217,Hakeem ,Sultan 
+Western,Jeddah,"Red Sea Mall, Jeddah",Starbucks,Starbucks,"Red Sea Mall, Jeddah",RB2-2714-STA,2714,Mall Location,LFL,5-Mar-2008,,205,Bassem ,Abdulrhman 
+Western,Jeddah,"Event Mall, Jeddah",Starbucks,Starbucks,"Event Mall, Jeddah",RB2-2739-STA,2739,Drive-Thru,LFL,12-Oct-2013,,15,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Al Marwa Plaza,RB2-H032-STA,H032,Plaza,LFL,9-Oct-2019,,157,Bassem ,Rajeev
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Manar Plaza DT Jeddah,RB2-H045-STA,H045,Drive-Thru,LFL,10-Mar-2020,,200,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Haramain Jeddah L1,RB2-H058-STA,H058,Others,LFL,23-Dec-2021,,74,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Rovan Plaza, Jeddah",RB2-H074-STA,H074,Plaza,LFL,22-Oct-2019,,187,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Ghina Plaza DT, Jeddah",RB2-H104-STA,H104,Drive-Thru,LFL,16-Nov-2019,,200,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Azizia Plaza DT, Jeddah",RB2-H119-STA,H119,Drive-Thru,LFL,19-Dec-2019,,200,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Emaar Square,Jeddah",RB2-H145-STA,H145,Plaza,LFL,19-Dec-2019,,229,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Atelier La Vie, Jeddah",RB2-H160-STA,H160,Plaza,LFL,28-Oct-2020,,162,Bassem ,Abdulrhman 
+Western,Abha,Stand Alone,Starbucks,Starbucks,KKU Algreger Complex for Girls - Building-Abha,RB2-H739-STA,H739,Institution,LFL,14-Sep-2023,,120,Bassem ,Rayan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Up town,RB2-H180-STA,H180,Plaza,LFL,23-Jun-2020,,172,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Ivory square,RB2-H181-STA,H181,Plaza,LFL,26-Jun-2020,,214,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Herra street DT,RB2-H182-STA,H182,Drive-Thru,LFL,18-Nov-2021,,200,Bassem ,Rajeev
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,King Road - Abihour DT,RB2-H183-STA,H183,Drive-Thru,LFL,1-Jul-2021,,240,Bassem ,Rayan 
+Western,Jeddah,KAIA,Starbucks,Starbucks,KAIA international Airside E2- 21,RB2-H203-STA,H203,"Others, Airport",LFL,23-Dec-2021,,152,Bassem ,Abdulrhman 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Hamadaniyyah Jeddah,RB2-H210-STA,H210,Drive-Thru,LFL,16-Sep-2021,,200,Bassem ,Abdulrhman 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Babylon,Jeddah",RB2-H230-STA,H230,Plaza,LFL,10-Dec-2020,,335,Bassem ,Rajeev
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Tahlia DT,Jeddah",RB2-H240-STA,H240,Drive-Thru,LFL,17-Dec-2020,,200,Hakeem ,Sultan 
+Western,Jeddah,Sari Gate Jeddah,Starbucks,Starbucks,"Sari Street DT ,Jeddah",RB2-H244-STA,H244,Drive-Thru,LFL,1-Aug-2021,,200,Hakeem ,Sultan 
+Western,Abha,Stand Alone,Starbucks,Starbucks,KKU Alqaraa Faculty Of Humanities-Abha,RB2-H740-STA,H740,Institution,LFL,4-Dec-2023,,40,Bassem ,Rayan 
+Western,Abha,Stand Alone,Starbucks,Starbucks,AlAndalus DT Abha-Abha,RB2-H782-STA,H782,Drive-Thru,PTL,13-Jun-2024,,247,Bassem ,Rayan 
+Western,Jeddah,Yasmin Mall Jeddah,Starbucks,Starbucks,"Yasmin Mall , Jeddah",RB2-H388-STA,H388,Mall Location,LFL,15-Aug-2021,,271,Hakeem ,Sultan 
+Western,Jeddah,KAIA,Starbucks,Starbucks,"KAIA Domestic Airside - Saudi Airside Side ,Jeddah",RB2-H395-STA,H395,Airport,LFL,12-May-2022,,66,Bassem ,Abdulrhman 
+Western,Jeddah,KAIA,Starbucks,Starbucks,"KAIA Train Station hub ,Jeddah",RB2-H396-STA,H396,Airport,LFL,6-Jul-2022,,34,Bassem ,Abdulrhman 
+Western,Jeddah,KAIA,Starbucks,Starbucks,"KAIA Domestic Airside- Economic Flights Side  ,Jeddah",RB2-H397-STA,H397,Airport,LFL,23-Jun-2022,,171,Bassem ,Abdulrhman 
+Western,Jeddah,KAIA,Starbucks,Starbucks,"KAIA Arrivals - New,Jeddah",RB2-H400-STA,H400,Tall,LFL,7-Apr-2022,,179,Bassem ,Abdulrhman 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Fayfa Avenue, Jeddah",RB2-H412-STA,H412,Plaza,LFL,7-Dec-2021,,211,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Danub Tahlia, Jeddah",RB2-H413-STA,H413,Plaza,LFL,27-Dec-2021,,76,Hakeem ,Sultan 
+Western,Jeddah,"Tahlia Centre, Jeddah",Starbucks,Starbucks,"Tahlia Centre, Jeddah",RB2-H438-STA,H438,High Street,LFL,27-Dec-2021,,95,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Dari Q Jeddah,RB2-H504-STA,H504,Shopping Mall / Center,LFL,27-Oct-2022,,97,Bassem ,Rajeev
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Umm Alqurra DT Jeddah,RB2-H518-STA,H518,Drive-Thru,LFL,20-Nov-2023,,175,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Promenade Corniche, Jeddah",RB2-H522-STA,H522,Shopping Mall / Center,LFL,2-Jun-2022,,68,Bassem ,Abdulrhman 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Executive Terminal KAIA  Jeddah,RB2-H539-STA,H539,Airport,LFL,22-Dec-2022,,15,Bassem ,Abdulrhman 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Hamdania Square DT  Jeddah,RB2-H543-STA,H543,Drive-Thru,LFL,21-Nov-2022,,170,Bassem ,Abdulrhman 
+Western,Abha,Stand Alone,Starbucks,Starbucks,"High City, Abha",RB2-S749-STA,S749,Drive-Thru,PTL,21-Jan-2019,,204,Bassem ,Rayan 
+Western,Jeddah,Salam Mall-Jeddah,Starbucks,Starbucks,Salam Mall-Jeddah,RB2-H685-STA,H685,Shopping Mall / Center,LFL,10-Jul-2023,,234,Hakeem ,Sultan 
+Western,Abha,Stand Alone,Starbucks,Starbucks,"AlRawabi AlMahalah Road DT, Abha",RB2-H814-STA,H814,Drive-Thru,PTL,20-Jul-2024,,210,Bassem ,Rayan 
+Western,Jeddah,Trio,Starbucks,Starbucks,Trio Boulevard-Jeddah,RB2-H718-STA,H718,Entertainment / Leasure,PTL,18-Sep-2024,,714,Bassem ,Abdulrhman 
+Western,Jeddah,Stand Alone,Hospitality,Raising Cane's,Tamimi Prince Sultan DT-Jeddah,RB2-H920-RAI,H920,Drive-Thru,PTL,5-Dec-2024,,227,Bassem ,Rajeev
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Andalusiah Hospital Jameah-Jeddah,RB2-H748-STA,H748,Hospital,LFL,29-Oct-2023,,35,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Park square-Jeddah,RB2-H751-STA,H751,Shopping Mall / Center,LFL,23-Oct-2023,,223,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Al Naseem Boulevard King Abdullah Rd-Jeddah,RB2-H752-STA,H752,Residential / Commercial Bldg,LFL,28-Sep-2023,,223,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Al Rehab Zengabar St-Jeddah,RB2-H775-STA,H775,Drive-Thru,LFL,26-Oct-2023,,270,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Daniya Center DT, Jeddah",RB2-H171-STA,H171,Drive-Thru,LFL,5-Sep-2021,,200,Bassem ,Rayan 
+Western,Jeddah,"Aziz Mall, Jeddah",Starbucks,Starbucks,Aziz Mall Gate 4-Jeddah,RB2-H786-STA,H786,Shopping Mall / Center,LFL,3-Dec-2023,,145,Hakeem ,Sultan 
+Western,Jeddah,"Red Sea Mall, Jeddah",Starbucks,Starbucks,Red Sea Mall Gate 4-Jeddah,RB2-H787-STA,H787,Shopping Mall / Center,LFL,26-Dec-2023,,177,Bassem ,Abdulrhman 
+Western,Jeddah,"Andalus Mall, Jeddah",Starbucks,Starbucks,Andalus Mall  Jeddah (New),RB2-S162-STA,S162,Mall Location,LFL,5-Aug-2017,,141,Hakeem ,Sultan 
+Western,Jeddah,"Andalus Mall, Jeddah",Starbucks,Starbucks,"Andalus Mall, Jeddah",RB2-S174-STA,S174,Mall Location,LFL,20-Mar-2012,,126,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Al Rawdah, Jeddah",RB2-S328-STA,S328,High Street,LFL,17-Nov-2012,18-Apr-2026,246,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Taiba DT , Jeddah",RB2-H386-STA,H386,Drive-Thru,LFL,28-Apr-2022,,200,Bassem ,Rayan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Al Sawari Aber Alqarat DT-Jeddah,RB2-H713-STA,H713,Drive-Thru,LFL,2-Jul-2023,,198,Bassem ,Rayan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Abhour Mall Corniche-Jeddah,RB2-H725-STA,H725,Shopping Mall / Center,LFL,31-Aug-2023,,457,Bassem ,Rayan 
+Western,Jeddah,Liwan Center Jeddah,Starbucks,Starbucks,"Liwan Center, Jeddah",RB2-S786-STA,S786,Plaza,LFL,28-Aug-2017,,200,Hakeem ,Sultan 
+Western,Jeddah,Jeddah Park,Starbucks,Starbucks,Jeddah Park  Jeddah,RB2-S827-STA,S827,Residential / Commercial Bldg,LFL,4-May-2023,,314,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Al Asalah prince Talal St.-Jeddah,RB2-H780-STA,H780,Drive-Thru,LFL,27-Nov-2023,,125,Bassem ,Rayan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"MOJ Plaza Abur 1, Jeddah",RB2-S698-STA,S698,Plaza,LFL,21-Sep-2015,,228,Bassem ,Rayan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Musadiah Plaza 1, Jeddah",RB2-S983-STA,S983,Plaza,LFL,30-Oct-2018,,200,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Morjan Centre, Jeddah",RB2-S699-STA,S699,Plaza,LFL,6-Dec-2015,,270,Bassem ,Rayan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"KAEC, Jeddah",RB2-S884-STA,S884,Others,LFL,30-Dec-2017,,155,Bassem ,Rayan 
+Western,Jeddah,"Red Sea Mall, Jeddah",Hospitality,Tekzone,"Red Sea Mall, Jeddah",RB2-H073-FEC,H073,Mall Location,LFL,11-Jan-2021,,3350,Bassem ,Abdulrhman 
+Western,Jeddah,"Red Sea Mall, Jeddah",Hospitality,Texas Roadhouse,"Red Sea Mall, Jeddah",RB2-S062-TEX,S062,Mall Location,LFL,24-Aug-2018,,426,Bassem ,Abdulrhman 
+Western,Jeddah,"Le Mall, Jeddah",Hospitality,Texas Roadhouse,"Le Mall, Jeddah",RB2-S443-TEX,S443,Mall Location,LFL,14-Dec-2013,,705,Hakeem ,Rajeev
+Western,Jeddah,"Le Mall, Jeddah",Hospitality,The Cheesecake Factory,"Le Mall, Jeddah",RB2-S441-CHE,S441,Mall Location,LFL,14-Dec-2013,,1326,Bassem/Hakeem ,Rajeev
+Western,Jeddah,"Red Sea Mall, Jeddah",Apparel,Victoria's Secret International-FA,"Red Sea Mall, Jeddah-FA",RB2-S747-VIF,S747,Mall Location,LFL,18-Nov-2017,,962,Bassem ,Abdulrhman 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Zahra Plaza, Jeddah",RB2-S917-STA,S917,Plaza,LFL,23-Sep-2018,,164,Bassem ,Rayan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,Tamimi Kaust,RB2-S991-STA,S991,Plaza,LFL,29-Jun-2019,,114,Bassem ,Rayan 
+Western,Jeddah,Abdullah Sulayman Al Faiha DT,Starbucks,Starbucks,Abdullah Sulayman Al Faiha DT,RB2-H938-STA,H938,Drive-Thru,TBC,25-Sep-2025,,180,Hakeem ,Sultan 
+Western,Jeddah,Stand Alone,Starbucks,Starbucks,"Tamimi Prince Sultan DT, Jeddah",RB2-H520-STA,H520,Drive-Thru,PTL,24-Oct-2024,,225,Bassem ,Rajeev
+Western,Jizan,Stand Alone,Starbucks,Starbucks,Corniche RD DT   Jizan,RB2-H379-STA,H379,Drive-Thru,LFL,6-Oct-2022,,250,Bassem ,Rayan 
+Western,Khamis Mushait,Stand Alone,Starbucks,Starbucks,"Nooran Plaza, Khamis Mushait",RB2-2520-STA,2520,Plaza,LFL,10-May-2018,18-Apr-2026,200,Bassem ,Rayan 
+Western,Khamis Mushait,Stand Alone,Starbucks,Starbucks,"Mojan Park Mall, Khamis Mushait",RB2-H161-STA,H161,Mall Location,LFL,21-Dec-2021,,190,Bassem ,Rayan 
+Western,Khamis Mushait,Stand Alone,Starbucks,Starbucks,"Ravala DT ,Khamis Mushait",RB2-H251-STA,H251,Drive-Thru,LFL,22-Jun-2021,,175,Bassem ,Rayan 
+Western,Khamis Mushait,Stand Alone,Starbucks,Starbucks,Ahad Rufidah King Khaled Rd  Khamis Mushait,RB2-H763-STA,H763,Drive-Thru,LFL,11-Nov-2023,,150,Bassem ,Rayan 
+Western,Jeddah,The Village-Jeddah,Apparel,American Eagle,The Village-Jeddah,RB2-H663-AME,H663,Shopping Mall / Center,LFL,11-Sep-2023,,437,Bassem ,Rayan 
+Western,Jeddah,The Village-Jeddah,Apparel,American Eagle,The Village-Jeddah-Aerie,RB2-H664-AME,H664,Shopping Mall / Center,LFL,11-Sep-2023,,184,Bassem ,Rayan 
+Western,Jeddah,The Village-Jeddah,Wellness,Bath and Body Works,The Village-Jeddah,RB2-H665-BAT,H665,Shopping Mall / Center,LFL,23-Jul-2023,,104,Bassem ,Rayan 
+Western,Jeddah,The Village-Jeddah,Starbucks,Starbucks,The Village-Jeddah,RB2-H669-STA,H669,Shopping Mall / Center,LFL,1-Jul-2023,,192,Bassem ,Rayan 
+Western,Madina,"Oberoi, Medina",Apparel,American Eagle,Oberoi Medina,RB2-H017-AME,H017,Others,LFL,1-Dec-2018,,226,Hakeem ,Jamal 
+Western,Madina,"Rashid Mega Mall, Medina",Wellness,Bath and Body Works,"Rashid Mega Mall, Medina",RB2-S183-BAT,S183,Mall Location,LFL,17-Nov-2012,,208,Hakeem ,Jamal 
+Western,Madina,"Oberoi, Medina",Wellness,Bath and Body Works,"Oberoi, Medina",RB2-S439-BAT,S439,Others,LFL,28-Oct-2017,,110,Hakeem ,Jamal 
+Western,Madina,"Rashid Mega Mall, Medina",Apparel,Foot Locker,"Rashid Mega Mall, Madina",RB2-H325-FOO,H325,Mall Location,LFL,19-Aug-2021,,238,Hakeem ,Jamal 
+Western,Madina,"Oberoi, Medina",Apparel,Foot Locker,"Oberoi, Medina",RB2-S872-FOO,S872,Others,LFL,28-Oct-2017,,145,Hakeem ,Jamal 
+Western,Madina,Aliat Al Medina,Hennes and Mauritz,Hennes and Mauritz,Aliat Al Medina,RB2-2746-HEN,2746,Mall Location,LFL,30-Nov-2017,,2003,Hakeem ,Jamal 
+Western,Madina,"Rashid Mega Mall, Medina",Hennes and Mauritz,Hennes and Mauritz,Al Rashid Mega Mall,RB2-S184-HEN,S184,Mall Location,LFL,27-Sep-2014,,1358,Hakeem ,Jamal 
+Western,Madina,"Rashid Mega Mall, Medina",Apparel,Milano,"Rashid Mega Mall, Medina",RB2-1754-MIL,1754,Mall Location,LFL,30-Aug-2008,,133,Hakeem ,Jamal 
+Western,Madina,"Al Dakheel Plaza, Medina",Apparel,Milano,Dakheel Plaza  Madina,RB2-1837-MIL,1837,Plaza,LFL,6-Jul-2008,,103,Hakeem ,Jamal 
+Western,Madina,"Oberoi, Medina",Apparel,Milano,"Oberoi, Medina",RB2-1846-MIL,1846,Others,LFL,1-Sep-2001,,141,Hakeem ,Jamal 
+Western,Madina,"Oberoi, Medina",Apparel,Mothercare,"Oberoi, Medina",RB2-1841-MOT,1841,Others,LFL,1-Nov-1995,,211,Hakeem ,Jamal 
+Western,Madina,Aliat Al Medina,Apparel,Mothercare,Aliat Al Medina,RB2-2666-MOT,2666,Mall Location,LFL,13-Sep-2008,,238,Hakeem ,Jamal 
+Western,Madina,"Rashid Mega Mall, Medina",Apparel,Next,"Rashid Mega Mall, Medina",RB2-1829-NEX,1829,Mall Location,LFL,31-Aug-2008,,301,Hakeem ,Jamal 
+Western,Madina,"Oberoi, Medina",Apparel,Next,"Oberoi, Medina",RB2-1843-NEX,1843,Others,LFL,1-Oct-1996,,245,Hakeem ,Jamal 
+Western,Madina,"Oberoi, Medina",Hospitality,Pinkberry,"Oberoi, Medina",RB2-1960-PIN,1960,Others,LFL,15-Mar-2018,,71,Hakeem ,Jamal 
+Western,Madina,"Rashid Mega Mall, Medina",Starbucks,Starbucks,"Rashid Mega Mall, Medina",RB2-1756-STA,1756,Mall Location,LFL,21-Jun-2008,,110,Hakeem ,Jamal 
+Western,Madina,"Dakheel Plaza, Medina",Starbucks,Starbucks,Dakheel Plaza  Madina,RB2-1836-STA,1836,Plaza,LFL,19-Jul-2008,,104,Hakeem ,Jamal 
+Western,Madina,"Oberoi, Medina",Starbucks,Starbucks,Oberoi Medina 3,RB2-1840-STA,1840,Others,LFL,6-Dec-2017,,119,Hakeem ,Jamal 
+Western,Madina,"Oberoi, Medina",Starbucks,Starbucks,"Oberoi, Medina - Level 0",RB2-1854-STA,1854,Others,LFL,19-Aug-2005,,25,Hakeem ,Jamal 
+Western,Madina,Stand Alone,Starbucks,Starbucks,"Jammat Bin Dawood, Medina",RB2-2499-STA,2499,High Street,LFL,11-Feb-2017,,152,Hakeem ,Jamal 
+Western,Madina,Stand Alone,Starbucks,Starbucks,Hizam Street,RB2-2539-STA,2539,High Street,LFL,21-Jan-2019,,192,Hakeem ,Jamal 
+Western,Madina,Aliat Al Medina,Starbucks,Starbucks,Aliat Al Medina,RB2-2668-STA,2668,Mall Location,LFL,8-Oct-2008,,150,Hakeem ,Jamal 
+Western,Madina,Stand Alone,Starbucks,Starbucks,"Salam Plaza DT,Madina",RB2-H153-STA,H153,Drive-Thru,LFL,17-Dec-2020,,200,Hakeem ,Jamal 
+Western,Madina,Stand Alone,Starbucks,Starbucks,Mohammadyh center DT,RB2-H184-STA,H184,Drive-Thru,LFL,6-Jul-2022,,200,Hakeem ,Jamal 
+Western,Madina,Stand Alone,Starbucks,Starbucks,Al Mowasat Hospital Madina,RB2-H556-STA,H556,Hospital,LFL,23-Oct-2022,,74,Hakeem ,Jamal 
+Western,Madina,Stand Alone,Starbucks,Starbucks,Rawaq Plaza,RB2-H571-STA,H571,Shopping Mall / Center,LFL,14-Sep-2023,,341,Hakeem ,Jamal 
+Western,Madina,Noor Mall Medina,Starbucks,Starbucks,"Noor Mall, Medina",RB2-H655-STA,H655,Shopping Mall / Center,LFL,28-Dec-2022,,40,Hakeem ,Jamal 
+Western,Madina,Stand Alone,Starbucks,Starbucks,Anwar Almadinah Movenpick Mall-Madina,RB2-H715-STA,H715,Shopping Mall / Center,LFL,16-May-2023,,68,Hakeem ,Jamal 
+Western,Madina,Stand Alone,Starbucks,Starbucks,Madinah Airport InternationalTerminal-Madina,RB2-H723-STA,H723,Airport,PTL,1-Feb-2024,,98,Hakeem ,Jamal 
+Western,Madina,Stand Alone,Starbucks,Starbucks,Madinah Airport DomesticTerminal-Madina,RB2-H724-STA,H724,Airport,PTL,7-Mar-2024,,120,Hakeem ,Jamal 
+Western,Madina,Stand Alone,Starbucks,Starbucks,Madina Tamimi Al Hijrah Walk  Madina,RB2-H770-STA,H770,Shopping Mall / Center,LFL,10-Nov-2023,,143,Hakeem ,Jamal 
+Western,Madina,"Oberoi, Medina",Starbucks,Starbucks,Oberoi Medina 2,RB2-S573-STA,S573,Others,LFL,18-Jun-2016,,79,Hakeem ,Jamal 
+Western,Madina,Stand Alone,Starbucks,Starbucks,Jarir-Madina,RB2-S990-STA,S990,Plaza,LFL,4-Nov-2020,,160,Hakeem ,Jamal 
+Western,Madina,The Palms View DT,Starbucks,Starbucks,The Palms View DT,RB2-H841-STA,H841,Drive-Thru,TBC,9-Oct-2025,,195,Hakeem ,Jamal 
+Western,Makkah,Abraaj Al Bait Makkah,Wellness,Bath and Body Works,"Abraaj Al Bait, Makkah",RB2-2549-BAT,2549,Mall Location,LFL,24-Jun-2015,,156,Hakeem ,Jamal 
+Western,Makkah,Makkah Mall Makkah,Wellness,Bath and Body Works,Makkah Mall  Makkah,RB2-H487-BAT,H487,Shopping Mall / Center,LFL,13-Oct-2022,,80,Hakeem ,Jamal 
+Western,Makkah,Diyafah Mall Makkah,Wellness,MAC,Diyafah Mall  Makkah,RB2-2019-MAC,2019,Mall Location,LFL,6-Jun-2015,,50,Hakeem ,Jamal 
+Western,Makkah,Diyafah Mall Makkah,Apparel,Milano,"Diyafah Mall, Makkah (New)",RB2-S700-MIL,S700,Mall Location,LFL,6-Apr-2015,,127,Hakeem ,Jamal 
+Western,Makkah,Hijaz Mall Makkah,Apparel,Milano,"Hijaz Mall, Mecca",RB2-S865-MIL,S865,Mall Location,LFL,25-Mar-2017,,145,Hakeem ,Jamal 
+Western,Makkah,Diyafah Mall Makkah,Apparel,Mothercare,Diyafah Mall  Makkah,RB2-1951-MOT,1951,Mall Location,LFL,1-Oct-2001,,215,Hakeem ,Jamal 
+Western,Makkah,Stand Alone,Apparel,Mothercare,Jabal Omar C1,RB2-S938-MOT,S938,Mall Location,LFL,20-Sep-2018,,164,Hakeem ,Jamal 
+Western,Makkah,Diyafah Mall Makkah,Starbucks,Starbucks,"Diyafah Mall, Makkah -2",RB2-1956-STA,1956,Mall Location,LFL,18-Aug-2005,,59,Hakeem ,Jamal 
+Western,Makkah,Hijaz Mall Makkah,Starbucks,Starbucks,"Hijaz Mall, Mecca",RB2-2385-STA,2385,Mall Location,LFL,29-May-2016,,181,Hakeem ,Jamal 
+Western,Makkah,Abraaj Al Bait Makkah,Starbucks,Starbucks,"Abraaj Al Bait, Makkah - (1st Flr)-2",RB2-2555-STA,2555,Mall Location,LFL,4-Dec-2006,,240,Hakeem ,Jamal 
+Western,Makkah,Stand Alone,Starbucks,Starbucks,Haramain Makkhah,RB2-H059-STA,H059,Others,LFL,14-Dec-2019,,110,Hakeem ,Jamal 
+Western,Makkah,Stand Alone,Starbucks,Starbucks,"Haramain station, Madina",RB2-H065-STA,H065,Others,LFL,14-Dec-2019,,120,Hakeem ,Jamal 
+Western,Makkah,Abraaj Al Bait Makkah,Starbucks,Starbucks,"Abraaj Al Bait 2nd Floor, Makkah",RB2-H159-STA,H159,Mall Location,LFL,13-Jul-2021,,310,Hakeem ,Jamal 
+Western,Makkah,Stand Alone,Starbucks,Starbucks,"Othaim market - Ash Shawqiyyah DT, Makkah",RB2-H163-STA,H163,Drive-Thru,LFL,24-Jun-2022,,200,Hakeem ,Jamal 
+Western,Makkah,Stand Alone,Starbucks,Starbucks,Kinana Plaza Makkah,RB2-H209-STA,H209,Plaza,LFL,19-Nov-2020,,245,Hakeem ,Jamal 
+Western,Makkah,Stand Alone,Starbucks,Starbucks,"Khalidiyah DT ,Makkah",RB2-H237-STA,H237,Drive-Thru,LFL,19-Apr-2021,,200,Hakeem ,Jamal 
+Western,Makkah,Diyafah Mall Makkah,Starbucks,Starbucks,"Diyafa Mall street ,Makkah",RB2-H241-STA,H241,Mall Location,LFL,25-Mar-2021,,236,Hakeem ,Jamal 
+Western,Makkah,Stand Alone,Starbucks,Starbucks,"Petroly DT, Makkah",RB2-H424-STA,H424,Drive-Thru,LFL,9-May-2022,,170,Hakeem ,Jamal 
+Western,Makkah,Stand Alone,Starbucks,Starbucks,"Tilal Al Nasseem, Makkah",RB2-H506-STA,H506,Shopping Mall / Center,LFL,29-Jun-2022,,185,Hakeem ,Jamal 
+Western,Makkah,Makkah Mall Makkah,Starbucks,Starbucks,"Makkah Mall, Makkah",RB2-H538-STA,H538,Shopping Mall / Center,LFL,13-Sep-2022,,133,Hakeem ,Jamal 
+Western,Makkah,Stand Alone,Starbucks,Starbucks,Dona Plaza-Makkah,RB2-H737-STA,H737,Residential / Commercial Bldg,LFL,31-Aug-2023,,199,Hakeem ,Jamal 
+Western,Makkah,Stand Alone,Starbucks,Starbucks,Souk Alkhalel Al Jumeirah-Makkah,RB2-H755-STA,H755,Shopping Mall / Center,LFL,3-Nov-2023,,85,Hakeem ,Jamal 
+Western,Makkah,Stand Alone,Starbucks,Starbucks,"Jarir Asair Road, Mecca",RB2-S332-STA,S332,Plaza,LFL,28-Jul-2012,,94,Hakeem ,Jamal 
+Western,Makkah,Jabal Omar Makkah,Starbucks,Starbucks,"Jabal Omar C1, Makkah",RB2-S906-STA,S906,Mall Location,LFL,22-Mar-2018,,94,Hakeem ,Jamal 
+Western,Makkah,Stand Alone,Starbucks,Starbucks,"Ascott Hotel, Makkah",RB2-S913-STA,S913,Others,LFL,15-Nov-2018,,248,Hakeem ,Jamal 
+Western,Makkah,Stand Alone,Starbucks,Starbucks,Hokair Time Makkah,RB2-S921-STA,S921,Others,LFL,5-Jul-2018,,110,Hakeem ,Jamal 
+Western,Makkah,Stand Alone,Starbucks,Starbucks,Saud Plaza,RB2-S944-STA,S944,Plaza,LFL,29-Nov-2018,,209,Hakeem ,Jamal 
+Western,Makkah,Stand Alone,Starbucks,Starbucks,Alshaikh Mohamed St AlShawaqiyah DT  Makkah,RB2-H815-STA,H815,Drive-Thru,PTL,6-Jun-2024,,200,Hakeem ,Jamal 
+Western,Najran,Stand Alone,Starbucks,Starbucks,Najran Park-Najran,RB2-H716-STA,H716,Shopping Mall / Center,LFL,20-Aug-2023,,142,Hakeem ,Sultan 
+Western,Najran,Milagro,Starbucks,Starbucks,"Milagro Najran DT, Najran",RB2-H822-STA,H822,Drive-Thru,PTL,23-Sep-2024,,255,Hakeem ,Sultan 
+Western,Sabia,Stand Alone,Starbucks,Starbucks,SABIA BOULVEARD DT,RB2-H843-STA,H843,Drive-Thru,PTL,17-Oct-2024,,355,Hakeem ,Sultan 
+Western,Sakakah,Stand Alone,Starbucks,Starbucks,Sakakah saloom plaza DT-Sakakah,RB2-H731-STA,H731,Drive-Thru,LFL,26-Oct-2023,,346,Bassem ,Abdulrhman 
+Western,Tabuk,Tabuk Park,Wellness,Bath and Body Works,Tabuk Park,RB2-H033-BAT,H033,Mall Location,LFL,28-Nov-2019,,96,Bassem ,Abdulrhman 
+Western,Tabuk,Tabuk Park,Hennes and Mauritz,Hennes and Mauritz,Tabuk Park,RB2-H034-HEN,H034,Mall Location,LFL,19-Dec-2019,,1470,Bassem ,Abdulrhman 
+Western,Tabuk,"Milagro Boutique,Tabuk",Apparel,Next,"Milagro Boutique, Tabuk",RB2-2523-NEX,2523,Plaza,LFL,16-Apr-2016,10-May-2026,340,Bassem ,Abdulrhman 
+Western,Tabuk,"Milagro Boutique,Tabuk",Starbucks,Starbucks,"Milagro Boutique, Tabuk",RB2-2524-STA,2524,Plaza,LFL,11-Jun-2016,,253,Bassem ,Abdulrhman 
+Western,Tabuk,Tabuk Park,Starbucks,Starbucks,Tabuk Park,RB2-H036-STA,H036,Mall Location,LFL,18-Nov-2019,,191,Bassem ,Abdulrhman 
+Western,Tabuk,Stand Alone,Starbucks,Starbucks,"The Curve ,Tabuk",RB2-H231-STA,H231,Plaza,LFL,9-Dec-2020,,208,Bassem ,Abdulrhman 
+Western,Tabuk,Stand Alone,Starbucks,Starbucks,Neom Tabuk,RB2-H601-STA,H601,Residential / Commercial Bldg,LFL,23-Dec-2022,,250,Bassem ,Abdulrhman 
+Western,Tabuk,Stand Alone,Starbucks,Starbucks,Tabuk Boulevard DT,RB2-H606-STA,H606,Drive-Thru,LFL,8-Dec-2022,,200,Bassem ,Abdulrhman 
+Western,Tabuk,Tabuk Park,Starbucks,Starbucks,"Tabuk Park 2, Tabuk",RB2-H656-STA,H656,Residential / Commercial Bldg,LFL,25-Dec-2022,,54,Bassem ,Abdulrhman 
+Western,Tabuk,Stand Alone,Starbucks,Starbucks,AlRaqi Avenue Tabuk,RB2-H746-STA,H746,Shopping Mall / Center,LFL,27-Aug-2023,,205,Bassem ,Abdulrhman 
+Western,Tabuk,"Tabuk,Airport",Starbucks,Starbucks,"Tabuk Airport, Tabuk",RB2-S669-STA,S669,"Others, Airport",LFL,24-Mar-2018,,35,Bassem ,Abdulrhman 
+Western,Taif,The Park,Wellness,Bath and Body Works,The Park -Taif,RB2-H803-BAT,H803,Shopping Mall / Center,LFL,26-Dec-2023,,119,Hakeem ,Jamal 
+Western,Taif,Kamal Centre,Hennes and Mauritz,Hennes and Mauritz,Kamal Centre,RB2-S413-HEN,S413,Plaza,LFL,17-Nov-2012,,1153,Hakeem ,Jamal 
+Western,Taif,"Abikan Mall, Taif",Apparel,Milano,"Abikan Mall, Taif",RB2-2616-MIL,2616,Mall Location,LFL,9-Feb-2013,,138,Hakeem ,Jamal 
+Western,Taif,Valley Center Taif,Apparel,Milano,"Valley Center, Taif",RB2-S794-MIL,S794,Plaza,LFL,19-Aug-2017,,104,Hakeem ,Jamal 
+Western,Taif,"Durret Shehar, Taif",Apparel,Next,"Durret Shehar, Taif",RB2-1971-NEX,1971,Plaza,LFL,1-Apr-2002,,256,Hakeem ,Jamal 
+Western,Taif,"Abikan Mall, Taif",Apparel,Next,"Abikan Mall, Taif",RB2-2612-NEX,2612,Mall Location,LFL,8-Jul-2006,,381,Hakeem ,Jamal 
+Western,Taif,"Abikan Mall, Taif",Starbucks,Starbucks,"Abikan Mall, Taif",RB2-2614-STA,2614,Mall Location,LFL,7-Oct-2006,,102,Hakeem ,Jamal 
+Western,Taif,Stand Alone,Starbucks,Starbucks,"City Walk DT ,Taif",RB2-H248-STA,H248,Drive-Thru,LFL,9-Jun-2021,,175,Hakeem ,Jamal 
+Western,Taif,Stand Alone,Starbucks,Starbucks,Jory Mall Taif,RB2-H619-STA,H619,Shopping Mall / Center,LFL,5-Dec-2022,,128,Hakeem ,Jamal 
+Western,Taif,The Park,Starbucks,Starbucks,The Park -Taif,RB2-H687-STA,H687,Shopping Mall / Center,LFL,24-Jun-2023,,205,Hakeem ,Jamal 
+Western,Taif,Stand Alone,Starbucks,Starbucks,Jarir Taif,RB2-S748-STA,S748,Plaza,LFL,27-May-2017,,210,Hakeem ,Jamal 
+Western,Taif,Valley Center Taif,Starbucks,Starbucks,"Valley Center, Taif",RB2-S797-STA,S797,Plaza,LFL,14-Oct-2017,,170,Hakeem ,Jamal 
+Western,Taif,"Durret Shehar, Taif",Starbucks,Starbucks,"Durret Shehar, Taif",RB2-S859-STA,S859,Plaza,LFL,26-Aug-2017,,71,Hakeem ,Jamal 
+Western,Taif,AlAseel Yard Airport Road,Starbucks,Starbucks,AlAseel Yard Airport Road,RB2-H840-STA,H840,Drive-Thru,New,19-Jun-2025,,276,Hakeem ,Jamal 
+Western,Yanbu,"Dana Mall, Yanbu",Wellness,Bath and Body Works,"Dana Mall, Yanbu",RB2-S401-BAT,S401,Mall Location,LFL,5-Jul-2014,,150,Bassem ,Abdulrhman 
+Western,Yanbu,"Dana Mall, Yanbu",Hennes and Mauritz,Hennes and Mauritz,"Dana Mall, Yanbu",RB2-S400-HEN,S400,Mall Location,LFL,28-Jun-2014,,1586,Bassem ,Abdulrhman 
+Western,Yanbu,"Dana Mall, Yanbu",Apparel,Milano,"Dana Mall, Yanbu",RB2-S529-MIL,S529,Mall Location,LFL,28-Jun-2014,,119,Bassem ,Abdulrhman 
+Western,Yanbu,Stand Alone,Starbucks,Starbucks,"Murooj Plaza DT, Yanbu",RB2-H138-STA,H138,Drive-Thru,LFL,25-Mar-2020,,200,Bassem ,Abdulrhman 
+Western,Yanbu,"Dana Mall, Yanbu",Starbucks,Starbucks,"Dana Mall, Yanbu",RB2-S927-STA,S927,Mall Location,LFL,6-Oct-2018,,192,Bassem ,Abdulrhman 
+Western,Jeddah,The Village-Jeddah,Apparel,Victoria's Secret International-FA,The Village-Jeddah-FA,RB2-H675-VIF,H675,Shopping Mall / Center,LFL,23-Sep-2023,,447,Bassem ,Rayan 
+Western,Jeddah,Jeddah Walk Mall,Starbucks,Starbucks,Jeddah Walk Mall,RB2-H741-STA,H741,Mall Location,PTL,30-May-2024,,256,Bassem ,Rajeev
+Western,Jeddah,Jeddah Walk Mall,Apparel,Victoria's Secret International,Jeddah Walk Mall,RB2-H772-VIF,H772,Mall Location,PTL,3-Jun-2024,,446,Bassem ,Rajeev

@@ -1,0 +1,214 @@
+Region,City,Mall,Division,Brand,Store Name,Oracle Ccid,Store Type,Store Status,Opening Date,Closure, Size (sqm) ,"FM 
+Supervisor",FM Manager
+Eastern,Katif,Katif Commercial Centre,Apparel,American Eagle,Katif Commercial Centre  Katif,RB2-2320-AME,Plaza,LFL,8/26/2017, ,321,Mahmoud,Naif
+Eastern,Dammam,West Avenue  Dammam,Apparel,American Eagle,West Avenue  Dammam,RB2-2360-AME,Mall Location,LFL,4/26/2018,,382,Mahmoud,Naif
+Eastern,Jubail,The Galleria  Jubail,Apparel,American Eagle,The Galleria  Jubail,RB2-S108-AME,Mall Location,LFL,2/18/2017,,322,Mahmoud,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Apparel,American Eagle,Othaim Mall  Dammam (DB),RB2-S660-AME,DB Box,LFL,11/11/2017,30-Nov-23,59,Mahmoud,Naif
+Eastern,Katif,Katif Commercial Centre,Wellness,Bath and Body Works,Katif Commercial Centre,RB2-2317-BAT,Plaza,LFL,4/29/2021,,63,Mahmoud,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Wellness,Bath and Body Works,Rashid Mall  Khobar,RB2-2376-BAT,Mall Location,LFL,2/16/2018,,164,Waqar,Naif
+Eastern,Dammam,West Avenue  Dammam,Wellness,Bath and Body Works,West Avenue  Dammam,RB2-2437-BAT,Mall Location,LFL,4/26/2018,,187,Mahmoud,Naif
+Eastern,Dammam,Nakheel Mall Dammam,Wellness,Bath and Body Works,Nakheel Mall  Dammam,RB2-H416-BAT,Shopping Mall / Center,PTL,10/6/2022,,250,Mahmoud,Naif
+Eastern,Hofuf,The Walk,Wellness,Bath and Body Works,The Walk,RB2-H419-BAT,Shopping Mall / Center,PTL,10/29/2022,,88,Waqar,Naif
+Eastern,Dhahran,Mall of Dhahran,Wellness,Bath and Body Works,Mall of Dhahran Dhahran,RB2-H573-BAT,Shopping Mall / Center,New,2/9/2023,,168,Waqar,Naif
+Eastern,Jubail,The Galleria  Jubail,Wellness,Bath and Body Works,The Galleria  Jubail,RB2-S117-BAT,Mall Location,LFL,11/10/2016,,177,Mahmoud,Naif
+Eastern,Hofuf,"Othaim Mall, Hofuf",Wellness,Bath and Body Works,Othaim Mall  Hofuf,RB2-S141-BAT,Mall Location,LFL,12/29/2012,,330,Waqar,Naif
+Eastern,Khobar,Prince Faisal Street,Wellness,Bath and Body Works,Prince Faisal Street  Khobar,RB2-S150-BAT,High Street,LFL,11/18/2017,,94,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Wellness,Bath and Body Works,Othaim Mall  Dammam,RB2-S323-BAT,Mall Location,LFL,10/15/2011,,250,Mahmoud,Naif
+Eastern,Dammam,"Dareen Mall, Dammam",Wellness,Bath and Body Works,Dareen Mall  Dammam,RB2-S511-BAT,Mall Location,LFL,1/25/2014,,191.34,Mahmoud,Naif
+Eastern,Dammam,"Marina Mall, Dammam",Wellness,Bath and Body Works,Marina Mall  Dammam,RB2-S702-BAT,Mall Location,LFL,2/13/2016,,177,Mahmoud,Naif
+Eastern,Hofuf,"Lulu Al Hasa, Hofuf",Wellness,Bath and Body Works,Lulu Al Hasa  Hofuf,RB2-S931-BAT,Mall Location,LFL,2/10/2018,,109,Waqar,Naif
+Eastern,Katif,Katif Commercial Centre,Wellness,Boots,Katif Commercial Centre,RB2-2351-BOO,Plaza,LFL,4/9/2016,,86,Mahmoud,Naif
+Eastern,Khobar,"Tamimi Raka, Khobar",Wellness,Boots,Tamimi Raka  Khobar,RB2-S071-BOO,Plaza,LFL,4/11/2018,,125,Waqar,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Wellness,Boots,Rashid Mall  Khobar,RB2-S188-BOO,Mall Location,LFL,5/13/2017,,146,Waqar,Naif
+Eastern,Hofuf,"Othaim Mall, Hofuf",Wellness,Boots,Othaim Mall  Hofuf,RB2-S300-BOO,Mall Location,LFL,11/12/2011,,162,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Wellness,Boots,Othaim Mall  Dammam,RB2-S305-BOO,Mall Location,LFL,12/24/2011,,172,Mahmoud,Naif
+Eastern,Jubail,The Galleria  Jubail,Wellness,Boots,The Galleria  Jubail,RB2-S417-BOO,Mall Location,LFL,10/19/2017,,89,Mahmoud,Naif
+Eastern,Khobar,Extra Box  Khobar,Wellness,Boots,Extra Box  Khobar,RB2-S804-BOO,Plaza,LFL,7/17/2018,,90,Waqar,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",New Venture,Cheekee Munkee,Rashid Mall Khobar (MB),RB2-2301-CHM,Concession,CLS,4/6/2022,,28,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",New Venture,Cheekee Munkee,Othaim Mall  Dammam (DB),RB2-S660-CHM,Concession,CLS,4/6/2022,,37,Mahmoud,Naif
+Eastern,Dhahran,Jarir Plaza  Dammam,Apparel,Claire's,Jarir Plaza  Dammam,RB2-1863-CLA,Plaza,LFL,12/2/2008,,46,Waqar,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Apparel,Claire's,Rashid Mall  Khobar,RB2-2307-CLA,Mall Location,LFL,3/1/2001,,50.72,Waqar,Naif
+Eastern,Hofuf,"Othaim Mall, Hofuf",Apparel,Claire's,Othaim Mall  Hofuf,RB2-S138-CLA,Mall Location,LFL,2/9/2008,,83,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Apparel,Claire's,Othaim Mall  Dammam,RB2-S273-CLA,Mall Location,LFL,4/4/2011,,67,Mahmoud,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Apparel,Claire's,Othaim Mall  Dammam (DB),RB2-S660-CLA,DB Box,LFL,7/6/2015,30-Nov-23,39,Mahmoud,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Apparel,Debenhams,Othaim Mall  Dammam (DB),RB2-S660-DEB,DB Box,LFL,7/6/2015,30-Nov-23,4132,Mahmoud,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Wellness,Debenhams Cosmetics,Othaim Mall  Dammam (DB),RB2-S660-DCO,DB Box,LFL,7/6/2015,30-Nov-23,396,Mahmoud,Naif
+Eastern,Khobar,"Corniche, Khobar",Apparel,Disney,Corniche Khobar (MB),RB2-2291-DIS,Concession,LFL,8/6/2021,,85,Waqar,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Apparel,Disney,Rashid Mall Khobar (MB),RB2-2301-DIS,Concession,LFL,7/23/2021,,50,Waqar,Naif
+Eastern,Dammam,West Avenue  Dammam,Apparel,Disney,West Avenue Dammam,RB2-2435-DIS,Concession,LFL,7/25/2021,,50,Mahmoud,Naif
+Eastern,Hofuf,"Othaim Mall, Hofuf",Apparel,Disney,Othaim Mall Hofuf,RB2-S133-DIS,Concession,LFL,7/31/2021,,50,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Apparel,Disney,Othaim Mall Dammam,RB2-S296-DIS,Concession,CLS,7/30/2021,,50,Mahmoud,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Apparel,Disney,Othaim Mall Dammam (DB),RB2-S660-DIS,DB Box,LFL,7/24/2021,30-Nov-23,96,Mahmoud,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Apparel,Foot Locker,Rashid Mall  Khobar,RB2-2309-FOO,Mall Location,LFL,10/20/2007,,318.11,Waqar,Naif
+Eastern,Jubail,The Galleria  Jubail,Apparel,Foot Locker,The Galleria  Jubail,RB2-S109-FOO,Mall Location,LFL,11/10/2016,,214,Mahmoud,Naif
+Eastern,Khobar,Turki Centre  Khobar,Hennes and Mauritz,Hennes and Mauritz,Turki Centre  Khobar,RB2-2389-HEN,Plaza,LFL,4/5/2018,,3327,Waqar,Naif
+Eastern,Dammam,West Avenue  Dammam,Hennes and Mauritz,Hennes and Mauritz,West Avenue  Dammam,RB2-2438-HEN,Mall Location,LFL,4/26/2018,,1723,Mahmoud,Naif
+Eastern,Jubail,The Galleria  Jubail,Hennes and Mauritz,Hennes and Mauritz,The Galleria  Jubail,RB2-S111-HEN,Mall Location,LFL,11/10/2016,,2118,Mahmoud,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Hennes and Mauritz,Hennes and Mauritz,Rashid Mall  Khobar,RB2-S187-HEN,Mall Location,LFL,5/28/2016,,2881.3,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Hennes and Mauritz,Hennes and Mauritz,Othaim Mall  Dammam,RB2-S294-HEN,Mall Location,LFL,3/26/2011,,3067,Mahmoud,Naif
+Eastern,Hofuf,"Othaim Mall, Hofuf",Hennes and Mauritz,Hennes and Mauritz,Othaim Mall Hofuf (Relocation),RB2-S394-HEN,Mall Location,LFL,9/29/2012,,1370,Waqar,Naif
+Eastern,Dammam,"Dareen Mall, Dammam",Hennes and Mauritz,Hennes and Mauritz,Dareen Mall  Dammam,RB2-S712-HEN,Mall Location,LFL,5/28/2016,,1000,Mahmoud,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Wellness,Jo Malone,Rashid Mall  Khobar,RB2-2383-JOM,Mall Location,LFL,1/15/2017,,67,Waqar,Naif
+Eastern,Hofuf,"Othaim Mall, Hofuf",Wellness,MAC,Othaim Mall  Hofuf,RB2-2004-MAC,Mall Location,LFL,6/16/2012,,60,Waqar,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Wellness,MAC,Rashid Mall  Khobar,RB2-2308-MAC,Mall Location,LFL,11/1/2000,,67.38,Waqar,Naif
+Eastern,Dhahran,Mall of Daharan,Wellness,MAC,Mall of Daharan,RB2-H362-MAC,Mall Location,LFL,8/26/2021,,60,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Wellness,MAC,Othaim Mall  Dammam,RB2-S271-MAC,Mall Location,LFL,3/26/2011,,63,Mahmoud,Naif
+Eastern,Jubail,The Galleria  Jubail,Wellness,MAC,The Galleria  Jubail,RB2-S425-MAC,Mall Location,LFL,11/10/2016,,79,Mahmoud,Naif
+Eastern,Dammam,"Dareen Mall, Dammam",Wellness,MAC,Dareen Mall  Dammam,RB2-S512-MAC,Mall Location,LFL,6/28/2014,,63,Mahmoud,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Apparel,Milano,Rashid Mall  Khobar,RB2-2305-MIL,Mall Location,LFL,1/1/1995,,133.88,Waqar,Naif
+Eastern,Jubail,The Galleria  Jubail,Apparel,Milano,The Galleria  Jubail,RB2-S120-MIL,Mall Location,LFL,11/10/2016,,143,Mahmoud,Naif
+Eastern,Hofuf,"Othaim Mall, Hofuf",Apparel,Milano,Othaim Mall  Hofuf,RB2-S136-MIL,Mall Location,LFL,2/23/2008,,104,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Apparel,Milano,Othaim Mall  Dammam,RB2-S297-MIL,Mall Location,LFL,3/26/2011,,120,Mahmoud,Naif
+Eastern,Khobar,"Corniche, Khobar",Apparel,Mothercare,Corniche  Khobar (MB),RB2-2291-MOT,High Street,LFL,4/1/1987,,1445,Waqar,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Apparel,Mothercare,Rashid Mall  Khobar (MB),RB2-2301-MOT,Mall Location,LFL,9/23/2003,,725.98,Waqar,Naif
+Eastern,Katif,Katif Commercial Centre,Apparel,Mothercare,Katif Commercial Centre,RB2-2314-MOT,Plaza,LFL,3/1/2008,,324,Mahmoud,Naif
+Eastern,Dammam,West Avenue  Dammam,Apparel,Mothercare,West Avenue  Dammam,RB2-2435-MOT,Mall Location,LFL,4/26/2018,,475,Mahmoud,Naif
+Eastern,Khobar,"Sulaiman Habib Hospital, Khobar",Apparel,Mothercare,Sulaiman Habib Hospital,RB2-H061-MOT,"Others, Hospital",LFL,8/31/2019,,40,Waqar,Naif
+Eastern,Jubail,The Galleria  Jubail,Apparel,Mothercare,The Galleria  Jubail,RB2-S113-MOT,Mall Location,LFL,11/10/2016,,529,Mahmoud,Naif
+Eastern,Hofuf,"Othaim Mall, Hofuf",Apparel,Mothercare,Othaim Mall  Hofuf,RB2-S133-MOT,Mall Location,LFL,2/23/2008,,540,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Apparel,Mothercare,Othaim Mall  Dammam,RB2-S296-MOT,Mall Location,LFL,3/26/2011,,620,Mahmoud,Naif
+Eastern,Dammam,"Dareen Mall, Dammam",Apparel,Mothercare,Dareen Mall  Dammam,RB2-S331-MOT,Mall Location,LFL,10/1/2011,,388,Mahmoud,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Apparel,Muji,Rashid Mall  Khobar,RB2-H052-MUJ,Mall Location,LFL,7/11/2019,,409,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Apparel,New Balance,Othaim Mall  Dammam (DB),RB2-S660-NEW,DB Box,LFL,9/25/2020,30-Nov-23,66,Mahmoud,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Apparel,Next,Rashid Mall  Khobar,RB2-2302-NEX,Mall Location,LFL,2/1/1995,,622,Waqar,Naif
+Eastern,Jubail,The Galleria  Jubail,Apparel,Next,The Galleria  Jubail,RB2-S115-NEX,Mall Location,LFL,11/10/2016,,569,Mahmoud,Naif
+Eastern,Hofuf,"Othaim Mall, Hofuf",Apparel,Next,Othaim Mall  Hofuf,RB2-S134-NEX,Mall Location,LFL,2/23/2008,,280,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Apparel,Next,Othaim Mall  Dammam,RB2-S274-NEX,Mall Location,LFL,5/7/2011,,222,Mahmoud,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Apparel,Next,Othaim Mall Dammam (DB),RB2-S660-NEX,DB Box,LFL,10/7/2021,30-Nov-23,30,Mahmoud,Naif
+Eastern,Dammam,"Marina Mall, Dammam",Apparel,Next,Marina Mall  Dammam,RB2-S704-NEX,Mall Location,LFL,11/28/2015,,250,Mahmoud,Naif
+Eastern,Hofuf,"Othaim Mall, Hofuf",Wellness,NYX,Othaim Mall  Hofuf,RB2-H027-NYX,Mall Location,LFL,3/7/2019,,84,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Wellness,NYX,Othaim Mall  Dammam,RB2-S734-NYX,Mall Location,LFL,1/31/2019,,95,Mahmoud,Naif
+Eastern,Khobar,"Ajdaan Walk,Khobar",Hospitality,PF Chang's,Ajdaan Walk  Khobar,RB2-2275-PFC,Plaza,LFL,12/19/2019,,575,Mahmoud,Naif
+Eastern,Khobar,"Ajdaan Walk,Khobar",Hospitality,Pinkberry,Ajdaan Walk  Khobar,RB2-H040-PIN,Plaza,LFL,12/19/2019,,82,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Hospitality,Pinkberry,Othaim Mall  Dammam,RB2-S199-PIN,Mall Location,LFL,3/16/2013,,95,Mahmoud,Naif
+Eastern,Dammam,Dammam Shatea HT,Hospitality,Pinkberry,Dammam Shatea HT,RB2-S899-PIN,Mall Location,CLS,11/22/2017,,40,Mahmoud,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Wellness,Pottery Barn,Rashid Mall  Khobar,RB2-2366-POT,Mall Location,LFL,8/16/2018,,880,Waqar,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Wellness,Pottery Barn - Kids,Rashid Mall  Khobar,RB2-2366-PBK,Mall Location,LFL,8/16/2018,,383,Waqar,Naif
+Eastern,Khobar,Centro Corniche,Hospitality,Raising Cane's,Centro Corniche  Khobar,RB2-2368-RAI,Drive-Thru,LFL,12/20/2018,,285,Waqar,Naif
+Eastern,Dammam,Centro Khaleej,Hospitality,Raising Cane's,Centro Khaleej DT  Dammam,RB2-2529-RAI,Drive-Thru,LFL,7/26/2020,,210,Mahmoud,Naif
+Eastern,Khobar,"Tamimi Raka, Khobar",Hospitality,Raising Cane's,Tamimi Raka  Khobar,RB2-S021-RAI,Plaza,LFL,12/28/2017,,243,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Apparel,River Island,Othaim Mall  Dammam (DB),RB2-S660-RIV,DB Box,LFL,3/4/2017,30-Nov-23,51,Mahmoud,Naif
+#N/A,Dammam,#N/A,#N/A,River Island,#N/A,RB2-2291-RIV,#N/A,#N/A,#N/A,,#N/A,Mahmoud,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Wellness,Solaris,Othaim Mall  Dammam,RB2-S200-SOL,Concession,LFL,5/29/2018,,25.8,Mahmoud,Naif
+Eastern,Dammam,"Shatie Mall, Dammam",Starbucks,Starbucks,Shatie Mall  Dammam,RB2-1763-STA,Mall Location,LFL,12/3/2006,,200,Mahmoud,Naif
+Eastern,Khobar,Prince Faisal Street,Starbucks,Starbucks,Prince Faisal Street  Khobar,RB2-1828-STA,High Street,LFL,6/26/2008,,179,Waqar,Naif
+Eastern,Khobar,Turki Street DT,Starbucks,Starbucks,Turki Street DT,RB2-1978-STA,Drive-Thru,LFL,2/23/2019,,170,Waqar,Naif
+Eastern,Dammam,Corniche  Dammam,Starbucks,Starbucks,Corniche  Dammam,RB2-1996-STA,Drive-Thru,LFL,12/19/2015,,325,Mahmoud,Naif
+Eastern,Dammam,Centro Khaleej,Starbucks,Starbucks,Centro Khaleej DT,RB2-2016-STA,Drive-Thru,LFL,5/21/2016,,200,Mahmoud,Naif
+Eastern,Dammam,Manar Plaza  Dammam,Starbucks,Starbucks,Manar Plaza  Dammam,RB2-2160-STA,Plaza,LFL,12/10/2016,,174,Mahmoud,Naif
+Eastern,Dammam,Furzan Plaza,Starbucks,Starbucks,Furzan Plaza,RB2-2168-STA,Drive-Thru,LFL,11/2/2019,,127,Mahmoud,Naif
+Eastern,Khobar,"Corniche, Khobar",Starbucks,Starbucks,Corniche  Khobar,RB2-2292-STA,Drive-Thru,CLS,1/21/2004,,838.5,Waqar,Naif
+Eastern,Jubail,Al Jubail,Starbucks,Starbucks,Al Jubail,RB2-2342-STA,High Street,LFL,8/9/2014,,370,Mahmoud,Naif
+Eastern,Dammam,Aramco Farm  Dammam,Starbucks,Starbucks,Aramco Farm  Dammam,RB2-2381-STA,High Street,LFL,12/1/2001,,220,Mahmoud,Naif
+Eastern,Dammam,"IBN Khaldon Plaza, Dammam",Starbucks,Starbucks,Bin Khaldoun Plaza  Dammam,RB2-2401-STA,Plaza,CLS,6/1/2002,,416,Mahmoud,Naif
+Eastern,Dammam,"KFIA, Dammam",Starbucks,Starbucks,KFIA - Departure Landside  Dammam,RB2-2403-STA,"Others, Airport",LFL,4/15/2017,,162,Mahmoud,Naif
+Eastern,Dammam,"KFIA, Dammam",Starbucks,Starbucks,KFIA - Domestic Airside  Dammam,RB2-2404-STA,"Others, Airport",LFL,11/5/2016,,49,Mahmoud,Naif
+Eastern,Dammam,West Avenue  Dammam,Starbucks,Starbucks,West Avenue  Dammam,RB2-2440-STA,Mall Location,LFL,5/3/2018,,175,Mahmoud,Naif
+Eastern,Jubail,Suhool Plaza,Starbucks,Starbucks,Suhool Plaza,RB2-2496-STA,Drive-Thru,LFL,12/6/2018,,260,Mahmoud,Naif
+Eastern,Khobar,Extra Box  Khobar,Starbucks,Starbucks,Extra Box  Khobar,RB2-2540-STA,Plaza,LFL,8/5/2017,,154,Waqar,Naif
+Eastern,Dammam,Al Fares Plaza-DT,Starbucks,Starbucks,Al Fares Plaza-DT,RB2-2690-STA,Drive-Thru,LFL,11/23/2019,,184,Mahmoud,Naif
+Eastern,Khobar,Mouawsat-Hospital,Starbucks,Starbucks,Mouawsat-Hospital,RB2-H016-STA,"Others, Hospital",LFL,1/26/2019,,46,Waqar,Naif
+Eastern,Dhahran,Villaggio Dhahran,Starbucks,Starbucks,Villaggio Dhahran,RB2-H022-STA,Plaza,LFL,4/6/2019,,211,Waqar,Naif
+Eastern,Dhahran,Aramco Camp,Starbucks,Starbucks,Aramco Camp,RB2-H038-STA,Plaza,LFL,12/26/2019,,173,Waqar,Naif
+Eastern,Khobar,"Sulaiman Habib Hospital, Khobar",Starbucks,Starbucks,Sulaiman Habib Hospital G6,RB2-H075-STA,"Others, Hospital",LFL,9/25/2019,,24,Waqar,Naif
+Eastern,Khobar,"Sulaiman Habib Hospital, Khobar",Starbucks,Starbucks,Sulaiman Habib Hospital G8,RB2-H076-STA,"Others, Hospital",LFL,9/25/2019,,20,Waqar,Naif
+Eastern,Khobar,Edu Hospital  Khobar,Starbucks,Starbucks,Edu Hospital  Khobar,RB2-H102-STA,"Others, Hospital",LFL,12/19/2019,,25,Waqar,Naif
+Eastern,Katif,Katif Commercial Centre,Starbucks,Starbucks,Katif Commercial Centre (Relocation),RB2-H106-STA,Plaza,LFL,11/21/2019,,262,Mahmoud,Naif
+Eastern,Katif,Katif DT  Katif,Starbucks,Starbucks,Katif DT  Katif,RB2-H107-STA,Drive-Thru,LFL,1/14/2021,,230,Mahmoud,Naif
+Eastern,Jubail,Marriot  Jubail,Starbucks,Starbucks,Marriot  Jubail,RB2-H137-STA,Others,LFL,10/15/2020,,253,Mahmoud,Naif
+Eastern,Dammam,Dammam Water Front DT Dhahran,Starbucks,Starbucks,Dammam Water Front DT Dhahran,RB2-H144-STA,Drive-Thru,LFL,11/9/2020,,387,Mahmoud,Naif
+Eastern,Dammam,Izdhar DT Dammam,Starbucks,Starbucks,Izdhar DT Dammam,RB2-H148-STA,Drive-Thru,LFL,3/14/2020,,175,Mahmoud,Naif
+Eastern,Khobar,Aramco Rabbia,Starbucks,Starbucks,Aramco Rabbia,RB2-H158-STA,Others,LFL,8/10/2021,,10,Waqar,Naif
+Eastern,Dhahran,Dana DT  Dhahran,Starbucks,Starbucks,Dana DT  Dhahran,RB2-H168-STA,Drive-Thru,LFL,7/6/2020,,324,Waqar,Naif
+Eastern,Dammam,Novotel DT  Dammam,Starbucks,Starbucks,Novotel DT  Dammam,RB2-H169-STA,Drive-Thru,LFL,12/10/2020,,175,Mahmoud,Naif
+Eastern,Khobar,Khobar Beach DT,Starbucks,Starbucks,Khobar Beach DT,RB2-H178-STA,Drive-Thru,LFL,12/2/2021,,311,Waqar,Naif
+Eastern,Dammam,Saudi German Hospital - Damamm,Starbucks,Starbucks,Saudi German Hospital - Damamm,RB2-H208-STA,"Others, Hospital",LFL,6/29/2020,,42,Mahmoud,Naif
+Eastern,Khobar,10th street DT  Khobar,Starbucks,Starbucks,10th street DT  Khobar,RB2-H242-STA,Drive-Thru,LFL,4/23/2021,,180,Waqar,Naif
+Eastern,Dammam,18th street DT Dammam,Starbucks,Starbucks,18th street DT Dammam,RB2-H243-STA,Drive-Thru,LFL,11/11/2021,,175,Mahmoud,Naif
+Eastern,Hofuf,The Walk,Starbucks,Starbucks,The Walk DT Hufuf,RB2-H245-STA,Drive-Thru,LFL,11/18/2021,,200,Waqar,Naif
+Eastern,Khobar,Almana hospital Khobar – Tower 2,Starbucks,Starbucks,Almana hospital Khobar – Tower 2,RB2-H293-STA,"Others, Hospital",LFL,11/4/2020,,40,Waqar,Naif
+Eastern,Dammam,Almana Hospital Dammam Aziziyah,Starbucks,Starbucks,Almana Hospital Dammam Aziziyah,RB2-H295-STA,Hospital,New,6/30/2023,,25,Mahmoud,Naif
+Eastern,Khobar,Port Plaza – Coast road DT,Starbucks,Starbucks,Port Plaza – Coast road DT,RB2-H303-STA,Drive-Thru,LFL,6/2/2021,,200,Waqar,Naif
+Eastern,Hofuf,Jarir King Abdullah-Hofuf,Starbucks,Starbucks,Jarir King Abdullah-Hofuf,RB2-H339-STA,Plaza,LFL,7/14/2021,,135,Waqar,Naif
+Eastern,Dammam,Al Faisalliah-Dammam DT,Starbucks,Starbucks,Al Faisalliah-Dammam DT,RB2-H342-STA,Drive-Thru,LFL,11/18/2021,,200,Mahmoud,Naif
+Eastern,Dammam,Al Nuzha – Dammam DT,Starbucks,Starbucks,Al Nuzha – Dammam DT,RB2-H343-STA,Drive-Thru,LFL,12/23/2021,,175,Mahmoud,Naif
+Eastern,Dammam,Nakheel Mall Dammam,Starbucks,Starbucks,Nakheel Mall Dammam,RB2-H363-STA,Mall Location,LFL,7/15/2021,,264,Mahmoud,Naif
+Eastern,Dhahran,Mall of Daharan,Starbucks,Starbucks,Mall of Daharan,RB2-H365-STA,Mall Location,LFL,8/11/2021,,250,Waqar,Naif
+Eastern,Khobar,Al Khobar City Walk,Starbucks,Starbucks,Al Khobar City Walk,RB2-H366-STA,Plaza,LFL,10/24/2021,,259,Waqar,Naif
+Eastern,Dammam,Al Fakharia DT  Dammam,Starbucks,Starbucks,Al Fakharia DT  Dammam,RB2-H377-STA,Drive-Thru,PTL,1/31/2022,,200,Mahmoud,Naif
+Eastern,Dammam,Al Khalij Road DT,Starbucks,Starbucks,Al Khalij Road DT,RB2-H378-STA,Drive-Thru,LFL,12/28/2021,,200,Mahmoud,Naif
+Eastern,Dammam,Daharan Jubail Way DT  Dammam,Starbucks,Starbucks,Daharan Jubail Way DT  Dammam,RB2-H380-STA,Drive-Thru,PTL,3/22/2022,,175,Mahmoud,Naif
+Eastern,Jubail,Fuel Way DT   Jubail,Starbucks,Starbucks,Fuel Way DT   Jubail,RB2-H381-STA,Drive-Thru,LFL,11/18/2021,,150,Mahmoud,Naif
+Eastern,Dammam,Mart Zone DT   Dammam,Starbucks,Starbucks,Mart Zone DT   Dammam,RB2-H383-STA,Drive-Thru,LFL,11/18/2021,,217,Mahmoud,Naif
+Eastern,Khobar,21 ST Olaya DT,Starbucks,Starbucks,21 ST Olaya DT,RB2-H384-STA,Drive-Thru,PTL,10/30/2022,,200,Waqar,Naif
+Eastern,Khobar,Al Salam Hospital  Khobar,Starbucks,Starbucks,Al Salam Hospital  Khobar,RB2-H422-STA,Hospital,PTL,7/3/2022,,150,Waqar,Naif
+Eastern,Dammam,Dammam Medical Complex  Dammam,Starbucks,Starbucks,Dammam Medical Complex  Dammam,RB2-H423-STA,"Others, Hospital",PTL,2/21/2022,,96,Mahmoud,Naif
+Eastern,Dammam,Coast Road DT  Dammam,Starbucks,Starbucks,Coast Road DT  Dammam,RB2-H432-STA,Drive-Thru,PTL,5/1/2022,,60,Mahmoud,Naif
+Eastern,Hofuf,Asha Hospital  Hofuf,Starbucks,Starbucks,Asha Hospital  Hofuf,RB2-H485-STA,Hospital,PTL,4/5/2022,,90,Waqar,Naif
+Eastern,Dammam,Tamimi Al Nahda DT ,Starbucks,Starbucks,Tamimi Al Nahada DT Dammam,RB2-H500-STA,Drive-Thru,New,4/26/2023,,175,Mahmoud,Naif
+Eastern,Katif,Quds Street DT  Katif,Starbucks,Starbucks,Quds Street DT  Katif,RB2-H512-STA,Drive-Thru,PTL,11/30/2022,,180,Mahmoud,Naif
+Eastern,Hafir Al Batin,King Abdulaziz Road City DT,Starbucks,Starbucks,King Abdulaziz Road City DT  Hafir Al Batin,RB2-H523-STA,Drive-Thru,New,3/16/2023,,200,Waqar,Naif
+Eastern,Dammam,Abuhaddriya DT,Starbucks,Starbucks,Abuhaddriya DT,RB2-H524-STA,Drive-Thru,New,6/19/2023,,80,Mahmoud,Naif
+Eastern,Khobar,Curvature DT  Khobar,Starbucks,Starbucks,Curvature DT  Khobar,RB2-H529-STA,Drive-Thru,PTL,12/22/2022,,400,Waqar,Naif
+Eastern,Dammam,Tamimi Oruba DT,Starbucks,Starbucks,Tamimi Oruba DT Dammam,RB2-H531-STA,Drive-Thru,New,4/21/2023,,217,Mahmoud,Naif
+Eastern,Hofuf,Makkah Road DT,Starbucks,Starbucks,Makkah Road DT,RB2-H565-STA,Drive-Thru,New,5/4/2023,,150,Waqar,Naif
+Eastern,Khobar,ORA Fuel DT,Starbucks,Starbucks,ORA Fuel DT,RB2-H567-STA,Drive-Thru,New,7/25/2023,,80,Waqar,Naif
+Eastern,#N/A,ORA King Saud DT,Starbucks,Starbucks,ORA King Saud DT,RB2-H568-STA,Drive-Thru,TBC,2/1/2024,,200,Waqar,Naif
+Eastern,Hofuf,Othaim Rashdiya DT,Starbucks,Starbucks,Othaim Rashdiya DT,RB2-H569-STA,Drive-Thru,PTL,11/10/2022,,200,Waqar,Naif
+Eastern,Jubail,The Move Jubail,Starbucks,Starbucks,The Move Jubail,RB2-H572-STA,Shopping Mall / Center,New,2/23/2023,,180,Mahmoud,Naif
+Eastern,Katif,Oomco Katif DT,Starbucks,Starbucks,Oomco Katif DT,RB2-H602-STA,Drive-Thru,PTL,12/14/2022,,124,Mahmoud,Naif
+Eastern,Khobar,King Saud Aramco DT,Starbucks,Starbucks,King Saud Aramco DT,RB2-H671-STA,Drive-Thru,New,5/28/2023,,223,Waqar,Naif
+Eastern,Khobar,Rakkah Plaza,Starbucks,Starbucks,Rakkah Plaza,RB2-H686-STA,Shopping Mall / Center,New,6/19/2023,,150,Waqar,Naif
+Eastern,Khobar,Makkah Rd Total Energies ,Starbucks,Starbucks,Makkah Rd Total Energies -Khobar,RB2-H709-STA,Drive-Thru,New,5/24/2023,,148,Waqar,Naif
+Eastern,Jubail,Al Derah Walk,Starbucks,Starbucks,Al Derah Walk,RB2-H717-STA,Shopping Mall / Center,New,9/23/2023,,126,Mahmoud,naif
+Eastern,Khobar,AHAH Tower,Starbucks,Starbucks,AHAH Tower,RB2-H753-STA,Residential / Commercial Bldg,New,9/12/2023,,209,Waqar,Naif
+Eastern,Dammam,Dammam Petroly DT,Starbucks,Starbucks,Dammam Petroly DT,RB2-H769-STA,Drive-Thru,New,9/23/2023,,288,Mahmoud,Naif
+Eastern,Dammam,King Fahad Specialist Hospital,Starbucks,Starbucks,King Fahad Specialist Hospital,RB2-S042-STA,"Others, Hospital",LFL,10/21/2019,,100,Mahmoud,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Starbucks,Starbucks,Rashid Mall  Khobar,RB2-S043-STA,Mall Location,LFL,1/17/2019,,229,Waqar,Naif
+Eastern,Khobar,Bahrain Causeway-DT,Starbucks,Starbucks,Bahrain Causeway-DT,RB2-S048-STA,Drive-Thru,LFL,9/17/2019,,54,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Starbucks,Starbucks,Othaim Mall  Dammam,RB2-S049-STA,Mall Location,LFL,12/19/2019,,123,Mahmoud,Naif
+Eastern,Khobar,"Tamimi Raka, Khobar",Starbucks,Starbucks,Tamimi Raka  Khobar,RB2-S070-STA,Drive-Thru,LFL,11/2/2017,,60,Waqar,Naif
+Eastern,Jubail,The Galleria  Jubail,Starbucks,Starbucks,The Galleria  Jubail,RB2-S119-STA,Mall Location,LFL,11/10/2016,,159,Mahmoud,Naif
+Eastern,Hofuf,"Othaim Mall, Hofuf",Starbucks,Starbucks,Othaim Mall  Hofuf,RB2-S139-STA,Mall Location,LFL,2/24/2008,,105,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Starbucks,Starbucks,Othaim Mall  Dammam,RB2-S431-STA,Mall Location,LFL,5/12/2013,,180,Mahmoud,Naif
+Eastern,Dammam,"KFIA, Dammam",Starbucks,Starbucks,KFIA Dam  Dammam,RB2-S654-STA,"Others, Airport",LFL,1/19/2016,,65,Mahmoud,Naif
+Eastern,Khobar,ENOC Khozama,Starbucks,Starbucks,ENOC Khozama,RB2-S802-STA,Drive-Thru,LFL,6/29/2019,,50,Waqar,Naif
+Eastern,Hofuf,"Lulu Al Hasa, Hofuf",Starbucks,Starbucks,Lulu Al Hasa  Hofuf,RB2-S807-STA,Mall Location,LFL,8/5/2017,,152,Waqar,Naif
+Eastern,Hofuf,Salmaniya Plaza  Hofuf,Starbucks,Starbucks,Salmaniya Plaza  Hofuf,RB2-S817-STA,Plaza,LFL,4/8/2017,,193,Waqar,Naif
+Eastern,Jubail,Tamimi Plaza  Jubail,Starbucks,Starbucks,Tamimi Jubail,RB2-S819-STA,Plaza,LFL,12/25/2017,,230,Mahmoud,Naif
+Eastern,Hofuf,Tamimi Plaza  Hofuf,Starbucks,Starbucks,Tamimi Plaza  Hofuf,RB2-S820-STA,Plaza,LFL,8/5/2017,,172,Waqar,Naif
+Eastern,Khobar,Centro Corniche,Starbucks,Starbucks,Centro Corniche  Khobar,RB2-S848-STA,Drive-Thru,LFL,2/10/2018,,190,Waqar,Naif
+Eastern,Dammam,Dammam Shatea HT,Starbucks,Starbucks,Dammam Shatea HT  Dammam,RB2-S887-STA,Mall Location,LFL,11/18/2017,,120,Mahmoud,Naif
+Eastern,Jubail,Alsalam Center  Jubail,Starbucks,Starbucks,Alsalam Center  Jubail,RB2-S888-STA,Plaza,LFL,12/9/2017,,175,Mahmoud,Naif
+Eastern,Hofuf,Retal Valley  Hofuf,Starbucks,Starbucks,Retal Valley  Hofuf,RB2-S890-STA,Drive-Thru,LFL,1/27/2018,,292,Waqar,Naif
+Eastern,Khobar,Asnab Plaza,Starbucks,Starbucks,Asnab Plaza,RB2-S912-STA,Plaza,LFL,12/27/2018,,117,Waqar,Naif
+Eastern,Hofuf,Jarir  Hofuf,Starbucks,Starbucks,Jarir  Hofuf,RB2-S914-STA,Mall Location,LFL,2/13/2018,,91,Waqar,Naif
+Eastern,Khafji,Khafji Downtown,Starbucks,Starbucks,Khafji Downtown,RB2-S940-STA,Mall Location,LFL,5/15/2018,,180,Mahmoud,Naif
+Eastern,Khobar,Dawan Khuzama,Starbucks,Starbucks,Dawan Khuzama,RB2-S947-STA,Plaza,LFL,12/19/2018,,250,Waqar,Naif
+Eastern,Dhahran,Tamimi Doha,Starbucks,Starbucks,Tamimi Doha,RB2-S986-STA,Plaza,LFL,7/6/2019,,206,Waqar,Naif
+Eastern,Dhahran,Bright Future  Dhahran,Starbucks,Starbucks,Bright Future  Dhahran,RB2-S989-STA,Mall Location,LFL,9/27/2018,,200,Waqar,Naif
+Eastern,Dhahran,Doha Street,Starbucks,Starbucks,Doha Street,RB2-S995-STA,High Street,LFL,11/21/2018,,200,Waqar,Naif
+Eastern,Jubail,Piano Plaza,Starbucks,Starbucks,Piano Plaza,RB2-S996-STA,Plaza,LFL,11/22/2018,,144,Mahmoud,Naif
+Eastern,Dammam,Badia-DT,Starbucks,Starbucks,Badia-DT,RB2-S997-STA,Drive-Thru,LFL,2/22/2020,,160,Mahmoud,Naif
+Eastern,Dammam,Kady-DT  Dammam,Starbucks,Starbucks,Kady-DT  Dammam,RB2-S998-STA,Drive-Thru,LFL,12/26/2019,,348,Mahmoud,Naif
+Eastern,Khobar,"Ajdaan Walk,Khobar",Starbucks,Starbucks,Ajdaan Walk  Khobar,RB2-S999-STA,Plaza,LFL,12/19/2019,,254,Waqar,Naif
+Eastern,Khobar,"Ajdaan Walk,Khobar",Hospitality,Texas Roadhouse,Ajdaan Walk  Khobar,RB2-H042-TEX,Plaza,LFL,12/19/2019,,625,Mahmoud,Naif
+Eastern,Khobar,"Ajdaan Walk,Khobar",Hospitality,The Cheesecake Factory,Ajdaan Walk  Khobar,RB2-S058-CHE,Plaza,LFL,12/19/2019,,1177,Waqar,Naif
+Eastern,Khobar,"Rashid Mall, Khobar",Apparel,Victoria's Secret International,Rashid Mall-Pink,RB2-1800-VIF,Mall Location,LFL,12/20/2018,,280,Waqar,Naif
+Eastern,Jubail,The Galleria  Jubail,Apparel,Victoria's Secret International,The Galleria  Jubail-BA,RB2-S116-VIF,Mall Location,LFL,11/10/2016,,80,Mahmoud,Naif
+Eastern,Hofuf,"Othaim Mall, Hofuf",Apparel,Victoria's Secret International,Othaim Mall  Hofuf-BA,RB2-S140-VIF,Mall Location,LFL,12/29/2012,,159,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Wellness,Vision Express,Othaim Mall  Dammam,RB2-S200-PEA,Mall Location,LFL,5/29/2018,,60.2,Mahmoud,Naif
+Eastern,Khobar,Turki Centre  Khobar,Wellness,West Elm,Turki Centre  Khobar,RB2-2390-WES,Plaza,LFL,4/6/2018,,850,Waqar,Naif
+Eastern,Dammam,"Othaim Mall, Dammam",Wellness,West Elm,Othaim Mall  Dammam,RB2-S910-WES,Mall Location,LFL,6/8/2018,,1197,Mahmoud,Naif
+Eastern,Dammam,#N/A,#N/A,#N/A,#N/A,RB2-9058-000,#N/A,#N/A,#N/A,,#N/A,Waqar,Naif
+Eastern,Khobar,#N/A,#N/A,#N/A,#N/A,RB2-AJDAAN-COMM,#N/A,#N/A,#N/A,,#N/A,Waqar,Naif
+#N/A,#N/A,#N/A,#N/A,#N/A,#N/A,RB2-S288-PEA,#N/A,#N/A,#N/A,,#N/A,Mahmoud,Naif
+#N/A,#N/A,#N/A,#N/A,#N/A,#N/A,RB2-S660-JAC,#N/A,#N/A,#N/A,,#N/A,Mahmoud,Naif
+#N/A,#N/A,#N/A,#N/A,#N/A,#N/A,RB2-S660-TED,#N/A,#N/A,#N/A,,#N/A,Mahmoud,Naif
+Eastern,Dammam,#N/A,#N/A,#N/A,#N/A,RB2-TURKI-COMM,#N/A,#N/A,#N/A,,#N/A,Mahmoud,Naif
+Eastern,Dammam,#N/A,#N/A,#N/A,#N/A,REG.ADMIN OFFICE-OTHAIM MALL,#N/A,#N/A,#N/A,,#N/A,Mahmoud,Naif
+Eastern,Dammam,#N/A,#N/A,#N/A,#N/A,WAREHOUSE.CORNICHE,#N/A,#N/A,#N/A,,#N/A,Waqar,Naif
+Eastern,Dammam,#N/A,#N/A,#N/A,#N/A,MHA-ACADEMY-KSADAM,#N/A,#N/A,#N/A,,#N/A,Mahmoud,Naif
+Eastern,Dammam,#N/A,#N/A,#N/A,#N/A,RB2-9013-LOG,#N/A,#N/A,#N/A,,#N/A,Waqar,Naif
+,Hafir Al Batin,,,Raising Cane's,KING ABDULAZIZ RD. RYD WAY,RB2-H921-RAI,,,,,,Waqar,Naif
+,Hafir Al Batin,,,Starbucks,KING ABDULAZIZ RD RIYADH WAY (DT),RB2-H560-STA,,,,,,Waqar,Naif
