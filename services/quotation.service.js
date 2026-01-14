@@ -33,7 +33,7 @@ export const createQuotation = async (data) => {
   const { quote_no, mr_no, mr_date, oracle_ccid, work_description, items = [], discount = 0, images = [], store_opening_date, continuous_assessment } = data;
 
   if (!quote_no) throw new Error('Quotation Number is required');
-  if (!oracle_ccid) throw new Error('Store CCID is required');
+  // if (!oracle_ccid) throw new Error('Store CCID is required'); // OPTIONAL NOW
 
   // 1. Check if Quote No already exists
   const existingJob = await Job.findOne({ where: { quote_no } });
@@ -41,7 +41,7 @@ export const createQuotation = async (data) => {
     throw new Error(`Quotation #${quote_no} already exists in the system. Please use a unique number or refresh the page.`);
   }
 
-  // 2. Validate Store (Optional)
+  // 2. Validate Store (Optional - Custom CCID allowed)
   const store = oracle_ccid ? await Store.findByPk(oracle_ccid) : null;
 
   // 3. Create Job
