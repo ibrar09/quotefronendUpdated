@@ -122,6 +122,32 @@ export const listQuotations = async (req, res) => {
 };
 
 /**
+ * 🔹 CHECK IF MR EXISTS
+ * GET /api/quotations/check-mr?mrNo=...
+ */
+export const checkMrExists = async (req, res) => {
+  try {
+    const { mrNo } = req.query;
+    if (!mrNo) {
+      return res.status(400).json({ success: false, message: 'MR Number is required' });
+    }
+
+    const exists = await quotationService.checkMrExists(mrNo);
+
+    res.status(200).json({
+      success: true,
+      exists,
+      message: exists ? 'MR Number already exists' : 'MR Number is available'
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
+  }
+};
+
+/**
  * 🔹 SEARCH QUOTATIONS (ADVANCED FILTERING)
  * GET /api/quotations/search
  */

@@ -63,6 +63,9 @@ export const getDashboardStats = async (req, res) => {
             recent: recentActivities.map(j => ({
                 id: j.id,
                 quote_no: j.quote_no,
+                mr_no: j.mr_no || 'N/A',
+                grand_total: j.grand_total || 0,
+                work_description: j.work_description || '',
                 brand: j.brand_name || j.brand || j.Store?.brand || 'N/A',
                 updatedAt: j.updatedAt,
                 status: j.quote_status

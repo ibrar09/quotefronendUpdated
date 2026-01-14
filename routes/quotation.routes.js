@@ -7,12 +7,14 @@ import {
   listQuotations,
   listIntakes,
   searchQuotations,
-  uploadQuotationImages
+  uploadQuotationImages,
+  checkMrExists
 } from '../controllers/quotation.controller.js';
 import { upload } from '../middlewares/upload.middleware.js';
 
 const router = express.Router();
 
+router.get('/check-mr', checkMrExists);
 router.post('/', createQuotation);
 router.post('/:id/images', upload.array('images'), uploadQuotationImages);
 router.get('/search', searchQuotations);

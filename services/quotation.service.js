@@ -271,6 +271,15 @@ export const listIntakes = async () => {
 };
 
 /**
+ * 🔹 CHECK IF MR EXISTS
+ */
+export const checkMrExists = async (mrNo) => {
+  if (!mrNo) return false;
+  const existingJob = await Job.findOne({ where: { mr_no: mrNo } });
+  return !!existingJob;
+};
+
+/**
  * 🔹 ADVANCED SEARCH (ANY FIELD)
  */
 export const searchQuotations = async (filters) => {

@@ -1,0 +1,7 @@
+[2026-01-14T08:08:46.717Z] ERROR: Cannot read properties of null (reading 'file_path')
+STACK: TypeError: Cannot read properties of null (reading 'file_path')
+    at file:///C:/Quotation/quotebackend/utils/pdfTemplates/quotation.template.js:241:42
+    at Array.map (<anonymous>)
+    at generateQuotationHTML (file:///C:/Quotation/quotebackend/utils/pdfTemplates/quotation.template.js:239:41)
+    at generatePdf (file:///C:/Quotation/quotebackend/controllers/pdf.controller.js:94:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
