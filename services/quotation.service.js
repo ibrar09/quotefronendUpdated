@@ -49,7 +49,7 @@ export const createQuotation = async (data) => {
     quote_no,
     mr_no,
     mr_date,
-    oracle_ccid,
+    oracle_ccid: oracle_ccid || null, // Ensure empty string becomes NULL
     work_description,
     discount,
     quote_status: data.quote_status || 'DRAFT',
@@ -134,6 +134,7 @@ export const updateQuotation = async (jobId, data) => {
   const { JobItems, Store, PurchaseOrders, Finance: financeInput, items, ...jobData } = data;
 
   // Update Job main fields
+  if (jobData.oracle_ccid === '') jobData.oracle_ccid = null; // Sanitize empty string
   await job.update(jobData);
 
   // 🔹 Update Nested PurchaseOrder & Finance
