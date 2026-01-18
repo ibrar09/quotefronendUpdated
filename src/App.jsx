@@ -2,9 +2,11 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
+import { ThemeProvider } from "./context/ThemeContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
 
+// 🔹 Loading Component
 // 🔹 Loading Component
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -35,58 +37,61 @@ const ProfilePage = lazy(() => import("./pages/ProfilePage")); // [NEW]
 function App() {
   return (
     <Router>
-      <AuthProvider>
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
-            {/* Public Route */}
-            <Route path="/login" element={<Login />} />
+      <ThemeProvider>
+        <AuthProvider>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Routes>
+              {/* Public Route */}
+              <Route path="/login" element={<Login />} />
 
-            {/* Profile Route - Protected */}
-            <Route path="/profile" element={
-              <ProtectedRoute>
-                <DashboardLayout>
-                  <ProfilePage />
-                </DashboardLayout>
-              </ProtectedRoute>
-            } />
+              {/* Profile Route - Protected */}
+              <Route path="/profile" element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <ProfilePage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              } />
 
-            {/* Standalone PDF View (No Sidebar) - Protected? Yes */}
-            <Route element={<ProtectedRoute />}>
-              <Route path="/quotations/print-view/:id" element={<QuotationPrintView />} />
-            </Route>
 
-            {/* Dashboard Layout - Protected */}
-            <Route path="/" element={<ProtectedRoute />}>
-              <Route element={<DashboardLayout />}>
-                {/* Default dashboard page */}
-                <Route index element={<Dashboard />} />
-
-                {/* Analytics Dashboard */}
-                <Route path="/analytics" element={<AnalyticsDashboard />} />
-
-                {/* Quotation Routes */}
-                <Route path="quotations/list" element={<QuotationList />} />
-                <Route path="quotations/new" element={<QuotationIntake />} />
-                <Route path="quotations/intakes" element={<IntakeList />} />
-                <Route path="quotations/new-quotation" element={<NewQuotation />} />
-                <Route path="quotations/send/:id" element={<SendQuotation />} />
-
-                {/* Work Routes */}
-                <Route path="work/list" element={<WorkList />} />
-
-                {/* Admin Routes */}
-                <Route path="admin/data-sync" element={<DataSync />} />
-                <Route path="admin/users" element={<UserManagement />} />
-                <Route path="admin/custom-stores" element={<CustomStores />} />
-                <Route path="admin/custom-pricelist" element={<CustomPriceList />} />
-                <Route path="master-data" element={<MasterData />} />
-                <Route path="rate-card" element={<PriceList />} />
-                <Route path="recycle-bin" element={<RecycleBin />} />
+              {/* Standalone PDF View (No Sidebar) - Protected? Yes */}
+              <Route element={<ProtectedRoute />}>
+                <Route path="/quotations/print-view/:id" element={<QuotationPrintView />} />
               </Route>
-            </Route>
-          </Routes>
-        </Suspense>
-      </AuthProvider>
+
+              {/* Dashboard Layout - Protected */}
+              <Route path="/" element={<ProtectedRoute />}>
+                <Route element={<DashboardLayout />}>
+                  {/* Default dashboard page */}
+                  <Route index element={<Dashboard />} />
+
+                  {/* Analytics Dashboard */}
+                  <Route path="/analytics" element={<AnalyticsDashboard />} />
+
+                  {/* Quotation Routes */}
+                  <Route path="quotations/list" element={<QuotationList />} />
+                  <Route path="quotations/new" element={<QuotationIntake />} />
+                  <Route path="quotations/intakes" element={<IntakeList />} />
+                  <Route path="quotations/new-quotation" element={<NewQuotation />} />
+                  <Route path="quotations/send/:id" element={<SendQuotation />} />
+
+                  {/* Work Routes */}
+                  <Route path="work/list" element={<WorkList />} />
+
+                  {/* Admin Routes */}
+                  <Route path="admin/data-sync" element={<DataSync />} />
+                  <Route path="admin/users" element={<UserManagement />} />
+                  <Route path="admin/custom-stores" element={<CustomStores />} />
+                  <Route path="admin/custom-pricelist" element={<CustomPriceList />} />
+                  <Route path="master-data" element={<MasterData />} />
+                  <Route path="rate-card" element={<PriceList />} />
+                  <Route path="recycle-bin" element={<RecycleBin />} />
+                </Route>
+              </Route>
+            </Routes>
+          </Suspense>
+        </AuthProvider>
+      </ThemeProvider>
     </Router>
   );
 }

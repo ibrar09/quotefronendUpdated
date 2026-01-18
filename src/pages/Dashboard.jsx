@@ -38,7 +38,6 @@ const DashboardLayout = () => {
       )}
 
       <Sidebar
-        darkMode={darkMode}
         isMobileOpen={isMobileSidebarOpen}
         onClose={() => setIsMobileSidebarOpen(false)}
       />

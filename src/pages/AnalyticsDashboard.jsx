@@ -53,16 +53,16 @@ const AnalyticsDashboard = () => {
     }
 
     return (
-        <div className="space-y-6 animate-fade-in">
+        <div className="space-y-6 animate-fade-in pb-10">
             {/* Header */}
             <div className="flex justify-between items-center">
                 <div>
-                    <h1 className="text-2xl font-bold text-gray-800">Analytics Overview</h1>
-                    <p className="text-sm text-gray-500">Real-time business intelligence and performance metrics.</p>
+                    <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Analytics Overview</h1>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">Real-time business intelligence and performance metrics.</p>
                 </div>
                 <button
                     onClick={fetchAnalytics}
-                    className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 text-sm font-medium text-gray-600 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 text-sm font-medium text-gray-600 dark:text-gray-200 transition-colors shadow-sm"
                 >
                     <RefreshCcw className="w-4 h-4" />
                     Refresh Data
@@ -72,11 +72,10 @@ const AnalyticsDashboard = () => {
             {/* KPI Cards */}
             <div className="space-y-6">
                 <AnalyticsKPIs data={data.kpis} />
-                <h2 className="text-lg font-semibold text-gray-700">Financial Health</h2>
+                <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-200 pl-1">Financial Health</h2>
                 <FinancialKPIs data={data.financials} />
             </div>
 
-            {/* Charts Grid */}
             {/* Charts Grid - Revenue Trend Only */}
             <div className="grid grid-cols-1 gap-6">
                 <RevenueTrendChart data={data.charts.revenueTrend.data.map((val, i) => ({

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight, FaTimes, FaSignOutAlt } from "react-icons/fa";
-import { useAuth } from "../context/AuthContext"; // [NEW]
+import { useAuth } from "../context/AuthContext";
+import { useTheme } from "../context/ThemeContext";
 
-const Sidebar = ({ darkMode = true, isMobileOpen = false, onClose }) => {
+const Sidebar = ({ isMobileOpen = false, onClose }) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { darkMode } = useTheme();
 
   const [isOpen, setIsOpen] = useState(true);
   const [openSubMenu, setOpenSubMenu] = useState(null);
