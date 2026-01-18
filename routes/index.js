@@ -14,12 +14,14 @@ import notificationRoutes from './notification.routes.js';
 import clientGroupRoutes from './clientGroup.routes.js'; // [NEW]
 import jobRoutes from './job.routes.js'; // [NEW]
 import binRoutes from './bin.routes.js'; // [NEW] Recycling Bin
+import authRoutes from './auth.routes.js'; // [NEW]
 
 const router = express.Router();
 
 // 🔹 Mount all routes
 router.use('/notifications', notificationRoutes);
 router.use('/client-groups', clientGroupRoutes);
+router.use('/auth', authRoutes); // [NEW]
 router.use('/jobs', jobRoutes);
 router.use('/bin', binRoutes); // [NEW]
 router.use('/dashboard', dashboardRoutes);

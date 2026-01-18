@@ -11,6 +11,8 @@ import { startBrandSeeding } from './seed/initBrands.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+import compression from 'compression'; // [NEW]
+
 // Initialize dotenv
 dotenv.config();
 
@@ -22,6 +24,7 @@ console.log('---------------------------');
 const app = express();
 
 // Middleware
+app.use(compression()); // [NEW] Enable GZIP/Brotli Compression
 const allowedOrigins = [
     process.env.FRONTEND_URL || 'http://localhost:5173',
     'http://localhost:3000' // Legacy/fallback

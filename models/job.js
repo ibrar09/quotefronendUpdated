@@ -85,6 +85,22 @@ const Job = sequelize.define('Job', {
     {
       unique: true,
       fields: ['quote_no', 'revision_no']
+    },
+    // [NEW] Performance Optimization Indexes
+    {
+      fields: ['quote_status'] // Frequent filter
+    },
+    {
+      fields: ['region'] // Frequent filter
+    },
+    {
+      fields: ['brand'] // Frequent filter
+    },
+    {
+      fields: ['mr_no'] // Search
+    },
+    {
+      fields: ['createdAt'] // Sort order
     }
   ]
 });

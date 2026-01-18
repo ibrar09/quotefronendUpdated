@@ -243,20 +243,45 @@ export const getQuotationById = async (jobId) => {
 /**
  * 🔹 LIST ALL QUOTATIONS (Excludes Intakes)
  */
-export const listQuotations = async () => {
+/**
+ * 🔹 LIST ALL QUOTATIONS (Excludes Intakes)
+ * Supports pagination params but defaults to recent 300 for speed
+ */
+export const listQuotations = async (page = 1, limit = 300) => {
+  const offset = (page - 1) * limit;
+
   return Job.findAll({
+    attributes: [
+      'id', 'quote_no', 'mr_no', 'mr_date', 'pr_no', 'brand', 'brand_name',
+      'location', 'city', 'region', 'quote_status', 'work_status',
+      'work_description', 'grand_total', 'createdAt', 'oracle_ccid',
+      'subtotal', 'vat_amount', 'discount', 'sent_at', 'completion_date',
+      'completed_by', 'supervisor', 'comments'
+    ],
     where: {
       is_latest: true,
       quote_status: { [Op.notIn]: ['INTAKE', 'PREVIEW'] }
     },
     include: [
-      { model: Store },
+      {
+        model: Store,
+        attributes: ['mall', 'city', 'region', 'brand']
+      },
       {
         model: PurchaseOrder,
-        include: [{ model: Finance }] // Nested include for Finance details
+        attributes: ['po_no', 'po_date', 'amount_ex_vat', 'total_inc_vat', 'eta'],
+        include: [{
+          model: Finance,
+          attributes: ['invoice_no', 'invoice_status', 'received_amount']
+        }]
       }
     ],
-    order: [['createdAt', 'DESC']]
+    order: [['createdAt', 'DESC']],
+    limit: limit,
+    offset: offset,
+    // [Performance] Subqueries can be slow, but needed for includes with limits in 1:M specific cases.
+    // However, Job is 1:1 with Store (mostly) and 1:M with PO but we only take first usually.
+    // subQuery: false // Try toggle if issues arise
   });
 };
 
