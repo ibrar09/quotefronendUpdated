@@ -15,6 +15,8 @@ import clientGroupRoutes from './clientGroup.routes.js'; // [NEW]
 import jobRoutes from './job.routes.js'; // [NEW]
 import binRoutes from './bin.routes.js'; // [NEW] Recycling Bin
 import authRoutes from './auth.routes.js'; // [NEW]
+import devRoutes from './dev.routes.js'; // [NEW] Dev Utils
+
 
 const router = express.Router();
 
@@ -22,6 +24,8 @@ const router = express.Router();
 router.use('/notifications', notificationRoutes);
 router.use('/client-groups', clientGroupRoutes);
 router.use('/auth', authRoutes); // [NEW]
+router.use('/dev', devRoutes); // [NEW] /api/dev/seed-admin
+
 router.use('/jobs', jobRoutes);
 router.use('/bin', binRoutes); // [NEW]
 router.use('/dashboard', dashboardRoutes);
