@@ -3,6 +3,7 @@ import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
 import Job from '../models/job.js';
 import { generateQuotationHTML } from '../utils/pdfTemplates/quotation.template.js';
+import { fileURLToPath } from 'url';
 
 // In-memory store for temporary previews (lasts until server restart)
 const previewStore = new Map();
@@ -148,22 +149,43 @@ export const generatePdf = async (req, res) => {
                 // Load Assets (Stamp & Signature) from Frontend Directory if possible
                 // Load Assets (Stamp & Signature)
                 try {
-                    // Use process.cwd() to resolve path relative to backend root
-                    const assetPath = path.join(process.cwd(), 'assets');
-                    console.log(`[PDF] Loading assets from: ${assetPath}`);
+                    // Resolve path relative to this file (controllers/pdf.controller.js) -> ../assets
+                    const __filename = fileURLToPath(import.meta.url);
+                    const __dirname = path.dirname(__filename);
+                    const assetPath = path.join(__dirname, '..', 'assets');
 
-                    if (fs.existsSync(path.join(assetPath, 'stamp.jpeg'))) {
-                        const stamp = fs.readFileSync(path.join(assetPath, 'stamp.jpeg'));
+                    console.log(`[PDF] Resolving assets from: ${assetPath}`);
+
+                    const stampPath = path.join(assetPath, 'stamp.jpeg');
+                    if (fs.existsSync(stampPath)) {
+                        const stamp = fs.readFileSync(stampPath);
                         quoteData.stampBase64 = `data:image/jpeg;base64,${stamp.toString('base64')}`;
+                        console.log('[PDF] Stamp loaded successfully.');
                     } else {
-                        console.warn('[PDF] Stamp file missing:', path.join(assetPath, 'stamp.jpeg'));
+                        console.warn('[PDF] Stamp file missing at:', stampPath);
+                        // Fallback: Check if file exists in root (Vercel edge case)
+                        const rootStamp = path.join(process.cwd(), 'assets', 'stamp.jpeg');
+                        if (fs.existsSync(rootStamp)) {
+                            const stamp = fs.readFileSync(rootStamp);
+                            quoteData.stampBase64 = `data:image/jpeg;base64,${stamp.toString('base64')}`;
+                            console.log('[PDF] Stamp loaded from CWD fallback.');
+                        }
                     }
 
-                    if (fs.existsSync(path.join(assetPath, 'signature.jpeg'))) {
-                        const sig = fs.readFileSync(path.join(assetPath, 'signature.jpeg'));
+                    const sigPath = path.join(assetPath, 'signature.jpeg');
+                    if (fs.existsSync(sigPath)) {
+                        const sig = fs.readFileSync(sigPath);
                         quoteData.signatureBase64 = `data:image/jpeg;base64,${sig.toString('base64')}`;
+                        console.log('[PDF] Signature loaded successfully.');
                     } else {
-                        console.warn('[PDF] Signature file missing:', path.join(assetPath, 'signature.jpeg'));
+                        console.warn('[PDF] Signature file missing at:', sigPath);
+                        // Fallback
+                        const rootSig = path.join(process.cwd(), 'assets', 'signature.jpeg');
+                        if (fs.existsSync(rootSig)) {
+                            const sig = fs.readFileSync(rootSig);
+                            quoteData.signatureBase64 = `data:image/jpeg;base64,${sig.toString('base64')}`;
+                            console.log('[PDF] Signature loaded from CWD fallback.');
+                        }
                     }
                 } catch (assetErr) {
                     console.warn('[PDF] Failed to load local assets:', assetErr.message);

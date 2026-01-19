@@ -459,6 +459,7 @@ export const generateQuotationHTML = (data) => {
                      <div style="font-size: 8px; font-weight: bold; border-bottom: 1px solid black; margin-bottom: 4px; padding-bottom: 4px; text-transform: uppercase;">List of Exclusions</div>
                      <div style="font-size: 8px; font-bold">1. __________________</div>
                      <div style="font-size: 8px; font-bold">2. __________________</div>
+                     <div style="font-size: 8px; font-bold">3. __________________</div>
                 </div>
             </div>
          </div>
