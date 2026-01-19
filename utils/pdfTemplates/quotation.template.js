@@ -34,6 +34,55 @@ export const generateQuotationHTML = (data) => {
     const vat = totalWithAdj * 0.15;
     const grandTotal = totalWithAdj + vat;
 
+    // --- Pagination / Spacing Logic ---
+    // Estimate content height to determine if we need filler rows to avoid gaps on Page 1
+    // when the footer is pushed to Page 2.
+    let estimatedTableHeight = 0;
+    items.forEach(item => {
+        const descLen = (item.description || '').length;
+        // Approx chars per line: 80. Line height ~14px. Base padding ~12px.
+        const lines = Math.floor(descLen / 80) + 1;
+        // Estimate height per item: Base 30px + extra lines
+        estimatedTableHeight += Math.max(35, lines * 14 + 16);
+    });
+
+    // Thresholds (in pixels approx)
+    // If content > ~450px, the Footer (Images+Totals) usually jumps to Page 2.
+    // If that happens, we want the Table to extend to ~850px to fill Page 1.
+    const SINGLE_PAGE_THRESHOLD = 450;
+    const PAGE_1_TARGET_HEIGHT = 850;
+
+    let finalFillerCount = 0;
+    let dynamicPadding = 6; // Default p-2 is approx 6px-8px. Let's start with base 6px.
+    const MAX_PADDING = 16; // Don't let rows get too tall (looks weird)
+    const MIN_ROWS = 10;
+
+    // Logic: If footer pushed to Page 2 (estimated > 450), we want to fill Page 1 (target 850).
+    // First, try to expand rows by identifying the "gap".
+    if (estimatedTableHeight > SINGLE_PAGE_THRESHOLD && estimatedTableHeight < PAGE_1_TARGET_HEIGHT) {
+        const gap = PAGE_1_TARGET_HEIGHT - estimatedTableHeight;
+        // How much extra padding per row (top+bottom) can we add?
+        // extra total padding per item = gap / items.length
+        // extra one-side padding = (gap / items.length) / 2
+        const extraPaddingPerSide = Math.floor((gap / items.length) / 2);
+
+        // Apply, but cap at MAX_PADDING
+        dynamicPadding = Math.min(6 + extraPaddingPerSide, MAX_PADDING);
+
+        // Recalculate used height with new padding
+        const addedHeight = (dynamicPadding - 6) * 2 * items.length;
+        const newEstimatedHeight = estimatedTableHeight + addedHeight;
+
+        // If there is STILL a gap, fill it with filler rows
+        const remainingGap = PAGE_1_TARGET_HEIGHT - newEstimatedHeight;
+        const calculatedFiller = Math.ceil(remainingGap / 35); // ~35px per expanded filler row
+        finalFillerCount = Math.max(0, calculatedFiller);
+    } else {
+        // Standard small quote or huge quote
+        finalFillerCount = Math.max(0, MIN_ROWS - items.length);
+    }
+
+
     // --- Template String ---
     return `
     <!DOCTYPE html>
@@ -109,6 +158,7 @@ export const generateQuotationHTML = (data) => {
             .border-none { border: none; }
 
             .p-1 { padding: 4px; }
+            .p-2 { padding: 6px; } /* Increased padding for table rows */
             
             /* Table */
             table { width: 100%; border-collapse: collapse; page-break-inside: auto; }
@@ -130,14 +180,19 @@ export const generateQuotationHTML = (data) => {
             /* Special case for "Quote Revised" (col-span-2 inside col-4) -> 50/50 split */
             .half-cell { width: 50%; }
 
-            /* ITEMS TABLE COLUMN WIDTHS (Matching w-16, w-10 etc) */
-            .col-code { width: 8%; }  /* w-16 approx */
-            .col-desc { width: 56%; } /* Auto/Remaining */
-            .col-unit { width: 5%; }  /* w-10 approx */
-            .col-qty  { width: 5%; }  /* w-10 approx */
-            .col-mat  { width: 8%; }  /* w-16 */
-            .col-lab  { width: 8%; }  /* w-16 */
-            .col-tot  { width: 10%; } /* w-20 */
+            /* ITEMS TABLE COLUMN WIDTHS */
+            /* ALIGNMENT FIX: */
+            /* Top Table Label = 25% of 33.33% = 8.333% */
+            /* Top Table Value = 75% of 33.33% = 25.000% */
+            /* To align "CODE" line with "DATE" line, CODE must be 8.33% */
+            
+            .col-code { width: 8.333%; }   /* Aligns with top labels */
+            .col-desc { width: 56.667%; } /* Remaining dynamic space */
+            .col-unit { width: 5%; } 
+            .col-qty  { width: 5%; }  
+            .col-mat  { width: 8%; } 
+            .col-lab  { width: 8%; } 
+            .col-tot  { width: 9%; }
             
         </style>
     </head>
@@ -252,32 +307,30 @@ export const generateQuotationHTML = (data) => {
             <tbody>
                 ${items.map(item => `
                 <tr class="font-bold text-sm">
-                    <td class="border p-1 text-center">${item.item_code}</td>
-                    <td class="border p-1 whitespace-pre-wrap">${item.description}</td>
-                    <td class="border p-1 text-center">${item.unit}</td>
-                    <td class="border p-1 text-center">${item.quantity}</td>
-                    <td class="border p-1 text-right">${fmt(item.material_price)}</td>
-                    <td class="border p-1 text-right">${fmt(item.labor_price)}</td>
-                    <td class="border p-1 text-right bg-gray-50">
+                    <td class="border text-center" style="padding: ${dynamicPadding}px;">${item.item_code}</td>
+                    <td class="border whitespace-pre-wrap" style="padding: ${dynamicPadding}px;">${item.description}</td>
+                    <td class="border text-center" style="padding: ${dynamicPadding}px;">${item.unit}</td>
+                    <td class="border text-center" style="padding: ${dynamicPadding}px;">${item.quantity}</td>
+                    <td class="border text-right" style="padding: ${dynamicPadding}px;">${fmt(item.material_price)}</td>
+                    <td class="border text-right" style="padding: ${dynamicPadding}px;">${fmt(item.labor_price)}</td>
+                    <td class="border text-right bg-gray-50" style="padding: ${dynamicPadding}px;">
                         ${fmt((Number(item.quantity) * Number(item.material_price)) + Number(item.labor_price))}
                     </td>
                 </tr>
                 `).join('')}
 
-                <!-- FILLER ROWS (To fill space but not push to next page) -->
+                <!-- FILLER ROWS (Dynamic Spacing) -->
                 ${(() => {
-            const MIN_ROWS = 6; // Reduced from 12 to prevent forcing page break
-            const fillerCount = Math.max(0, MIN_ROWS - items.length);
-            if (fillerCount === 0) return '';
-            return Array(fillerCount).fill(0).map(() => `
+            if (finalFillerCount <= 0) return '';
+            return Array(finalFillerCount).fill(0).map(() => `
                         <tr>
-                            <td class="col-code" style="height: 24px;">&nbsp;</td>
-                            <td class="col-desc">&nbsp;</td>
-                            <td class="col-unit">&nbsp;</td>
-                            <td class="col-qty">&nbsp;</td>
-                            <td class="col-price">&nbsp;</td>
-                            <td class="col-price">&nbsp;</td>
-                            <td class="col-total">&nbsp;</td>
+                            <td class="col-code border-r border-l" style="height: 30px;">&nbsp;</td>
+                            <td class="col-desc border-r">&nbsp;</td>
+                            <td class="col-unit border-r">&nbsp;</td>
+                            <td class="col-qty border-r">&nbsp;</td>
+                            <td class="col-mat border-r">&nbsp;</td>
+                            <td class="col-lab border-r">&nbsp;</td>
+                            <td class="col-tot border-r">&nbsp;</td>
                         </tr>
                     `).join('');
         })()}
@@ -298,16 +351,39 @@ export const generateQuotationHTML = (data) => {
             
             <!-- LEFT: IMAGES (50%) -->
             <div style="width: 50%; padding-right: 4px;">
-               ${(() => {
-            const imgList = (data.images || []).slice(0, 6);
+                ${(() => {
+            const imgList = (data.images || []).slice(0, 9);
             const count = imgList.length;
 
-            // Dynamic Grid Style
-            let gridStyle = 'display: grid; gap: 4px; border: 1px solid #d1d5db; background: #f9fafb; padding: 2px; min-height: 160px; height: 100%;';
+            if (count === 0) return '';
 
-            if (count <= 1) gridStyle += ' grid-template-columns: 1fr;';
-            else if (count === 2) gridStyle += ' grid-template-columns: 1fr 1fr;';
-            else gridStyle += ' grid-template-columns: repeat(3, 1fr);';
+            // Adaptive Grid Logic
+            let gridCols = '1fr';
+            let gridRows = '1fr';
+            let itemHeight = '100%';
+
+            if (count === 1) {
+                gridCols = '1fr';
+                itemHeight = '260px'; // Full height
+            } else if (count === 2) {
+                gridCols = '1fr 1fr';
+                itemHeight = '260px'; // Full height split
+            } else if (count <= 4) {
+                gridCols = '1fr 1fr';
+                gridRows = '1fr 1fr';
+                itemHeight = '125px'; // Half height
+            } else if (count <= 6) {
+                gridCols = 'repeat(3, 1fr)';
+                gridRows = 'repeat(2, 1fr)';
+                itemHeight = '125px'; // Half height
+            } else {
+                // 7-9 Images -> 3x3 Grid
+                gridCols = 'repeat(3, 1fr)';
+                gridRows = 'repeat(3, 1fr)';
+                itemHeight = '85px'; // 1/3 height
+            }
+
+            const gridStyle = `display: grid; grid-template-columns: ${gridCols}; grid-template-rows: ${gridRows}; gap: 4px; border: 1px solid #d1d5db; background: #f9fafb; padding: 2px; height: 270px; overflow: hidden;`;
 
             return `
                    <div style="${gridStyle}">
@@ -315,8 +391,8 @@ export const generateQuotationHTML = (data) => {
                 const src = img ? (img.file_path || img) : '';
                 if (!src) return '';
                 return `
-                              <div style="height: ${count <= 2 ? '150px' : '100px'}; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid #d1d5db; background: white;">
-                                 <img src="${src}" style="width: 100%; height: 100%; object-fit: contain; max-width: 100%; display: block;" />
+                              <div style="height: ${itemHeight}; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid #d1d5db; background: white;">
+                                 <img src="${src}" style="width: 100%; height: 100%; object-fit: contain; display: block;" />
                               </div>
                           `;
             }).join('')}

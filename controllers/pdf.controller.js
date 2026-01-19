@@ -9,6 +9,32 @@ import { stampBase64, signatureBase64 } from '../config/assets.js';
 // In-memory store for temporary previews (lasts until server restart)
 const previewStore = new Map();
 
+// Singleton Browser Instance
+let browserInstance = null;
+
+const getBrowserInstance = async () => {
+    if (browserInstance && browserInstance.isConnected()) {
+        return browserInstance;
+    }
+    console.log('[PDF] Launching new Puppeteer instance...');
+    browserInstance = await puppeteer.launch({
+        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || null,
+        headless: 'new',
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-gpu',
+            '--font-render-hinting=none',
+            '--disable-extensions',
+            '--disable-sync',
+            '--disable-background-networking',
+            '--disable-default-apps'
+        ]
+    });
+    return browserInstance;
+};
+
 export const preparePreview = async (req, res) => {
     try {
         const previewId = uuidv4();
@@ -81,6 +107,13 @@ export const generatePdf = async (req, res) => {
                     try {
                         // 1. Remote URL (Cloudinary / S3)
                         if (imagePath.startsWith('http')) {
+                            // OPTIMIZATION: Use Cloudinary Transformation if applicable
+                            // Inject w_800,q_auto,f_auto if it's a cloudinary URL and doesn't already have params
+                            if (imagePath.includes('cloudinary.com') && imagePath.includes('/upload/') && !imagePath.includes('/w_')) {
+                                imagePath = imagePath.replace('/upload/', '/upload/w_800,q_auto,f_auto/');
+                                console.log(`[PDF] Cloudinary Optimized: ${imagePath}`);
+                            }
+
                             // Use native fetch (Node 18+)
                             const response = await fetch(imagePath);
                             if (response.ok) {
@@ -93,21 +126,21 @@ export const generatePdf = async (req, res) => {
                             }
                         }
                         // 2. Local File System
-                        // Handle various path formats: /uploads, uploads\, \uploads
-                        else if (imagePath.includes('uploads')) {
+                        // Treat anything that isn't http/https as local
+                        else if (imagePath && typeof imagePath === 'string') {
                             // Normalize path to fix windows backslashes
                             const normalizedPath = imagePath.replace(/\\/g, '/');
 
-                            // Construct absolute path using process.cwd()
-                            // Assumption: 'uploads' folder is in root of backend
-                            let finalPath = path.join(process.cwd(), normalizedPath.startsWith('/') ? normalizedPath.slice(1) : normalizedPath);
+                            // Try multiple resolution strategies
+                            // 1. As provided (relative to root)
+                            let finalPath = path.resolve(process.cwd(), normalizedPath.startsWith('/') ? normalizedPath.slice(1) : normalizedPath);
 
-                            // If path doesn't start with 'uploads', assume it's just filename and append
-                            if (!normalizedPath.includes('/')) {
-                                finalPath = path.join(process.cwd(), 'uploads', normalizedPath);
+                            // 2. If not found, try inside 'uploads' folder if it wasn't already there
+                            if (!fs.existsSync(finalPath) && !normalizedPath.includes('uploads')) {
+                                finalPath = path.resolve(process.cwd(), 'uploads', normalizedPath);
                             }
 
-                            console.log(`[PDF] Resolved Local Path: ${finalPath}`);
+                            console.log(`[PDF] Resolving Local Path: ${imagePath} -> ${finalPath}`);
 
                             if (fs.existsSync(finalPath)) {
                                 const fileData = fs.readFileSync(finalPath);
@@ -174,18 +207,8 @@ export const generatePdf = async (req, res) => {
             return res.status(400).send('Either URL or quotationId/previewId is required');
         }
 
-        // 2. PUPPETEER LAUNCH
-        const browser = await puppeteer.launch({
-            executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || null,
-            headless: 'new',
-            args: [
-                '--no-sandbox',
-                '--disable-setuid-sandbox',
-                '--disable-dev-shm-usage',
-                '--disable-gpu',
-                '--font-render-hinting=none',
-            ]
-        });
+        // 2. PUPPETEER LAUNCH (SINGLETON)
+        const browser = await getBrowserInstance();
         const page = await browser.newPage();
 
         // Build header template for REPETITION (This applies to both methods)
@@ -287,7 +310,8 @@ export const generatePdf = async (req, res) => {
             preferCSSPageSize: true
         });
 
-        await browser.close();
+        // await browser.close(); // Don't close singleton!
+        await page.close(); // Close the page only
         console.log('[PDF] Generated successfully.');
 
         res.set({

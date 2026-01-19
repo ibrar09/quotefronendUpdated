@@ -12,6 +12,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 import compression from 'compression'; // [NEW]
+import helmet from 'helmet'; // [NEW] Security Headers
+import rateLimit from 'express-rate-limit'; // [NEW] Rate Limiting
 
 // Initialize dotenv
 dotenv.config();
@@ -22,6 +24,20 @@ console.log('DB_URL status:', (process.env.DB_URL || process.env.DATABASE_URL) ?
 console.log('---------------------------');
 
 const app = express();
+
+// Security Middleware
+app.use(helmet({
+    crossOriginResourcePolicy: { policy: "cross-origin" }, // Allow cross-origin for images/PDFs
+    contentSecurityPolicy: false // Disable CSP for API-only to avoid blocking inline scripts in potential debug views
+}));
+
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 200, // Limit each IP to 200 requests per windowMs
+    standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+    legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+});
+app.use('/api', limiter); // Apply rate limiting to API routes
 
 // Middleware
 app.use(compression()); // [NEW] Enable GZIP/Brotli Compression
