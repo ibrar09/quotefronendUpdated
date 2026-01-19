@@ -102,7 +102,7 @@ export const generatePdf = async (req, res) => {
                 // Process Images: Convert local /uploads paths OR remote URLs to Base64 for Puppeteer
                 const processedImages = await Promise.all((jobJSON.JobImages || []).map(async (img) => {
                     let imagePath = img.file_path || '';
-                    console.log(`[PDF] Processing Image: ${imagePath}`);
+                    // console.log(`[PDF] Processing Image: ${imagePath}`);
 
                     try {
                         // 1. Remote URL (Cloudinary / S3)
@@ -111,7 +111,7 @@ export const generatePdf = async (req, res) => {
                             // Inject w_800,q_auto,f_auto if it's a cloudinary URL and doesn't already have params
                             if (imagePath.includes('cloudinary.com') && imagePath.includes('/upload/') && !imagePath.includes('/w_')) {
                                 imagePath = imagePath.replace('/upload/', '/upload/w_800,q_auto,f_auto/');
-                                console.log(`[PDF] Cloudinary Optimized: ${imagePath}`);
+                                // console.log(`[PDF] Cloudinary Optimized: ${imagePath}`);
                             }
 
                             // Use native fetch (Node 18+)
@@ -140,7 +140,7 @@ export const generatePdf = async (req, res) => {
                                 finalPath = path.resolve(process.cwd(), 'uploads', normalizedPath);
                             }
 
-                            console.log(`[PDF] Resolving Local Path: ${imagePath} -> ${finalPath}`);
+                            // console.log(`[PDF] Resolving Local Path: ${imagePath} -> ${finalPath}`);
 
                             if (fs.existsSync(finalPath)) {
                                 const fileData = fs.readFileSync(finalPath);
