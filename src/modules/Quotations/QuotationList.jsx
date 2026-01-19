@@ -16,6 +16,7 @@ const QuotationList = () => {
     const [quotations, setQuotations] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searchParams] = useSearchParams();
+    const location = useLocation(); // Add location to detect navigation
     const [regionFilter, setRegionFilter] = useState(searchParams.get('region') || 'ALL');
     const [statusFilter, setStatusFilter] = useState(searchParams.get('status')?.toUpperCase() || 'ALL');
     const [brandFilter, setBrandFilter] = useState(searchParams.get('brand') || 'ALL');
@@ -94,6 +95,17 @@ const QuotationList = () => {
     useEffect(() => {
         fetchGroupBrands();
     }, [brandFilter]);
+
+    // [NEW] Auto-refresh when navigating back from NewQuotation
+    useEffect(() => {
+        // Check if we're coming back from a save operation
+        if (location.state?.refreshList) {
+            console.log('[QuotationList] Refreshing list after save');
+            fetchQuotations(page);
+            // Clear the state to prevent re-fetching on every render
+            window.history.replaceState({}, document.title);
+        }
+    }, [location.state]);
 
     // Drag-to-Scroll State
     const tableContainerRef = useRef(null);
@@ -700,6 +712,19 @@ const QuotationList = () => {
                 >
                     <CheckCircle size={16} />
                     {selectionMode ? `Selection Mode ON (${selectedIds.length})` : 'Select Items'}
+                </button>
+
+                {/* Manual Refresh Button */}
+                <button
+                    onClick={() => fetchQuotations(page)}
+                    disabled={loading}
+                    className={`px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all border-2
+                    ${darkMode ? 'bg-gray-800 border-gray-700 text-gray-400 hover:border-teal-500' : 'bg-white border-gray-300 text-gray-500 hover:border-teal-500'}
+                    ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    title="Refresh quotation list"
+                >
+                    <RefreshCw size={16} className={loading ? 'animate-spin' : ''} />
+                    {loading ? 'Refreshing...' : 'Refresh'}
                 </button>
 
                 {/* Bulk Action Bar - Show only when items selected */}
