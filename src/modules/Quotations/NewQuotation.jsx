@@ -877,12 +877,14 @@ const NewQuotation = () => {
                 data-row="header"
                 data-col="date"
                 type="date"
-                className="w-full outline-none font-semibold uppercase bg-transparent no-print text-black cursor-pointer"
-                style={{ color: 'black' }}
+                className="w-full outline-none font-semibold bg-transparent no-print text-black cursor-pointer"
+                style={{ color: 'black', textTransform: 'uppercase' }}
                 value={header.date}
                 onChange={(e) => handleHeaderChange('date', e.target.value)}
                 onKeyDown={(e) => handleHeaderKeyDown(e, 'date')}
                 onFocus={(e) => e.target.select()}
+                spellCheck={true}
+                lang="en"
               />
               <span className="print-only text-black">{header.date}</span>
             </div>
@@ -896,8 +898,8 @@ const NewQuotation = () => {
               <input
                 data-row="header"
                 data-col="attentionTo"
-                className="w-full outline-none font-semibold uppercase bg-transparent no-print text-black"
-                style={{ color: 'black' }}
+                className="w-full outline-none font-semibold bg-transparent no-print text-black"
+                style={{ color: 'black', textTransform: 'uppercase' }}
                 value={header.attentionTo}
                 onChange={(e) => handleHeaderChange('attentionTo', e.target.value)}
                 onKeyDown={(e) => handleHeaderKeyDown(e, 'attentionTo')}
@@ -918,8 +920,8 @@ const NewQuotation = () => {
               <input
                 data-row="header"
                 data-col="brand"
-                className="w-full outline-none font-semibold uppercase bg-transparent no-print text-black"
-                style={{ color: 'black' }}
+                className="w-full outline-none font-semibold bg-transparent no-print text-black"
+                style={{ color: 'black', textTransform: 'uppercase' }}
                 value={header.brand}
                 onChange={(e) => handleHeaderChange('brand', e.target.value)}
                 onKeyDown={(e) => handleHeaderKeyDown(e, 'brand')}
@@ -937,8 +939,8 @@ const NewQuotation = () => {
               <input
                 data-row="header"
                 data-col="quoteNo"
-                className="w-full outline-none font-semibold uppercase bg-transparent no-print text-black"
-                style={{ color: 'black' }}
+                className="w-full outline-none font-semibold bg-transparent no-print text-black"
+                style={{ color: 'black', textTransform: 'uppercase' }}
                 value={header.quoteNo}
                 onChange={(e) => handleHeaderChange('quoteNo', e.target.value)}
                 onKeyDown={(e) => handleHeaderKeyDown(e, 'quoteNo')}
@@ -960,8 +962,8 @@ const NewQuotation = () => {
               <input
                 data-row="header"
                 data-col="location"
-                className="w-full outline-none font-semibold uppercase bg-transparent no-print text-black"
-                style={{ color: 'black' }}
+                className="w-full outline-none font-semibold bg-transparent no-print text-black"
+                style={{ color: 'black', textTransform: 'uppercase' }}
                 value={header.location}
                 onChange={(e) => handleHeaderChange('location', e.target.value)}
                 onKeyDown={(e) => handleHeaderKeyDown(e, 'location')}
@@ -977,7 +979,8 @@ const NewQuotation = () => {
               <input
                 data-row="header"
                 data-col="mrNo"
-                className={`w-full outline-none font-semibold uppercase bg-transparent pr-8 no-print ${mrStatus === 'exists' ? 'text-red-600' : ''}`}
+                className={`w-full outline-none font-semibold bg-transparent pr-8 no-print ${mrStatus === 'exists' ? 'text-red-600' : ''}`}
+                style={{ textTransform: 'uppercase' }}
                 value={header.mrNo}
                 onChange={(e) => handleHeaderChange('mrNo', e.target.value)}
                 onBlur={checkMrExistence}
@@ -1027,8 +1030,8 @@ const NewQuotation = () => {
               <input
                 data-row="header"
                 data-col="city"
-                className="w-full outline-none font-semibold uppercase bg-transparent no-print text-black"
-                style={{ color: 'black' }}
+                className="w-full outline-none font-semibold bg-transparent no-print text-black"
+                style={{ color: 'black', textTransform: 'uppercase' }}
                 value={header.city}
                 onChange={(e) => handleHeaderChange('city', e.target.value)}
                 onKeyDown={(e) => handleHeaderKeyDown(e, 'city')}
@@ -1044,8 +1047,8 @@ const NewQuotation = () => {
               <input
                 data-row="header"
                 data-col="storeCcid"
-                className={`w-full outline-none font-semibold uppercase bg-transparent pr-12 no-print text-black ${storeStatus === 'error' ? 'text-red-600' : storeStatus === 'manual' ? 'text-yellow-600' : ''}`}
-                style={{ color: 'black' }}
+                className={`w-full outline-none font-semibold bg-transparent pr-12 no-print text-black ${storeStatus === 'error' ? 'text-red-600' : storeStatus === 'manual' ? 'text-yellow-600' : ''}`}
+                style={{ color: 'black', textTransform: 'uppercase' }}
                 value={header.storeCcid}
                 onChange={(e) => handleHeaderChange('storeCcid', e.target.value)}
                 onBlur={() => handleStoreLookup()}
@@ -1078,8 +1081,8 @@ const NewQuotation = () => {
               <input
                 data-row="header"
                 data-col="mrPriority"
-                className="w-full outline-none font-semibold uppercase bg-transparent no-print text-black"
-                style={{ color: 'black' }}
+                className="w-full outline-none font-semibold bg-transparent no-print text-black"
+                style={{ color: 'black', textTransform: 'uppercase' }}
                 value={header.mrPriority}
                 onChange={(e) => handleHeaderChange('mrPriority', e.target.value)}
                 onKeyDown={(e) => handleHeaderKeyDown(e, 'mrPriority')}
