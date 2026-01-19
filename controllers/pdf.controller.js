@@ -93,7 +93,7 @@ export const generatePdf = async (req, res) => {
                 if (!job) throw new Error('Quotation not found');
 
                 const jobJSON = job.toJSON();
-                console.log('[PDF] Job Data loaded:', JSON.stringify(jobJSON, null, 2));
+                // console.log('[PDF] Job Data loaded:', JSON.stringify(jobJSON, null, 2));
 
                 // ---------------------------------------------------------
                 // MAP DATA TO MATCH FRONTEND LOGIC (QuotationPrintView.jsx)
@@ -194,7 +194,7 @@ export const generatePdf = async (req, res) => {
                     console.warn('[PDF] Failed to load assets:', assetErr.message);
                 }
 
-                console.log('[PDF] Final Mapped Data:', JSON.stringify(quoteData, null, 2));
+                // console.log('[PDF] Final Mapped Data:', JSON.stringify(quoteData, null, 2));
             }
 
             if (!quoteData) throw new Error('Failed to retrieve data for PDF generation');
