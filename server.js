@@ -47,8 +47,8 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 
-// Handle preflight requests for all routes
-app.options('*', cors());
+// Handle preflight requests for all routes (Express 5 fix: use regex instead of *)
+app.options(/(.*)/, cors());
 
 // Security Middleware
 app.use(helmet({
