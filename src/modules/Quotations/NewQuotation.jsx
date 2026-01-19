@@ -591,6 +591,7 @@ const NewQuotation = () => {
         quote_no: header.quoteNo,
         mr_no: header.mrNo,
         mr_date: header.mrRecDate || null,
+        mr_priority: header.mrPriority || 'Normal',
         oracle_ccid: header.storeCcid,
         work_description: header.mrDesc || header.description,
         brand: header.brand,
@@ -600,7 +601,19 @@ const NewQuotation = () => {
         store_opening_date: header.openingDate || null,
         continuous_assessment: header.continuous_assessment,
         quote_status: status,
+        // Financial fields
         discount: Number(adj.discount) || 0,
+        transportation: Number(adj.transportation) || 0,
+        // Quotation metadata
+        version: header.version || '1.0',
+        validity: header.validity || '30 Days',
+        currency: header.currency || 'SAR',
+        // Additional fields
+        sent_at: header.date || new Date().toISOString().split('T')[0],
+        completion_date: completionDate || null,
+        warranty: warranty || null,
+        terms: terms || null,
+        attentionTo: header.attentionTo || null,
         items: items.filter(i => i.code || i.description).map(item => ({
           item_code: item.code,
           description: item.description,
