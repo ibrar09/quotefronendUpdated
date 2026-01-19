@@ -1094,6 +1094,9 @@ const NewQuotation = () => {
                 style={{ color: 'black' }}
                 placeholder="Continuous assessment notes..."
                 value={header.continuous_assessment || ''}
+                spellCheck={true}
+                lang="en"
+                autoCapitalize="sentences"
                 onChange={(e) => handleHeaderChange('continuous_assessment', e.target.value)}
                 onKeyDown={(e) => handleHeaderKeyDown(e, 'continuous_assessment')}
                 onFocus={(e) => e.target.select()}
@@ -1198,7 +1201,8 @@ const NewQuotation = () => {
                           rows={1}
                           onInput={(e) => { e.target.style.height = 'auto'; e.target.style.height = e.target.scrollHeight + 'px'; }}
                           spellCheck={true}
-                          lang="en-US"
+                          lang="en"
+                          autoCapitalize="sentences"
                           ref={(el) => {
                             if (el) {
                               el.style.height = 'auto';
@@ -1588,6 +1592,9 @@ const NewQuotation = () => {
                 value={terms}
                 onChange={(e) => setTerms(e.target.value)}
                 placeholder="Enter Terms and Conditions"
+                spellCheck={true}
+                lang="en"
+                autoCapitalize="sentences"
               />
               <div className="print-only text-[9px] font-semibold whitespace-pre-line p-2 text-black">{terms}</div>
               <div className="flex items-center gap-2 mt-2">
