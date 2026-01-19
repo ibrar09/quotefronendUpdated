@@ -1717,13 +1717,7 @@ const NewQuotation = () => {
             <X size={14} /> Cancel
           </button>
           <button
-            onClick={async () => {
-              const job = await handleSave('DRAFT');
-              if (job) {
-                alert('Draft Saved!');
-                navigate('/quotations/list');
-              }
-            }}
+            onClick={() => handleSave('DRAFT')}
             className={`flex items-center gap-2 px-6 py-2.5 text-[11px] font-bold uppercase transition-all rounded-lg shadow-sm border ${darkMode ? 'bg-gray-700 border-gray-600 text-white hover:bg-gray-600' : 'bg-gray-100 border-gray-200 text-gray-700 hover:bg-gray-200'}`}
           >
             <Save size={14} /> Save Draft
@@ -1733,7 +1727,6 @@ const NewQuotation = () => {
             onClick={async () => {
               const job = await handleSave('SENT');
               if (job) {
-                alert('Quotation Saved and Sent!');
                 navigate('/quotations/list');
               }
             }}
