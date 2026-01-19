@@ -107,7 +107,7 @@ export const createQuotation = async (data) => {
   if (images && images.length > 0) {
     for (const imgData of images) {
       if (imgData) {
-        const isPath = typeof imgData === 'string' && imgData.startsWith('/uploads');
+        const isPath = typeof imgData === 'string' && (imgData.startsWith('/uploads') || imgData.startsWith('http'));
         await JobImage.create({
           job_id: job.id,
           image_data: isPath ? null : imgData,
@@ -198,7 +198,7 @@ export const updateQuotation = async (jobId, data) => {
     await JobImage.destroy({ where: { job_id: jobId } });
     for (const imgData of data.images) {
       if (imgData) {
-        const isPath = typeof imgData === 'string' && imgData.startsWith('/uploads');
+        const isPath = typeof imgData === 'string' && (imgData.startsWith('/uploads') || imgData.startsWith('http'));
         await JobImage.create({
           job_id: jobId,
           image_data: isPath ? null : imgData,
