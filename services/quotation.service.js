@@ -255,8 +255,9 @@ export const listQuotations = async (page = 1, limit = 300) => {
       'id', 'quote_no', 'mr_no', 'mr_date', 'pr_no', 'brand', 'brand_name',
       'location', 'city', 'region', 'quote_status', 'work_status',
       'work_description', 'grand_total', 'createdAt', 'oracle_ccid',
-      'subtotal', 'vat_amount', 'discount', 'sent_at', 'completion_date',
-      'completed_by', 'supervisor', 'comments'
+      'subtotal', 'vat_amount', 'discount', 'transportation', 'sent_at', 'completion_date',
+      'completed_by', 'supervisor', 'comments', 'craftsperson_notes',
+      'check_in_date', 'check_in_time', 'mr_priority', 'currency', 'version'
     ],
     where: {
       is_latest: true,
@@ -269,10 +270,15 @@ export const listQuotations = async (page = 1, limit = 300) => {
       },
       {
         model: PurchaseOrder,
-        attributes: ['po_no', 'po_date', 'amount_ex_vat', 'total_inc_vat', 'eta'],
+        attributes: ['po_no', 'po_date', 'amount_ex_vat', 'total_inc_vat', 'eta', 'update_notes'],
         include: [{
           model: Finance,
-          attributes: ['invoice_no', 'invoice_status', 'received_amount']
+          attributes: [
+            'invoice_no', 'invoice_status', 'received_amount', 'invoice_date',
+            'payment_date', 'payment_month', 'hsbc_no', 'vat_status', 'vat_duration',
+            'days_outstanding', 'our_bank_ref', 'company_bank_ref', 'payment_status',
+            'payment_ref', 'general_ref', 'bank_date', 'advance_payment'
+          ]
         }]
       }
     ],

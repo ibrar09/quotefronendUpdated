@@ -60,8 +60,18 @@ const Job = sequelize.define('Job', {
   // 🔹 FINANCIAL SUMMARY (Calculated)
   subtotal: { type: DataTypes.DECIMAL(12, 2), defaultValue: 0 },
   discount: { type: DataTypes.DECIMAL(12, 2), defaultValue: 0 },
+  transportation: { type: DataTypes.DECIMAL(12, 2), defaultValue: 0 }, // [NEW] Logic
   vat_amount: { type: DataTypes.DECIMAL(12, 2), defaultValue: 0 },
   grand_total: { type: DataTypes.DECIMAL(12, 2), defaultValue: 0 },
+  currency: { type: DataTypes.STRING, defaultValue: 'SAR' }, // [NEW]
+
+  // 🔹 Quotation Metadata
+  version: { type: DataTypes.STRING, defaultValue: '1.0' }, // [NEW]
+  validity: { type: DataTypes.STRING, defaultValue: '30 Days' }, // [NEW]
+  attentionTo: { type: DataTypes.STRING }, // [NEW]
+  terms: { type: DataTypes.TEXT }, // [NEW]
+  warranty: { type: DataTypes.STRING }, // [NEW]
+  mr_priority: { type: DataTypes.STRING, defaultValue: 'Normal' }, // [NEW]
 
   // 🔹 Audit / Timeline
   sent_at: { type: DataTypes.DATE },
