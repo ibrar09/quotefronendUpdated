@@ -308,7 +308,7 @@ export const generateQuotationHTML = (data) => {
                 ${items.map(item => `
                 <tr class="font-bold text-sm">
                     <td class="border text-center" style="padding: ${dynamicPadding}px;">${item.item_code}</td>
-                    <td class="border whitespace-pre-wrap" style="padding: ${dynamicPadding}px;">${item.description}</td>
+                    <td class="border whitespace-pre-wrap" style="padding: ${dynamicPadding}px; text-transform: uppercase;">${item.description}</td>
                     <td class="border text-center" style="padding: ${dynamicPadding}px;">${item.unit}</td>
                     <td class="border text-center" style="padding: ${dynamicPadding}px;">${item.quantity}</td>
                     <td class="border text-right" style="padding: ${dynamicPadding}px;">${fmt(item.material_price)}</td>
