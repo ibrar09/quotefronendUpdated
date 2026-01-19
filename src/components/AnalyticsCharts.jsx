@@ -28,7 +28,7 @@ const CustomTooltip = ({ active, payload, label, formatter }) => {
 
 export const RevenueTrendChart = ({ data }) => {
     return (
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 h-96 transition-all hover:shadow-xl group">
+        <div className="bg-white dark:bg-[#1f1f2e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 h-96 transition-all hover:shadow-xl group">
             <div className="flex justify-between items-center mb-6">
                 <div>
                     <h3 className="text-lg font-bold text-gray-800 dark:text-white">Revenue Trend</h3>
@@ -78,7 +78,7 @@ export const RevenueTrendChart = ({ data }) => {
 
 export const StatusPieChart = ({ data }) => {
     return (
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 h-96 transition-all hover:shadow-xl">
+        <div className="bg-white dark:bg-[#1f1f2e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 h-96 transition-all hover:shadow-xl">
             <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-6">Job Status Distribution</h3>
             <ResponsiveContainer width="100%" height="85%">
                 <PieChart>
@@ -111,7 +111,7 @@ export const StatusPieChart = ({ data }) => {
 
 export const BrandPerformanceChart = ({ data }) => {
     return (
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 h-96 transition-all hover:shadow-xl">
+        <div className="bg-white dark:bg-[#1f1f2e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 h-96 transition-all hover:shadow-xl">
             <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-6">Top Brands by Revenue</h3>
             <ResponsiveContainer width="100%" height="85%">
                 <BarChart layout="vertical" data={data} barSize={24} margin={{ left: 20 }}>
@@ -141,7 +141,7 @@ export const WorkTypeChart = ({ data }) => {
     const height = Math.max(350, data.length * 50);
 
     return (
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 h-96 overflow-y-auto transition-all hover:shadow-xl custom-scrollbar dark:custom-scrollbar-dark">
+        <div className="bg-white dark:bg-[#1f1f2e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 h-96 overflow-y-auto transition-all hover:shadow-xl custom-scrollbar dark:custom-scrollbar-dark">
             <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-6">Revenue & Volume by Work Type</h3>
             <div style={{ height: `${height}px` }}>
                 <ResponsiveContainer width="100%" height="100%">
@@ -174,8 +174,8 @@ export const WorkTypeChart = ({ data }) => {
 
 export const LeaderboardCard = ({ title, data, icon: Icon, color = "bg-blue-500" }) => {
     return (
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 h-96 overflow-y-auto transition-all hover:shadow-xl custom-scrollbar dark:custom-scrollbar-dark">
-            <div className="flex items-center gap-3 mb-6 sticky top-0 bg-white dark:bg-gray-800 z-10 pb-2 border-b border-gray-50 dark:border-gray-700">
+        <div className="bg-white dark:bg-[#1f1f2e] p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 h-96 overflow-y-auto transition-all hover:shadow-xl custom-scrollbar dark:custom-scrollbar-dark">
+            <div className="flex items-center gap-3 mb-6 sticky top-0 bg-white dark:bg-[#1f1f2e] z-10 pb-2 border-b border-gray-50 dark:border-gray-800">
                 <div className={`p-2 rounded-lg ${color} bg-opacity-10`}>
                     {Icon ? <Icon className={`w-5 h-5 ${color.replace('bg-', 'text-')}`} /> : <div className="w-5 h-5" />}
                 </div>
