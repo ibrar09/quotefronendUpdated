@@ -113,13 +113,13 @@ const NewQuotation = () => {
 
         setHeader(prev => ({
           ...prev,
-          brand: store.brand || prev.brand,
-          city: store.city || prev.city,
-          location: store.mall || prev.location,
+          brand: prev.brand ? prev.brand : (store.brand || ''),
+          city: prev.city ? prev.city : (store.city || ''),
+          location: prev.location ? prev.location : (store.mall || ''),
           storeCcid: store.oracle_ccid,
-          attentionTo: store.fm_manager || store.fm_supervisor || prev.attentionTo,
-          region: store.region || prev.region,
-          openingDate: store.opening_date || prev.openingDate,
+          attentionTo: prev.attentionTo ? prev.attentionTo : (store.fm_manager || store.fm_supervisor || ''),
+          region: prev.region ? prev.region : (store.region || ''),
+          openingDate: prev.openingDate ? prev.openingDate : (store.opening_date || ''),
           description: prev.mrDesc || prev.description || ''
         }));
 
