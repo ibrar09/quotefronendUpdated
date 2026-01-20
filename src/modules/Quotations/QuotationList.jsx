@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
-import { Plus, Edit, Download, Search, RefreshCw, MapPin, Trash2, Upload, CheckCircle } from 'lucide-react';
+import { Plus, Edit, Download, Search, RefreshCw, MapPin, Trash2, Upload, CheckCircle, Calendar } from 'lucide-react';
 import * as XLSX from 'xlsx';
 import { useTheme } from '../../context/ThemeContext';
 import API_BASE_URL from '../../config/api';
@@ -826,12 +826,31 @@ const QuotationList = () => {
                 <div className="relative w-full md:w-64">
                     <input
                         type="text"
-                        placeholder="Search Quote, Location, City, Invoice..."
-                        className={`w-full pl-10 pr-4 py-2 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-700 text-white' : 'bg-white border-gray-200 text-gray-900'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                        placeholder="Search... (Text, City, Location, YYYY-MM)"
+                        className={`w-full pl-10 pr-10 py-2 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-700 text-white' : 'bg-white border-gray-200 text-gray-900'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
                     <Search className="absolute left-3 top-2.5 text-gray-400" size={18} />
+
+                    {/* Calendar Month Picker */}
+                    <button
+                        onClick={() => document.getElementById('month-picker').showPicker()}
+                        className="absolute right-3 top-2.5 text-gray-400 hover:text-blue-500 transition-colors"
+                        title="Select Month"
+                    >
+                        <Calendar size={18} />
+                    </button>
+                    <input
+                        id="month-picker"
+                        type="month"
+                        className="absolute opacity-0 pointer-events-none w-0 h-0"
+                        onChange={(e) => {
+                            if (e.target.value) {
+                                setSearchTerm(e.target.value); // e.g., "2025-01"
+                            }
+                        }}
+                    />
                 </div>
             </div>
 
