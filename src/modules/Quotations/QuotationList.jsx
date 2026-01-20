@@ -194,26 +194,51 @@ const QuotationList = () => {
         }
     }, [highlightedRow, quotations]);
 
-    const fetchQuotations = async (pageNum = 1) => {
+    // Sync URL when search changes (Debounce)
+    useEffect(() => {
+        const handler = setTimeout(() => {
+            const newParams = new URLSearchParams(searchParams);
+            if (searchTerm) {
+                newParams.set('search', searchTerm);
+            } else {
+                newParams.delete('search');
+            }
+            // Only update if changed prevents loop if we rely on [searchParams] elsewhere
+            if (newParams.toString() !== searchParams.toString()) {
+                setSearchParams(newParams);
+            }
+        }, 500);
+        return () => clearTimeout(handler);
+    }, [searchTerm]);
+
+    // Update fetchQuotations to accept overrides
+    const fetchQuotations = async (pageNum = 1, filters = {}) => {
         setLoading(true);
         try {
-            // Passing pagination params and new filters
+            // Priority: Argument > State
+            const effectiveSearch = filters.search !== undefined ? filters.search : searchTerm;
+            const effectiveRegion = filters.region !== undefined ? filters.region : regionFilter;
+            const effectiveStatus = filters.status !== undefined ? filters.status : statusFilter;
+            const effectiveBrand = filters.brand !== undefined ? filters.brand : brandFilter;
+
             const params = new URLSearchParams({
                 page: pageNum,
                 limit: LIMIT,
-                search: searchTerm,
-                region: regionFilter,
-                status: statusFilter,
-                brand: brandFilter
+                search: effectiveSearch,
+                region: effectiveRegion,
+                status: effectiveStatus,
+                brand: effectiveBrand
             });
 
-            // Remove undefined keys
-            Object.keys(params).forEach(key => params[key] === undefined && delete params[key]);
+            // Remove undefined or null keys (but keep empty string if meaningful?)
+            // Backend handles empty string as "no filter" usually, or partial match "%%"
+            Object.keys(params).forEach(key => {
+                if (params[key] === undefined || params[key] === null || params[key] === 'undefined') delete params[key];
+            });
 
             const res = await axios.get(`${API_BASE_URL}/api/quotations?${params.toString()}`);
             if (res.data.success) {
                 setQuotations(res.data.data || []);
-                // If we get less than LIMIT, we reached the end
                 setHasMore(res.data.data.length === LIMIT);
             }
         } catch (err) {
