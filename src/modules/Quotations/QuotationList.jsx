@@ -35,6 +35,23 @@ const QuotationList = () => {
     const { darkMode, colors, themeStyles } = useTheme();
     const rowRefs = useRef({});
 
+    // [NEW] Helper to highlight search terms
+    const HighlightText = ({ text, highlight }) => {
+        if (!highlight || !text) return text;
+        const parts = String(text).split(new RegExp(`(${highlight})`, 'gi'));
+        return (
+            <span>
+                {parts.map((part, i) =>
+                    part.toLowerCase() === highlight.toLowerCase() ? (
+                        <span key={i} className="bg-yellow-300 text-black font-bold px-0.5 rounded-sm">{part}</span>
+                    ) : (
+                        part
+                    )
+                )}
+            </span>
+        );
+    };
+
     // Define all available filters
     const regions = ['ALL', 'CP', 'CPR', 'EP', 'WP', 'WPR'];
     // Status definitions moved to line 191 for consistency
@@ -751,21 +768,7 @@ const QuotationList = () => {
                     </button>
                 )}
 
-                <div className="relative max-w-md w-full ml-auto">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <Search size={16} className="text-gray-400" />
-                    </div>
-                    <input
-                        type="text"
-                        placeholder="Search Quote #, MR #, Brand or Description..."
-                        className={`block w-full pl-10 pr-3 py-2 border rounded-lg leading-5 transition duration-150 ease-in-out sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#00a8aa] ${darkMode
-                            ? 'bg-gray-800 border-gray-700 text-white placeholder-gray-500'
-                            : 'bg-white border-gray-300 text-gray-900 placeholder-gray-400'
-                            }`}
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                    />
-                </div>
+
             </div>
 
             {/* Nested Filters: Region and Status */}
@@ -1012,15 +1015,15 @@ const QuotationList = () => {
                                         {q.quote_status || 'DRAFT'}
                                     </td>
 
-                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, q.quote_no, 'Quote No')} className="p-2 font-bold cursor-copy hover:bg-black/5" title="Double-click to copy">{q.quote_no}</td>
+                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, q.quote_no, 'Quote No')} className="p-2 font-bold cursor-copy hover:bg-black/5" title="Double-click to copy"><HighlightText text={q.quote_no} highlight={searchTerm} /></td>
                                     <td onDoubleClick={(e) => handleCellDoubleClick(e, q.mr_date, 'MR Date')} className="p-2 cursor-copy hover:bg-black/5" title="Double-click to copy">{q.mr_date || '-'}</td>
-                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, q.mr_no, 'MR No')} className="p-2 cursor-copy hover:bg-black/5" title="Double-click to copy">{q.mr_no || '-'}</td>
-                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, q.pr_no, 'PR No')} className="p-2 cursor-copy hover:bg-black/5" title="Double-click to copy">{q.pr_no || '-'}</td>
-                                    <td className="p-2">{q.brand || q.brand_name || q.Store?.brand || '-'}</td>
-                                    <td className="p-2">{q.location || q.Store?.mall || '-'}</td>
-                                    <td className="p-2">{q.city || q.Store?.city || '-'}</td>
-                                    <td className="p-2">{q.region || q.Store?.region || '-'}</td>
-                                    <td className="p-2 truncate max-w-[120px]">{q.work_description}</td>
+                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, q.mr_no, 'MR No')} className="p-2 cursor-copy hover:bg-black/5" title="Double-click to copy"><HighlightText text={q.mr_no || '-'} highlight={searchTerm} /></td>
+                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, q.pr_no, 'PR No')} className="p-2 cursor-copy hover:bg-black/5" title="Double-click to copy"><HighlightText text={q.pr_no || '-'} highlight={searchTerm} /></td>
+                                    <td className="p-2"><HighlightText text={q.brand || q.brand_name || q.Store?.brand || '-'} highlight={searchTerm} /></td>
+                                    <td className="p-2"><HighlightText text={q.location || q.Store?.mall || '-'} highlight={searchTerm} /></td>
+                                    <td className="p-2"><HighlightText text={q.city || q.Store?.city || '-'} highlight={searchTerm} /></td>
+                                    <td className="p-2"><HighlightText text={q.region || q.Store?.region || '-'} highlight={searchTerm} /></td>
+                                    <td className="p-2 truncate max-w-[120px]"><HighlightText text={q.work_description} highlight={searchTerm} /></td>
                                     <td className="p-2 font-bold text-green-600">{q.work_status || '-'}</td>
                                     <td className="p-2">{q.completion_date || '-'}</td>
                                     <td className="p-2">{q.completed_by || '-'}</td>
@@ -1030,7 +1033,7 @@ const QuotationList = () => {
                                     <td className="p-2 truncate max-w-[100px]" title={q.craftsperson_notes}>
                                         {q.craftsperson_notes || '-'}
                                     </td>
-                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, po.po_no, 'PO No')} className="p-2 font-bold text-green-600 cursor-copy hover:bg-black/5" title="Double-click to copy">{po.po_no || '-'}</td>
+                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, po.po_no, 'PO No')} className="p-2 font-bold text-green-600 cursor-copy hover:bg-black/5" title="Double-click to copy"><HighlightText text={po.po_no || '-'} highlight={searchTerm} /></td>
                                     <td className="p-2">{po.po_date || '-'}</td>
                                     <td className="p-2">{po.eta || '-'}</td>
                                     <td className="p-2">{po.update_notes || '-'}</td>
@@ -1039,11 +1042,11 @@ const QuotationList = () => {
                                     <td className="p-2 text-right">{po.vat_15 || q.vat_amount || '0.00'}</td>
                                     <td className="p-2 text-right font-bold">{po.total_inc_vat || q.grand_total || '0.00'}</td>
                                     <td className="p-2 font-bold text-green-600">{fin.invoice_status || '-'}</td>
-                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, fin.invoice_no, 'Invoice No')} className="p-2 font-bold text-green-600 cursor-copy hover:bg-black/5" title="Double-click to copy">{fin.invoice_no || '-'}</td>
+                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, fin.invoice_no, 'Invoice No')} className="p-2 font-bold text-green-600 cursor-copy hover:bg-black/5" title="Double-click to copy"><HighlightText text={fin.invoice_no || '-'} highlight={searchTerm} /></td>
                                     <td className="p-2">{fin.invoice_date || '-'}</td>
                                     <td className="p-2">{q.supervisor || '-'}</td>
                                     <td className="p-2 truncate max-w-[150px]" title={q.comments}>{q.comments || '-'}</td>
-                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, q.oracle_ccid, 'Store CCID')} className="p-2 cursor-copy hover:bg-black/5" title="Double-click to copy">{q.oracle_ccid || '-'}</td>
+                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, q.oracle_ccid, 'Store CCID')} className="p-2 cursor-copy hover:bg-black/5" title="Double-click to copy"><HighlightText text={q.oracle_ccid || '-'} highlight={searchTerm} /></td>
                                     <td className="p-2 text-right">{fin.advance_payment || '0.00'}</td>
                                     <td className="p-2">{fin.payment_ref || '-'}</td>
                                     <td className="p-2 text-right font-bold text-green-700">{fin.received_amount || '0.00'}</td>
