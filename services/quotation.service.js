@@ -247,8 +247,74 @@ export const getQuotationById = async (jobId) => {
  * 🔹 LIST ALL QUOTATIONS (Excludes Intakes)
  * Supports pagination params but defaults to recent 300 for speed
  */
-export const listQuotations = async (page = 1, limit = 300) => {
+export const listQuotations = async (page = 1, limit = 300, filters = {}) => {
   const offset = (page - 1) * limit;
+
+  // 1. Build Main Job Filter
+  const whereClause = {
+    is_latest: true,
+    quote_status: { [Op.notIn]: ['INTAKE', 'PREVIEW'] }
+  };
+
+  // Filter: Location (Partial Match)
+  if (filters.location) {
+    whereClause.location = { [Op.iLike]: `%${filters.location}%` };
+  }
+
+  // Filter: Store CCID (Partial Match on oracle_ccid)
+  if (filters.store_ccid) {
+    whereClause.oracle_ccid = { [Op.iLike]: `%${filters.store_ccid}%` };
+  }
+
+  // Filter: Status
+  if (filters.status && filters.status !== 'ALL') {
+    whereClause.quote_status = filters.status;
+  }
+
+  // Filter: Region
+  if (filters.region && filters.region !== 'ALL') {
+    whereClause.region = filters.region;
+  }
+
+  // Filter: Brand
+  if (filters.brand && filters.brand !== 'ALL') {
+    // Determine if it's a group or single brand is handled frontend side usually via fetching group members
+    // But for direct match:
+    whereClause.brand = filters.brand; // Or use Op.or with brand_name
+  }
+
+  // Filter: Month & Year (createdAt)
+  if (filters.month || filters.year) {
+    const dateQuery = {};
+    const year = parseInt(filters.year) || new Date().getFullYear();
+
+    if (filters.month) {
+      // Check if format is 'YYYY-MM' or just month index
+      // Assuming input is month index (1-12) or name. Let's handle month index 1-12.
+      // safer to accept YYYY-MM from frontend if possible, but let's assume separate params
+      const monthIndex = parseInt(filters.month) - 1; // JS Date is 0-11
+      const startDate = new Date(year, monthIndex, 1);
+      const endDate = new Date(year, monthIndex + 1, 0, 23, 59, 59); // Last day of month
+      whereClause.createdAt = { [Op.between]: [startDate, endDate] };
+    } else {
+      // Year only
+      const startDate = new Date(year, 0, 1);
+      const endDate = new Date(year, 11, 31, 23, 59, 59);
+      whereClause.createdAt = { [Op.between]: [startDate, endDate] };
+    }
+  }
+
+  // 2. Build Includable Filters (Invoice No)
+  // We need to conditionally add 'required: true' to includes ONLY if we are filtering by them.
+  // Otherwise, we want LEFT OUTER JOIN (default) to keep showing jobs even without PO/Finance.
+
+  const financeWhere = {};
+  let requiredFinance = false;
+
+  if (filters.invoice_no) {
+    financeWhere.invoice_no = { [Op.iLike]: `%${filters.invoice_no}%` };
+    requiredFinance = true;
+  }
 
   return Job.findAll({
     attributes: [
@@ -259,10 +325,7 @@ export const listQuotations = async (page = 1, limit = 300) => {
       'completed_by', 'supervisor', 'comments', 'craftsperson_notes',
       'check_in_date', 'check_in_time', 'mr_priority', 'currency', 'version'
     ],
-    where: {
-      is_latest: true,
-      quote_status: { [Op.notIn]: ['INTAKE', 'PREVIEW'] }
-    },
+    where: whereClause,
     include: [
       {
         model: Store,
@@ -270,9 +333,12 @@ export const listQuotations = async (page = 1, limit = 300) => {
       },
       {
         model: PurchaseOrder,
+        required: requiredFinance, // Force INNER JOIN if filtering by Invoice
         attributes: ['po_no', 'po_date', 'amount_ex_vat', 'total_inc_vat', 'eta', 'update_notes'],
         include: [{
           model: Finance,
+          where: requiredFinance ? financeWhere : undefined,
+          required: requiredFinance, // Force INNER JOIN if filtering by Invoice
           attributes: [
             'invoice_no', 'invoice_status', 'received_amount', 'invoice_date',
             'payment_date', 'payment_month', 'hsbc_no', 'vat_status', 'vat_duration',
@@ -285,9 +351,6 @@ export const listQuotations = async (page = 1, limit = 300) => {
     order: [['createdAt', 'DESC']],
     limit: limit,
     offset: offset,
-    // [Performance] Subqueries can be slow, but needed for includes with limits in 1:M specific cases.
-    // However, Job is 1:1 with Store (mostly) and 1:M with PO but we only take first usually.
-    // subQuery: false // Try toggle if issues arise
   });
 };
 
