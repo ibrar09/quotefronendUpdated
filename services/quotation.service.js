@@ -308,12 +308,73 @@ export const listQuotations = async (page = 1, limit = 300, filters = {}) => {
   // We need to conditionally add 'required: true' to includes ONLY if we are filtering by them.
   // Otherwise, we want LEFT OUTER JOIN (default) to keep showing jobs even without PO/Finance.
 
-  const financeWhere = {};
-  let requiredFinance = false;
+  // 2. Generic Search (Unified Field Search)
+  if (filters.search) {
+    const s = `%${filters.search}%`;
+    whereClause[Op.or] = [
+      { quote_no: { [Op.iLike]: s } },
+      { mr_no: { [Op.iLike]: s } },
+      { pr_no: { [Op.iLike]: s } },
+      { work_description: { [Op.iLike]: s } },
+      { oracle_ccid: { [Op.iLike]: s } }, // Store ID
+      { location: { [Op.iLike]: s } },
+      { brand: { [Op.iLike]: s } },
+      { brand_name: { [Op.iLike]: s } },
+      // Note: Searching nested fields (PO, Finance) usually requires top-level subqueries or simple join logic.
+      // For simplicity and performance in Sequelize, we often keep it to main table or use basic includes.
+      // However, to search PO/Invoice, we need to add them to the 'required' includes or use sequelize.literal if complex.
+      // Let's try to match basic fields first. 
+      // If user wants to search Invoice No via main bar, we need to handle it carefully to avoid expanding the query too much.
+      // A common pattern:
+      // '$PurchaseOrders.po_no$': { [Op.iLike]: s }
+    ];
+  }
 
+  // 3. Build Includable Filters (Invoice No / PO Search)
+  const financeWhere = {};
+  const poWhere = {};
+  let requiredFinance = false;
+  let requiredPO = false;
+
+  // Specific Invoice Filter (Keep for backward compat or if used)
   if (filters.invoice_no) {
     financeWhere.invoice_no = { [Op.iLike]: `%${filters.invoice_no}%` };
     requiredFinance = true;
+  }
+
+  // Generic Search Extension for nested tables
+  // If search term is present, we might want to check PO or Finance. 
+  // But adding OR across tables in Sequelize is tricky without 'subQuery: false' and careful alias usage.
+  // STRATEGY: If the search looks like an Invoice (starts with INV) or PO, we can try to force that path.
+  // Alternatively, just let the main 'whereClause' handle the job fields, and if not found, it won't show.
+  // User asked for "Invoice Number" and "Store ID" in search bar.
+  // Store ID is 'oracle_ccid' (Covered).
+  // Invoice Number is in Finance.
+
+  if (filters.search) {
+    // To support Invoice Search in main bar, we need to include it in the OR. 
+    // Sequelize doesn't easily support top-level OR with nested includes unless we use '$Nested.col$'.
+    // Let's try the simple approach: check if it matches an Invoice pattern, OR just add a separate condition.
+    // actually, using [Op.or] with '$PurchaseOrders...$' requires required:false allows LEFT JOIN but logic is complex.
+    // SIMPLER: Let's assume if it looks like an Invoice/PO, we search those SPECIFICALLY via includes? 
+    // No, user just types.
+
+    // Let's stick to main table fields for the broad search to ensure speed.
+    // BUT, we can add a specific check:
+    // If the search term is clearly numeric or specific format, we can check those tables.
+
+    // STRICTER IMPLEMENTATION FOR PERFORMANCE:
+    // We will stick to Job fields for the main "Search".
+    // If user specifically wants proper deep search, we might need a separate optimized query or dedicated 'Advanced Search' (which we just removed).
+    // Wait, user said "ADD SEARCH BY LOCATION... INVOICE NUMBER... STORE ID... IN THE SEARCH BAR".
+    // So we MUST support it.
+
+    // Solution: Use subQuery: false and $syntax$ for nested columns in the main whereClause [Op.or]
+    // This requires 'subQuery: false' in the main findAll options.
+    whereClause[Op.or].push(
+      { '$PurchaseOrders.po_no$': { [Op.iLike]: `%${filters.search}%` } },
+      { '$PurchaseOrders.Finance.invoice_no$': { [Op.iLike]: `%${filters.search}%` } }
+    );
   }
 
   return Job.findAll({
