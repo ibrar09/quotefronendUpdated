@@ -6,7 +6,7 @@ export const ThemeProvider = ({ children }) => {
   // Initialize from localStorage or system preference
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem("theme");
-    return saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    return saved === "dark"; // Default to light if not explicitly "dark"
   });
 
   // Sync with DOM and Storage
