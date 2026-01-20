@@ -60,8 +60,15 @@ const NewQuotation = () => {
   const [approval, setApproval] = useState({ prepared: '', reviewed: '', approved: '' });
   const [highlightedSuggestion, setHighlightedSuggestion] = useState(0);
   const suggestionItemRefs = useRef([]);
+  const searchTimeoutRef = useRef(null);
   // [NEW] Portal Positioning State
   const [dropdownPos, setDropdownPos] = useState({ top: 0, left: 0, width: 0 });
+
+  useEffect(() => {
+    return () => {
+      if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current);
+    };
+  }, []);
 
   const updateDropdownPosition = (element) => {
     if (element) {
@@ -293,7 +300,7 @@ const NewQuotation = () => {
   }, []);
 
   // --- Price List Lookup (Smart Suggestions) ---
-  const handleItemSearch = async (index, field, val) => {
+  const handleItemSearch = (index, field, val) => {
     const newItems = [...items];
     newItems[index][field] = val;
     setItems(newItems);
@@ -301,16 +308,24 @@ const NewQuotation = () => {
     setActiveRow(index);
     setActiveField(field);
 
-    console.log(`[SUGGEST] Searching for: "${val}" in field: ${field}`);
-    try {
-      const res = await axios.get(`${API_BASE_URL}/api/pricelist/search?q=${val || ''}`);
-      console.log(`[SUGGEST] Found ${res.data.data?.length || 0} items`);
-      setPriceSuggestions(res.data.data || []);
-      setHighlightedSuggestion(0);
-      suggestionItemRefs.current = []; // Reset refs
-    } catch (err) {
-      console.error("Error fetching prices:", err);
+    // Clear previous timeout (Debounce)
+    if (searchTimeoutRef.current) {
+      clearTimeout(searchTimeoutRef.current);
     }
+
+    // Set new timeout to fire API call after 300ms
+    searchTimeoutRef.current = setTimeout(async () => {
+      console.log(`[SUGGEST] Searching for: "${val}" in field: ${field}`);
+      try {
+        const res = await axios.get(`${API_BASE_URL}/api/pricelist/search?q=${val || ''}`);
+        console.log(`[SUGGEST] Found ${res.data.data?.length || 0} items`);
+        setPriceSuggestions(res.data.data || []);
+        setHighlightedSuggestion(0);
+        suggestionItemRefs.current = []; // Reset refs
+      } catch (err) {
+        console.error("Error fetching prices:", err);
+      }
+    }, 300);
   };
 
   const handleFocus = (index, field, val) => {
