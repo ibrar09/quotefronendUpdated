@@ -25,10 +25,7 @@ const QuotationList = () => {
     const [storeFilter, setStoreFilter] = useState(''); // [NEW]
     const [invoiceFilter, setInvoiceFilter] = useState(''); // [NEW]
     const [monthFilter, setMonthFilter] = useState(''); // [NEW] YYYY-MM
-    const [locationFilter, setLocationFilter] = useState(''); // [NEW]
-    const [storeFilter, setStoreFilter] = useState(''); // [NEW]
-    const [invoiceFilter, setInvoiceFilter] = useState(''); // [NEW]
-    const [monthFilter, setMonthFilter] = useState(''); // [NEW] YYYY-MM
+
     const [selectedQuotation, setSelectedQuotation] = useState(null);
     const [importing, setImporting] = useState(false);
     const [highlightedRow, setHighlightedRow] = useState(null);
