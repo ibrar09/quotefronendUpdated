@@ -21,6 +21,10 @@ const QuotationList = () => {
     const [statusFilter, setStatusFilter] = useState(searchParams.get('status')?.toUpperCase() || 'ALL');
     const [brandFilter, setBrandFilter] = useState(searchParams.get('brand') || 'ALL');
     const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
+    const [locationFilter, setLocationFilter] = useState(''); // [NEW]
+    const [storeFilter, setStoreFilter] = useState(''); // [NEW]
+    const [invoiceFilter, setInvoiceFilter] = useState(''); // [NEW]
+    const [monthFilter, setMonthFilter] = useState(''); // [NEW] YYYY-MM
     const [selectedQuotation, setSelectedQuotation] = useState(null);
     const [importing, setImporting] = useState(false);
     const [highlightedRow, setHighlightedRow] = useState(null);
@@ -178,8 +182,25 @@ const QuotationList = () => {
     const fetchQuotations = async (pageNum = 1) => {
         setLoading(true);
         try {
-            // Passing pagination params
-            const res = await axios.get(`${API_BASE_URL}/api/quotations?page=${pageNum}&limit=${LIMIT}`);
+            // Passing pagination params and new filters
+            const params = new URLSearchParams({
+                page: pageNum,
+                limit: LIMIT,
+                search: searchTerm,
+                region: regionFilter,
+                status: statusFilter,
+                brand: brandFilter,
+                location: locationFilter || undefined,
+                store_ccid: storeFilter || undefined,
+                invoice_no: invoiceFilter || undefined,
+                month: monthFilter ? monthFilter.split('-')[1] : undefined,
+                year: monthFilter ? monthFilter.split('-')[0] : undefined
+            });
+
+            // Remove undefined keys
+            Object.keys(params).forEach(key => params[key] === undefined && delete params[key]);
+
+            const res = await axios.get(`${API_BASE_URL}/api/quotations?${params.toString()}`);
             if (res.data.success) {
                 setQuotations(res.data.data || []);
                 // If we get less than LIMIT, we reached the end
