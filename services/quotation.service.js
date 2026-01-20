@@ -318,6 +318,7 @@ export const listQuotations = async (page = 1, limit = 300, filters = {}) => {
       { work_description: { [Op.iLike]: s } },
       { oracle_ccid: { [Op.iLike]: s } }, // Store ID
       { location: { [Op.iLike]: s } },
+      { city: { [Op.iLike]: s } },
       { brand: { [Op.iLike]: s } },
       { brand_name: { [Op.iLike]: s } },
       // Nested Fields via $Syntax$ (Requires subQuery: false)
