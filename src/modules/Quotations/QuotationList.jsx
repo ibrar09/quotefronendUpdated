@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
-import { Plus, Edit, Download, Search, RefreshCw, MapPin, Trash2, Upload, CheckCircle, Calendar } from 'lucide-react';
+import { Plus, Edit, Download, Search, RefreshCw, MapPin, Trash2, Upload, CheckCircle, CalendarDays } from 'lucide-react';
 import * as XLSX from 'xlsx';
 import { useTheme } from '../../context/ThemeContext';
 import API_BASE_URL from '../../config/api';
@@ -12,6 +12,25 @@ import QuotationEditModal from './QuotationEditModal';
 import BrandManagerModal from './BrandManagerModal';
 import JobCompletionModal from './JobCompletionModal';
 
+// [NEW] Helper for Search Highlighting
+const HighlightText = ({ text, highlight }) => {
+    if (!highlight || !text) return <>{text}</>;
+    const parts = text.toString().split(new RegExp(`(${highlight})`, 'gi'));
+    return (
+        <span>
+            {parts.map((part, i) =>
+                part.toLowerCase() === highlight.toLowerCase() ? (
+                    <span key={i} className="bg-yellow-300 dark:bg-yellow-700 dark:text-white px-0.5 rounded font-bold">
+                        {part}
+                    </span>
+                ) : (
+                    part
+                )
+            )}
+        </span>
+    );
+};
+
 const QuotationList = () => {
     const [quotations, setQuotations] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -21,8 +40,8 @@ const QuotationList = () => {
     const [statusFilter, setStatusFilter] = useState(searchParams.get('status')?.toUpperCase() || 'ALL');
     const [brandFilter, setBrandFilter] = useState(searchParams.get('brand') || 'ALL');
     const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
-
-
+    const [dateFilter, setDateFilter] = useState(searchParams.get('date') || ''); // [NEW] Date Filter
+    const [dateFilterType, setDateFilterType] = useState('date'); // [NEW] 'date', 'month', 'year'
     const [selectedQuotation, setSelectedQuotation] = useState(null);
     const [importing, setImporting] = useState(false);
     const [highlightedRow, setHighlightedRow] = useState(null);
@@ -35,23 +54,6 @@ const QuotationList = () => {
     const { darkMode, colors, themeStyles } = useTheme();
     const rowRefs = useRef({});
 
-    // [NEW] Helper to highlight search terms
-    const HighlightText = ({ text, highlight }) => {
-        if (!highlight || !text) return text;
-        const parts = String(text).split(new RegExp(`(${highlight})`, 'gi'));
-        return (
-            <span>
-                {parts.map((part, i) =>
-                    part.toLowerCase() === highlight.toLowerCase() ? (
-                        <span key={i} className="bg-yellow-300 text-black font-bold px-0.5 rounded-sm">{part}</span>
-                    ) : (
-                        part
-                    )
-                )}
-            </span>
-        );
-    };
-
     // Define all available filters
     const regions = ['ALL', 'CP', 'CPR', 'EP', 'WP', 'WPR'];
     // Status definitions moved to line 191 for consistency
@@ -63,8 +65,9 @@ const QuotationList = () => {
     useEffect(() => {
         const urlRegion = searchParams.get('region');
         const urlStatus = searchParams.get('status');
-        const urlBrand = searchParams.get('brand');
+        const urlBrand = searchParams.get('brand'); // [RESTORED]
         const urlSearch = searchParams.get('search');
+        const urlDate = searchParams.get('date'); // [NEW]
         const urlMode = searchParams.get('mode');
 
         setRegionFilter(urlRegion || 'ALL');
@@ -86,15 +89,11 @@ const QuotationList = () => {
             setSearchTerm('');
         }
 
+        if (urlDate) setDateFilter(urlDate); // [NEW]
+
         // Reset page when filters change
         setPage(1);
-        // [FIX] Pass explicit filters to avoid stale state issues
-        fetchQuotations(1, {
-            search: urlSearch || '',
-            region: urlRegion || 'ALL',
-            status: urlStatus ? urlStatus.toUpperCase() : 'ALL',
-            brand: urlBrand || 'ALL'
-        });
+        fetchQuotations(1);
     }, [searchParams]);
 
     // [NEW] Fetch Brand Group members whenever brandFilter changes
@@ -200,51 +199,21 @@ const QuotationList = () => {
         }
     }, [highlightedRow, quotations]);
 
-    // Sync URL when search changes (Debounce)
-    useEffect(() => {
-        const handler = setTimeout(() => {
-            const newParams = new URLSearchParams(searchParams);
-            if (searchTerm) {
-                newParams.set('search', searchTerm);
-            } else {
-                newParams.delete('search');
-            }
-            // Only update if changed prevents loop if we rely on [searchParams] elsewhere
-            if (newParams.toString() !== searchParams.toString()) {
-                setSearchParams(newParams);
-            }
-        }, 500);
-        return () => clearTimeout(handler);
-    }, [searchTerm]);
-
-    // Update fetchQuotations to accept overrides
-    const fetchQuotations = async (pageNum = 1, filters = {}) => {
+    const fetchQuotations = async (pageNum = 1) => {
         setLoading(true);
         try {
-            // Priority: Argument > State
-            const effectiveSearch = filters.search !== undefined ? filters.search : searchTerm;
-            const effectiveRegion = filters.region !== undefined ? filters.region : regionFilter;
-            const effectiveStatus = filters.status !== undefined ? filters.status : statusFilter;
-            const effectiveBrand = filters.brand !== undefined ? filters.brand : brandFilter;
+            // Passing pagination params AND filters
+            let query = `${API_BASE_URL}/api/quotations?page=${pageNum}&limit=${LIMIT}`;
+            if (dateFilter) {
+                if (dateFilterType === 'month') query += `&month=${dateFilter}`;
+                else if (dateFilterType === 'year') query += `&year=${dateFilter}`;
+                else query += `&date=${dateFilter}`;
+            }
 
-            const params = new URLSearchParams({
-                page: pageNum,
-                limit: LIMIT,
-                search: effectiveSearch,
-                region: effectiveRegion,
-                status: effectiveStatus,
-                brand: effectiveBrand
-            });
-
-            // Remove undefined or null keys (but keep empty string if meaningful?)
-            // Backend handles empty string as "no filter" usually, or partial match "%%"
-            Object.keys(params).forEach(key => {
-                if (params[key] === undefined || params[key] === null || params[key] === 'undefined') delete params[key];
-            });
-
-            const res = await axios.get(`${API_BASE_URL}/api/quotations?${params.toString()}`);
+            const res = await axios.get(query);
             if (res.data.success) {
                 setQuotations(res.data.data || []);
+                // If we get less than LIMIT, we reached the end
                 setHasMore(res.data.data.length === LIMIT);
             }
         } catch (err) {
@@ -344,7 +313,11 @@ const QuotationList = () => {
                 (q.oracle_ccid && q.oracle_ccid.toString().includes(s)) ||
                 (q.work_description && q.work_description.toLowerCase().includes(s)) ||
                 (q.brand && q.brand.toLowerCase().includes(s)) ||
-                (q.Store?.brand && q.Store.brand.toLowerCase().includes(s));
+                (q.Store?.brand && q.Store.brand.toLowerCase().includes(s)) ||
+                (q.city && q.city.toLowerCase().includes(s)) || // [NEW]
+                (q.location && q.location.toLowerCase().includes(s)) || // [NEW]
+                (q.Store?.city && q.Store.city.toLowerCase().includes(s)) || // [NEW]
+                (q.Store?.mall && q.Store.mall.toLowerCase().includes(s)); // [NEW]
 
             return matchesRegion && matchesStatus && matchesSearch && matchesBrand;
         });
@@ -799,103 +772,170 @@ const QuotationList = () => {
                     </button>
                 )}
 
+                <div className="relative max-w-md w-full ml-auto flex gap-2">
+                    <div className="relative flex-grow">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <Search size={16} className="text-gray-400" />
+                        </div>
+                        <input
+                            type="text"
+                            placeholder="Search Quote #, MR #, Brand, City or Description..."
+                            className={`block w-full pl-10 pr-3 py-2 border rounded-lg leading-5 transition duration-150 ease-in-out sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#00a8aa] ${darkMode
+                                ? 'bg-gray-800 border-gray-700 text-white placeholder-gray-500'
+                                : 'bg-white border-gray-300 text-gray-900 placeholder-gray-400'
+                                }`}
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+                    </div>
+                    {/* Data Picker Icon */}
+                    {/* Data Picker Icon */}
+                    {/* Date Picker Group */}
+                    <div className="flex items-center gap-1 ml-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-700 p-0.5 shadow-sm">
 
+                        {/* Type Selector */}
+                        <select
+                            value={dateFilterType}
+                            onChange={(e) => {
+                                setDateFilterType(e.target.value);
+                                setDateFilter(''); // Clear value on type change
+                            }}
+                            className="text-[10px] bg-transparent border-none focus:ring-0 cursor-pointer font-bold text-gray-500 hover:text-[#00a8aa] py-1 pl-2 pr-6"
+                            title="Select Filter Type"
+                        >
+                            <option value="date">Date</option>
+                            <option value="month">Month</option>
+                            <option value="year">Year</option>
+                        </select>
+
+                        {/* Divider */}
+                        <div className="h-4 w-px bg-gray-300 dark:bg-gray-600"></div>
+
+                        {/* Picker Trigger */}
+                        <div className="relative flex items-center">
+                            <button
+                                onClick={() => {
+                                    const input = document.getElementById('date-filter-calendar');
+                                    if (input) {
+                                        if (dateFilterType !== 'year' && input.showPicker) {
+                                            input.showPicker();
+                                        } else {
+                                            input.focus();
+                                        }
+                                    }
+                                }}
+                                className={`p-1.5 rounded-md flex items-center gap-1 transition-colors ${dateFilter
+                                    ? 'text-[#00a8aa] bg-teal-50'
+                                    : `text-gray-400 hover:text-gray-600`
+                                    }`}
+                                title={`Filter by ${dateFilterType}`}
+                            >
+                                <CalendarDays size={18} />
+                                {dateFilter && <span className="text-xs font-bold">{dateFilter}</span>}
+                            </button>
+
+
+                            {dateFilterType === 'year' ? (
+                                <input
+                                    id="date-filter-calendar"
+                                    type="number"
+                                    min="2000" max="2100" placeholder="YYYY"
+                                    className="w-16 text-xs text-center border-none bg-transparent focus:ring-0 p-0"
+                                    value={dateFilter || ''}
+                                    onChange={(e) => setDateFilter(e.target.value)}
+                                    onBlur={() => fetchQuotations(1)}
+                                />
+                            ) : (
+                                <input
+                                    id="date-filter-calendar"
+                                    type={dateFilterType}
+                                    className="absolute opacity-0 top-0 left-0 w-full h-full cursor-pointer"
+                                    style={{ visibility: 'hidden' }} // use showPicker
+                                    value={dateFilter || ''}
+                                    onChange={(e) => {
+                                        setDateFilter(e.target.value);
+                                    }}
+                                    onBlur={() => fetchQuotations(1)}
+                                />
+                            )}
+
+                            {/* Clear button if date selected */}
+                            {dateFilter && (
+                                <button
+                                    onClick={() => { setDateFilter(''); fetchQuotations(1); }}
+                                    className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-0.5 text-[8px] w-4 h-4 flex items-center justify-center z-20 shadow-sm"
+                                    title="Clear filter"
+                                >
+                                    x
+                                </button>
+                            )}
+                        </div>
+                    </div>
+                </div>
             </div>
 
             {/* Nested Filters: Region and Status */}
-            {/* Filters */}
-            <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
-                <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto">
-                    {regions.map(region => (
-                        <button
-                            key={region}
-                            onClick={() => {
-                                setRegionFilter(region);
-                                setPage(1);
-                            }}
-                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${regionFilter === region
-                                ? 'bg-blue-600 text-white shadow-md'
-                                : darkMode ? 'bg-gray-800 text-gray-300 hover:bg-gray-700' : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
-                                }`}
-                        >
-                            {region}
-                        </button>
-                    ))}
+            <div className="flex flex-col gap-4 mb-6">
+                {/* Region Filter Row */}
+                <div className="flex items-center gap-2 overflow-x-auto pb-1 px-1">
+                    <span className={`text-[10px] font-black uppercase tracking-widest min-w-[60px] ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Region:</span>
+                    <div className="flex gap-2">
+                        {regions.map(reg => (
+                            <button
+                                key={reg}
+                                onClick={() => setRegionFilter(reg)}
+                                className={`px-4 py-1.5 rounded-full font-black uppercase text-[9px] transition-all border-2 flex items-center gap-1
+                                ${regionFilter === reg
+                                        ? `bg-[#00a8aa] text-white border-[#00a8aa] shadow-lg scale-105`
+                                        : `${darkMode ? 'bg-gray-800 border-gray-700 text-gray-400' : 'bg-white border-gray-300 text-gray-500'} hover:border-[#00a8aa]`
+                                    }`}
+                            >
+                                <MapPin size={10} /> {reg === 'ALL' ? 'All Regions' : reg}
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
-                <div className="relative w-full md:w-64">
-                    <input
-                        type="text"
-                        placeholder="Search... (Text, City, Location, YYYY-MM)"
-                        className={`w-full pl-10 pr-10 py-2 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-700 text-white' : 'bg-white border-gray-200 text-gray-900'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                    />
-                    <Search className="absolute left-3 top-2.5 text-gray-400" size={18} />
+                {/* Status Filter Row */}
+                <div className="flex items-center gap-2 overflow-x-auto pb-1 px-1">
+                    <span className={`text-[10px] font-black uppercase tracking-widest min-w-[60px] ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Status:</span>
+                    <div className="flex gap-2">
+                        {statuses.map(status => (
+                            <button
+                                key={status}
+                                onClick={() => setStatusFilter(status)}
+                                className={`px-4 py-1.5 rounded-full font-black uppercase text-[9px] transition-all border-2
+                                ${statusFilter === status
+                                        ? `bg-black text-white border-black shadow-lg scale-105`
+                                        : `${darkMode ? 'bg-gray-800 border-gray-700 text-gray-400' : 'bg-white border-gray-300 text-gray-500'} hover:border-black`
+                                    }`}
+                            >
+                                {status === 'ALL' ? 'All Statuses' : status}
+                            </button>
+                        ))}
+                    </div>
+                </div>
 
-                    {/* Calendar Month Picker */}
+                {/* [NEW] Pagination Controls */}
+                <div className="flex items-center justify-between bg-gray-50 dark:bg-gray-900 p-2 rounded-lg border dark:border-gray-700">
                     <button
-                        onClick={() => document.getElementById('month-picker').showPicker()}
-                        className="absolute right-3 top-2.5 text-gray-400 hover:text-blue-500 transition-colors"
-                        title="Select Month"
+                        onClick={handlePrevPage}
+                        disabled={page === 1 || loading}
+                        className={`px-3 py-1 rounded text-xs font-bold ${page === 1 ? 'text-gray-400 cursor-not-allowed' : 'bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm'}`}
                     >
-                        <Calendar size={18} />
+                        Previous
                     </button>
-                    <input
-                        id="month-picker"
-                        type="month"
-                        className="absolute opacity-0 pointer-events-none w-0 h-0"
-                        onChange={(e) => {
-                            if (e.target.value) {
-                                setSearchTerm(e.target.value); // e.g., "2025-01"
-                            }
-                        }}
-                    />
+                    <span className="text-xs font-mono text-gray-500">
+                        Page {page} {loading && '...'}
+                    </span>
+                    <button
+                        onClick={handleNextPage}
+                        disabled={!hasMore || loading}
+                        className={`px-3 py-1 rounded text-xs font-bold ${!hasMore ? 'text-gray-400 cursor-not-allowed' : 'bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm'}`}
+                    >
+                        Next
+                    </button>
                 </div>
-            </div>
-
-            {/* Status Filter Row */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-1 px-1 mb-4">
-                <span className={`text-[10px] font-black uppercase tracking-widest min-w-[60px] ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Status:</span>
-                <div className="flex gap-2">
-                    {statuses.map(status => (
-                        <button
-                            key={status}
-                            onClick={() => {
-                                setStatusFilter(status);
-                                setPage(1);
-                            }}
-                            className={`px-4 py-1.5 rounded-full font-black uppercase text-[9px] transition-all border-2
-                            ${statusFilter === status
-                                    ? `bg-black text-white border-black shadow-lg scale-105`
-                                    : `${darkMode ? 'bg-gray-800 border-gray-700 text-gray-400' : 'bg-white border-gray-300 text-gray-500'} hover:border-black`
-                                }`}
-                        >
-                            {status === 'ALL' ? 'All Statuses' : status}
-                        </button>
-                    ))}
-                </div>
-            </div>
-
-            {/* Pagination Controls */}
-            <div className="flex items-center justify-between mb-4 bg-gray-50 dark:bg-gray-900 p-2 rounded-lg border dark:border-gray-700">
-                <button
-                    onClick={handlePrevPage}
-                    disabled={page === 1 || loading}
-                    className={`px-3 py-1 rounded text-xs font-bold ${page === 1 ? 'text-gray-400 cursor-not-allowed' : 'bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm'}`}
-                >
-                    Previous
-                </button>
-                <span className="text-xs font-mono text-gray-500">
-                    Page {page} {loading && '...'}
-                </span>
-                <button
-                    onClick={handleNextPage}
-                    disabled={!hasMore || loading}
-                    className={`px-3 py-1 rounded text-xs font-bold ${!hasMore ? 'text-gray-400 cursor-not-allowed' : 'bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm'}`}
-                >
-                    Next
-                </button>
             </div>
 
             {/* Table Container with Drag-to-Scroll */}
@@ -1066,24 +1106,24 @@ const QuotationList = () => {
                                     </td>
 
                                     <td onDoubleClick={(e) => handleCellDoubleClick(e, q.quote_no, 'Quote No')} className="p-2 font-bold cursor-copy hover:bg-black/5" title="Double-click to copy"><HighlightText text={q.quote_no} highlight={searchTerm} /></td>
-                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, q.mr_date, 'MR Date')} className="p-2 cursor-copy hover:bg-black/5" title="Double-click to copy">{q.mr_date || '-'}</td>
+                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, q.mr_date, 'MR Date')} className="p-2 cursor-copy hover:bg-black/5" title="Double-click to copy"><HighlightText text={q.mr_date || '-'} highlight={searchTerm} /></td>
                                     <td onDoubleClick={(e) => handleCellDoubleClick(e, q.mr_no, 'MR No')} className="p-2 cursor-copy hover:bg-black/5" title="Double-click to copy"><HighlightText text={q.mr_no || '-'} highlight={searchTerm} /></td>
                                     <td onDoubleClick={(e) => handleCellDoubleClick(e, q.pr_no, 'PR No')} className="p-2 cursor-copy hover:bg-black/5" title="Double-click to copy"><HighlightText text={q.pr_no || '-'} highlight={searchTerm} /></td>
                                     <td className="p-2"><HighlightText text={q.brand || q.brand_name || q.Store?.brand || '-'} highlight={searchTerm} /></td>
                                     <td className="p-2"><HighlightText text={q.location || q.Store?.mall || '-'} highlight={searchTerm} /></td>
                                     <td className="p-2"><HighlightText text={q.city || q.Store?.city || '-'} highlight={searchTerm} /></td>
-                                    <td className="p-2"><HighlightText text={q.region || q.Store?.region || '-'} highlight={searchTerm} /></td>
+                                    <td className="p-2">{q.region || q.Store?.region || '-'}</td>
                                     <td className="p-2 truncate max-w-[120px]"><HighlightText text={q.work_description} highlight={searchTerm} /></td>
                                     <td className="p-2 font-bold text-green-600">{q.work_status || '-'}</td>
                                     <td className="p-2">{q.completion_date || '-'}</td>
-                                    <td className="p-2">{q.completed_by || '-'}</td>
+                                    <td className="p-2"><HighlightText text={q.completed_by || '-'} highlight={searchTerm} /></td>
                                     <td className="p-2 text-center text-[8px] leading-tight">
                                         {q.check_in_date || '-'}<br />{q.check_in_time || ''}
                                     </td>
                                     <td className="p-2 truncate max-w-[100px]" title={q.craftsperson_notes}>
                                         {q.craftsperson_notes || '-'}
                                     </td>
-                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, po.po_no, 'PO No')} className="p-2 font-bold text-green-600 cursor-copy hover:bg-black/5" title="Double-click to copy"><HighlightText text={po.po_no || '-'} highlight={searchTerm} /></td>
+                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, po.po_no, 'PO No')} className="p-2 font-bold text-green-600 cursor-copy hover:bg-black/5" title="Double-click to copy">{po.po_no || '-'}</td>
                                     <td className="p-2">{po.po_date || '-'}</td>
                                     <td className="p-2">{po.eta || '-'}</td>
                                     <td className="p-2">{po.update_notes || '-'}</td>
@@ -1092,11 +1132,11 @@ const QuotationList = () => {
                                     <td className="p-2 text-right">{po.vat_15 || q.vat_amount || '0.00'}</td>
                                     <td className="p-2 text-right font-bold">{po.total_inc_vat || q.grand_total || '0.00'}</td>
                                     <td className="p-2 font-bold text-green-600">{fin.invoice_status || '-'}</td>
-                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, fin.invoice_no, 'Invoice No')} className="p-2 font-bold text-green-600 cursor-copy hover:bg-black/5" title="Double-click to copy"><HighlightText text={fin.invoice_no || '-'} highlight={searchTerm} /></td>
+                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, fin.invoice_no, 'Invoice No')} className="p-2 font-bold text-green-600 cursor-copy hover:bg-black/5" title="Double-click to copy">{fin.invoice_no || '-'}</td>
                                     <td className="p-2">{fin.invoice_date || '-'}</td>
                                     <td className="p-2">{q.supervisor || '-'}</td>
                                     <td className="p-2 truncate max-w-[150px]" title={q.comments}>{q.comments || '-'}</td>
-                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, q.oracle_ccid, 'Store CCID')} className="p-2 cursor-copy hover:bg-black/5" title="Double-click to copy"><HighlightText text={q.oracle_ccid || '-'} highlight={searchTerm} /></td>
+                                    <td onDoubleClick={(e) => handleCellDoubleClick(e, q.oracle_ccid, 'Store CCID')} className="p-2 cursor-copy hover:bg-black/5" title="Double-click to copy">{q.oracle_ccid || '-'}</td>
                                     <td className="p-2 text-right">{fin.advance_payment || '0.00'}</td>
                                     <td className="p-2">{fin.payment_ref || '-'}</td>
                                     <td className="p-2 text-right font-bold text-green-700">{fin.received_amount || '0.00'}</td>
@@ -1139,13 +1179,15 @@ const QuotationList = () => {
             />
 
             {/* [NEW] Job Completion Modal */}
-            {selectedJobCompletion && (
-                <JobCompletionModal
-                    quotation={selectedJobCompletion}
-                    onClose={() => setSelectedJobCompletion(null)}
-                    onUpdate={fetchQuotations}
-                />
-            )}
+            {
+                selectedJobCompletion && (
+                    <JobCompletionModal
+                        quotation={selectedJobCompletion}
+                        onClose={() => setSelectedJobCompletion(null)}
+                        onUpdate={fetchQuotations}
+                    />
+                )
+            }
         </div >
     );
 };
