@@ -777,63 +777,146 @@ const QuotationList = () => {
             </div>
 
             {/* Nested Filters: Region and Status */}
-            <div className="flex flex-col gap-4 mb-6">
-                {/* Region Filter Row */}
-                <div className="flex items-center gap-2 overflow-x-auto pb-1 px-1">
-                    <span className={`text-[10px] font-black uppercase tracking-widest min-w-[60px] ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Region:</span>
-                    <div className="flex gap-2">
-                        {regions.map(reg => (
+            {/* Filters Section (Updated) */}
+            <div className={`p-4 rounded-lg border mb-4 shadow-sm ${darkMode ? 'bg-gray-800/50 border-gray-700' : 'bg-gray-50 border-gray-200'}`}>
+                {/* Primary Filters Row */}
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
+                    <div className="flex gap-2 overflow-x-auto w-full md:w-auto pb-1">
+                        {regions.map(region => (
                             <button
-                                key={reg}
-                                onClick={() => setRegionFilter(reg)}
-                                className={`px-4 py-1.5 rounded-full font-black uppercase text-[9px] transition-all border-2 flex items-center gap-1
-                                ${regionFilter === reg
-                                        ? `bg-[#00a8aa] text-white border-[#00a8aa] shadow-lg scale-105`
-                                        : `${darkMode ? 'bg-gray-800 border-gray-700 text-gray-400' : 'bg-white border-gray-300 text-gray-500'} hover:border-[#00a8aa]`
+                                key={region}
+                                onClick={() => {
+                                    setRegionFilter(region);
+                                    setPage(1);
+                                }}
+                                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${regionFilter === region
+                                    ? 'bg-blue-600 text-white shadow'
+                                    : darkMode ? 'bg-gray-700 text-gray-300 hover:bg-gray-600' : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
                                     }`}
                             >
-                                <MapPin size={10} /> {reg === 'ALL' ? 'All Regions' : reg}
+                                {region}
                             </button>
                         ))}
                     </div>
+
+                    <div className="flex w-full md:w-auto gap-2">
+                        <div className="relative flex-1 md:w-64">
+                            <input
+                                type="text"
+                                placeholder="Search all fields..."
+                                className={`w-full pl-10 pr-4 py-2 rounded-lg border text-sm ${darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 placeholder-gray-500'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                            />
+                            <Search className="absolute left-3 top-2.5 text-gray-400" size={16} />
+                        </div>
+                        <button
+                            onClick={() => fetchQuotations(1)}
+                            className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-sm"
+                            title="Refresh List"
+                        >
+                            <Search size={20} />
+                        </button>
+                    </div>
                 </div>
 
-                {/* Status Filter Row */}
-                <div className="flex items-center gap-2 overflow-x-auto pb-1 px-1">
-                    <span className={`text-[10px] font-black uppercase tracking-widest min-w-[60px] ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Status:</span>
+                {/* Advanced Filters Row */}
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                    <input
+                        type="text"
+                        placeholder="Location"
+                        className={`px-3 py-2 rounded border text-sm ${darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300'}`}
+                        value={locationFilter}
+                        onChange={(e) => setLocationFilter(e.target.value)}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Store ID"
+                        className={`px-3 py-2 rounded border text-sm ${darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300'}`}
+                        value={storeFilter}
+                        onChange={(e) => setStoreFilter(e.target.value)}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Invoice #"
+                        className={`px-3 py-2 rounded border text-sm ${darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300'}`}
+                        value={invoiceFilter}
+                        onChange={(e) => setInvoiceFilter(e.target.value)}
+                    />
+                    <input
+                        type="month"
+                        className={`px-3 py-2 rounded border text-sm ${darkMode ? 'bg-gray-700 border-gray-600 text-white' : 'bg-white border-gray-300'}`}
+                        value={monthFilter}
+                        onChange={(e) => setMonthFilter(e.target.value)}
+                    />
                     <div className="flex gap-2">
+                        <button
+                            onClick={() => {
+                                setPage(1);
+                                fetchQuotations(1);
+                            }}
+                            className="flex-1 bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700 text-sm font-medium transition shadow-md"
+                        >
+                            Apply
+                        </button>
+                        <button
+                            onClick={() => {
+                                setLocationFilter('');
+                                setStoreFilter('');
+                                setInvoiceFilter('');
+                                setMonthFilter('');
+                                setSearchTerm('');
+                                setRegionFilter('ALL');
+                                setStatusFilter('ALL');
+                                setPage(1);
+                                setTimeout(() => fetchQuotations(1), 100);
+                            }}
+                            className={`px-3 py-2 rounded border text-sm font-medium transition ${darkMode ? 'bg-gray-700 text-gray-300 border-gray-600 hover:bg-gray-600' : 'bg-white text-gray-600 border-gray-300 hover:bg-gray-50'}`}
+                            title="Clear Filters"
+                        >
+                            Clear
+                        </button>
+                    </div>
+                </div>
+
+                {/* Status Filter Row (Compact) */}
+                <div className="flex items-center gap-2 overflow-x-auto pb-1 px-1 mt-4 border-t pt-3 dark:border-gray-700 border-gray-200">
+                    <span className={`text-[10px] font-black uppercase tracking-widest min-w-[50px] ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Status:</span>
+                    <div className="flex gap-1.5">
                         {statuses.map(status => (
                             <button
                                 key={status}
-                                onClick={() => setStatusFilter(status)}
-                                className={`px-4 py-1.5 rounded-full font-black uppercase text-[9px] transition-all border-2
+                                onClick={() => {
+                                    setStatusFilter(status);
+                                    setPage(1);
+                                }}
+                                className={`px-3 py-1 rounded-full font-bold uppercase text-[9px] transition-all border
                                 ${statusFilter === status
-                                        ? `bg-black text-white border-black shadow-lg scale-105`
-                                        : `${darkMode ? 'bg-gray-800 border-gray-700 text-gray-400' : 'bg-white border-gray-300 text-gray-500'} hover:border-black`
+                                        ? `bg-black text-white border-black shadow scale-105`
+                                        : `${darkMode ? 'bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700' : 'bg-white border-gray-200 text-gray-500 hover:border-gray-300'}`
                                     }`}
                             >
-                                {status === 'ALL' ? 'All Statuses' : status}
+                                {status === 'ALL' ? 'All' : status}
                             </button>
                         ))}
                     </div>
                 </div>
-
-                {/* [NEW] Pagination Controls */}
-                <div className="flex items-center justify-between bg-gray-50 dark:bg-gray-900 p-2 rounded-lg border dark:border-gray-700">
+                {/* Pagination Controls (Moved inside filter block for cohesion) */}
+                <div className="flex items-center justify-between mt-3 pt-3 border-t dark:border-gray-700 border-gray-200">
                     <button
                         onClick={handlePrevPage}
                         disabled={page === 1 || loading}
-                        className={`px-3 py-1 rounded text-xs font-bold ${page === 1 ? 'text-gray-400 cursor-not-allowed' : 'bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm'}`}
+                        className={`flex items-center gap-1 px-3 py-1.5 rounded text-xs font-bold transition ${page === 1 ? 'text-gray-400 cursor-not-allowed' : 'bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 shadow-sm border dark:border-gray-600'}`}
                     >
-                        Previous
+                        Prev
                     </button>
-                    <span className="text-xs font-mono text-gray-500">
+                    <span className="text-xs font-mono text-gray-500 dark:text-gray-400">
                         Page {page} {loading && '...'}
                     </span>
                     <button
                         onClick={handleNextPage}
                         disabled={!hasMore || loading}
-                        className={`px-3 py-1 rounded text-xs font-bold ${!hasMore ? 'text-gray-400 cursor-not-allowed' : 'bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-sm'}`}
+                        className={`flex items-center gap-1 px-3 py-1.5 rounded text-xs font-bold transition ${!hasMore ? 'text-gray-400 cursor-not-allowed' : 'bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 shadow-sm border dark:border-gray-600'}`}
                     >
                         Next
                     </button>
