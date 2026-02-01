@@ -23,6 +23,29 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     const login = async (email, password) => {
+        // --- BYPASS LOGIN (Backend not deployed) ---
+        console.warn("LOGIN BYPASS ENABLED: Skipping backend authentication.");
+
+        const mockUser = {
+            id: 999,
+            name: 'Demo Administrator',
+            email: email,
+            role: 'ADMIN',
+            permissions: ['ALL_ACCESS']
+        };
+
+        const mockToken = 'demo-bypass-token-' + Date.now();
+
+        localStorage.setItem('token', mockToken);
+        localStorage.setItem('user', JSON.stringify(mockUser));
+
+        axios.defaults.headers.common['Authorization'] = `Bearer ${mockToken}`;
+        setUser(mockUser);
+
+        return { success: true };
+
+        /* 
+        // ORIGINAL CODE (Restored when backend is live)
         try {
             const res = await axios.post(`${API_BASE_URL}/api/auth/login`, { email, password });
             if (res.data.success) {
@@ -41,6 +64,7 @@ export const AuthProvider = ({ children }) => {
                 message: err.response?.data?.message || 'Login failed'
             };
         }
+        */
     };
 
     const logout = () => {
