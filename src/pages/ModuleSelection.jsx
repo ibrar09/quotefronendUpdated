@@ -59,7 +59,7 @@ const ModuleSelection = () => {
             color: 'violet',
             bg: 'bg-violet-600',
             path: '/user/dashboard',
-            path: '/user/dashboard',
+
             permission: 'view_tasks'
         }
     ];
