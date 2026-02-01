@@ -16,6 +16,10 @@ export default {
         'sidebar-gradient': 'linear-gradient(180deg, #4c1a57 0%, #00a8aa 100%)',
         'dashboard-gradient': 'linear-gradient(135deg, #4c1a57 0%, #00a8aa 100%)',
       },
+      fontFamily: {
+        heading: ['"Playfair Display"', 'serif'],
+        sans: ['"Inter"', 'sans-serif'],
+      },
     },
   },
   plugins: [],

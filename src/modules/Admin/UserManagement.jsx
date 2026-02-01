@@ -2,38 +2,43 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import API_BASE_URL from '../../config/api';
 import { useTheme } from '../../context/ThemeContext';
-import { UserPlus, Edit, Trash2, CheckCircle, XCircle, Shield, Key } from 'lucide-react';
+import { UserPlus, Edit, Trash2, CheckCircle, XCircle, Shield, Key, Search, Lock, User } from 'lucide-react';
+import PermissionSelector from '../../components/PermissionSelector';
 
 const UserManagement = () => {
-    const [users, setUsers] = useState([]);
+    const [employees, setEmployees] = useState([]);
+    const [roles, setRoles] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [showModal, setShowModal] = useState(false);
-    const [editingUser, setEditingUser] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    // Modal State
+    const [showLoginModal, setShowLoginModal] = useState(false);
+    const [selectedEmployee, setSelectedEmployee] = useState(null);
+    const [loginForm, setLoginForm] = useState({ username: '', email: '', password: '', roleId: '', permissions: [], manualRole: '', isManualRole: false });
+
     const { themeStyles, darkMode } = useTheme();
 
-    // Form State
-    const [formData, setFormData] = useState({
-        username: '',
-        email: '',
-        password: '',
-        role: 'USER',
-        permissions: []
-    });
-
-    const ALL_PERMISSIONS = [
-        'view_dashboard', 'view_quotations', 'create_quotation', 'delete_quotation',
-        'view_finance', 'approve_finance', 'manage_master_data', 'manage_users'
-    ];
-
     useEffect(() => {
-        fetchUsers();
+        fetchData();
     }, []);
 
-    const fetchUsers = async () => {
+    const fetchData = async () => {
         try {
-            const res = await axios.get(`${API_BASE_URL}/api/auth/users`);
-            if (res.data.success) {
-                setUsers(res.data.data);
+            const token = localStorage.getItem('token');
+            const config = {
+                headers: { Authorization: `Bearer ${token}` }
+            };
+
+            const [empRes, roleRes] = await Promise.all([
+                axios.get(`${API_BASE_URL}/api/employees`, config),
+                axios.get(`${API_BASE_URL}/api/roles`, config)
+            ]);
+
+            if (empRes.data.success) {
+                setEmployees(empRes.data.data);
+            }
+            if (roleRes.data.success) {
+                setRoles(roleRes.data.data);
             }
         } catch (err) {
             console.error(err);
@@ -42,234 +47,246 @@ const UserManagement = () => {
         }
     };
 
-    const handleSave = async (e) => {
+    const handleCreateLoginCommon = (emp) => {
+        setSelectedEmployee(emp);
+        setLoginForm({
+            username: (emp.name || emp.first_name).replace(/\s+/g, '').toLowerCase(),
+            email: emp.email || '',
+            roleId: roles.length > 0 ? roles[0].id : '',
+            password: '', // Default to empty for manual entry
+            permissions: emp.User?.permissions || [] // Load existing if any
+        });
+        setShowLoginModal(true);
+    };
+
+    const submitLogin = async (e) => {
         e.preventDefault();
         try {
-            if (editingUser) {
-                // Edit
-                await axios.put(`${API_BASE_URL}/api/auth/users/${editingUser.id}`, formData);
-            } else {
-                // Create
-                await axios.post(`${API_BASE_URL}/api/auth/register`, formData);
+            const selectedRole = roles.find(r => r.id == loginForm.roleId);
+            const roleName = loginForm.isManualRole ? loginForm.manualRole : (selectedRole ? selectedRole.name : 'USER');
+
+            const payload = {
+                ...loginForm,
+                role: roleName,
+                roleId: loginForm.isManualRole ? null : loginForm.roleId, // Clear roleId if manual
+                employeeId: selectedEmployee.id,
+                email: loginForm.email || selectedEmployee.email
+            };
+
+            const token = localStorage.getItem('token');
+            if (!token) {
+                alert("Authentication Error: You are not logged in or session expired.");
+                return;
             }
-            setShowModal(false);
-            fetchUsers();
-            resetForm();
-        } catch (err) {
-            alert(err.response?.data?.message || 'Operation failed');
+            console.log("Submitting with Token:", token ? "Present" : "Missing");
+
+            const config = {
+                headers: { Authorization: `Bearer ${token}` }
+            };
+
+            if (selectedEmployee.User) {
+                // Update Existing User
+                await axios.put(`${API_BASE_URL}/api/auth/users/${selectedEmployee.User.id}`, payload, config);
+                alert("User Access Updated Successfully!");
+            } else {
+                // Register New User
+                await axios.post(`${API_BASE_URL}/api/auth/register`, payload, config);
+                alert("User Access Granted Successfully!");
+            }
+
+            setShowLoginModal(false);
+            fetchData(); // Refresh list to show active status
+        } catch (error) {
+            console.error(error);
+            alert(error.response?.data?.message || "Failed to save user access");
         }
     };
 
-    const handleDelete = async (id) => {
-        if (!window.confirm('Delete this user?')) return;
-        try {
-            await axios.delete(`${API_BASE_URL}/api/auth/users/${id}`);
-            fetchUsers();
-        } catch (err) {
-            console.error(err);
-        }
-    };
-
-    const togglePermission = (perm) => {
-        const current = formData.permissions || [];
-        if (current.includes(perm)) {
-            setFormData({ ...formData, permissions: current.filter(p => p !== perm) });
-        } else {
-            setFormData({ ...formData, permissions: [...current, perm] });
-        }
-    };
-
-    const resetForm = () => {
-        setEditingUser(null);
-        setFormData({ username: '', email: '', password: '', role: 'USER', permissions: [] });
-    };
+    const filteredEmployees = employees.filter(emp => {
+        const search = searchTerm.toLowerCase();
+        const name = (emp.name || `${emp.first_name} ${emp.last_name}`).toLowerCase();
+        const email = (emp.email || '').toLowerCase();
+        return name.includes(search) || email.includes(search);
+    });
 
     return (
         <div className={`p-6 min-h-screen ${themeStyles.container}`}>
-            <div className="flex justify-between items-center mb-6">
+            <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
                 <div>
                     <h1 className="text-2xl font-bold flex items-center gap-2">
-                        <Shield className="text-blue-500" /> User Management
+                        <Shield className="text-blue-500" /> User Access Management
                     </h1>
-                    <p className="text-gray-500">Manage system access and permissions</p>
+                    <p className="text-gray-500">Manage login credentials for all employees</p>
                 </div>
-                <button
-                    onClick={() => { resetForm(); setShowModal(true); }}
-                    className={`${themeStyles.button} bg-blue-600 hover:bg-blue-700 text-white`}
-                >
-                    <UserPlus size={18} /> Add New User
-                </button>
+
+                <div className="relative w-full md:w-64">
+                    <Search className="absolute left-3 top-3 text-gray-400" size={18} />
+                    <input
+                        type="text"
+                        placeholder="Search employees..."
+                        className={`w-full pl-10 p-2.5 rounded-xl border outline-none ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}
+                        value={searchTerm}
+                        onChange={e => setSearchTerm(e.target.value)}
+                    />
+                </div>
             </div>
 
-            <div className="overflow-x-auto shadow-xl rounded-lg border border-gray-700">
+            <div className="overflow-x-auto shadow-xl rounded-xl border border-gray-200 dark:border-gray-700">
                 <table className="w-full text-left border-collapse">
                     <thead>
-                        <tr className="bg-gray-800 text-white uppercase text-xs font-bold">
-                            <th className="p-4 border-b border-gray-700">User</th>
-                            <th className="p-4 border-b border-gray-700">Role</th>
-                            <th className="p-4 border-b border-gray-700">Permissions</th>
-                            <th className="p-4 border-b border-gray-700">Status</th>
-                            <th className="p-4 border-b border-gray-700 text-center">Actions</th>
+                        <tr className="bg-gray-800 text-white uppercase text-xs font-bold tracking-wider">
+                            <th className="p-4">Employee</th>
+                            <th className="p-4">Department / Position</th>
+                            <th className="p-4">Login Status</th>
+                            <th className="p-4">Linked User</th>
+                            <th className="p-4 text-center">Actions</th>
                         </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-700">
-                        {users.map(user => (
-                            <tr key={user.id} className="hover:bg-white/5 transition-colors">
-                                <td className="p-4">
-                                    <div className="font-bold">{user.username}</div>
-                                    <div className="text-xs text-gray-400">{user.email}</div>
-                                </td>
-                                <td className="p-4">
-                                    <span className={`px-2 py-1 rounded text-xs font-bold ${user.role === 'ADMIN' ? 'bg-purple-900 text-purple-200' : 'bg-blue-900 text-blue-200'}`}>
-                                        {user.role}
-                                    </span>
-                                </td>
-                                <td className="p-4">
-                                    <div className="flex flex-wrap gap-1">
-                                        {user.role === 'ADMIN' ? (
-                                            <span className="text-xs bg-green-900 text-green-200 px-2 py-0.5 rounded">ALL ACCESS</span>
+                    <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                        {loading ? (
+                            <tr><td colSpan="5" className="p-8 text-center">Loading employees...</td></tr>
+                        ) : filteredEmployees.map(emp => {
+                            const hasUser = !!emp.User; // Uses relation from backend
+                            return (
+                                <tr key={emp.id} className={`transition-colors ${darkMode ? 'hover:bg-white/5' : 'hover:bg-gray-50'}`}>
+                                    <td className="p-4">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold">
+                                                {(emp.name || emp.first_name).charAt(0)}
+                                            </div>
+                                            <div>
+                                                <div className={`font-bold ${darkMode ? 'text-gray-100' : 'text-gray-800'}`}>
+                                                    {emp.name || `${emp.first_name} ${emp.last_name}`}
+                                                </div>
+                                                <div className="text-xs text-gray-400">{emp.emp_id}</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="p-4 text-sm">
+                                        <div className={darkMode ? 'text-gray-300' : 'text-gray-700'}>{emp.department}</div>
+                                        <div className="text-xs text-gray-500">{emp.position || emp.role}</div>
+                                    </td>
+                                    <td className="p-4">
+                                        {hasUser ? (
+                                            <span className="px-2 py-1 rounded-full text-xs font-bold bg-green-100 text-green-700 flex items-center gap-1 w-fit">
+                                                <CheckCircle size={12} /> Active
+                                            </span>
                                         ) : (
-                                            user.permissions?.map(p => (
-                                                <span key={p} className="text-[10px] bg-gray-700 px-2 py-0.5 rounded border border-gray-600">
-                                                    {p.replace(/_/g, ' ')}
-                                                </span>
-                                            ))
+                                            <span className="px-2 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-500 flex items-center gap-1 w-fit">
+                                                <XCircle size={12} /> No Access
+                                            </span>
                                         )}
-                                    </div>
-                                </td>
-                                <td className="p-4">
-                                    {user.is_active ? <CheckCircle size={16} className="text-green-500" /> : <XCircle size={16} className="text-red-500" />}
-                                </td>
-                                <td className="p-4 text-center">
-                                    <div className="flex justify-center gap-2">
+                                    </td>
+                                    <td className="p-4 text-sm">
+                                        {hasUser ? (
+                                            <div>
+                                                <div className="font-mono text-xs">{emp.User.username}</div>
+                                                <div className="text-[10px] text-gray-500">{emp.User.email}</div>
+                                            </div>
+                                        ) : (
+                                            <span className="text-gray-400 text-xs italic">Not Linked</span>
+                                        )}
+                                    </td>
+                                    <td className="p-4 text-center">
                                         <button
-                                            onClick={() => {
-                                                setEditingUser(user);
-                                                setFormData({ ...user, password: '' });
-                                                setShowModal(true);
-                                            }}
-                                            className="p-1 hover:bg-white/10 rounded text-blue-400"
-                                            title="Edit User"
+                                            onClick={() => handleCreateLoginCommon(emp)}
+                                            className={`px-3 py-1.5 rounded-lg text-xs font-bold shadow-md transition-all flex items-center gap-1 mx-auto ${!hasUser
+                                                ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                                                : 'bg-indigo-600 hover:bg-indigo-700 text-white'
+                                                }`}
                                         >
-                                            <Edit size={16} />
+                                            <Key size={14} /> {hasUser ? 'Manage Access' : 'Create Login'}
                                         </button>
-                                        {user.role !== 'ADMIN' && (
-                                            <button
-                                                onClick={() => handleDelete(user.id)}
-                                                className="p-1 hover:bg-white/10 rounded text-red-400"
-                                                title="Delete User"
-                                            >
-                                                <Trash2 size={16} />
-                                            </button>
-                                        )}
-                                    </div>
-                                </td>
-                            </tr>
-                        ))}
+                                    </td>
+                                </tr>
+                            );
+                        })}
                     </tbody>
                 </table>
             </div>
 
-            {/* Modal */}
-            {showModal && (
-                <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
-                    <div className={`${darkMode ? 'bg-gray-800 text-white border border-gray-600' : 'bg-white text-gray-900 shadow-2xl'} w-full max-w-2xl rounded-xl overflow-hidden transition-all transform scale-100`}>
-                        <div className={`p-6 border-b flex justify-between items-center ${darkMode ? 'border-gray-700 bg-gray-900/50' : 'border-gray-100 bg-gray-50'}`}>
-                            <h2 className="text-xl font-bold flex items-center gap-2">
-                                {editingUser ? <Edit size={20} /> : <UserPlus size={20} />}
-                                {editingUser ? 'Edit User' : 'Add New User'}
-                            </h2>
-                            <button onClick={() => setShowModal(false)} className="hover:bg-red-500/10 hover:text-red-500 p-1 rounded-full"><XCircle size={24} /></button>
+            {/* Login Provisioning Modal */}
+            {showLoginModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={() => setShowLoginModal(false)}>
+                    <div className={`w-full max-w-md max-h-[90vh] overflow-y-auto rounded-2xl p-6 shadow-2xl transform scale-100 transition-all ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`} onClick={e => e.stopPropagation()}>
+                        <div className="flex justify-between items-center mb-4">
+                            <h2 className="text-xl font-bold flex items-center gap-2"><UserPlus size={20} /> Provision Access</h2>
+                            <button onClick={() => setShowLoginModal(false)}><XCircle size={20} className="hover:text-red-500" /></button>
                         </div>
-                        <form onSubmit={handleSave} className="p-6 space-y-4">
-                            <div className="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label className={`block text-xs font-bold mb-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Username</label>
-                                    <input
-                                        className={`w-full p-2.5 rounded-lg border outline-none transition-colors font-medium
-                                            ${darkMode
-                                                ? 'bg-gray-700 border-gray-600 focus:border-blue-500 text-white placeholder-gray-400'
-                                                : 'bg-white border-gray-300 focus:border-blue-500 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-100'}
-                                        `}
-                                        value={formData.username}
-                                        onChange={e => setFormData({ ...formData, username: e.target.value })}
-                                        required
-                                        placeholder="e.g. John Doe"
-                                    />
-                                </div>
-                                <div>
-                                    <label className={`block text-xs font-bold mb-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Email</label>
-                                    <input
-                                        type="email"
-                                        className={`w-full p-2.5 rounded-lg border outline-none transition-colors font-medium
-                                            ${darkMode
-                                                ? 'bg-gray-700 border-gray-600 focus:border-blue-500 text-white placeholder-gray-400'
-                                                : 'bg-white border-gray-300 focus:border-blue-500 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-100'}
-                                        `}
-                                        value={formData.email}
-                                        onChange={e => setFormData({ ...formData, email: e.target.value })}
-                                        required
-                                        placeholder="e.g. john@maaj.com"
-                                    />
-                                </div>
-                            </div>
 
+                        <div className="mb-4 p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-sm flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-blue-200 dark:bg-blue-800 flex items-center justify-center font-bold">
+                                {(selectedEmployee?.name || selectedEmployee?.first_name || 'U').charAt(0)}
+                            </div>
                             <div>
-                                <label className={`block text-xs font-bold mb-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                                    Password {editingUser && <span className="text-xs font-normal opacity-70">(Leave blank to keep unchanged)</span>}
+                                <p className="font-bold">{selectedEmployee?.name || `${selectedEmployee?.first_name} ${selectedEmployee?.last_name}`}</p>
+                                <p className="text-xs opacity-70">Creating login for this employee</p>
+                            </div>
+                        </div>
+
+                        <form onSubmit={submitLogin} className="space-y-4">
+                            <div>
+                                <label className="block text-xs font-bold uppercase opacity-70 mb-1">Email / Username</label>
+                                <input type="email" className={`w-full p-3 rounded-lg border outline-none ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}
+                                    value={loginForm.email} onChange={e => setLoginForm({ ...loginForm, email: e.target.value })}
+                                    required />
+                            </div>
+                            <div>
+                                <label className="block text-xs font-bold uppercase opacity-70 mb-1">
+                                    Password {selectedEmployee?.User && <span className="text-gray-400 font-normal normal-case">(Leave blank to keep current)</span>}
                                 </label>
                                 <div className="relative">
-                                    <Key size={18} className={`absolute left-3 top-3 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`} />
                                     <input
-                                        type="password"
-                                        className={`w-full pl-10 p-2.5 rounded-lg border outline-none transition-colors font-medium
-                                            ${darkMode
-                                                ? 'bg-gray-700 border-gray-600 focus:border-blue-500 text-white placeholder-gray-400'
-                                                : 'bg-white border-gray-300 focus:border-blue-500 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-100'}
-                                        `}
-                                        value={formData.password}
-                                        onChange={e => setFormData({ ...formData, password: e.target.value })}
-                                        required={!editingUser}
-                                        minLength={6}
-                                        placeholder={editingUser ? "••••••••" : "Enter secure password"}
+                                        type="text"
+                                        className={`w-full p-3 rounded-lg border outline-none font-mono ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}
+                                        value={loginForm.password}
+                                        onChange={e => setLoginForm({ ...loginForm, password: e.target.value })}
+                                        placeholder={selectedEmployee?.User ? "••••••••" : "Enter password"}
+                                        required={!selectedEmployee?.User}
                                     />
                                 </div>
                             </div>
-
                             <div>
-                                <label className={`block text-xs font-bold mb-2 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Permissions</label>
-                                <div className={`grid grid-cols-2 gap-2 p-4 rounded-lg border ${darkMode ? 'bg-gray-900/50 border-gray-700' : 'bg-gray-50 border-gray-200'}`}>
-                                    {ALL_PERMISSIONS.map(perm => (
-                                        <label key={perm} className={`flex items-center gap-2 cursor-pointer p-2 rounded transition-colors ${darkMode ? 'hover:bg-white/5' : 'hover:bg-white hover:shadow-sm'}`}>
-                                            <input
-                                                type="checkbox"
-                                                className="w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-gray-300"
-                                                checked={formData.permissions?.includes(perm)}
-                                                onChange={() => togglePermission(perm)}
-                                            />
-                                            <span className={`text-xs font-semibold uppercase tracking-wide ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                                                {perm.replace(/_/g, ' ')}
-                                            </span>
-                                        </label>
-                                    ))}
+                                <div className="flex justify-between items-center mb-1">
+                                    <label className="block text-xs font-bold uppercase opacity-70">Assign Role</label>
+                                    <button
+                                        type="button"
+                                        onClick={() => setLoginForm({ ...loginForm, isManualRole: !loginForm.isManualRole, roleId: '', manualRole: '' })}
+                                        className="text-[10px] text-blue-500 hover:underline"
+                                    >
+                                        {loginForm.isManualRole ? "Select from List" : "Enter Manually"}
+                                    </button>
                                 </div>
+                                {loginForm.isManualRole ? (
+                                    <input
+                                        type="text"
+                                        placeholder="Enter custom role name (e.g. Supervisor)"
+                                        className={`w-full p-3 rounded-lg border outline-none ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}
+                                        value={loginForm.manualRole}
+                                        onChange={e => setLoginForm({ ...loginForm, manualRole: e.target.value })}
+                                        required
+                                    />
+                                ) : (
+                                    <select className={`w-full p-3 rounded-lg border outline-none ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}
+                                        value={loginForm.roleId} onChange={e => setLoginForm({ ...loginForm, roleId: e.target.value })}
+                                        required>
+                                        <option value="">Select System Role</option>
+                                        {roles.map(r => (
+                                            <option key={r.id} value={r.id}>{r.name}</option>
+                                        ))}
+                                    </select>
+                                )}
                             </div>
 
-                            <div className={`pt-4 flex justify-end gap-3 border-t ${darkMode ? 'border-gray-700' : 'border-gray-100'}`}>
-                                <button
-                                    type="button"
-                                    onClick={() => setShowModal(false)}
-                                    className={`px-4 py-2 rounded-lg text-sm font-bold transition-colors ${darkMode ? 'bg-gray-700 hover:bg-gray-600 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'}`}
-                                >
-                                    Cancel
-                                </button>
-                                <button
-                                    type="submit"
-                                    className="px-6 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold shadow-lg shadow-blue-900/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
-                                >
-                                    {editingUser ? 'Save Changes' : 'Create User'}
-                                </button>
-                            </div>
+                            <PermissionSelector
+                                selectedPermissions={loginForm.permissions}
+                                onChange={(perms) => setLoginForm({ ...loginForm, permissions: perms })}
+                                darkMode={darkMode}
+                            />
+
+                            <button type="submit" className="w-full py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-lg mt-2">
+                                Confirm & Create Login
+                            </button>
                         </form>
                     </div>
                 </div>

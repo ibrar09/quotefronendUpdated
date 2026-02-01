@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight, FaTimes, FaSignOutAlt } from "react-icons/fa";
+import { LayoutGrid } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { useTheme } from "../context/ThemeContext";
 
@@ -11,10 +12,6 @@ const Sidebar = ({ isMobileOpen = false, onClose }) => {
 
   const [isOpen, setIsOpen] = useState(true);
   const [openSubMenu, setOpenSubMenu] = useState(null);
-
-  // ... menuItems definition ... 
-
-  // ... menuItems definition ... 
 
   const { hasPermission, user, logout } = useAuth(); // [NEW]
 
@@ -37,7 +34,7 @@ const Sidebar = ({ isMobileOpen = false, onClose }) => {
       id: "brand-alshaya",
       label: "Alshaya",
       icon: "🏢",
-      requiredPermission: "view_quotations", // [NEW]
+      requiredPermission: "view_quote",
       subItems: [
         {
           id: "alshaya-tracker",
@@ -64,7 +61,7 @@ const Sidebar = ({ isMobileOpen = false, onClose }) => {
       id: "brand-structure",
       label: "Structure",
       icon: "🏗️",
-      requiredPermission: "view_quotations", // [NEW]
+      requiredPermission: "view_quote",
       subItems: [
         {
           id: "structure-tracker",
@@ -79,6 +76,7 @@ const Sidebar = ({ isMobileOpen = false, onClose }) => {
       id: "quotations",
       label: "Quotations",
       icon: "📝",
+      requiredPermission: "view_quote",
       subItems: [
         {
           id: "quotation-tracker",
@@ -136,28 +134,14 @@ const Sidebar = ({ isMobileOpen = false, onClose }) => {
           count: 0,
           color: "green",
         },
-      ],
-    },
-    {
-      id: "work-orders",
-      label: "Work Orders",
-      icon: "🔨",
-      requiredPermission: "view_quotations", // [NEW] (Using same perm for now)
-      subItems: [
-        {
-          id: "work-tracker",
-          label: "Work Tracker",
-          route: "/work/list",
-          count: 0,
-          color: "orange",
-        }
+
       ],
     },
     {
       id: "worker-reports",
       label: "Worker Reports",
       icon: "📋",
-      requiredPermission: "view_quotations", // [NEW]
+      requiredPermission: "view_quote",
       subItems: [
         {
           id: "wr-send",
@@ -183,7 +167,7 @@ const Sidebar = ({ isMobileOpen = false, onClose }) => {
       id: "finance",
       label: "Job Completion",
       icon: "💰",
-      requiredPermission: "view_finance", // [NEW]
+      requiredPermission: "view_finance",
       subItems: [
         {
           id: "fin-po-recv",
@@ -209,7 +193,7 @@ const Sidebar = ({ isMobileOpen = false, onClose }) => {
       id: "master-data",
       label: "Master Data (AOR)",
       icon: "🗄️",
-      requiredPermission: "manage_master_data", // [NEW]
+      requiredPermission: "manage_users",
       subItems: [
         { id: "md-view", label: "Dashboard View", route: "/master-data", color: "blue" },
         { id: "md-custom", label: "Custom Stores", route: "/admin/custom-stores", color: "orange" },
@@ -220,7 +204,7 @@ const Sidebar = ({ isMobileOpen = false, onClose }) => {
       id: "rate-card",
       label: "Price List / Rate Card",
       icon: "💲",
-      requiredPermission: "manage_master_data", // [NEW]
+      requiredPermission: "manage_users",
       subItems: [
         { id: "pl-view", label: "Rate Card View", route: "/rate-card", color: "green" },
         { id: "pl-custom", label: "Custom PL / Items", route: "/admin/custom-pricelist", color: "purple" },
@@ -232,7 +216,7 @@ const Sidebar = ({ isMobileOpen = false, onClose }) => {
       label: "Recycle Bin",
       icon: "🗑️",
       route: "/recycle-bin",
-      requiredPermission: "delete_quotation" // [NEW]
+      requiredPermission: "delete_quote"
     },
     {
       id: "users",
@@ -409,6 +393,14 @@ const Sidebar = ({ isMobileOpen = false, onClose }) => {
       </nav>
 
       <div className="p-4 border-t border-white/20">
+        <div className="flex items-center space-x-3 mb-4 p-2 bg-white/10 rounded-xl cursor-pointer hover:bg-white/20 transition-all border border-white/10"
+          onClick={() => navigate('/selection')}>
+          <div className="flex-1 flex items-center justify-center gap-2">
+            <LayoutGrid size={16} />
+            {isOpen && <span className="text-xs font-bold uppercase tracking-wider">Switch Module</span>}
+          </div>
+        </div>
+
         <div className="flex items-center space-x-3">
           <div className="h-9 w-9 rounded-full bg-blue-500 flex items-center justify-center text-sm font-bold">
             AD

@@ -1114,7 +1114,26 @@ const QuotationList = () => {
                                     <td className="p-2"><HighlightText text={q.city || q.Store?.city || '-'} highlight={searchTerm} /></td>
                                     <td className="p-2">{q.region || q.Store?.region || '-'}</td>
                                     <td className="p-2 truncate max-w-[120px]"><HighlightText text={q.work_description} highlight={searchTerm} /></td>
-                                    <td className="p-2 font-bold text-green-600">{q.work_status || '-'}</td>
+                                    <td className="p-2">
+                                        {q.work_status ? (
+                                            <span className={`px-2 py-1 rounded-full text-[9px] font-bold uppercase border
+                                                ${q.work_status === 'DONE'
+                                                    ? 'bg-green-100 text-green-700 border-green-200 dark:bg-green-900/20 dark:border-green-800 dark:text-green-400'
+                                                    : q.work_status === 'IN_PROGRESS'
+                                                        ? 'bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-900/20 dark:border-blue-800 dark:text-blue-400'
+                                                        : q.work_status === 'NOT_STARTED'
+                                                            ? 'bg-gray-100 text-gray-700 border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400'
+                                                            : q.work_status === 'CANCELLED'
+                                                                ? 'bg-red-100 text-red-700 border-red-200 dark:bg-red-900/20 dark:border-red-800 dark:text-red-400'
+                                                                : 'bg-gray-100 text-gray-700 border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400'
+                                                }`}>
+                                                {q.work_status === 'IN_PROGRESS' ? 'In Progress'
+                                                    : q.work_status === 'NOT_STARTED' ? 'Not Started'
+                                                        : q.work_status === 'DONE' ? 'Completed'
+                                                            : q.work_status}
+                                            </span>
+                                        ) : '-'}
+                                    </td>
                                     <td className="p-2">{q.completion_date || '-'}</td>
                                     <td className="p-2"><HighlightText text={q.completed_by || '-'} highlight={searchTerm} /></td>
                                     <td className="p-2 text-center text-[8px] leading-tight">

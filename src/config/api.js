@@ -2,7 +2,7 @@
 // This file centralizes the API base URL for all axios requests
 // The URL is determined by the environment variable VITE_API_BASE_URL
 
-let API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+let API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5010';
 
 // Ensure the URL has a protocol and no trailing slash
 if (API_BASE_URL && !API_BASE_URL.startsWith('http') && !API_BASE_URL.includes('localhost')) {
