@@ -44,6 +44,11 @@ const Sidebar = () => {
             path: "/employes/documents"
         },
         {
+            label: "Company Docs",
+            icon: <Briefcase size={16} />,
+            path: "/employes/company-documents"
+        },
+        {
             label: "Payroll",
             icon: <Banknote size={16} />,
             path: "/employes/payroll"

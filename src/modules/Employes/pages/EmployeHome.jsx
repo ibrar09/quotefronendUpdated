@@ -17,6 +17,7 @@ import RoleManagement from './RoleManagement';
 import FieldOpsManager from './FieldOpsManager';
 import Leaves from '../../HumanResources/pages/Leaves';
 import Expenses from '../../HumanResources/pages/Expenses';
+import CompanyDocuments from '../../HumanResources/pages/CompanyDocuments';
 
 const EmployeHome = () => {
     // Centralized Employee State
@@ -61,6 +62,7 @@ const EmployeHome = () => {
                         <Route path="field-ops" element={<FieldOpsManager />} />
                         <Route path="leaves" element={<Leaves />} />
                         <Route path="expenses" element={<Expenses />} />
+                        <Route path="company-documents" element={<CompanyDocuments />} />
 
                         <Route path="/" element={<MainPage employees={employees} setEmployees={setEmployees} />} />
                         <Route path="*" element={<MainPage employees={employees} setEmployees={setEmployees} />} />
