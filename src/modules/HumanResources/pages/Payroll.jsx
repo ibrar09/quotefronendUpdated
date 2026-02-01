@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../../context/ThemeContext';
-import { generatePayslip } from '../../../utils/pdfGenerator';
+import { generatePayslip } from '@/utils/pdfGenerator';
 
 import axios from 'axios';
 import API_BASE_URL from '../../../config/api';
