@@ -25,7 +25,7 @@ const SalarySlip = ({ employee, onClose, getPaymentRecord, selectedMonth }) => {
     };
 
     const handleDownload = () => {
-        import('../../../../utils/pdfGenerator').then(module => {
+        import('../../../utils/pdfGenerator').then(module => {
             module.generatePayslip({
                 ...record,
                 Employee: record.Employee || employee,
