@@ -430,14 +430,6 @@ const EmployeDetails = ({ employee, onBack, onEdit, onTerminate }) => {
     const DocumentPreviewModal = ({ doc, onClose }) => {
         if (!doc) return null;
 
-        const resolveUrl = (path) => {
-            if (!path) return '';
-            if (path.startsWith('http')) return path;
-            // Normalize Windows paths
-            let cleanPath = path.replace(/\\/g, '/');
-            if (!cleanPath.startsWith('/')) cleanPath = `/${cleanPath}`;
-            return `${API_BASE_URL}${cleanPath}`;
-        };
 
         const fileUrl = resolveUrl(doc.file);
         console.log("Preview File URL:", fileUrl); // DEBUG

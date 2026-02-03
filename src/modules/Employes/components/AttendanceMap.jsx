@@ -60,13 +60,6 @@ const AttendanceMap = ({ darkMode, data, selectedEmployee }) => {
 
     const activeMarkers = data.filter(e => e.lat && e.lng);
 
-    // Standard URL Resolver
-    const resolveUrl = (path) => {
-        if (!path) return null;
-        if (path.startsWith('http') || path.startsWith('data:')) return path;
-        const cleanPath = path.startsWith('/') ? path : `/${path}`;
-        return `${API_BASE_URL}${cleanPath}`;
-    };
 
     return (
         <div className="w-full h-full min-h-[600px] flex flex-col pt-0">
