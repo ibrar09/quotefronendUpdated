@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search, MapPin, Clock, ChevronRight, Maximize, User } from 'lucide-react';
 import API_BASE_URL from '../../../config/api';
+import { resolveUrl } from '../../../utils/url';
 
 const AttendanceList = ({
     darkMode,
@@ -14,13 +15,6 @@ const AttendanceList = ({
     const [filter, setFilter] = useState('All');
     const [searchTerm, setSearchTerm] = useState('');
 
-    // Standard URL Resolver
-    const resolveUrl = (path) => {
-        if (!path) return null;
-        if (path.startsWith('http') || path.startsWith('data:')) return path;
-        const cleanPath = path.startsWith('/') ? path : `/${path}`;
-        return `${API_BASE_URL}${cleanPath}`;
-    };
 
     // Filter Logic
     const filteredTeam = data.filter(employee => {

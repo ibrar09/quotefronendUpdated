@@ -3,21 +3,13 @@ import { useTheme } from '../../../context/ThemeContext';
 import { useNavigate } from 'react-router-dom';
 import { MoreHorizontal, Search, AlertCircle, AlertTriangle, Plus, Building2, User } from 'lucide-react';
 import API_BASE_URL from '../../../config/api';
+import { resolveUrl } from '../../../utils/url';
 
 const EmployeList = ({ employees = [], onEdit, onView }) => {
     const { darkMode } = useTheme();
     const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
 
-    // URL Resolver Helper
-    const resolveUrl = (path) => {
-        if (!path) return null;
-        if (path.startsWith('http') || path.startsWith('data:')) return path;
-
-        // Handle relative paths starting with /
-        const cleanPath = path.startsWith('/') ? path : `/${path}`;
-        return `${API_BASE_URL}${cleanPath}`;
-    };
 
     // Expiry Check Logic
     const checkExpiry = (dateString) => {

@@ -6,6 +6,7 @@ import { MapPin, Calendar, CheckCircle2, Clock, AlertCircle, ChevronRight, Brief
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
 import API_BASE_URL from '../../../config/api';
+import { resolveUrl } from '../../../utils/url';
 
 const FieldJobList = () => {
     const { darkMode } = useTheme();
@@ -20,13 +21,6 @@ const FieldJobList = () => {
         fetchJobs();
     }, [user]);
 
-    // Standard URL Resolver
-    const resolveUrl = (path) => {
-        if (!path) return null;
-        if (path.startsWith('http') || path.startsWith('data:')) return path;
-        const cleanPath = path.startsWith('/') ? path : `/${path}`;
-        return `${API_BASE_URL}${cleanPath}`;
-    };
 
     const fetchJobs = async () => {
         if (!user || !user.employee_id) {

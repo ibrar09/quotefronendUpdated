@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { getDashboardStats, markAttendance, updateLiveLocation } from '../services/portal.service';
 import { toast } from 'react-hot-toast';
 import API_BASE_URL from '../../../config/api';
+import { resolveUrl } from '../../../utils/url';
 import { UI_AVATARS_BASE_URL } from '../../../config/constants';
 import SelfieCaptureModal from '../components/SelfieCaptureModal';
 
@@ -41,13 +42,6 @@ const FieldDashboard = () => {
         }
     };
 
-    // Standard URL Resolver
-    const resolveUrl = (path) => {
-        if (!path) return null;
-        if (path.startsWith('http') || path.startsWith('data:')) return path;
-        const cleanPath = path.startsWith('/') ? path : `/${path}`;
-        return `${API_BASE_URL}${cleanPath}`;
-    };
 
     useEffect(() => {
         const timer = setInterval(() => setCurrentTime(new Date()), 60000);

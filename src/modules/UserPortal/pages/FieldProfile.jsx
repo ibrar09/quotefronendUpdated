@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { User, Mail, Phone, MapPin, Calendar, Briefcase, Hash, Building, DollarSign, LogOut } from 'lucide-react';
 import axios from 'axios';
 import API_BASE_URL from '../../../config/api';
+import { resolveUrl } from '../../../utils/url';
 import { UI_AVATARS_BASE_URL } from '../../../config/constants';
 
 const FieldProfile = () => {
@@ -14,13 +15,6 @@ const FieldProfile = () => {
     const [profile, setProfile] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    // Standard URL Resolver
-    const resolveUrl = (path) => {
-        if (!path) return null;
-        if (path.startsWith('http') || path.startsWith('data:')) return path;
-        const cleanPath = path.startsWith('/') ? path : `/${path}`;
-        return `${API_BASE_URL}${cleanPath}`;
-    };
 
     const handleLogout = () => {
         if (window.confirm('Are you sure you want to logout?')) {

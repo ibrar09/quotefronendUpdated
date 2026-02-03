@@ -3,19 +3,12 @@ import { Upload, ArrowLeft, User } from 'lucide-react'
 import { useTheme } from '../../../context/ThemeContext'
 import EmployeeService from '../../../services/EmployeeService'
 import API_BASE_URL from '../../../config/api'
+import { resolveUrl } from '../../../utils/url'
 
 const EditEmploye = ({ employee, onBack, onUpdate }) => {
     const { darkMode } = useTheme();
     const [loading, setLoading] = useState(false);
 
-    // URL Resolver Helper
-    const resolveUrl = (path) => {
-        if (!path) return null;
-        if (path.startsWith('http') || path.startsWith('data:')) return path;
-
-        const cleanPath = path.startsWith('/') ? path : `/${path}`;
-        return `${API_BASE_URL}${cleanPath}`;
-    };
 
     // Initial State from Employee Prop
     const [formData, setFormData] = useState({

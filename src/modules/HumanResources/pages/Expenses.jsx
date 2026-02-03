@@ -9,6 +9,7 @@ import {
 import ExpenseService from '../../../services/ExpenseService';
 import EmployeeService from '../../../services/EmployeeService';
 import API_BASE_URL from '../../../config/api';
+import { resolveUrl } from '../../../utils/url';
 
 const Expenses = () => {
     const { darkMode } = useTheme();
@@ -117,11 +118,6 @@ const Expenses = () => {
         }
     };
 
-    const resolveUrl = (path) => {
-        if (!path) return null;
-        if (path.startsWith('http')) return path;
-        return `${API_BASE_URL}/${path.replace(/\\/g, '/')}`;
-    };
 
     const filteredExpenses = expenses.filter(exp => {
         const matchesSearch =

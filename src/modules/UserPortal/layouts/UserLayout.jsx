@@ -5,6 +5,7 @@ import { Home, Briefcase, MapPin, User, Bell, MessageSquare, LayoutGrid } from '
 import MediaSidebar from '../../FieldOperations/components/MediaSidebar';
 import axios from 'axios';
 import API_BASE_URL from '../../../config/api';
+import { resolveUrl } from '../../../utils/url';
 import { UI_AVATARS_BASE_URL } from '../../../config/constants';
 
 const UserLayout = () => {
@@ -21,13 +22,6 @@ const UserLayout = () => {
         return () => clearInterval(interval);
     }, []);
 
-    // Standard URL Resolver
-    const resolveUrl = (path) => {
-        if (!path) return null;
-        if (path.startsWith('http') || path.startsWith('data:')) return path;
-        const cleanPath = path.startsWith('/') ? path : `/${path}`;
-        return `${API_BASE_URL}${cleanPath}`;
-    };
 
     const fetchProfile = async () => {
         try {

@@ -3,6 +3,7 @@ import QRCode from "react-qr-code";
 import logoSrc from '../../../assets/Maaj-Logo 04.png';
 import { User, Rocket, Edit2 } from 'lucide-react';
 import API_BASE_URL from '../../../config/api';
+import { resolveUrl } from '../../../utils/url';
 import html2canvas from 'html2canvas';
 
 const DigitalIDCard = ({ employee, darkMode }) => {
@@ -15,25 +16,6 @@ const DigitalIDCard = ({ employee, darkMode }) => {
     const [issueDate, setIssueDate] = useState(new Date().toISOString().split('T')[0]);
     const [isPrinting, setIsPrinting] = useState(false);
 
-    // Resolve Image URL logic
-    const resolveUrl = (path) => {
-        if (!path) return null;
-        if (path.startsWith('http')) return path;
-
-        // Normalize slashes
-        let cleanPath = path.replace(/\\/g, '/');
-
-        // Strip everything before 'uploads/' if present (fixes absolute paths)
-        const uploadsIndex = cleanPath.indexOf('uploads/');
-        if (uploadsIndex !== -1) {
-            cleanPath = cleanPath.substring(uploadsIndex);
-        }
-
-        // Ensure leading slash for URL construction
-        if (!cleanPath.startsWith('/')) cleanPath = `/${cleanPath}`;
-
-        return `${API_BASE_URL}${cleanPath}`;
-    };
 
     const avatarUrl = resolveUrl(employee.passport_photo || employee.avatar || employee.avatar_url);
 

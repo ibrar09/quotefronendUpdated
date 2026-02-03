@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import axios from 'axios';
 import API_BASE_URL from '../../../config/api';
+import { resolveUrl } from '../../../utils/url';
 import toast from 'react-hot-toast';
 
 const ASSET_CATEGORIES = [
@@ -49,13 +50,6 @@ const AssetInventory = ({ employees = [] }) => {
     const [assets, setAssets] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    // Standard URL Resolver
-    const resolveUrl = (path) => {
-        if (!path) return null;
-        if (path.startsWith('http') || path.startsWith('data:')) return path;
-        const cleanPath = path.startsWith('/') ? path : `/${path}`;
-        return `${API_BASE_URL}${cleanPath}`;
-    };
 
     // Fetch Assets
     const fetchAssets = async () => {

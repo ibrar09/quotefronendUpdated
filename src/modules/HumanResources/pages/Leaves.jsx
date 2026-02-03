@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import API_BASE_URL from '../../../config/api';
+import { resolveUrl } from '../../../utils/url';
 import { useTheme } from '../../../context/ThemeContext';
 import {
     Calendar, CheckCircle, Clock, XCircle, Plus,
@@ -28,13 +29,6 @@ const Leaves = () => {
         status: 'PENDING'
     });
 
-    // Standard URL Resolver
-    const resolveUrl = (path) => {
-        if (!path) return null;
-        if (path.startsWith('http') || path.startsWith('data:')) return path;
-        const cleanPath = path.startsWith('/') ? path : `/${path}`;
-        return `${API_BASE_URL}${cleanPath}`;
-    };
 
     const fetchData = async () => {
         setLoading(true);

@@ -8,6 +8,7 @@ import {
     LEAFLET_ICON_RETINA, LEAFLET_ICON_DEFAULT, LEAFLET_ICON_SHADOW
 } from '../../../config/constants';
 import API_BASE_URL from '../../../config/api';
+import { resolveUrl } from '../../../utils/url';
 
 // Fix for default marker icons in Leaflet
 delete L.Icon.Default.prototype._getIconUrl;

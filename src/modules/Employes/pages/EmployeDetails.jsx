@@ -8,6 +8,7 @@ import {
     QrCode
 } from 'lucide-react';
 import API_BASE_URL from '../../../config/api';
+import { resolveUrl } from '../../../utils/url';
 import { useTheme } from '../../../context/ThemeContext';
 import axios from 'axios';
 import { getStaffMonthlyAttendance } from '../../UserPortal/services/portal.service';
@@ -15,13 +16,6 @@ import LetterGeneratorModal from '../components/LetterGeneratorModal';
 import DigitalIDCard from '../components/DigitalIDCard';
 
 const EmployeDetails = ({ employee, onBack, onEdit, onTerminate }) => {
-    // Standard URL Resolver
-    const resolveUrl = (path) => {
-        if (!path) return null;
-        if (path.startsWith('http') || path.startsWith('data:')) return path;
-        const cleanPath = path.startsWith('/') ? path : `/${path}`;
-        return `${API_BASE_URL}${cleanPath}`;
-    };
     console.log("EmployeDetails v3 Loaded - employee id:", employee?.id);
     const { darkMode } = useTheme();
     const [activeTab, setActiveTab] = React.useState('overview');

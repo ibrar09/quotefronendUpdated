@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { DollarSign, CheckCircle, Calendar, Search, CreditCard, CheckSquare, Square, Building2, FileText, Users } from 'lucide-react';
 import { useTheme } from '../../../../context/ThemeContext';
 import API_BASE_URL from '../../../../config/api';
+import { resolveUrl } from '../../../../utils/url';
 
 const PayrollList = ({
     employees,
@@ -21,13 +22,6 @@ const PayrollList = ({
     const { darkMode } = useTheme();
     const [searchTerm, setSearchTerm] = useState('');
 
-    // Standard URL Resolver
-    const resolveUrl = (path) => {
-        if (!path) return null;
-        if (path.startsWith('http') || path.startsWith('data:')) return path;
-        const cleanPath = path.startsWith('/') ? path : `/${path}`;
-        return `${API_BASE_URL}${cleanPath}`;
-    };
 
     // --- 1. Enhanced Mock Data Generator ---
     const enhanceEmployeeData = (emp) => {
