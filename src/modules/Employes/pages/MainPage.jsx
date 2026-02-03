@@ -5,7 +5,7 @@ import EditEmploye from './EditEmploye'
 import EmployeDetails from './EmployeDetails'
 import TerminatedEmployees from './TerminatedEmployees'
 
-const MainPage = ({ employees: propEmployees, setEmployees: propSetEmployees }) => {
+const MainPage = ({ employees: propEmployees, setEmployees: propSetEmployees, onUpdate }) => {
 
     const [editingEmployee, setEditingEmployee] = useState(null);
     const [viewingEmployee, setViewingEmployee] = useState(null);
@@ -57,7 +57,7 @@ const MainPage = ({ employees: propEmployees, setEmployees: propSetEmployees }) 
             <div className='flex-1 overflow-hidden p-2'>
 
                 {editingEmployee ? (
-                    <EditEmploye employee={editingEmployee} onBack={handleBack} />
+                    <EditEmploye employee={editingEmployee} onBack={handleBack} onUpdate={onUpdate} />
                 ) : viewingEmployee ? (
                     <EmployeDetails
                         employee={viewingEmployee}

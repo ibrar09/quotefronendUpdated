@@ -126,8 +126,8 @@ function App() {
                   <Route path="field-ops/*" element={<FieldOperationsRoutes />} />
                 </Route>
 
-                {/* User Portal Routes - require view_tasks permission */}
-                <Route element={<ProtectedRoute requiredPermission="view_tasks" />}>
+                {/* User Portal Routes - require access_portal permission */}
+                <Route element={<ProtectedRoute requiredPermission="access_portal" />}>
                   <Route path="user" element={<UserLayout />}>
                     <Route index element={<FieldDashboard />} />
                     <Route path="dashboard" element={<FieldDashboard />} />

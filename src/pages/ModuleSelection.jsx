@@ -60,15 +60,12 @@ const ModuleSelection = () => {
             bg: 'bg-violet-600',
             path: '/user/dashboard',
 
-            permission: 'view_tasks'
+            permission: 'access_portal'
         }
     ];
 
     const visibleModules = modules.filter(mod => {
-        // ADMIN sees everything
-        if (user?.role === 'ADMIN') return true;
-
-        // Check specific permission
+        // Check specific permission using centralized hasPermission logic
         if (mod.permission && hasPermission(mod.permission)) return true;
 
         // Fallback for User Portal (any authenticated user can see it as long as they aren't admin who already sees everything)

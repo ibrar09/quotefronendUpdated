@@ -127,8 +127,8 @@ const Services = () => {
     const sickUsed = leaves.filter(l => l.type === 'SICK' && l.status === 'APPROVED').reduce((acc, curr) => acc + curr.days, 0);
 
     const leaveBalances = [
-        { type: 'Annual', balance: annualTotal - annualUsed, total: annualTotal, color: 'bg-blue-500' },
-        { type: 'Sick', balance: sickTotal - sickUsed, total: sickTotal, color: 'bg-red-500' }
+        { type: 'Annual', balance: 0, total: 30, color: 'bg-blue-500' },
+        { type: 'Sick', balance: 0, total: 15, color: 'bg-red-500' }
     ];
 
     const ServicesGrid = () => (
@@ -163,15 +163,20 @@ const Services = () => {
                 </button>
 
                 <button
-                    onClick={() => setActiveService('PAYROLL')}
-                    className={`p-5 rounded-3xl text-left border transition-all active:scale-95
-                    ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100 shadow-sm'}`}
+                    onClick={() => toast.error('Payroll section is currently locked for review.')}
+                    className={`p-5 rounded-3xl text-left border transition-all active:scale-95 group relative
+                    ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100 shadow-sm opacity-80'}`}
                 >
+                    <div className="absolute top-4 right-4 text-gray-400 group-hover:text-red-500 transition-colors">
+                        <Shield size={16} />
+                    </div>
                     <div className="bg-purple-100 dark:bg-purple-900/40 w-10 h-10 rounded-xl flex items-center justify-center mb-3 text-purple-600">
                         <DollarSign size={20} />
                     </div>
-                    <h3 className="font-bold">Payroll</h3>
-                    <p className="text-xs text-gray-400 mt-1">Slips & Advances</p>
+                    <h3 className="font-bold flex items-center gap-2">
+                        Payroll
+                    </h3>
+                    <p className="text-[10px] text-red-500 font-bold mt-1 uppercase tracking-tight">Access Restricted</p>
                 </button>
 
                 <button
@@ -230,41 +235,134 @@ const Services = () => {
                     ))}
                 </div>
                 {showRequestForm ? (
-                    <form onSubmit={handleLeaveSubmit} className={`p-4 rounded-xl border mb-4 ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white'}`}>
-                        <h3 className="font-bold mb-3">New Request</h3>
-                        <div className="space-y-3">
-                            <select value={leaveRequest.type} onChange={e => setLeaveRequest({ ...leaveRequest, type: e.target.value })} className="w-full p-2 rounded border bg-transparent">
-                                <option value="ANNUAL">Annual Leave</option>
-                                <option value="SICK">Sick Leave</option>
-                                <option value="EMERGENCY">Emergency Leave</option>
-                            </select>
-                            <div className="grid grid-cols-2 gap-2">
-                                <input type="date" value={leaveRequest.start_date} onChange={e => setLeaveRequest({ ...leaveRequest, start_date: e.target.value })} className="w-full p-2 rounded border bg-transparent" required />
-                                <input type="date" value={leaveRequest.end_date} onChange={e => setLeaveRequest({ ...leaveRequest, end_date: e.target.value })} className="w-full p-2 rounded border bg-transparent" required />
+                    <div className="animate-[fadeIn_0.3s_ease-out]">
+                        <div className={`p-6 rounded-[2rem] border-2 shadow-2xl ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-blue-50'}`}>
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="p-3 bg-blue-100 dark:bg-blue-900/40 text-blue-600 rounded-2xl">
+                                    <Plus size={24} strokeWidth={3} />
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-black">Apply Leave</h3>
+                                    <p className="text-xs text-gray-400 font-medium">HR Review Required</p>
+                                </div>
                             </div>
-                            <textarea placeholder="Reason" value={leaveRequest.reason} onChange={e => setLeaveRequest({ ...leaveRequest, reason: e.target.value })} className="w-full p-2 rounded border bg-transparent" />
-                            <div className="flex gap-2">
-                                <button type="button" onClick={() => setShowRequestForm(false)} className="flex-1 p-2 text-gray-500">Cancel</button>
-                                <button type="submit" className="flex-1 p-2 bg-blue-600 text-white rounded">Submit</button>
-                            </div>
+                            <form onSubmit={handleLeaveSubmit} className="space-y-5">
+                                <div className="space-y-1.5">
+                                    <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Leave Category</label>
+                                    <div className="relative">
+                                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                                            <Calendar size={18} />
+                                        </div>
+                                        <select
+                                            value={leaveRequest.type}
+                                            onChange={e => setLeaveRequest({ ...leaveRequest, type: e.target.value })}
+                                            className={`w-full pl-12 pr-4 py-3.5 rounded-2xl border-2 font-bold outline-none transition-all appearance-none
+                                                ${darkMode ? 'bg-gray-900 border-gray-700 focus:border-blue-500 text-white' : 'bg-gray-50 border-gray-100 focus:border-blue-500 focus:bg-white text-gray-900'}`}
+                                        >
+                                            <option value="ANNUAL">Annual Vacation</option>
+                                            <option value="SICK">Medical / Sick Leave</option>
+                                            <option value="EMERGENCY">Emergency Leave</option>
+                                            <option value="UNPAID">Unpaid Leave</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="space-y-1.5">
+                                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">From Date</label>
+                                        <input
+                                            type="date"
+                                            value={leaveRequest.start_date}
+                                            onChange={e => setLeaveRequest({ ...leaveRequest, start_date: e.target.value })}
+                                            className={`w-full px-4 py-3.5 rounded-2xl border-2 font-bold outline-none transition-all
+                                                ${darkMode ? 'bg-gray-900 border-gray-700 focus:border-blue-500 text-white shadow-inner' : 'bg-gray-50 border-gray-100 focus:border-blue-500 focus:bg-white text-gray-900'}`}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="space-y-1.5">
+                                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">To Date</label>
+                                        <input
+                                            type="date"
+                                            value={leaveRequest.end_date}
+                                            onChange={e => setLeaveRequest({ ...leaveRequest, end_date: e.target.value })}
+                                            className={`w-full px-4 py-3.5 rounded-2xl border-2 font-bold outline-none transition-all
+                                                ${darkMode ? 'bg-gray-900 border-gray-700 focus:border-blue-500 text-white shadow-inner' : 'bg-gray-50 border-gray-100 focus:border-blue-500 focus:bg-white text-gray-900'}`}
+                                            required
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="space-y-1.5">
+                                    <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Reason / Notes</label>
+                                    <textarea
+                                        placeholder="Enter details for HR approval..."
+                                        value={leaveRequest.reason}
+                                        onChange={e => setLeaveRequest({ ...leaveRequest, reason: e.target.value })}
+                                        className={`w-full p-4 rounded-2xl border-2 font-medium outline-none transition-all min-h-[100px]
+                                            ${darkMode ? 'bg-gray-900 border-gray-700 focus:border-blue-500 text-white' : 'bg-gray-50 border-gray-100 focus:border-blue-500 focus:bg-white text-gray-900'}`}
+                                    />
+                                </div>
+
+                                <div className="flex gap-4 pt-2">
+                                    <button
+                                        type="button"
+                                        onClick={() => setShowRequestForm(false)}
+                                        className={`flex-1 py-4 font-black transition-all rounded-2xl border-2
+                                            ${darkMode ? 'border-gray-700 text-gray-400 hover:bg-gray-700' : 'border-gray-100 text-gray-500 hover:bg-gray-50'}`}
+                                    >
+                                        Cancel
+                                    </button>
+                                    <button
+                                        type="submit"
+                                        className="flex-[2] py-4 bg-blue-600 text-white rounded-2xl font-black text-lg shadow-xl shadow-blue-500/30 active:scale-95 transition-all hover:bg-blue-700"
+                                    >
+                                        Send Request
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
                 ) : (
                     <>
-                        <h3 className="font-bold mb-3">Recent Requests</h3>
-                        {loading ? <p>Loading...</p> : (
-                            <div className="space-y-3">
-                                {leaves.length === 0 && <p className="text-gray-400 text-sm">No leave history found.</p>}
+                        <h3 className="text-lg font-black mb-4 flex items-center gap-2">
+                            <Clock size={20} className="text-blue-500" />
+                            Recent Requests
+                        </h3>
+                        {loading ? (
+                            <div className="flex justify-center p-12">
+                                <div className="w-8 h-8 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+                            </div>
+                        ) : (
+                            <div className="space-y-4">
+                                {leaves.length === 0 && (
+                                    <div className="text-center py-10 opacity-50 font-medium italic">No leave history found.</div>
+                                )}
                                 {leaves.map(leave => (
-                                    <div key={leave.id} className={`p-4 rounded-xl border flex justify-between items-center ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100'}`}>
-                                        <div className="flex gap-3">
-                                            <div className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center"><Calendar size={18} className="text-gray-500" /></div>
+                                    <div key={leave.id} className={`p-5 rounded-3xl border-2 transition-all hover:shadow-lg active:scale-[0.98] cursor-pointer flex justify-between items-center 
+                                        ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-blue-50/50'}`}>
+                                        <div className="flex gap-4">
+                                            <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors
+                                                ${leave.type === 'SICK' ? 'bg-red-100 text-red-600' : 'bg-blue-100 text-blue-600'}`}>
+                                                <Calendar size={22} strokeWidth={2.5} />
+                                            </div>
                                             <div>
-                                                <p className="font-bold text-sm capitalize">{leave.type.toLowerCase()} Leave</p>
-                                                <p className="text-xs text-gray-500">{leave.start_date} ({leave.days} days)</p>
+                                                <p className="font-black text-sm capitalize leading-tight">
+                                                    {leave.type.toLowerCase().replace('_', ' ')} Leave
+                                                </p>
+                                                <p className="text-[11px] text-gray-400 font-bold mt-0.5">
+                                                    {new Date(leave.start_date).toLocaleDateString()} • {leave.days} {leave.days === 1 ? 'Day' : 'Days'}
+                                                </p>
                                             </div>
                                         </div>
-                                        <span className={`text-xs font-bold px-2 py-1 rounded ${leave.status === 'PENDING' ? 'text-orange-500 bg-orange-100' : leave.status === 'APPROVED' ? 'text-green-500 bg-green-100' : 'text-red-500 bg-red-100'}`}>{leave.status}</span>
+                                        <div className="flex items-center gap-2">
+                                            <span className={`text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-tighter shadow-sm
+                                                ${leave.status === 'PENDING' ? 'text-orange-500 bg-orange-100 border border-orange-200/50' :
+                                                    leave.status === 'APPROVED' ? 'text-green-500 bg-green-100 border border-green-200/50' :
+                                                        'text-red-500 bg-red-100 border border-red-200/50'}`}>
+                                                {leave.status}
+                                            </span>
+                                            <ChevronRight size={18} className="text-gray-300" />
+                                        </div>
                                     </div>
                                 ))}
                             </div>

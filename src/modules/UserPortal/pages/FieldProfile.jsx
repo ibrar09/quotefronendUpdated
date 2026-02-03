@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { User, Mail, Phone, MapPin, Calendar, Briefcase, Hash, Building, DollarSign, LogOut } from 'lucide-react';
 import axios from 'axios';
 import API_BASE_URL from '../../../config/api';
+import { UI_AVATARS_BASE_URL } from '../../../config/constants';
 
 const FieldProfile = () => {
     const { darkMode } = useTheme();
@@ -12,6 +13,14 @@ const FieldProfile = () => {
     const navigate = useNavigate();
     const [profile, setProfile] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    // Standard URL Resolver
+    const resolveUrl = (path) => {
+        if (!path) return null;
+        if (path.startsWith('http') || path.startsWith('data:')) return path;
+        const cleanPath = path.startsWith('/') ? path : `/${path}`;
+        return `${API_BASE_URL}${cleanPath}`;
+    };
 
     const handleLogout = () => {
         if (window.confirm('Are you sure you want to logout?')) {
@@ -108,8 +117,24 @@ const FieldProfile = () => {
             <div className={`p-6 rounded-3xl mb-6 ${darkMode ? 'bg-gradient-to-br from-blue-900/40 to-purple-900/40' : 'bg-gradient-to-br from-blue-50 to-purple-50'}`}>
                 <div className="flex flex-col items-center text-center">
                     {/* Avatar */}
-                    <div className={`w-24 h-24 rounded-full flex items-center justify-center mb-4 ${darkMode ? 'bg-blue-600' : 'bg-blue-500'} shadow-lg`}>
-                        <User size={48} className="text-white" />
+                    <div className={`w-24 h-24 rounded-full border-4 ${darkMode ? 'border-gray-800' : 'border-white'} shadow-xl overflow-hidden mb-4 bg-gray-100 flex items-center justify-center relative`}>
+                        {resolveUrl(profile.personal?.avatar_url) ? (
+                            <img
+                                src={resolveUrl(profile.personal.avatar_url)}
+                                alt="Profile"
+                                className="w-full h-full object-cover"
+                                onError={(e) => {
+                                    e.target.style.display = 'none';
+                                    e.target.parentElement.innerHTML = `<div class="w-full h-full flex items-center justify-center bg-blue-100 text-blue-600 font-bold text-3xl">${profile.personal?.first_name.charAt(0)}</div>`;
+                                }}
+                            />
+                        ) : (
+                            <img
+                                src={`${UI_AVATARS_BASE_URL}?name=${profile.personal?.first_name}+${profile.personal?.last_name}&background=random&size=128`}
+                                alt="Avatar"
+                                className="w-full h-full object-cover"
+                            />
+                        )}
                     </div>
 
                     {/* Name */}

@@ -53,7 +53,7 @@ const EmployeHome = () => {
                         <Route path="documents" element={<EmployeeDocumentRepository employees={employees} />} />
 
                         {/* Sub Modules */}
-                        <Route path="add" element={<AddEmploye />} />
+                        <Route path="add" element={<AddEmploye onAdd={loadEmployees} />} />
                         <Route path="payroll" element={<Payroll employees={employees} />} />
                         <Route path="attendance" element={<Attendance employees={employees} />} />
                         <Route path="assets" element={<AssetInventory employees={employees} />} />
@@ -64,8 +64,8 @@ const EmployeHome = () => {
                         <Route path="expenses" element={<Expenses />} />
                         <Route path="company-documents" element={<CompanyDocuments />} />
 
-                        <Route path="/" element={<MainPage employees={employees} setEmployees={setEmployees} />} />
-                        <Route path="*" element={<MainPage employees={employees} setEmployees={setEmployees} />} />
+                        <Route path="/" element={<MainPage employees={employees} setEmployees={setEmployees} onUpdate={loadEmployees} />} />
+                        <Route path="*" element={<MainPage employees={employees} setEmployees={setEmployees} onUpdate={loadEmployees} />} />
                     </Routes>
                 </main>
             </div>

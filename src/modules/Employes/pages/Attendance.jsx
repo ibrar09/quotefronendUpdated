@@ -18,6 +18,7 @@ const Attendance = ({ employees = [] }) => {
 
     // UI State
     const [viewMode, setViewMode] = useState('live'); // 'live' | 'history'
+    const [activeTab, setActiveTab] = useState('list'); // 'list' | 'map'
     const [showStats, setShowStats] = useState(true);
     const [expandedId, setExpandedId] = useState(null);
 
@@ -106,6 +107,30 @@ const Attendance = ({ employees = [] }) => {
                 </div>
 
                 <div className="flex items-center gap-3">
+                    {/* View Mode Toggle (Live/History) */}
+                    <div className={`flex p-1 rounded-xl border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200 shadow-sm'}`}>
+                        <button
+                            onClick={() => setViewMode('live')}
+                            className={`px-4 py-2 rounded-lg text-sm font-bold transition-all
+                            ${viewMode === 'live'
+                                    ? 'bg-blue-500 text-white shadow-md'
+                                    : 'text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700'}`}
+                        >
+                            Live
+                        </button>
+                        <button
+                            onClick={() => setViewMode('history')}
+                            className={`px-4 py-2 rounded-lg text-sm font-bold transition-all
+                            ${viewMode === 'history'
+                                    ? 'bg-blue-500 text-white shadow-md'
+                                    : 'text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700'}`}
+                        >
+                            History
+                        </button>
+                    </div>
+
+                    <div className="h-8 w-px bg-gray-200 dark:bg-gray-700 mx-1"></div>
+
                     {/* Manual Entry Button */}
                     <button
                         onClick={() => setIsManualModalOpen(true)}
@@ -114,32 +139,6 @@ const Attendance = ({ employees = [] }) => {
                     >
                         <PenTool size={16} />
                         <span className="hidden md:inline">Manual Entry</span>
-                    </button>
-
-                    {/* Stats Toggle */}
-                    <button
-                        onClick={() => setShowStats(!showStats)}
-                        className={`p-2 rounded-xl border shadow-sm transition-colors
-                        ${!showStats ? 'bg-blue-100 text-blue-600 border-blue-300' : (darkMode ? 'bg-gray-800 border-gray-700 text-gray-400' : 'bg-white border-gray-200 text-gray-500')}`}
-                        title={showStats ? "Hide Stats" : "Show Stats"}
-                    >
-                        <Layers size={20} className={showStats ? "" : "text-blue-600"} />
-                    </button>
-
-                    {/* View Mode Toggle */}
-                    <button
-                        onClick={() => setViewMode(prev => prev === 'live' ? 'history' : 'live')}
-                        className={`p-2 rounded-xl border shadow-sm transition-colors relative
-                        ${viewMode === 'history' ? 'bg-blue-100 text-blue-600 border-blue-300' : (darkMode ? 'bg-gray-800 border-gray-700 text-gray-400' : 'bg-white border-gray-200 text-gray-500')}`}
-                        title={viewMode === 'live' ? "View History" : "Back to Live"}
-                    >
-                        <Calendar size={20} />
-                    </button>
-
-                    <button className={`p-2 rounded-xl border shadow-sm transition-colors
-                        ${darkMode ? 'bg-gray-800 border-gray-700 text-gray-400 hover:text-white hover:bg-gray-700' : 'bg-white border-gray-200 text-gray-500 hover:text-gray-900 hover:bg-gray-50'}`}
-                        title="Export Report">
-                        <Download size={20} />
                     </button>
 
                     {/* Time Display or Date Picker */}
@@ -182,6 +181,50 @@ const Attendance = ({ employees = [] }) => {
                 </div>
             </div>
 
+            {/* View Sub-Tabs (Only for Live) */}
+            {viewMode === 'live' && (
+                <div className="flex items-center justify-between mb-6 px-2">
+                    <div className="flex gap-4">
+                        <button
+                            onClick={() => setActiveTab('list')}
+                            className={`flex items-center gap-2 px-6 py-2.5 rounded-2xl font-bold transition-all shadow-sm
+                            ${activeTab === 'list'
+                                    ? 'bg-blue-600 text-white shadow-blue-500/20'
+                                    : (darkMode ? 'bg-gray-800 text-gray-400 hover:text-white' : 'bg-white text-gray-600 hover:bg-gray-50')}`}
+                        >
+                            Active List
+                            <span className={`px-2 py-0.5 rounded-full text-[10px] ${activeTab === 'list' ? 'bg-white/20' : 'bg-gray-100 dark:bg-gray-700'}`}>
+                                {teamAttendance.length}
+                            </span>
+                        </button>
+                        <button
+                            onClick={() => setActiveTab('map')}
+                            className={`flex items-center gap-2 px-6 py-2.5 rounded-2xl font-bold transition-all shadow-sm
+                            ${activeTab === 'map'
+                                    ? 'bg-blue-600 text-white shadow-blue-500/20'
+                                    : (darkMode ? 'bg-gray-800 text-gray-400 hover:text-white' : 'bg-white text-gray-600 hover:bg-gray-50')}`}
+                        >
+                            Live Map
+                            <div className={`w-2 h-2 rounded-full animate-pulse ${activeTab === 'map' ? 'bg-white' : 'bg-green-500'}`}></div>
+                        </button>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                        <button
+                            onClick={() => setShowStats(!showStats)}
+                            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all
+                            ${!showStats ? 'bg-blue-100 text-blue-600' : 'text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700'}`}
+                        >
+                            <Layers size={18} />
+                            Insights
+                        </button>
+                        <button className={`p-2 rounded-xl text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all`}>
+                            <Download size={20} />
+                        </button>
+                    </div>
+                </div>
+            )}
+
             {/* Stats Section */}
             <div className={`transition-all duration-500 ease-in-out overflow-hidden ${showStats ? 'max-h-[500px] opacity-100 mb-8' : 'max-h-0 opacity-0 mb-0'}`}>
                 <AttendanceStats
@@ -191,26 +234,39 @@ const Attendance = ({ employees = [] }) => {
                 />
             </div>
 
-            {/* Main Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start h-full">
-
-                {/* List View */}
-                <AttendanceList
-                    darkMode={darkMode}
-                    viewMode={viewMode}
-                    data={currentData}
-                    expandedId={expandedId}
-                    setExpandedId={setExpandedId}
-                    onLocationClick={(emp) => setSelectedEmployee(emp)}
-                />
-
-                {/* Map View (Live Only) */}
-                {viewMode === 'live' && (
-                    <AttendanceMap
+            {/* Main Content Area */}
+            <div className="min-h-[500px]">
+                {viewMode === 'history' ? (
+                    <AttendanceList
                         darkMode={darkMode}
-                        data={teamAttendance}
-                        selectedEmployee={selectedEmployee}
+                        viewMode={viewMode}
+                        data={historyData}
+                        expandedId={expandedId}
+                        setExpandedId={setExpandedId}
+                        fullWidth={true}
                     />
+                ) : (
+                    activeTab === 'list' ? (
+                        <AttendanceList
+                            darkMode={darkMode}
+                            viewMode={viewMode}
+                            data={teamAttendance}
+                            expandedId={expandedId}
+                            setExpandedId={setExpandedId}
+                            onLocationClick={(emp) => {
+                                setSelectedEmployee(emp);
+                                setActiveTab('map');
+                            }}
+                            fullWidth={true}
+                        />
+                    ) : (
+                        <AttendanceMap
+                            darkMode={darkMode}
+                            data={teamAttendance}
+                            selectedEmployee={selectedEmployee}
+                            fullWidth={true}
+                        />
+                    )
                 )}
             </div>
 

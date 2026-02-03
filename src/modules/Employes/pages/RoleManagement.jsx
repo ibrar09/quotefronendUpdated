@@ -39,25 +39,30 @@ const RoleManagement = () => {
         }
     };
 
-    // Permission Definitions for the UI
+    // Permission Definitions for the UI (Matches PermissionSelector keys)
     const permissionList = [
-        { key: 'viewSalary', label: 'View Salaries (Payroll)', icon: <Lock size={14} /> },
-        { key: 'editEmployee', label: 'Edit Employee Profiles', icon: <Edit size={14} /> },
-        { key: 'deleteEmployee', label: 'Delete/Terminate Employees', icon: <Trash2 size={14} /> },
-        { key: 'manageRoles', label: 'Manage Roles & Permissions', icon: <Shield size={14} /> },
-        { key: 'approveLeave', label: 'Approve Leave Requests', icon: <Check size={14} /> },
-        { key: 'viewDocuments', label: 'View Sensitive Documents', icon: <Eye size={14} /> },
+        { key: 'view_salary', label: 'View Salaries (Payroll)', icon: <Lock size={14} /> },
+        { key: 'edit_employee', label: 'Edit Employee Profiles', icon: <Edit size={14} /> },
+        { key: 'delete_employee', label: 'Delete/Terminate Employees', icon: <Trash2 size={14} /> },
+        { key: 'manage_roles', label: 'Manage Roles & Permissions', icon: <Shield size={14} /> },
+        { key: 'approve_leave', label: 'Approve Leave Requests', icon: <Check size={14} /> },
+        { key: 'view_documents', label: 'View Sensitive Documents', icon: <Eye size={14} /> },
+        { key: 'view_dashboard', label: 'View Dashboard', icon: <Eye size={14} /> },
+        { key: 'manage_users', label: 'Manage Users', icon: <Users size={14} /> },
+        { key: 'view_field_ops', label: 'View Field Operations', icon: <Shield size={14} /> },
+        { key: 'manage_jobs', label: 'Manage Jobs/Assignments', icon: <Edit size={14} /> },
     ];
 
     const handleTogglePermission = (roleId, key) => {
         setRoles(roles.map(role => {
             if (role.id === roleId) {
+                const currentPerms = Array.isArray(role.permissions) ? role.permissions : [];
+                const updatedPerms = currentPerms.includes(key)
+                    ? currentPerms.filter(p => p !== key)
+                    : [...currentPerms, key];
                 return {
                     ...role,
-                    permissions: {
-                        ...role.permissions,
-                        [key]: !role.permissions[key]
-                    }
+                    permissions: updatedPerms
                 };
             }
             return role;

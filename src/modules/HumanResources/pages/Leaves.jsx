@@ -28,6 +28,14 @@ const Leaves = () => {
         status: 'PENDING'
     });
 
+    // Standard URL Resolver
+    const resolveUrl = (path) => {
+        if (!path) return null;
+        if (path.startsWith('http') || path.startsWith('data:')) return path;
+        const cleanPath = path.startsWith('/') ? path : `/${path}`;
+        return `${API_BASE_URL}${cleanPath}`;
+    };
+
     const fetchData = async () => {
         setLoading(true);
         try {
@@ -227,9 +235,19 @@ const Leaves = () => {
                                                     <div className="flex items-center">
                                                         <div className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold mr-3 shadow-sm flex-shrink-0 overflow-hidden
                                                             ${darkMode ? 'bg-gray-700 text-blue-400' : 'bg-blue-50 text-blue-600'}`}>
-                                                            {req.Employee?.avatar_url ? (
-                                                                <img src={req.Employee.avatar_url} alt="av" className="w-full h-full object-cover" />
-                                                            ) : (req.Employee?.first_name || 'E').charAt(0)}
+                                                            {resolveUrl(req.Employee?.avatar_url || req.Employee?.avatar) ? (
+                                                                <img
+                                                                    src={resolveUrl(req.Employee?.avatar_url || req.Employee?.avatar)}
+                                                                    alt={req.Employee?.first_name}
+                                                                    className="w-full h-full object-cover"
+                                                                    onError={(e) => {
+                                                                        e.target.style.display = 'none';
+                                                                        e.target.parentElement.innerHTML = `<span>${(req.Employee?.first_name || 'E').charAt(0)}</span>`;
+                                                                    }}
+                                                                />
+                                                            ) : (
+                                                                <span>{(req.Employee?.first_name || 'E').charAt(0)}</span>
+                                                            )}
                                                         </div>
                                                         <div>
                                                             <div className="font-semibold">{req.Employee?.first_name} {req.Employee?.last_name}</div>

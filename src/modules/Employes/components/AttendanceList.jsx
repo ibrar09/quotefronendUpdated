@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Search, MapPin, Clock, ChevronRight, Maximize } from 'lucide-react';
+import { Search, MapPin, Clock, ChevronRight, Maximize, User } from 'lucide-react';
+import API_BASE_URL from '../../../config/api';
 
 const AttendanceList = ({
     darkMode,
@@ -7,10 +8,19 @@ const AttendanceList = ({
     data,
     expandedId,
     setExpandedId,
-    onLocationClick
+    onLocationClick,
+    fullWidth = false
 }) => {
     const [filter, setFilter] = useState('All');
     const [searchTerm, setSearchTerm] = useState('');
+
+    // Standard URL Resolver
+    const resolveUrl = (path) => {
+        if (!path) return null;
+        if (path.startsWith('http') || path.startsWith('data:')) return path;
+        const cleanPath = path.startsWith('/') ? path : `/${path}`;
+        return `${API_BASE_URL}${cleanPath}`;
+    };
 
     // Filter Logic
     const filteredTeam = data.filter(employee => {
@@ -21,7 +31,7 @@ const AttendanceList = ({
     });
 
     return (
-        <div className={`lg:col-span-2 space-y-6 ${viewMode === 'history' ? 'lg:col-span-3' : ''}`}>
+        <div className={`w-full space-y-6`}>
             {/* Header */}
             <div className="flex flex-wrap justify-between items-center gap-4 px-2">
                 <div className="flex items-center gap-2">
@@ -89,12 +99,33 @@ const AttendanceList = ({
                                         >
                                             <td className="px-4 py-4 rounded-l-lg">
                                                 <div className="flex items-center">
-                                                    <div className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold mr-3 shadow-sm flex-shrink-0 relative
-                                                        ${darkMode ? 'bg-gray-700 text-blue-400' : 'bg-blue-50 text-blue-600'}`}>
-                                                        {employee.name.charAt(0)}
+                                                    <div className={`w-11 h-11 rounded-full flex items-center justify-center text-sm font-bold mr-3 shadow-lg flex-shrink-0 relative overflow-visible ring-2 
+                                                        ${employee.onlineStatus === 'Online'
+                                                            ? (darkMode ? 'ring-green-500/50' : 'ring-green-400/50 shadow-[0_0_15px_rgba(34,197,94,0.3)]')
+                                                            : (darkMode ? 'ring-gray-700' : 'ring-white')}
+                                                        ${darkMode ? 'bg-gray-800 text-blue-400' : 'bg-blue-50 text-blue-600'}`}>
+                                                        <div className="w-full h-full rounded-full overflow-hidden relative">
+                                                            {resolveUrl(employee.avatar) ? (
+                                                                <img
+                                                                    src={resolveUrl(employee.avatar)}
+                                                                    alt={employee.name}
+                                                                    className="w-full h-full object-cover"
+                                                                    onError={(e) => {
+                                                                        e.target.style.display = 'none';
+                                                                        e.target.parentElement.innerHTML = `<span>${employee.name.charAt(0)}</span>`;
+                                                                    }}
+                                                                />
+                                                            ) : (
+                                                                <span>{employee.name.charAt(0)}</span>
+                                                            )}
+                                                        </div>
                                                         {viewMode === 'live' && (
-                                                            <div className={`absolute -bottom-0.5 -right-0.5 w-3 h-3 border-2 rounded-full ${darkMode ? 'border-gray-700' : 'border-white'}
-                                                                ${employee.onlineStatus === 'Online' ? 'bg-green-500' : 'bg-gray-400'}`}></div>
+                                                            <div className={`absolute -bottom-0.5 -right-0.5 w-4.5 h-4.5 border-[2.5px] rounded-full z-30 shadow-md transition-all duration-300
+                                                                ${darkMode ? 'border-gray-800' : 'border-white'}
+                                                                ${employee.onlineStatus === 'Online'
+                                                                    ? 'bg-[#22C55E] shadow-[0_0_12px_rgba(34,197,94,0.8)] animate-[pulse_1.5s_infinite]'
+                                                                    : 'bg-gray-400'}`}>
+                                                            </div>
                                                         )}
                                                     </div>
                                                     <div>
@@ -219,9 +250,12 @@ const AttendanceList = ({
                                                                     <h4 className={`text-xs font-bold uppercase mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Verification</h4>
                                                                     <div className="relative group/photo">
                                                                         <img
-                                                                            src={employee.photo}
+                                                                            src={resolveUrl(employee.photo)}
                                                                             alt="Check-in verification"
                                                                             className="w-full h-32 object-cover rounded-xl border border-gray-200 dark:border-gray-600 shadow-sm"
+                                                                            onError={(e) => {
+                                                                                e.target.src = 'https://via.placeholder.com/150?text=No+Photo';
+                                                                            }}
                                                                         />
                                                                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/photo:opacity-100 transition-opacity flex items-center justify-center rounded-xl">
                                                                             <Maximize size={20} className="text-white" />

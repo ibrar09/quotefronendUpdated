@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import { useTheme } from '../../../context/ThemeContext';
 import {
     Search, FileDown, CheckCircle, AlertCircle,
-    AlertTriangle, Shield, CheckSquare, Square
+    AlertTriangle, Shield, CheckSquare, Square, FileStack
 } from 'lucide-react';
+import IDCollectionModal from '../components/IDCollectionModal';
+import API_BASE_URL from '../../../config/api';
+import { FileText } from 'lucide-react';
 
 const EmployeeDocumentRepository = ({ employees = [] }) => {
     const { darkMode } = useTheme();
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedIds, setSelectedIds] = useState([]);
+    const [showIDModal, setShowIDModal] = useState(false);
 
     // Filter Logic
     const filteredEmployees = employees.filter(emp =>
@@ -43,8 +47,18 @@ const EmployeeDocumentRepository = ({ employees = [] }) => {
         alert(`Initiating Bulk Download...\n\nType: ${type}\nTotal Files: ${count}`);
     };
 
+    const selectedEmployees = employees.filter(emp => selectedIds.includes(emp.id));
+
     return (
         <div className="h-full flex flex-col p-6 animate-[fadeIn_0.3s_ease-out] overflow-y-auto">
+            {/* ID Collection Modal */}
+            {showIDModal && (
+                <IDCollectionModal
+                    selectedEmployees={selectedEmployees}
+                    onClose={() => setShowIDModal(false)}
+                />
+            )}
+
             {/* Header */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
                 <div>
@@ -80,6 +94,13 @@ const EmployeeDocumentRepository = ({ employees = [] }) => {
                         {selectedIds.length} Selected
                     </span>
                     <div className="hidden md:block h-6 w-px bg-gray-300 dark:bg-gray-600 mx-2" />
+
+                    <button
+                        onClick={() => setShowIDModal(true)}
+                        className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition-all text-sm font-bold"
+                    >
+                        <FileStack size={16} /> Work Permission ID Generator
+                    </button>
 
                     <button
                         onClick={() => handleBulkExport('Iqama')}
@@ -136,9 +157,13 @@ const EmployeeDocumentRepository = ({ employees = [] }) => {
                             {/* Card Content */}
                             <div className="pt-10 px-4 pb-4 relative z-10 flex flex-col items-center">
                                 {/* Avatar */}
-                                <div className={`w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mb-2 shadow-lg border-4 
+                                <div className={`w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mb-2 shadow-lg border-4 overflow-hidden
                                     ${darkMode ? 'border-gray-800 bg-gray-700 text-white' : 'border-white bg-gray-100 text-gray-700'}`}>
-                                    {(emp.name || '?').charAt(0)}
+                                    {emp.avatar_url ? (
+                                        <img src={emp.avatar_url.startsWith('http') ? emp.avatar_url : `${API_BASE_URL}${emp.avatar_url.startsWith('/') ? emp.avatar_url : '/' + emp.avatar_url}`} alt="" className="w-full h-full object-cover" />
+                                    ) : (
+                                        (emp.name || '?').charAt(0)
+                                    )}
                                 </div>
 
                                 <h3 className={`font-bold text-base text-center mb-0.5 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{emp.name || 'Unknown'}</h3>
@@ -175,7 +200,7 @@ const EmployeeDocumentRepository = ({ employees = [] }) => {
                                                 (darkMode ? 'bg-gray-700/50 border-gray-600' : 'bg-gray-50 border-gray-100')}`}>
                                         <div className="flex items-center gap-2">
                                             <div className={`p-1 rounded-md ${darkMode ? 'bg-gray-600' : 'bg-white'} shadow-sm`}>
-                                                <Shield size={12} className={darkMode ? 'text-gray-300' : 'text-gray-600'} />
+                                                <FileText size={12} className={darkMode ? 'text-gray-300' : 'text-gray-600'} />
                                             </div>
                                             <div className="flex flex-col text-left">
                                                 <span className={`text-[10px] font-semibold text-gray-500 uppercase`}>Passport</span>

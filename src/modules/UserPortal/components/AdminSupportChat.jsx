@@ -6,6 +6,7 @@ import {
 import { getMessages, sendMessage } from '../services/portal.service';
 import { useAuth } from '../../../context/AuthContext';
 import MediaSidebar from '../../FieldOperations/components/MediaSidebar';
+import { UI_AVATARS_BASE_URL, CHAT_BACKGROUND_IMAGE } from '../../../config/constants';
 
 const AdminSupportChat = ({ onBack }) => {
     const { darkMode } = useTheme();
@@ -90,7 +91,7 @@ const AdminSupportChat = ({ onBack }) => {
                     </button>
 
                     <div className="relative cursor-pointer">
-                        <img src="https://ui-avatars.com/api/?name=Admin+Support&background=0D8ABC&color=fff" alt="Support" className="w-10 h-10 rounded-full" />
+                        <img src={`${UI_AVATARS_BASE_URL}?name=Admin+Support&background=0D8ABC&color=fff`} alt="Support" className="w-10 h-10 rounded-full" />
                         <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white dark:border-[#202c33] rounded-full"></span>
                     </div>
                     <div className="cursor-pointer">
@@ -113,7 +114,7 @@ const AdminSupportChat = ({ onBack }) => {
 
             {/* Chat Area */}
             <div className={`flex-1 overflow-y-auto p-4 space-y-4`}
-                style={{ backgroundImage: darkMode ? 'none' : 'url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png")', backgroundSize: '400px', backgroundBlendMode: 'soft-light' }}
+                style={{ backgroundImage: darkMode ? 'none' : `url("${CHAT_BACKGROUND_IMAGE}")`, backgroundSize: '400px', backgroundBlendMode: 'soft-light' }}
                 ref={scrollRef}>
 
                 {loading ? <p className="text-center text-gray-500 mt-10">Loading messages...</p> :
@@ -187,35 +188,37 @@ const AdminSupportChat = ({ onBack }) => {
             </div>
 
             {/* Input Area */}
-            <form onSubmit={handleSend} className={`px-4 py-3 shrink-0 flex items-center gap-2 z-20
+            <form onSubmit={handleSend} className={`px-2 py-3 sm:px-4 sm:py-3 shrink-0 flex items-center gap-1 sm:gap-2 z-20
                 ${darkMode ? 'bg-[#202c33]' : 'bg-[#f0f2f5]'}`}>
 
-                <button type="button" className={`p-2 rounded-full transition-colors ${darkMode ? 'text-[#8696a0] hover:bg-white/10' : 'text-[#54656f] hover:bg-black/5'}`}>
-                    <Smile size={24} />
-                </button>
-                <button type="button" className={`p-2 rounded-full transition-colors ${darkMode ? 'text-[#8696a0] hover:bg-white/10' : 'text-[#54656f] hover:bg-black/5'}`}>
-                    <Paperclip size={24} />
-                </button>
+                <div className="flex items-center">
+                    <button type="button" className={`p-2.5 sm:p-2 rounded-full transition-colors ${darkMode ? 'text-[#8696a0] hover:bg-white/10' : 'text-[#54656f] hover:bg-black/5'}`}>
+                        <Smile size={24} />
+                    </button>
+                    <button type="button" className={`p-2.5 sm:p-2 rounded-full transition-colors ${darkMode ? 'text-[#8696a0] hover:bg-white/10' : 'text-[#54656f] hover:bg-black/5'}`}>
+                        <Paperclip size={24} />
+                    </button>
+                </div>
 
-                <div className={`flex-1 flex items-center gap-2 px-4 py-2 rounded-lg transition-all
-                    ${darkMode ? 'bg-[#2a3942]' : 'bg-white'}`}>
+                <div className={`flex-1 flex items-center gap-2 px-3 sm:px-4 py-2.5 sm:py-2 rounded-xl sm:rounded-lg transition-all
+                    ${darkMode ? 'bg-[#2a3942]' : 'bg-white shadow-sm'}`}>
                     <input
                         type="text"
                         placeholder="Type a message"
                         value={newMessage}
                         onChange={(e) => setNewMessage(e.target.value)}
-                        className={`flex-1 bg-transparent text-sm focus:outline-none placeholder:text-[#8696a0] ${darkMode ? 'text-[#d1d7db]' : 'text-[#111b21]'}`}
+                        className={`flex-1 bg-transparent text-sm sm:text-base focus:outline-none placeholder:text-[#8696a0] ${darkMode ? 'text-[#d1d7db]' : 'text-[#111b21]'}`}
                     />
                 </div>
 
                 <button
                     type="submit"
-                    className={`p-3 rounded-full transition-all active:scale-95 flex items-center justify-center
+                    className={`p-3.5 sm:p-3 rounded-full transition-all active:scale-90 flex items-center justify-center shrink-0
                     ${newMessage.trim()
-                            ? 'bg-[#00a884] text-white shadow-sm'
+                            ? 'bg-[#00a884] text-white shadow-md'
                             : darkMode ? 'text-[#8696a0] hover:bg-white/10' : 'text-[#54656f] hover:bg-black/5'}`}
                 >
-                    <Send size={newMessage.trim() ? 20 : 24} className={newMessage.trim() ? 'ml-0.5' : ''} />
+                    <Send size={22} className={newMessage.trim() ? 'ml-0.5' : ''} />
                 </button>
             </form>
 

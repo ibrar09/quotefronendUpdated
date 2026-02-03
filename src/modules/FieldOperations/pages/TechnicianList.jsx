@@ -33,8 +33,9 @@ const TechnicianList = () => {
     };
 
     const filteredTechnicians = technicians.filter(tech => {
+        const skills = Array.isArray(tech.skills) ? tech.skills : [];
         const matchesSearch = tech.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            tech.skills.some(s => s.toLowerCase().includes(searchTerm.toLowerCase()));
+            skills.some(s => s.toLowerCase().includes(searchTerm.toLowerCase()));
         const matchesStatus = statusFilter === 'ALL' || tech.status === statusFilter;
         const matchesRegion = regionFilter === 'ALL' || tech.region === regionFilter;
         return matchesSearch && matchesStatus && matchesRegion;
@@ -141,15 +142,18 @@ const TechnicianList = () => {
                                 </div>
 
                                 <div className="relative z-10 flex flex-wrap gap-2">
-                                    {tech.skills.slice(0, 3).map((skill, i) => (
+                                    {Array.isArray(tech.skills) && tech.skills.slice(0, 3).map((skill, i) => (
                                         <span key={i} className={`px-2.5 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wide ${darkMode ? 'bg-slate-700 text-slate-300' : 'bg-slate-100 text-slate-600 border border-slate-200 group-hover:border-violet-100 group-hover:bg-violet-50 group-hover:text-violet-700 transition-colors'}`}>
                                             {skill}
                                         </span>
                                     ))}
-                                    {tech.skills.length > 3 && (
+                                    {Array.isArray(tech.skills) && tech.skills.length > 3 && (
                                         <span className={`px-2.5 py-1.5 rounded-lg text-[10px] font-bold ${darkMode ? 'bg-slate-700 text-slate-300' : 'bg-slate-100 text-slate-600 border border-slate-200'}`}>
                                             +{tech.skills.length - 3}
                                         </span>
+                                    )}
+                                    {(!Array.isArray(tech.skills) || tech.skills.length === 0) && (
+                                        <span className="text-xs text-slate-400 italic">No skills listed</span>
                                     )}
                                 </div>
                             </div>

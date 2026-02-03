@@ -242,12 +242,12 @@ const WorkAssignment = () => {
                                         <p className="text-slate-500 font-medium">Clear filters to see more.</p>
                                     </div>
                                 ) : (
-                                    <div className="divide-y divide-slate-100">
+                                    <div className="grid grid-cols-1 gap-4">
                                         {filteredQuotes.map((quote) => (
                                             <div
                                                 key={quote.id}
                                                 onClick={() => openAssignModal(quote)}
-                                                className={`group relative p-6 transition-all cursor-pointer flex flex-col sm:flex-row sm:items-center gap-6 border-l-4 border-transparent hover:border-l-violet-500 hover:bg-slate-50`}
+                                                className={`group relative p-6 transition-all cursor-pointer flex flex-col sm:flex-row sm:items-center gap-6 border rounded-xl hover:shadow-md bg-white border-slate-200 hover:border-violet-300`}
                                             >
                                                 {/* Left: Identifier */}
                                                 <div className="flex items-center gap-5 min-w-[240px]">
@@ -255,7 +255,20 @@ const WorkAssignment = () => {
                                                         <FileText size={24} />
                                                     </div>
                                                     <div>
-                                                        <p className={`font-black text-lg leading-tight mb-1 text-slate-900`}>{quote.brand}</p>
+                                                        <div className="flex items-center gap-2 mb-1">
+                                                            <p className={`font-black text-lg leading-tight text-slate-900`}>{quote.brand}</p>
+                                                            {/* New Badge for quotations created within last 24 hours */}
+                                                            {(() => {
+                                                                const createdDate = new Date(quote.sent_at || quote.created_at);
+                                                                const now = new Date();
+                                                                const hoursDiff = (now - createdDate) / (1000 * 60 * 60);
+                                                                return hoursDiff < 24 && (
+                                                                    <span className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse">
+                                                                        New
+                                                                    </span>
+                                                                );
+                                                            })()}
+                                                        </div>
                                                         <div className="flex items-center gap-2 text-xs font-bold text-slate-500">
                                                             <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-700">{quote.quote_no}</span>
                                                             <span>•</span>
@@ -265,15 +278,41 @@ const WorkAssignment = () => {
                                                 </div>
 
                                                 {/* Middle: Description/Location */}
-                                                <div className="flex-1 min-w-0 grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                    <div className="flex items-center gap-2 text-sm font-bold text-slate-700 truncate">
-                                                        <MapPin size={18} className="text-rose-500 flex-shrink-0" />
-                                                        {quote.location}, {quote.city}
+                                                <div className="flex-1 min-w-0 space-y-3">
+                                                    {/* MR Number & Location */}
+                                                    <div className="flex items-center gap-4 flex-wrap">
+                                                        {quote.mr_no && (
+                                                            <div className="flex items-center gap-2 text-xs font-bold">
+                                                                <span className="bg-blue-50 text-blue-700 px-2.5 py-1 rounded-md border border-blue-200">
+                                                                    MR: {quote.mr_no}
+                                                                </span>
+                                                            </div>
+                                                        )}
+                                                        <div className="flex items-center gap-2 text-sm font-bold text-slate-700">
+                                                            <MapPin size={16} className="text-rose-500 flex-shrink-0" />
+                                                            {quote.location}, {quote.city}
+                                                        </div>
                                                     </div>
-                                                    <div className="hidden md:block">
-                                                        <p className={`text-sm truncate font-medium text-slate-600`}>
-                                                            {quote.work_description || "No description provided."}
-                                                        </p>
+
+                                                    {/* Work Description */}
+                                                    <p className="text-sm font-medium text-slate-600 line-clamp-2">
+                                                        {quote.work_description || "No description provided."}
+                                                    </p>
+
+                                                    {/* Amount & Item Count */}
+                                                    <div className="flex items-center gap-4 text-xs font-bold">
+                                                        {quote.total_amount && (
+                                                            <div className="flex items-center gap-1.5 text-emerald-700">
+                                                                <DollarSign size={14} />
+                                                                <span>{parseFloat(quote.total_amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} SAR</span>
+                                                            </div>
+                                                        )}
+                                                        {quote.item_count && (
+                                                            <div className="flex items-center gap-1.5 text-slate-600">
+                                                                <LayoutList size={14} />
+                                                                <span>{quote.item_count} {quote.item_count === 1 ? 'Item' : 'Items'}</span>
+                                                            </div>
+                                                        )}
                                                     </div>
                                                 </div>
 

@@ -4,7 +4,7 @@ import { useTheme } from '../../../context/ThemeContext'
 import { useNavigate } from 'react-router-dom'
 import EmployeeService from '../../../services/EmployeeService'
 
-const AddEmploye = () => {
+const AddEmploye = ({ onAdd }) => {
     const { darkMode } = useTheme();
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -90,6 +90,7 @@ const AddEmploye = () => {
 
         try {
             await EmployeeService.addEmployee(processedData);
+            if (onAdd) await onAdd(); // Reload the list
             navigate('/employes');
         } catch (error) {
             console.error("Failed to add employee", error);
@@ -148,7 +149,7 @@ const AddEmploye = () => {
                             <FloatingInput id="nationality" label="Nationality" value={formData.nationality} onChange={handleChange} darkMode={darkMode} />
                             <FloatingInput id="sponsor_name" label="Sponsor / Company" value={formData.sponsor_name} onChange={handleChange} darkMode={darkMode} />
                         </div>
-                        <FloatingInput id="email" label="Email Address" type="email" value={formData.email} onChange={handleChange} darkMode={darkMode} />
+                        <FloatingInput id="email" label="Email Address" type="email" value={formData.email} onChange={handleChange} darkMode={darkMode} required />
                         <div className="grid grid-cols-2 gap-4">
                             <FloatingInput id="phone_primary" label="Phone Number" type="tel" value={formData.phone_primary} onChange={handleChange} darkMode={darkMode} />
                             <FloatingInput id="dob" label="Date of Birth" type="date" value={formData.dob} onChange={handleChange} darkMode={darkMode} />

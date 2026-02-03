@@ -11,7 +11,7 @@ axios.interceptors.response.use(
     async (error) => {
         const { config, response } = error;
 
-        // Check if it's a 429 error and we haven't hit max retries
+        // 1. Handle 429 Too Many Requests (Rate Limiting)
         if (response && response.status === 429) {
             config.__retryCount = config.__retryCount || 0;
 
@@ -28,6 +28,34 @@ axios.interceptors.response.use(
 
                 // Retry the request
                 return axios(config);
+            }
+        }
+
+        // 2. Handle 401 Unauthorized (Expired or Invalid Session)
+        if (response && response.status === 401) {
+            // Check if it's the login route itself - don't redirect if login fails!
+            // Also ignore public/asset routes if any
+            if (config.url.includes('/api/auth/login')) {
+                return Promise.reject(error);
+            }
+
+            console.error('🚫 [Axios] 401 Unauthorized detected. Session may have expired.');
+
+            // Avoid infinite loops if we are already on login page or just logged out
+            if (!window.location.pathname.includes('/login')) {
+                const isExpired = response.data?.code === 'TOKEN_EXPIRED';
+
+                // Clear all auth related storage
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+
+                // Use a standard confirmation if it's a critical error
+                const message = isExpired
+                    ? "Your session has expired. Please login again."
+                    : (response.data?.message || "Your session is invalid or has expired. Redirecting to login.");
+
+                alert(message);
+                window.location.href = '/login';
             }
         }
 

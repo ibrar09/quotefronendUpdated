@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { DollarSign, CheckCircle, Calendar, Search, CreditCard, CheckSquare, Square, Building2, FileText, Users } from 'lucide-react';
 import { useTheme } from '../../../../context/ThemeContext';
+import API_BASE_URL from '../../../../config/api';
 
 const PayrollList = ({
     employees,
@@ -19,6 +20,14 @@ const PayrollList = ({
 }) => {
     const { darkMode } = useTheme();
     const [searchTerm, setSearchTerm] = useState('');
+
+    // Standard URL Resolver
+    const resolveUrl = (path) => {
+        if (!path) return null;
+        if (path.startsWith('http') || path.startsWith('data:')) return path;
+        const cleanPath = path.startsWith('/') ? path : `/${path}`;
+        return `${API_BASE_URL}${cleanPath}`;
+    };
 
     // --- 1. Enhanced Mock Data Generator ---
     const enhanceEmployeeData = (emp) => {
@@ -281,9 +290,21 @@ const PayrollList = ({
 
                                         {/* Employee Info */}
                                         <div className="col-span-3 flex items-center gap-3">
-                                            <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-sm border-2
+                                            <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-sm border-2 overflow-hidden
                                             ${darkMode ? 'bg-gray-700 border-gray-600 text-white' : 'bg-white border-white text-blue-600 ring-1 ring-gray-100'}`}>
-                                                {emp.name.charAt(0)}
+                                                {resolveUrl(emp.avatar_url || emp.avatar) ? (
+                                                    <img
+                                                        src={resolveUrl(emp.avatar_url || emp.avatar)}
+                                                        alt={emp.name}
+                                                        className="w-full h-full object-cover"
+                                                        onError={(e) => {
+                                                            e.target.style.display = 'none';
+                                                            e.target.parentElement.innerHTML = `<span>${emp.name.charAt(0)}</span>`;
+                                                        }}
+                                                    />
+                                                ) : (
+                                                    <span>{emp.name.charAt(0)}</span>
+                                                )}
                                             </div>
                                             <div className="min-w-0">
                                                 <p className={`font-semibold text-sm truncate ${darkMode ? 'text-gray-200' : 'text-gray-800'}`}>{emp.name}</p>

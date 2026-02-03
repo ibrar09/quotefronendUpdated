@@ -5,6 +5,7 @@ import {
     Calendar, Clock, User, CheckCircle, AlertCircle,
     ChevronRight, MapPin, Briefcase, RefreshCw, X
 } from 'lucide-react';
+import { MAPBOX_STATIC_PLACEHOLDER } from '../../../config/constants';
 
 const FieldOpsManager = () => {
     const { darkMode, themeStyles, colors } = useTheme();
@@ -194,7 +195,7 @@ const FieldOpsManager = () => {
             ) : (
                 /* Map View Placeholder - Keeping consistent for now */
                 <div className={`flex-1 rounded-2xl overflow-hidden relative border min-h-[500px] ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-100'}`}>
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 bg-[url('https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/46.7,24.7,11,0/1200x800?access_token=pk.xxx')] bg-cover opacity-50">
+                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 bg-cover opacity-50" style={{ backgroundImage: `url('${MAPBOX_STATIC_PLACEHOLDER}')` }}>
                         <p className="bg-black/80 text-white px-4 py-2 rounded-xl backdrop-blur-md">Interactive Map View</p>
                     </div>
                 </div>

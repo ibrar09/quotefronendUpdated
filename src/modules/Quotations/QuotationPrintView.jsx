@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import logoSrc from '../../assets/Maaj-Logo 04.png';
+import { MapPin, Phone, Mail, Globe, Calendar, User, FileText, CheckCircle2, Loader2 } from 'lucide-react';
 import API_BASE_URL from '../../config/api';
+import { IMAGE_NOT_FOUND } from '../../config/constants';
 import signature from '../../assets/signature.jpeg';
 import stamp from '../../assets/stamp.jpeg';
-import { Loader2 } from 'lucide-react';
-
-// Use origin if API_BASE_URL is relative or missing
 const FINAL_API_URL = (API_BASE_URL && API_BASE_URL !== '') ? API_BASE_URL : window.location.origin;
 
 const QuotationPrintView = () => {
@@ -24,13 +22,13 @@ const QuotationPrintView = () => {
                 let q;
                 if (String(id).startsWith('preview-')) {
                     const previewId = id.replace('preview-', '');
-                    console.log(`Fetching preview quote from: ${FINAL_API_URL}/api/pdf/preview-data/${previewId}`);
-                    const res = await axios.get(`${FINAL_API_URL}/api/pdf/preview-data/${previewId}`);
+                    console.log(`Fetching preview quote from: ${FINAL_API_URL} /api/pdf / preview - data / ${previewId} `);
+                    const res = await axios.get(`${FINAL_API_URL} /api/pdf / preview - data / ${previewId} `);
                     if (!res.data.success) throw new Error(res.data.message || 'Preview not found');
                     q = res.data.data;
                 } else {
-                    console.log(`Fetching quote from: ${FINAL_API_URL}/api/quotations/${id}`);
-                    const res = await axios.get(`${FINAL_API_URL}/api/quotations/${id}`);
+                    console.log(`Fetching quote from: ${FINAL_API_URL} /api/quotations / ${id} `);
+                    const res = await axios.get(`${FINAL_API_URL} /api/quotations / ${id} `);
                     if (!res.data.success) throw new Error(res.data.message || 'Quotation not found');
                     q = res.data.data;
                 }
@@ -129,57 +127,57 @@ const QuotationPrintView = () => {
                 style={{ color: 'black' }}
             >
                 <style>{`
-                input, textarea { background: transparent; border: none; resize: none; font-weight: 600; color: black; width: 100%; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
-                ::-webkit-scrollbar { display: none; }
-                body { background: white; margin: 0; font-family: 'Outfit', sans-serif; }
-                .text-[8px] { font-size: 8px; line-height: 10px; }
-                .text-[10px] { font-size: 10px; line-height: 1.1; }
-                .font-bold { font-weight: 600; } 
-                .bg-theme { background-color: #e2d1a5 !important; }
+input, textarea { background: transparent; border: none; resize: none; font - weight: 600; color: black; width: 100 %; box - sizing: border - box; font - family: 'Outfit', sans - serif; }
+                :: -webkit - scrollbar { display: none; }
+                body { background: white; margin: 0; font - family: 'Outfit', sans - serif; }
+                .text - [8px] { font - size: 8px; line - height: 10px; }
+                .text - [10px] { font - size: 10px; line - height: 1.1; }
+                .font - bold { font - weight: 600; } 
+                .bg - theme { background - color: #e2d1a5!important; }
                 
-                table { width: 100%; border-collapse: collapse; }
-                
-                /* Print-specific styles */
-                @media print {
-                  @page { 
-                    size: A4; 
-                    /* Top Margin = Header Height (30mm) + Spacing (10mm) = 40mm */
-                    margin: 40mm 15mm 20mm 15mm; 
-                  }
+                table { width: 100 %; border - collapse: collapse; }
+
+/* Print-specific styles */
+@media print {
+    @page {
+        size: A4;
+        /* Top Margin = Header Height (30mm) + Spacing (10mm) = 40mm */
+        margin: 40mm 15mm 20mm 15mm;
+    }
                   
                   body {
-                    -webkit-print-color-adjust: exact;
-                  }
+        -webkit - print - color - adjust: exact;
+    }
 
                   /* FIXED HEADER INSIDE THE MARGIN */
-                  .fixed-header {
-                    position: fixed;
-                    top: -35mm; /* Pull up into the margin */
-                    left: 0;
-                    right: 0;
-                    height: 35mm;
-                    z-index: 1000;
-                  }
+                  .fixed - header {
+        position: fixed;
+        top: -35mm; /* Pull up into the margin */
+        left: 0;
+        right: 0;
+        height: 35mm;
+        z - index: 1000;
+    }
                   
-                  table { 
-                    width: 100%;
-                    border-collapse: collapse; 
-                    page-break-inside: auto;
-                  }
+                  table {
+        width: 100 %;
+        border - collapse: collapse;
+        page -break-inside: auto;
+    }
                   
-                  thead { display: table-header-group; } 
-                  tfoot { display: table-footer-group; }
-                  tr { page-break-inside: avoid; }
+                  thead { display: table - header - group; } 
+                  tfoot { display: table - footer - group; }
+                  tr { page -break-inside: avoid; }
 
-                  .totals-wrapper {
-                    page-break-inside: auto; 
-                  }
+                  .totals - wrapper {
+        page -break-inside: auto;
+    }
                   
-                  .totals-table-row {
-                    page-break-inside: avoid;
-                  }
-                }
-             `}</style>
+                  .totals - table - row {
+        page -break-inside: avoid;
+    }
+}
+`}</style>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
                 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -327,10 +325,10 @@ const QuotationPrintView = () => {
                                             <tr className="align-top">
                                                 {/* IMAGES COLUMN */}
                                                 <td className="w-1/2 pr-1 image-gallery-container" style={{ verticalAlign: 'top' }}>
-                                                    <div className={`grid w-full gap-1 border border-gray-300 bg-gray-50 p-[1px] ${images.length === 1 ? 'grid-cols-1' :
+                                                    <div className={`grid w - full gap - 1 border border - gray - 300 bg - gray - 50 p - [1px] ${images.length === 1 ? 'grid-cols-1' :
                                                         images.length === 2 ? 'grid-cols-1' :
                                                             'grid-cols-3'
-                                                        }`} style={{ minHeight: '200px' }}>
+                                                        } `} style={{ minHeight: '200px' }}>
                                                         {images.map((imgData, i) => {
                                                             if (!imgData) return null;
 
@@ -347,16 +345,16 @@ const QuotationPrintView = () => {
                                                             if (!isUrl) {
                                                                 // Ensure leading slash for path
                                                                 if (!cleanPath.startsWith('/')) cleanPath = '/' + cleanPath;
-                                                                src = `${FINAL_API_URL}${cleanPath}`;
+                                                                src = `${FINAL_API_URL}${cleanPath} `;
                                                             }
 
                                                             return (
                                                                 <div key={i} className="w-full h-32 flex items-center justify-center overflow-hidden border border-gray-300 relative">
                                                                     <img
                                                                         src={src}
-                                                                        alt={`Evidence ${i + 1}`}
+                                                                        alt={`Evidence ${i + 1} `}
                                                                         className="w-full h-full object-cover"
-                                                                        onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400?text=Image+Not+Found'; }}
+                                                                        onError={(e) => { e.target.onerror = null; e.target.src = IMAGE_NOT_FOUND; }}
                                                                     />
                                                                 </div>
                                                             );

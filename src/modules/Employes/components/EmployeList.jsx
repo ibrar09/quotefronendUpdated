@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
 import { useTheme } from '../../../context/ThemeContext';
 import { useNavigate } from 'react-router-dom';
-import { MoreHorizontal, Search, AlertCircle, AlertTriangle, Plus, Building2 } from 'lucide-react';
+import { MoreHorizontal, Search, AlertCircle, AlertTriangle, Plus, Building2, User } from 'lucide-react';
+import API_BASE_URL from '../../../config/api';
 
 const EmployeList = ({ employees = [], onEdit, onView }) => {
     const { darkMode } = useTheme();
     const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
+
+    // URL Resolver Helper
+    const resolveUrl = (path) => {
+        if (!path) return null;
+        if (path.startsWith('http') || path.startsWith('data:')) return path;
+
+        // Handle relative paths starting with /
+        const cleanPath = path.startsWith('/') ? path : `/${path}`;
+        return `${API_BASE_URL}${cleanPath}`;
+    };
 
     // Expiry Check Logic
     const checkExpiry = (dateString) => {
@@ -96,6 +107,7 @@ const EmployeList = ({ employees = [], onEdit, onView }) => {
                             const displayId = emp.emp_id || emp.id;
                             const iqamaNo = emp.iqama || emp.iqama_no || 'N/A';
                             const category = emp.category || emp.department || 'General';
+                            const avatarUrl = resolveUrl(emp.avatar_url || emp.avatar);
 
                             return (
                                 <tr
@@ -112,11 +124,26 @@ const EmployeList = ({ employees = [], onEdit, onView }) => {
                                     <td className={`px-4 py-4 rounded-l-lg border-l-4 hover:border-blue-500 transition-colors
                                     ${hasIssue ? 'border-red-500 bg-red-50/10' : 'border-transparent'}`}>
                                         <div className="flex items-center">
-                                            <div
-                                                className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold mr-3 shadow-sm flex-shrink-0
-                                            ${darkMode ? 'bg-gray-700 text-blue-400' : 'bg-blue-50 text-blue-600'}`}
+                                            <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold mr-3 shadow-sm flex-shrink-0 overflow-hidden"
+                                                style={{
+                                                    backgroundColor: avatarUrl ? 'transparent' : (darkMode ? '#374151' : '#EFF6FF')
+                                                }}
                                             >
-                                                {fullName.charAt(0)}
+                                                {avatarUrl ? (
+                                                    <img
+                                                        src={avatarUrl}
+                                                        alt={fullName}
+                                                        className="w-full h-full object-cover"
+                                                        onError={(e) => {
+                                                            e.target.style.display = 'none';
+                                                            e.target.parentElement.innerHTML = `<span class="${darkMode ? 'text-blue-400' : 'text-blue-600'}">${fullName.charAt(0)}</span>`;
+                                                        }}
+                                                    />
+                                                ) : (
+                                                    <span className={darkMode ? 'text-blue-400' : 'text-blue-600'}>
+                                                        {fullName.charAt(0)}
+                                                    </span>
+                                                )}
                                             </div>
                                             <span className="font-semibold">{fullName}</span>
                                         </div>

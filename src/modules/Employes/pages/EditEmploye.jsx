@@ -1,11 +1,21 @@
 import React, { useState } from 'react'
-import { Upload, ArrowLeft } from 'lucide-react'
+import { Upload, ArrowLeft, User } from 'lucide-react'
 import { useTheme } from '../../../context/ThemeContext'
 import EmployeeService from '../../../services/EmployeeService'
+import API_BASE_URL from '../../../config/api'
 
-const EditEmploye = ({ employee, onBack }) => {
+const EditEmploye = ({ employee, onBack, onUpdate }) => {
     const { darkMode } = useTheme();
     const [loading, setLoading] = useState(false);
+
+    // URL Resolver Helper
+    const resolveUrl = (path) => {
+        if (!path) return null;
+        if (path.startsWith('http') || path.startsWith('data:')) return path;
+
+        const cleanPath = path.startsWith('/') ? path : `/${path}`;
+        return `${API_BASE_URL}${cleanPath}`;
+    };
 
     // Initial State from Employee Prop
     const [formData, setFormData] = useState({
@@ -18,7 +28,7 @@ const EditEmploye = ({ employee, onBack }) => {
         phone_primary: employee?.phone || '',
         dob: employee?.dob || '',
         position: employee?.role || '',
-        skills: employee?.skills ? employee?.skills.join(', ') : '',
+        skills: Array.isArray(employee?.skills) ? employee.skills.join(', ') : (employee?.skills || ''),
         bank_name: employee?.bank_name || '',
         account_number: employee?.account_number || '',
         iban_number: employee?.iban_number || '',
@@ -37,7 +47,8 @@ const EditEmploye = ({ employee, onBack }) => {
         other_allowance: employee?.other_allowance || '',
         recurring_deduction: employee?.recurring_deduction || '',
         overtime_rate: employee?.overtime_rate || '1.5',
-        total_salary: employee?.total_salary || ''
+        total_salary: employee?.total_salary || '',
+        avatar: null // Will hold the new File object if changed
     });
 
     const handleChange = (e) => {
@@ -59,6 +70,16 @@ const EditEmploye = ({ employee, onBack }) => {
         }
     };
 
+    const handleFileChange = (e) => {
+        const { id, files } = e.target;
+        if (files && files[0]) {
+            setFormData(prev => ({
+                ...prev,
+                [id]: files[0] // Store File object
+            }));
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -73,8 +94,8 @@ const EditEmploye = ({ employee, onBack }) => {
 
         try {
             await EmployeeService.updateEmployee(employee.id, processedData);
+            if (onUpdate) await onUpdate(); // Refresh the list state
             onBack();
-            window.location.reload();
         } catch (error) {
             console.error("Update failed", error);
         } finally {
@@ -94,7 +115,7 @@ const EditEmploye = ({ employee, onBack }) => {
                     </button>
                     <div>
                         <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-                            {employee?.name || 'Employee Name'}
+                            Edit {employee?.name || 'Employee'}
                         </h2>
                         <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                             Iqama No: <span className="font-mono font-medium text-blue-600 dark:text-blue-400">{employee?.iqama || 'N/A'}</span>
@@ -112,6 +133,28 @@ const EditEmploye = ({ employee, onBack }) => {
                     {/* --- Column 1: Personal --- */}
                     <div className="md:col-span-1">
                         <h3 className="text-sm font-semibold text-blue-600 mb-4 uppercase tracking-wider">Personal</h3>
+
+                        {/* Profile Image Upload */}
+                        <div className="mb-6 flex justify-center">
+                            <div className="relative group">
+                                <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-dashed border-gray-400 flex items-center justify-center bg-gray-50 dark:bg-gray-800 shadow-inner">
+                                    {formData.avatar ? (
+                                        <img src={URL.createObjectURL(formData.avatar)} alt="Preview" className="w-full h-full object-cover" />
+                                    ) : (
+                                        employee?.avatar_url || employee?.avatar ? (
+                                            <img src={resolveUrl(employee.avatar_url || employee.avatar)} alt="Current" className="w-full h-full object-cover" />
+                                        ) : (
+                                            <Upload className="text-gray-400" />
+                                        )
+                                    )}
+                                </div>
+                                <label htmlFor="avatar" className="absolute inset-0 cursor-pointer flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 rounded-full transition-opacity text-white text-xs font-bold">
+                                    Change Photo
+                                </label>
+                                <input type="file" id="avatar" onChange={handleFileChange} className="hidden" accept="image/*" />
+                            </div>
+                        </div>
+
                         <FloatingInput id="first_name" label="First Name" value={formData.first_name} onChange={handleChange} darkMode={darkMode} required />
                         <FloatingInput id="father_name" label="Father Name" value={formData.father_name} onChange={handleChange} darkMode={darkMode} />
                         <FloatingInput id="last_name" label="Family Name" value={formData.last_name} onChange={handleChange} darkMode={darkMode} required />
@@ -128,7 +171,12 @@ const EditEmploye = ({ employee, onBack }) => {
                             <FloatingInput id="position" label="Position / Role" value={formData.position} onChange={handleChange} darkMode={darkMode} />
                             <FloatingInput id="skills" label="Skills (comma separated)" value={formData.skills} onChange={handleChange} darkMode={darkMode} />
                         </div>
-                        <FileUploadCompact id="cv_file" label="CV / Resume" darkMode={darkMode} />
+                        <FileUploadCompact
+                            id="cv_file"
+                            label={formData.cv_file?.name || (employee?.cv_file ? "Current CV Uploaded" : "Upload CV / Resume")}
+                            onChange={handleFileChange}
+                            darkMode={darkMode}
+                        />
 
                         <h3 className="text-sm font-semibold text-blue-600 mb-4 uppercase tracking-wider mt-6">Bank Details</h3>
                         <FloatingInput id="bank_name" label="Bank Name" value={formData.bank_name} onChange={handleChange} darkMode={darkMode} />
@@ -146,24 +194,44 @@ const EditEmploye = ({ employee, onBack }) => {
                             <FloatingInput id="muqeem_no" label="Muqeem No" value={formData.muqeem_no} onChange={handleChange} darkMode={darkMode} />
                         </div>
                         <FloatingInput id="iqama_expiry" label="Iqama Expiry" type="date" value={formData.iqama_expiry} onChange={handleChange} darkMode={darkMode} />
-                        <FileUploadCompact id="iqama_file" label="Iqama Copy" darkMode={darkMode} />
+                        <FileUploadCompact
+                            id="iqama_file"
+                            label={formData.iqama_file?.name || (employee?.iqama_file ? "Current Iqama Uploaded" : "Upload Iqama Copy")}
+                            onChange={handleFileChange}
+                            darkMode={darkMode}
+                        />
 
                         <div className="grid grid-cols-2 gap-4 mt-4">
                             <FloatingInput id="passport_no" label="Passport No" value={formData.passport_no} onChange={handleChange} darkMode={darkMode} />
                             <FloatingInput id="passport_expiry" label="Expiry Date" type="date" value={formData.passport_expiry} onChange={handleChange} darkMode={darkMode} />
                         </div>
-                        <FileUploadCompact id="passport_file" label="Passport Copy" darkMode={darkMode} />
+                        <FileUploadCompact
+                            id="passport_file"
+                            label={formData.passport_file?.name || (employee?.passport_file ? "Current Passport Uploaded" : "Upload Passport Copy")}
+                            onChange={handleFileChange}
+                            darkMode={darkMode}
+                        />
 
                         <div className="mt-4">
                             <FloatingInput id="gosi_no" label="GOSI Number" value={formData.gosi_no} onChange={handleChange} darkMode={darkMode} />
                         </div>
                         <div className="grid grid-cols-2 gap-4 mt-2">
                             <FloatingInput id="license_no" label="License No" value={formData.license_no} onChange={handleChange} darkMode={darkMode} />
-                            <FileUploadCompact id="license_file" label="License Copy" darkMode={darkMode} />
+                            <FileUploadCompact
+                                id="license_file"
+                                label={formData.license_file?.name || (employee?.license_file ? "Current License Uploaded" : "Upload License Copy")}
+                                onChange={handleFileChange}
+                                darkMode={darkMode}
+                            />
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                             <FloatingInput id="contract_id" label="Contract Ref" value={formData.contract_id} onChange={handleChange} darkMode={darkMode} />
-                            <FileUploadCompact id="contract_file" label="Contract File" darkMode={darkMode} />
+                            <FileUploadCompact
+                                id="contract_file"
+                                label={formData.contract_file?.name || (employee?.contract_file ? "Current Contract Uploaded" : "Upload Contract File")}
+                                onChange={handleFileChange}
+                                darkMode={darkMode}
+                            />
                         </div>
                     </div>
 
@@ -250,7 +318,7 @@ const FloatingInput = ({ label, id, value, onChange, type = "text", required = f
     </div>
 );
 
-const FileUploadCompact = ({ label, id, darkMode }) => (
+const FileUploadCompact = ({ label, id, onChange, darkMode }) => (
     <div className="relative z-0 w-full mb-5 group flex items-end gap-3">
         <div className="flex-1 relative">
             <input
@@ -265,7 +333,7 @@ const FileUploadCompact = ({ label, id, darkMode }) => (
         </div>
         <label htmlFor={id} className="cursor-pointer text-gray-400 hover:text-blue-600 transition-colors pb-2">
             <Upload size={20} />
-            <input type="file" id={id} className="hidden" />
+            <input type="file" id={id} onChange={onChange} className="hidden" />
         </label>
     </div>
 );

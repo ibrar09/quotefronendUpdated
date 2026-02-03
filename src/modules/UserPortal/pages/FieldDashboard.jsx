@@ -10,6 +10,8 @@ import { useNavigate } from 'react-router-dom';
 import { getDashboardStats, markAttendance, updateLiveLocation } from '../services/portal.service';
 import { toast } from 'react-hot-toast';
 import API_BASE_URL from '../../../config/api';
+import { UI_AVATARS_BASE_URL } from '../../../config/constants';
+import SelfieCaptureModal from '../components/SelfieCaptureModal';
 
 const FieldDashboard = () => {
     const { darkMode } = useTheme();
@@ -29,11 +31,22 @@ const FieldDashboard = () => {
         }
     });
 
+    const [selfieModalOpen, setSelfieModalOpen] = useState(false);
+    const [pendingAttendance, setPendingAttendance] = useState({ type: null, isOvertime: false });
+
     const handleLogout = () => {
         if (window.confirm('Are you sure you want to logout?')) {
             logout();
             navigate('/login');
         }
+    };
+
+    // Standard URL Resolver
+    const resolveUrl = (path) => {
+        if (!path) return null;
+        if (path.startsWith('http') || path.startsWith('data:')) return path;
+        const cleanPath = path.startsWith('/') ? path : `/${path}`;
+        return `${API_BASE_URL}${cleanPath}`;
     };
 
     useEffect(() => {
@@ -56,27 +69,41 @@ const FieldDashboard = () => {
     }, []);
 
     // Attendance Handler
-    const handleAttendance = async (type, isOvertime = false) => {
-        const loadingToast = toast.loading(type === 'CHECK_IN' ? 'Starting shift...' : 'Stopping shift...');
+    const handleAttendance = async (type, isOvertime = false, photo = null) => {
+        // If it's a check-in and no photo is provided, open modal first
+        if (type === 'CHECK_IN' && !photo) {
+            setPendingAttendance({ type, isOvertime });
+            setSelfieModalOpen(true);
+            return;
+        }
+
+        const loadingToast = toast.loading(type === 'CHECK_IN' ? (isOvertime ? 'Starting OT...' : 'Starting shift...') : 'Stopping shift...');
         try {
             // Get Location
             let location = null;
             if (navigator.geolocation) {
                 try {
                     const pos = await new Promise((resolve, reject) => {
-                        navigator.geolocation.getCurrentPosition(resolve, reject);
+                        navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 10000, enableHighAccuracy: true });
                     });
-                    location = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+                    location = {
+                        lat: pos.coords.latitude,
+                        lng: pos.coords.longitude,
+                        accuracy: pos.coords.accuracy
+                    };
                 } catch (e) {
                     console.warn("Location failed", e);
-                    toast.error("Location access required for attendance", { id: loadingToast });
+                    toast.error("Location access required", { id: loadingToast });
                     return;
                 }
             }
 
             const res = await markAttendance({
                 type,
-                location,
+                location: location ? { lat: location.lat, lng: location.lng } : null,
+                accuracy: location?.accuracy,
+                image: photo,
+                device_info: navigator.userAgent,
                 is_overtime: isOvertime
             });
 
@@ -110,14 +137,14 @@ const FieldDashboard = () => {
     const StatCard = ({ label, value, icon: Icon, color, onClick }) => (
         <div
             onClick={onClick}
-            className={`relative overflow-hidden p-4 rounded-2xl flex-1 flex flex-col items-center justify-center gap-1 border transition-transform hover:scale-[1.02] cursor-pointer active:scale-95
+            className={`relative overflow-hidden p-4 rounded-2xl flex-1 min-w-[100px] flex flex-col items-center justify-center gap-1 border transition-all hover:scale-[1.02] cursor-pointer active:scale-95
             ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100 shadow-sm'}`}
         >
             <div className={`absolute top-0 right-0 p-2 opacity-10 ${color.text}`}>
-                <Icon size={40} />
+                <Icon size={32} />
             </div>
-            <h3 className={`text-2xl font-black ${color.text}`}>{value}</h3>
-            <p className="text-[10px] uppercase tracking-wider text-gray-400 font-bold">{label}</p>
+            <h3 className={`text-xl font-black ${color.text}`}>{value}</h3>
+            <p className="text-[10px] uppercase tracking-wider text-gray-400 font-bold text-center">{label}</p>
         </div>
     );
 
@@ -130,7 +157,7 @@ const FieldDashboard = () => {
     }
 
     return (
-        <div className="flex flex-col h-full animate-[fadeIn_0.4s_ease-out] pb-20">
+        <div className="flex flex-col h-full animate-[fadeIn_0.4s_ease-out] pb-24">
             {/* Header Section */}
             <div className={`p-6 pb-8 rounded-b-[2.5rem] shadow-xl relative overflow-hidden
                  ${darkMode ? 'bg-gray-900 shadow-black/40' : 'bg-white shadow-blue-100/50'}`}>
@@ -160,39 +187,59 @@ const FieldDashboard = () => {
                         </button>
                         <div
                             onClick={() => navigate('/user/profile')}
-                            className="w-14 h-14 rounded-full border-2 border-white dark:border-gray-700 shadow-lg overflow-hidden cursor-pointer active:scale-95 transition-transform bg-gray-200"
+                            className={`w-14 h-14 rounded-full border-2 shadow-lg overflow-hidden cursor-pointer active:scale-95 transition-all relative
+                                ${darkMode ? 'border-gray-700' : 'border-white'}`}
                         >
-                            <img
-                                src={userData.avatar ? `${userData.avatar.startsWith('http') ? '' : API_BASE_URL}${userData.avatar}` : "https://ui-avatars.com/api/?name=" + userData.employeeName.replace(' ', '+')}
-                                alt="User"
-                                className="w-full h-full object-cover"
-                            />
+                            {resolveUrl(userData.avatar) ? (
+                                <img
+                                    src={resolveUrl(userData.avatar)}
+                                    alt="User"
+                                    className="w-full h-full object-cover"
+                                    onError={(e) => {
+                                        e.target.style.display = 'none';
+                                        e.target.parentElement.innerHTML = `<div class="w-full h-full flex items-center justify-center bg-blue-100 text-blue-600 font-bold">${userData.employeeName.charAt(0)}</div>`;
+                                    }}
+                                />
+                            ) : (
+                                <img
+                                    src={`${UI_AVATARS_BASE_URL}?name=${userData.employeeName.replace(' ', '+')}`}
+                                    alt="User"
+                                    className="w-full h-full object-cover"
+                                />
+                            )}
                         </div>
                     </div>
                 </div>
 
-                {/* Shift Status Card (Glassmorphism) */}
-                {/* Shift Status Card (Glassmorphism) */}
-                <div className={`p-5 rounded-3xl relative overflow-hidden transition-all
+                {/* Shift Status Card (Advanced Gradient) */}
+                <div className={`p-6 rounded-[2rem] relative overflow-hidden transition-all duration-500
                     ${darkMode
-                        ? 'bg-gradient-to-br from-blue-900/80 to-indigo-900/80 border border-white/10'
-                        : 'bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/30'}`}
+                        ? 'bg-gradient-to-br from-indigo-900 via-blue-900 to-slate-900 border border-white/10 shadow-2xl shadow-black/50'
+                        : 'bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-600 text-white shadow-xl shadow-blue-500/40'}`}
                 >
+                    {/* Decorative Elements */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-400/10 rounded-full -ml-12 -mb-12 blur-xl"></div>
                     {/* Inner Glow */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none"></div>
 
                     <div className="relative z-10">
-                        <div className="flex justify-between items-start mb-4">
+                        <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-4">
                             <div>
-                                <div className="flex items-center gap-2 mb-1">
-                                    <span className="flex h-2 w-2 relative">
-                                        <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${userData.stats.attendanceStatus === 'Present' ? 'bg-green-400' : 'bg-red-400'}`}></span>
-                                        <span className={`relative inline-flex rounded-full h-2 w-2 ${userData.stats.attendanceStatus === 'Present' ? 'bg-green-500' : 'bg-red-500'}`}></span>
-                                    </span>
-                                    <p className="text-blue-100 text-xs font-bold uppercase tracking-wider">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <div className="flex h-3 w-3 relative">
+                                        {userData.stats.attendanceStatus === 'Present' && (
+                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                        )}
+                                        <span className={`relative inline-flex rounded-full h-3 w-3 border border-white/20
+                                            ${userData.stats.attendanceStatus === 'Present'
+                                                ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]'
+                                                : 'bg-red-500'}`}></span>
+                                    </div>
+                                    <p className="text-blue-50 text-[10px] font-black uppercase tracking-widest opacity-90">
                                         {userData.stats.attendanceStatus === 'Present'
                                             ? (userData.stats.attendanceDetails?.tag === 'OVERTIME' ? 'Overtime Active' : 'Shift Active')
-                                            : 'Not Clocked In'}
+                                            : 'System Offline'}
                                     </p>
                                 </div>
                                 <h2 className="text-3xl font-mono font-bold tracking-tighter">
@@ -201,30 +248,30 @@ const FieldDashboard = () => {
                             </div>
 
                             {/* Action Buttons */}
-                            <div className="flex gap-2">
+                            <div className="flex flex-wrap gap-2 w-full sm:w-auto">
                                 {userData.stats.attendanceStatus === 'Present' ? (
                                     <button
                                         onClick={() => handleAttendance('CHECK_OUT')}
-                                        className="bg-red-500 hover:bg-red-600 text-white p-3 rounded-xl font-bold text-xs shadow-lg flex items-center gap-2 transition-transform active:scale-95"
+                                        className="bg-red-500 hover:bg-red-600 text-white p-3 rounded-xl font-bold text-xs shadow-lg flex-1 sm:flex-none flex items-center justify-center gap-2 transition-transform active:scale-95"
                                     >
                                         <Pause size={16} fill="white" />
                                         STOP {userData.stats.attendanceDetails?.tag === 'OVERTIME' ? 'OT' : 'SHIFT'}
                                     </button>
                                 ) : (
-                                    <div className="flex flex-col gap-2">
+                                    <div className="flex gap-2 w-full">
                                         <button
                                             onClick={() => handleAttendance('CHECK_IN', false)}
-                                            className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-xl font-bold text-xs shadow-lg flex items-center gap-2 transition-transform active:scale-95"
+                                            className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-3 rounded-xl font-bold text-xs shadow-lg flex-1 flex items-center justify-center gap-2 transition-transform active:scale-95"
                                         >
                                             <Zap size={16} fill="white" />
-                                            START SHIFT
+                                            SHIFT
                                         </button>
                                         <button
                                             onClick={() => handleAttendance('CHECK_IN', true)}
-                                            className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-xl font-bold text-xs shadow-lg flex items-center gap-2 transition-transform active:scale-95"
+                                            className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 rounded-xl font-bold text-xs shadow-lg flex-1 flex items-center justify-center gap-2 transition-transform active:scale-95"
                                         >
                                             <Clock size={16} />
-                                            START OVERTIME
+                                            OT
                                         </button>
                                     </div>
                                 )}
@@ -247,7 +294,7 @@ const FieldDashboard = () => {
             <div className="px-5 -mt-4 relative z-20 space-y-6">
 
                 {/* Visual Stats Grid */}
-                <div className="flex gap-4">
+                <div className="grid grid-cols-2 xs:grid-cols-3 gap-3">
                     <StatCard
                         label="Pending"
                         value={userData.stats.pendingJobs}
@@ -290,8 +337,17 @@ const FieldDashboard = () => {
                         <QuickAction icon={User} label="Profile" color="bg-gray-500" onClick={() => navigate('/user/profile')} />
                     </div>
                 </div>
-
             </div>
+
+            {/* Selfie Verification Modal */}
+            <SelfieCaptureModal
+                isOpen={selfieModalOpen}
+                onClose={() => setSelfieModalOpen(false)}
+                title={pendingAttendance?.isOvertime ? "Overtime Verification" : "Shift Verification"}
+                onCapture={(photo) => {
+                    handleAttendance(pendingAttendance.type, pendingAttendance.isOvertime, photo);
+                }}
+            />
         </div>
     );
 };

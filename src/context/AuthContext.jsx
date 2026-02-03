@@ -23,29 +23,6 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     const login = async (email, password) => {
-        // --- BYPASS LOGIN (Backend not deployed) ---
-        console.warn("LOGIN BYPASS ENABLED: Skipping backend authentication.");
-
-        const mockUser = {
-            id: 999,
-            name: 'Demo Administrator',
-            email: email,
-            role: 'ADMIN',
-            permissions: ['ALL_ACCESS']
-        };
-
-        const mockToken = 'demo-bypass-token-' + Date.now();
-
-        localStorage.setItem('token', mockToken);
-        localStorage.setItem('user', JSON.stringify(mockUser));
-
-        axios.defaults.headers.common['Authorization'] = `Bearer ${mockToken}`;
-        setUser(mockUser);
-
-        return { success: true };
-
-        /* 
-        // ORIGINAL CODE (Restored when backend is live)
         try {
             const res = await axios.post(`${API_BASE_URL}/api/auth/login`, { email, password });
             if (res.data.success) {
@@ -64,7 +41,6 @@ export const AuthProvider = ({ children }) => {
                 message: err.response?.data?.message || 'Login failed'
             };
         }
-        */
     };
 
     const logout = () => {
@@ -76,9 +52,24 @@ export const AuthProvider = ({ children }) => {
 
     const hasPermission = (requiredPerm) => {
         if (!user) return false;
-        if (user.role === 'ADMIN') return true;
-        if (user.permissions && user.permissions.includes('ALL_ACCESS')) return true;
-        return user.permissions && user.permissions.includes(requiredPerm);
+
+        // 1. Explicit Global Access Check (Case Insensitive)
+        const hasGlobalAccess = user.permissions && Array.isArray(user.permissions) &&
+            user.permissions.some(p => typeof p === 'string' && p.toLowerCase() === 'all_access');
+
+        if (hasGlobalAccess) {
+            return true;
+        }
+
+        // 2. Strict Permission Check
+        if (user.permissions && Array.isArray(user.permissions)) {
+            const normalizedPerms = user.permissions.map(p => typeof p === 'string' ? p.toLowerCase() : '');
+            if (normalizedPerms.includes(requiredPerm.toLowerCase())) {
+                return true;
+            }
+        }
+
+        return false;
     };
 
     const updateUserContext = (updatedUser) => {

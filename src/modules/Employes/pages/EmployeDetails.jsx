@@ -3,15 +3,25 @@ import {
     ArrowLeft, Mail, Phone, MapPin,
     Calendar, CreditCard, FileText, Download,
     ExternalLink, Shield, Briefcase, Clock,
-    AlertTriangle, AlertCircle, Laptop, Smartphone, Key, Car, Plus, Lock, User, DollarSign, RefreshCw, X as LucideX, Box as LucideBox
+
+    AlertTriangle, AlertCircle, Laptop, Smartphone, Key, Car, Plus, Lock, User, DollarSign, RefreshCw, X as LucideX, Box as LucideBox,
+    QrCode
 } from 'lucide-react';
 import API_BASE_URL from '../../../config/api';
 import { useTheme } from '../../../context/ThemeContext';
 import axios from 'axios';
 import { getStaffMonthlyAttendance } from '../../UserPortal/services/portal.service';
 import LetterGeneratorModal from '../components/LetterGeneratorModal';
+import DigitalIDCard from '../components/DigitalIDCard';
 
 const EmployeDetails = ({ employee, onBack, onEdit, onTerminate }) => {
+    // Standard URL Resolver
+    const resolveUrl = (path) => {
+        if (!path) return null;
+        if (path.startsWith('http') || path.startsWith('data:')) return path;
+        const cleanPath = path.startsWith('/') ? path : `/${path}`;
+        return `${API_BASE_URL}${cleanPath}`;
+    };
     console.log("EmployeDetails v3 Loaded - employee id:", employee?.id);
     const { darkMode } = useTheme();
     const [activeTab, setActiveTab] = React.useState('overview');
@@ -24,7 +34,8 @@ const EmployeDetails = ({ employee, onBack, onEdit, onTerminate }) => {
         { id: 'financial', label: 'Financial', icon: <DollarSign size={18} /> },
         { id: 'attendance', label: 'Attendance', icon: <Clock size={18} /> },
         { id: 'access', label: 'Login Access', icon: <Lock size={18} /> },
-        { id: 'assets', label: 'Assets', icon: <Laptop size={18} /> }
+        { id: 'assets', label: 'Assets', icon: <Laptop size={18} /> },
+        { id: 'digital_id', label: 'Digital ID', icon: <QrCode size={18} /> }
     ];
 
     // Helper to calculate active tab index if needed (omitted for brevity, assume tab logic exists in parent or handled via props, but wait... EmployeDetails doesn't seem to have `activeTab` state in the visible snippet? 
@@ -51,6 +62,7 @@ const EmployeDetails = ({ employee, onBack, onEdit, onTerminate }) => {
 
     const [previewDoc, setPreviewDoc] = React.useState(null);
     const [showLetterModal, setShowLetterModal] = React.useState(false);
+    const [initialTemplateId, setInitialTemplateId] = React.useState(null);
 
     // --- Login Provisioning State ---
     const [roles, setRoles] = React.useState([]);
@@ -104,6 +116,11 @@ const EmployeDetails = ({ employee, onBack, onEdit, onTerminate }) => {
         }
     };
 
+    const handleOpenLetterGenerator = (templateId = null) => {
+        setInitialTemplateId(templateId);
+        setShowLetterModal(true);
+    };
+
     const [employeeAssets, setEmployeeAssets] = React.useState([]);
     const [allAssets, setAllAssets] = React.useState([]);
     const [showAssignModal, setShowAssignModal] = React.useState(false);
@@ -146,6 +163,34 @@ const EmployeDetails = ({ employee, onBack, onEdit, onTerminate }) => {
         } catch (e) {
             console.error("Error returning asset", e);
             alert("Failed to return asset");
+        }
+    };
+
+    const handleIssueIDCard = async () => {
+        try {
+            const token = localStorage.getItem('token');
+            const assetData = {
+                name: "Digital ID Card",
+                type: "ID Card",
+                brand: "Digital",
+                serial_number: `ID-${employee.emp_id || employee.id.slice(0, 8)}`,
+                status: "Assigned",
+                category: "Identification",
+                assigned_to: employee.id,
+                description: `Digital ID Card issued to ${employee.name || employee.first_name}`
+            };
+
+            const res = await axios.post(`${API_BASE_URL}/api/assets`, assetData, {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+
+            if (res.data.success) {
+                alert("ID Card successfully assigned to employee records!");
+                fetchEmployeeAssets();
+            }
+        } catch (e) {
+            console.error("Error issuing ID card", e);
+            alert("Failed to assign ID card asset");
         }
     };
 
@@ -390,43 +435,48 @@ const EmployeDetails = ({ employee, onBack, onEdit, onTerminate }) => {
     // Document Preview Modal
     const DocumentPreviewModal = ({ doc, onClose }) => {
         if (!doc) return null;
+
+        const resolveUrl = (path) => {
+            if (!path) return '';
+            if (path.startsWith('http')) return path;
+            // Normalize Windows paths
+            let cleanPath = path.replace(/\\/g, '/');
+            if (!cleanPath.startsWith('/')) cleanPath = `/${cleanPath}`;
+            return `${API_BASE_URL}${cleanPath}`;
+        };
+
+        const fileUrl = resolveUrl(doc.file);
+        console.log("Preview File URL:", fileUrl); // DEBUG
+
         return (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm animate-[fadeIn_0.2s_ease-out]" onClick={onClose}>
                 <div
-                    className={`relative w-full max-w-4xl h-[80vh] rounded-2xl p-2 shadow-2xl flex flex-col
+                    className={`relative w-full max-w-5xl h-[85vh] rounded-2xl p-2 shadow-2xl flex flex-col
                     ${darkMode ? 'bg-gray-900' : 'bg-white'}`}
                     onClick={e => e.stopPropagation()}
                 >
                     <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-800">
                         <h3 className={`text-lg font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{doc.title} Preview</h3>
                         <div className="flex gap-2">
-                            <button className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 flex items-center gap-2">
+                            <a href={fileUrl} download target="_blank" rel="noreferrer" className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 flex items-center gap-2">
                                 <Download size={16} /> Download
-                            </button>
+                            </a>
                             <button onClick={onClose} className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500">
                                 <LucideX size={20} />
                             </button>
                         </div>
                     </div>
-                    <div className="flex-1 bg-gray-100 dark:bg-gray-950 rounded-b-xl flex items-center justify-center overflow-hidden relative">
-                        {/* Mock Content based on type */}
+                    <div className="flex-1 bg-gray-100 dark:bg-gray-950 rounded-b-xl flex items-center justify-center overflow-hidden relative p-4">
                         {doc.type === 'IMG' ? (
-                            <div className="text-center p-8">
-                                <span className="text-6xl mb-4 block">🖼️</span>
-                                <p className="text-gray-500">Image Preview Placeholder</p>
-                            </div>
+                            <img src={fileUrl} alt={doc.title} className="max-w-full max-h-full object-contain rounded-lg shadow-sm" />
                         ) : (
-                            <div className="text-center p-8">
-                                <span className="text-6xl mb-4 block">📄</span>
-                                <p className="text-gray-500">PDF Document Preview Placeholder</p>
-                            </div>
+                            <iframe src={fileUrl} className="w-full h-full rounded-lg border-0" title={doc.title}></iframe>
                         )}
                     </div>
                 </div>
             </div>
         );
     };
-
     const displayName = employee.name || `${employee.first_name} ${employee.last_name}`;
 
     return (
@@ -470,9 +520,21 @@ const EmployeDetails = ({ employee, onBack, onEdit, onTerminate }) => {
                         {/* Avatar with Glow */}
                         <div className="relative group">
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full opacity-75 group-hover:opacity-100 blur transition duration-500"></div>
-                            <div className={`relative w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold shadow-2xl
+                            <div className={`relative w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold shadow-2xl overflow-hidden
                                 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-blue-600'}`}>
-                                {displayName.charAt(0)}
+                                {resolveUrl(employee.avatar_url || employee.avatar) ? (
+                                    <img
+                                        src={resolveUrl(employee.avatar_url || employee.avatar)}
+                                        alt="Avatar"
+                                        className="w-full h-full object-cover"
+                                        onError={(e) => {
+                                            e.target.style.display = 'none';
+                                            e.target.parentElement.innerHTML = `<span>${displayName.charAt(0)}</span>`;
+                                        }}
+                                    />
+                                ) : (
+                                    displayName.charAt(0)
+                                )}
                             </div>
                             <span className={`absolute bottom-1 right-1 w-5 h-5 rounded-full border-4 ${darkMode ? 'border-gray-900' : 'border-[#F9F7F1]'}
                                 ${employee.status === 'Online' ? 'bg-green-500' : 'bg-gray-400'}`}
@@ -514,7 +576,14 @@ const EmployeDetails = ({ employee, onBack, onEdit, onTerminate }) => {
                         )}
 
                         <button
-                            onClick={() => setShowLetterModal(true)}
+                            onClick={() => handleOpenLetterGenerator('probation_cancellation')}
+                            className="px-4 py-2.5 rounded-xl font-bold bg-red-50 dark:bg-red-900/20 text-red-600 border border-red-200 dark:border-red-900/50 hover:bg-red-100 dark:hover:bg-red-900/30 transition-all flex items-center gap-2"
+                        >
+                            <AlertCircle size={16} /> Cancel Probation
+                        </button>
+
+                        <button
+                            onClick={() => handleOpenLetterGenerator()}
                             className={`px-4 py-2.5 rounded-xl font-semibold border transition-all flex items-center gap-2
                             ${darkMode ? 'bg-purple-600 border-purple-500 text-white hover:bg-purple-700' : 'bg-purple-50 border-purple-200 text-purple-700 hover:bg-purple-100'}`}
                         >
@@ -792,12 +861,24 @@ const EmployeDetails = ({ employee, onBack, onEdit, onTerminate }) => {
                             <InfoCard title="Employee Documents" icon={FileText} delay={100}>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                                     {[
-                                        { title: "Iqama Copy", type: "IMG", date: "Added today", size: "1.2 MB" },
-                                        { title: "Passport Scan", type: "PDF", date: "12 Jan 2024", size: "2.4 MB" },
-                                        { title: "Emp Contract", type: "PDF", date: "01 Mar 2023", size: "0.8 MB" },
-                                    ].map((doc, idx) => (
-                                        <DocumentCard key={idx} {...doc} onPreview={() => setPreviewDoc(doc)} />
+                                        { title: "Iqama Copy", type: "IMG", file: employee.iqama_file || employee.iqama_url, date: employee.iqama_expiry ? `Exp: ${employee.iqama_expiry}` : 'Uploaded' },
+                                        { title: "Passport Scan", type: "IMG", file: employee.passport_file || employee.passport_url, date: employee.passport_expiry ? `Exp: ${employee.passport_expiry}` : 'Uploaded' },
+                                        { title: "CV / Resume", type: "PDF", file: employee.cv_file, date: "Uploaded" },
+                                        { title: "Contract", type: "PDF", file: employee.contract_file, date: "Uploaded" },
+                                        { title: "Driving License", type: "IMG", file: employee.license_file, date: "Uploaded" },
+                                    ].filter(d => d.file).map((doc, idx) => (
+                                        <DocumentCard
+                                            key={idx}
+                                            title={doc.title}
+                                            type={doc.file?.toLowerCase().endsWith('.pdf') ? 'PDF' : 'IMG'}
+                                            date={doc.date}
+                                            size="-"
+                                            onPreview={() => setPreviewDoc({ ...doc, type: doc.file?.toLowerCase().endsWith('.pdf') ? 'PDF' : 'IMG' })}
+                                        />
                                     ))}
+                                    {![employee.iqama_file, employee.iqama_url, employee.passport_file, employee.passport_url, employee.cv_file, employee.contract_file, employee.license_file].some(Boolean) && (
+                                        <div className="col-span-full py-8 text-center text-gray-400 italic">No documents uploaded yet.</div>
+                                    )}
                                 </div>
                             </InfoCard>
                         </div>
@@ -994,6 +1075,120 @@ const EmployeDetails = ({ employee, onBack, onEdit, onTerminate }) => {
                             )}
                         </div>
 
+                        {/* ID Card Section */}
+                        <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                            <div className="flex justify-between items-center mb-4 px-2">
+                                <div>
+                                    <h3 className={`font-bold text-xl ${darkMode ? 'text-white' : 'text-gray-900'}`}>Employee ID Card</h3>
+                                    <p className="text-sm text-gray-500">Digital identification card for {displayName}</p>
+                                </div>
+                                <button
+                                    onClick={() => setActiveTab('digital_id')}
+                                    className="px-4 py-2 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-700 flex items-center gap-2 shadow-sm"
+                                >
+                                    <QrCode size={18} /> View Full ID Card
+                                </button>
+                            </div>
+
+                            <div className={`p-6 rounded-2xl border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100'}`}>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    {/* ID Card Preview */}
+                                    <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-violet-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 rounded-xl border-2 border-dashed border-violet-200 dark:border-gray-600">
+                                        <div className="text-center mb-4">
+                                            <QrCode size={64} className="mx-auto text-violet-600 dark:text-violet-400 mb-3" />
+                                            <h4 className={`font-bold text-lg ${darkMode ? 'text-white' : 'text-gray-900'}`}>Digital ID Card</h4>
+                                            <p className="text-sm text-gray-500">Scannable QR code included</p>
+                                        </div>
+                                        <div className="flex gap-3 mt-4">
+                                            <button
+                                                onClick={() => setActiveTab('digital_id')}
+                                                className="px-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors text-sm"
+                                            >
+                                                View Card
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    {/* ID Card Details */}
+                                    <div className="space-y-3">
+                                        {(() => {
+                                            const idCardAsset = employeeAssets.find(a => a.type === 'ID Card' || (a.name && a.name.includes('ID Card')));
+                                            const isIssued = !!idCardAsset;
+
+                                            return (
+                                                <>
+                                                    <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-900/50' : 'bg-gray-50'}`}>
+                                                        <div className="flex justify-between items-center mb-2">
+                                                            <span className="text-xs font-bold uppercase text-gray-500">Employee ID</span>
+                                                            <span className={`font-mono font-bold ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                                                                {employee.emp_id || employee.id}
+                                                            </span>
+                                                        </div>
+                                                        <div className="flex justify-between items-center mb-2">
+                                                            <span className="text-xs font-bold uppercase text-gray-500">Asset Record</span>
+                                                            <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${isIssued ? 'bg-green-100 text-green-600' : 'bg-gray-200 text-gray-600'}`}>
+                                                                {isIssued ? 'Issued' : 'Not Assigned'}
+                                                            </span>
+                                                        </div>
+                                                        {isIssued && (
+                                                            <div className="flex justify-between items-center mb-2">
+                                                                <span className="text-xs font-bold uppercase text-gray-500">Issue Date</span>
+                                                                <span className="font-semibold text-sm">
+                                                                    {idCardAsset.assigned_date ? new Date(idCardAsset.assigned_date).toLocaleDateString() : 'N/A'}
+                                                                </span>
+                                                            </div>
+                                                        )}
+                                                        <div className="flex justify-between items-center">
+                                                            <span className="text-xs font-bold uppercase text-gray-500">Iqama No</span>
+                                                            <span className="font-mono text-sm">{employee.iqama_no || 'N/A'}</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className={`p-4 rounded-lg border-l-4 ${isIssued ? 'border-green-500 bg-green-900/10' : 'border-amber-500 bg-amber-900/10'}`}>
+                                                        <div className="flex items-center gap-2">
+                                                            <Shield size={16} className={isIssued ? "text-green-600" : "text-amber-600"} />
+                                                            <span className={`text-sm font-semibold ${isIssued ? 'text-green-700' : 'text-amber-700'}`}>
+                                                                {isIssued ? 'ID Card Formally Issued' : 'ID Card Not Formally Issued'}
+                                                            </span>
+                                                        </div>
+                                                        <p className="text-xs text-gray-500 mt-1">
+                                                            {isIssued
+                                                                ? 'This card is recorded in the official asset inventory for this employee.'
+                                                                : 'This employee has not been formally issued an ID card in the asset system.'}
+                                                        </p>
+                                                    </div>
+
+                                                    <div className="flex gap-2">
+                                                        {!isIssued ? (
+                                                            <button
+                                                                onClick={handleIssueIDCard}
+                                                                className="flex-1 py-2.5 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-blue-500/20"
+                                                            >
+                                                                <Plus size={16} /> Issue ID Card Asset
+                                                            </button>
+                                                        ) : (
+                                                            <button
+                                                                onClick={() => handleReturnAsset(idCardAsset.id)}
+                                                                className="flex-1 py-2.5 bg-red-100 dark:bg-red-900/30 text-red-600 font-bold rounded-lg hover:bg-red-200 transition-all flex items-center justify-center gap-2"
+                                                            >
+                                                                <RefreshCw size={16} /> Revoke ID Card
+                                                            </button>
+                                                        )}
+                                                        <button
+                                                            onClick={() => setActiveTab('digital_id')}
+                                                            className="px-4 py-2.5 bg-violet-600 text-white font-bold rounded-lg hover:bg-violet-700 transition-all flex items-center justify-center gap-2"
+                                                        >
+                                                            <QrCode size={16} /> Open
+                                                        </button>
+                                                    </div>
+                                                </>
+                                            );
+                                        })()}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         {/* Assign Asset Modal */}
                         {showAssignModal && (
                             <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm" onClick={() => setShowAssignModal(false)}>
@@ -1039,7 +1234,11 @@ const EmployeDetails = ({ employee, onBack, onEdit, onTerminate }) => {
                 showLetterModal && (
                     <LetterGeneratorModal
                         employee={employee}
-                        onClose={() => setShowLetterModal(false)}
+                        onClose={() => {
+                            setShowLetterModal(false);
+                            setInitialTemplateId(null);
+                        }}
+                        initialTemplateId={initialTemplateId}
                     />
                 )
             }
@@ -1084,6 +1283,14 @@ const EmployeDetails = ({ employee, onBack, onEdit, onTerminate }) => {
                 )
             }
 
+            {
+                activeTab === 'digital_id' && (
+                    <div className="flex justify-center p-8 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-700 min-h-[400px]">
+                        <DigitalIDCard employee={employee} darkMode={darkMode} />
+                    </div>
+                )
+            }
+
             {/* Termination Action */}
             <div className="mt-8 flex justify-end pt-6 border-t border-gray-200 dark:border-gray-800">
                 <button
@@ -1105,7 +1312,7 @@ const EmployeDetails = ({ employee, onBack, onEdit, onTerminate }) => {
                     to { opacity: 1; transform: translateY(0); }
                 }
             `}</style>
-        </div>
+        </div >
     );
 };
 

@@ -137,6 +137,7 @@ const UserManagement = () => {
                         <tr className="bg-gray-800 text-white uppercase text-xs font-bold tracking-wider">
                             <th className="p-4">Employee</th>
                             <th className="p-4">Department / Position</th>
+                            <th className="p-4">System Role</th>
                             <th className="p-4">Login Status</th>
                             <th className="p-4">Linked User</th>
                             <th className="p-4 text-center">Actions</th>
@@ -165,6 +166,23 @@ const UserManagement = () => {
                                     <td className="p-4 text-sm">
                                         <div className={darkMode ? 'text-gray-300' : 'text-gray-700'}>{emp.department}</div>
                                         <div className="text-xs text-gray-500">{emp.position || emp.role}</div>
+                                    </td>
+                                    <td className="p-4">
+                                        {hasUser ? (
+                                            <div className="flex flex-col gap-1">
+                                                <span className={`px-2 py-0.5 rounded shadow-sm text-[10px] font-bold uppercase tracking-wider w-fit
+                                                    ${darkMode ? 'bg-indigo-900/40 text-indigo-400' : 'bg-indigo-50 text-indigo-600'}`}>
+                                                    {emp.User.role || 'No Role'}
+                                                </span>
+                                                {emp.User.Role && emp.User.permissions?.length > 0 && Array.isArray(emp.User.Role.permissions) && (
+                                                    JSON.stringify(emp.User.permissions.sort()) !== JSON.stringify(emp.User.Role.permissions.sort()) && (
+                                                        <span className="text-[9px] text-amber-500 font-bold uppercase">Customized</span>
+                                                    )
+                                                )}
+                                            </div>
+                                        ) : (
+                                            <span className="text-gray-400 text-xs italic">N/A</span>
+                                        )}
                                     </td>
                                     <td className="p-4">
                                         {hasUser ? (
@@ -268,7 +286,15 @@ const UserManagement = () => {
                                     />
                                 ) : (
                                     <select className={`w-full p-3 rounded-lg border outline-none ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}
-                                        value={loginForm.roleId} onChange={e => setLoginForm({ ...loginForm, roleId: e.target.value })}
+                                        value={loginForm.roleId} onChange={e => {
+                                            const rId = e.target.value;
+                                            const role = roles.find(r => r.id == rId);
+                                            setLoginForm({
+                                                ...loginForm,
+                                                roleId: rId,
+                                                permissions: role ? (role.permissions || []) : []
+                                            });
+                                        }}
                                         required>
                                         <option value="">Select System Role</option>
                                         {roles.map(r => (

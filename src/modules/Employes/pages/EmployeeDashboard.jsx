@@ -15,6 +15,9 @@ const EmployeeDashboard = () => {
         pendingLeaves: 0,
         pendingExpenses: 0,
         onLeaveToday: 0,
+        attendanceRate: 0,
+        monthlyExpensesTotal: 0,
+        lateCheckins: 0,
         expiringDocuments: [],
         weeklyAttendance: []
     });
@@ -43,10 +46,10 @@ const EmployeeDashboard = () => {
     // Mock Data no longer needed for charts, using statsData.weeklyAttendance
 
     const stats = [
-        { title: 'Total Employees', value: statsData.totalEmployees || 0, icon: Users, color: 'text-blue-500', bg: 'bg-blue-50', change: 'Active' },
-        { title: 'On Leave Today', value: statsData.onLeaveToday || 0, icon: () => <Clock size={24} className="text-orange-500" />, color: 'text-orange-500', bg: 'bg-orange-50', change: 'Away' },
-        { title: 'Pending Leaves', value: statsData.pendingLeaves || 0, icon: FileText, color: 'text-purple-500', bg: 'bg-purple-50', change: 'To Review' },
-        { title: 'Pending Expenses', value: statsData.pendingExpenses || 0, icon: FileText, color: 'text-yellow-500', bg: 'bg-yellow-50', change: 'Claims' },
+        { title: 'Total Workforce', value: statsData.totalEmployees || 0, icon: Users, color: 'text-blue-600', bg: 'bg-blue-50', change: 'Organization' },
+        { title: 'Attendance Rate', value: `${statsData.attendanceRate || 0}%`, icon: () => <Clock size={24} className="text-emerald-500" />, color: 'text-emerald-600', bg: 'bg-emerald-50', change: 'Daily Goal' },
+        { title: 'Monthly Expenses', value: `${statsData.monthlyExpensesTotal?.toLocaleString() || 0} SAR`, icon: FileText, color: 'text-amber-600', bg: 'bg-amber-50', change: 'Approved' },
+        { title: 'Late Check-ins', value: statsData.lateCheckins || 0, icon: AlertTriangle, color: 'text-rose-600', bg: 'bg-rose-50', change: 'Last 7 Days' },
     ];
 
     const StatCard = ({ title, value, icon: Icon, color, bg, change }) => (
@@ -91,19 +94,35 @@ const EmployeeDashboard = () => {
                             <span className="flex items-center gap-1 text-xs text-gray-500"><div className="w-2 h-2 rounded-full bg-red-400"></div> Absent</span>
                         </div>
                     </div>
-                    <div className="h-64 w-full">
-                        <ResponsiveContainer width="100%" height="100%">
-                            <BarChart data={statsData.weeklyAttendance || []} barGap={4}>
-                                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={darkMode ? '#374151' : '#e5e7eb'} />
-                                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#9CA3AF', fontSize: 12 }} dy={10} />
-                                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#9CA3AF', fontSize: 12 }} />
-                                <Tooltip
-                                    contentStyle={{ backgroundColor: darkMode ? '#1F2937' : '#fff', borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
-                                    itemStyle={{ color: darkMode ? '#fff' : '#111' }}
+                    <div className="h-64 w-full" style={{ minHeight: '250px' }}>
+                        <ResponsiveContainer width="100%" height="100%" debounce={300} minWidth={0} minHeight={0}>
+                            <BarChart data={statsData.weeklyAttendance || []} barGap={8}>
+                                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={darkMode ? '#374151' : '#f1f5f9'} />
+                                <XAxis
+                                    dataKey="name"
+                                    axisLine={false}
+                                    tickLine={false}
+                                    tick={{ fill: '#94a3b8', fontSize: 12, fontWeight: 600 }}
+                                    dy={10}
                                 />
-                                <Bar dataKey="present" fill="#3B82F6" radius={[4, 4, 0, 0]} barSize={30} />
-                                <Bar dataKey="absent" fill="#EF4444" radius={[4, 4, 0, 0]} barSize={30} />
-                                <Bar dataKey="leave" fill="#F59E0B" radius={[4, 4, 0, 0]} barSize={30} />
+                                <YAxis
+                                    axisLine={false}
+                                    tickLine={false}
+                                    tick={{ fill: '#94a3b8', fontSize: 12, fontWeight: 600 }}
+                                />
+                                <Tooltip
+                                    cursor={{ fill: darkMode ? '#1e293b' : '#f8fafc' }}
+                                    contentStyle={{
+                                        backgroundColor: darkMode ? '#0f172a' : '#fff',
+                                        borderRadius: '16px',
+                                        border: '1px solid ' + (darkMode ? '#334155' : '#e2e8f0'),
+                                        boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)'
+                                    }}
+                                    itemStyle={{ fontWeight: 700 }}
+                                />
+                                <Bar dataKey="present" fill="#2563eb" radius={[6, 6, 0, 0]} barSize={25} name="Present" />
+                                <Bar dataKey="absent" fill="#f43f5e" radius={[6, 6, 0, 0]} barSize={25} name="Absent" />
+                                <Bar dataKey="leave" fill="#f59e0b" radius={[6, 6, 0, 0]} barSize={25} name="On Leave" />
                             </BarChart>
                         </ResponsiveContainer>
                     </div>

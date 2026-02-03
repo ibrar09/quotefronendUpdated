@@ -49,6 +49,14 @@ const AssetInventory = ({ employees = [] }) => {
     const [assets, setAssets] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    // Standard URL Resolver
+    const resolveUrl = (path) => {
+        if (!path) return null;
+        if (path.startsWith('http') || path.startsWith('data:')) return path;
+        const cleanPath = path.startsWith('/') ? path : `/${path}`;
+        return `${API_BASE_URL}${cleanPath}`;
+    };
+
     // Fetch Assets
     const fetchAssets = async () => {
         setLoading(true);
@@ -286,8 +294,18 @@ const AssetInventory = ({ employees = [] }) => {
                         {/* Image Upload */}
                         <div className="flex justify-center mb-4">
                             <div className="relative group cursor-pointer w-full h-40 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 flex flex-col items-center justify-center overflow-hidden hover:border-blue-500 transition-colors">
-                                {previewUrl ? (
-                                    <img src={previewUrl} alt="Preview" className="w-full h-full object-contain" />
+                                {previewUrl || resolveUrl(assetToEdit?.image_url) ? (
+                                    <img
+                                        src={previewUrl || resolveUrl(assetToEdit?.image_url)}
+                                        alt="Preview"
+                                        className="w-full h-full object-contain"
+                                        onError={(e) => {
+                                            if (!previewUrl) {
+                                                e.target.style.display = 'none';
+                                                e.target.parentElement.innerHTML = '<div class="flex flex-col items-center text-gray-400"><svg class="mb-2" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg><span class="text-xs">Image Error</span></div>';
+                                            }
+                                        }}
+                                    />
                                 ) : (
                                     <div className="flex flex-col items-center text-gray-400">
                                         <Upload size={32} className="mb-2" />
@@ -481,9 +499,9 @@ const AssetInventory = ({ employees = [] }) => {
                             ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
 
                             {/* Image Area */}
-                            <div className="h-40 bg-gray-100 dark:bg-gray-900 relative">
-                                {asset.image_url ? (
-                                    <img src={asset.image_url} alt={asset.name} className="w-full h-full object-cover" />
+                            <div className="h-40 bg-gray-100 dark:bg-gray-900 relative overflow-hidden">
+                                {resolveUrl(asset.image_url) ? (
+                                    <img src={resolveUrl(asset.image_url)} alt={asset.name} className="w-full h-full object-cover" />
                                 ) : (
                                     <div className="w-full h-full flex items-center justify-center text-gray-300">
                                         <Box size={48} />
@@ -510,8 +528,13 @@ const AssetInventory = ({ employees = [] }) => {
                                 <p className="text-xs text-gray-400 mb-4 line-clamp-2 h-8">{asset.description || "No description provided."}</p>
 
                                 <div className={`p-3 rounded-xl mb-4 flex items-center gap-3 ${darkMode ? 'bg-gray-700/50' : 'bg-gray-50'}`}>
-                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${darkMode ? 'bg-gray-600 text-gray-300' : 'bg-white text-gray-600 shadow-sm'}`}>
-                                        {asset.assignee ? asset.assignee.name.charAt(0) : <User size={14} />}
+                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shadow-sm border overflow-hidden
+                                        ${darkMode ? 'bg-gray-600 border-gray-500 text-gray-300' : 'bg-white border-white text-gray-600'}`}>
+                                        {resolveUrl(asset.assignee?.avatar_url || asset.assignee?.avatar) ? (
+                                            <img src={resolveUrl(asset.assignee?.avatar_url || asset.assignee?.avatar)} className="w-full h-full object-cover" />
+                                        ) : (
+                                            <span>{asset.assignee ? asset.assignee.name.charAt(0) : <User size={14} />}</span>
+                                        )}
                                     </div>
                                     <div className="flex-1 min-w-0">
                                         <p className="text-[10px] uppercase text-gray-500 font-semibold">Assigned To</p>
@@ -576,7 +599,11 @@ const AssetInventory = ({ employees = [] }) => {
                                     <td className="p-4">
                                         <div className="flex items-center gap-3">
                                             <div className={`w-10 h-10 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0 flex items-center justify-center ${darkMode ? 'bg-gray-800' : ''}`}>
-                                                {asset.image_url ? <img src={asset.image_url} className="w-full h-full object-cover" alt="" /> : <div className="text-gray-400">{getIcon(asset.type)}</div>}
+                                                {resolveUrl(asset.image_url) ? (
+                                                    <img src={resolveUrl(asset.image_url)} className="w-full h-full object-cover" alt="" />
+                                                ) : (
+                                                    <div className="text-gray-400">{getIcon(asset.type)}</div>
+                                                )}
                                             </div>
                                             <div>
                                                 <div className={`font-semibold text-sm ${darkMode ? 'text-white' : 'text-gray-900'}`}>{asset.name}</div>

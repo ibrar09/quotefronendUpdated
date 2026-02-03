@@ -109,8 +109,8 @@ const FieldChat = () => {
     });
 
     return (
-        <div className={`h-[calc(100vh-2rem)] md:h-[calc(100vh-3rem)] m-0 md:m-4 flex overflow-hidden md:rounded-2xl md:border shadow-sm
-            ${darkMode ? 'bg-gray-900 md:bg-gray-800 md:border-gray-700' : 'bg-gray-50 md:bg-white md:border-gray-200'}`}>
+        <div className={`h-[calc(100vh-7.5rem)] sm:h-[calc(100vh-6rem)] m-0 sm:m-4 flex overflow-hidden sm:rounded-2xl sm:border shadow-sm
+            ${darkMode ? 'bg-gray-900 sm:bg-gray-800 sm:border-gray-700' : 'bg-gray-50 sm:bg-white sm:border-gray-200'}`}>
 
             {/* Sidebar (Chat List) */}
             <div className={`w-full md:w-80 flex flex-col border-r ${darkMode ? 'border-gray-700 bg-gray-900' : 'border-gray-100 bg-white'} 

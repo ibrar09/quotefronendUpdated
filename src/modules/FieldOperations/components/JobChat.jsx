@@ -6,6 +6,7 @@ import API_BASE_URL from '../../../config/api';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import MediaSidebar from './MediaSidebar';
+import { CHAT_BACKGROUND_IMAGE } from '../../../config/constants';
 
 const JobChat = ({ jobId, onClose, quoteNo, title, allowDelete = true }) => {
     const { darkMode } = useTheme();
@@ -241,8 +242,20 @@ const JobChat = ({ jobId, onClose, quoteNo, title, allowDelete = true }) => {
     // Sub-component for individual messages
     const MessageBubble = ({ message, isSelected, onClick, onLongPress }) => {
         const isOwn = message.sender_id === currentUser.id;
-        const [isTouching, setIsTouching] = useState(false);
+        const isSystem = message.message_type === 'SYSTEM';
         const timerRef = useRef(null);
+
+        if (isSystem) {
+            return (
+                <div className="flex justify-center w-full my-3 px-4">
+                    <div className={`${darkMode ? 'bg-gray-800 text-gray-400' : 'bg-gray-100/80 text-gray-500'} 
+                        px-4 py-1.5 rounded-lg text-[11px] font-bold uppercase tracking-wider shadow-sm border border-transparent dark:border-gray-700
+                        animate-[fadeIn_0.3s_ease-out]`}>
+                        {message.message_text}
+                    </div>
+                </div>
+            );
+        }
 
         const handleTouchStart = () => {
             timerRef.current = setTimeout(() => {
@@ -403,7 +416,7 @@ const JobChat = ({ jobId, onClose, quoteNo, title, allowDelete = true }) => {
             <div
                 className="flex-1 overflow-y-auto p-4 space-y-1 select-none"
                 style={{
-                    backgroundImage: 'url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png")',
+                    backgroundImage: `url("${CHAT_BACKGROUND_IMAGE}")`,
                     backgroundSize: '400px',
                     backgroundBlendMode: 'soft-light',
                     backgroundColor: 'white'
@@ -437,13 +450,13 @@ const JobChat = ({ jobId, onClose, quoteNo, title, allowDelete = true }) => {
 
             {/* Input Area */}
             {!selectionMode && (
-                <div className={`px-2 py-2 shrink-0 flex items-end gap-2 z-20 bg-[#f0f2f5]`}>
+                <div className={`px-2 py-3 sm:px-4 shrink-0 flex items-center gap-1 sm:gap-2 z-20 bg-[#f0f2f5] border-t border-[#d1d7db]`}>
                     <button
                         type="button"
                         onClick={() => fileInputRef.current?.click()}
-                        className={`p-3 mb-1 rounded-full transition-colors text-[#54656f] hover:bg-black/5`}
+                        className={`p-3 rounded-full transition-colors text-[#54656f] hover:bg-black/5 shrink-0`}
                     >
-                        <Paperclip size={22} />
+                        <Paperclip size={24} />
                     </button>
 
                     <input
@@ -461,33 +474,33 @@ const JobChat = ({ jobId, onClose, quoteNo, title, allowDelete = true }) => {
                         }}
                     />
 
-                    <form onSubmit={sendTextMessage} className="flex-1 flex items-end gap-2">
-                        <div className={`flex-1 flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-2xl transition-all mb-1
+                    <form onSubmit={sendTextMessage} className="flex-1 flex items-center gap-1 sm:gap-2">
+                        <div className={`flex-1 flex items-center gap-2 px-3 sm:px-4 py-2.5 sm:py-2 min-h-[44px] rounded-xl sm:rounded-2xl transition-all
                             bg-white shadow-sm`}>
                             <input
                                 type="text"
                                 value={newMessage}
                                 onChange={(e) => setNewMessage(e.target.value)}
                                 placeholder="Type a message"
-                                className={`flex-1 bg-transparent text-sm focus:outline-none placeholder:text-[#8696a0] text-[#111b21]`}
+                                className={`flex-1 bg-transparent text-sm sm:text-base focus:outline-none placeholder:text-[#8696a0] text-[#111b21]`}
                             />
                         </div>
 
                         {newMessage.trim() ? (
                             <button
                                 type="submit"
-                                className="p-3 mb-1 rounded-full transition-all active:scale-95 bg-[#00a884] text-white shadow-sm flex items-center justify-center shrink-0"
+                                className="p-3.5 sm:p-3 rounded-full transition-all active:scale-90 bg-[#00a884] text-white shadow-md flex items-center justify-center shrink-0"
                             >
-                                <Send size={20} className="ml-0.5" />
+                                <Send size={22} className="ml-0.5" />
                             </button>
                         ) : (
                             <button
                                 type="button"
                                 onClick={recording ? stopRecording : startRecording}
-                                className={`p-3 mb-1 rounded-full transition-all active:scale-95 flex items-center justify-center shrink-0
+                                className={`p-3.5 sm:p-3 rounded-full transition-all active:scale-90 flex items-center justify-center shrink-0
                                     ${recording ? 'bg-red-500 text-white animate-pulse' : 'bg-white text-[#54656f] shadow-sm'}`}
                             >
-                                <Mic size={22} />
+                                <Mic size={24} />
                             </button>
                         )}
                     </form>

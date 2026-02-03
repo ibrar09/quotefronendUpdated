@@ -54,17 +54,22 @@ const EmployeeService = {
             let payload = employeeData;
             let headers = {};
 
-            // If FormData is passed, axios handles headers automatically
-            // If plain object and has image file, convert to FormData
-            const hasFile = employeeData instanceof FormData || (employeeData.avatar instanceof File);
+            // If employeeData is a plain object, check if it contains any File objects
+            if (!(employeeData instanceof FormData)) {
+                const hasFiles = Object.values(employeeData).some(val => val instanceof File);
 
-            if (hasFile && !(employeeData instanceof FormData)) {
-                // Convert to FormData logic if user passed object with File
-                const formData = new FormData();
-                Object.keys(employeeData).forEach(key => {
-                    formData.append(key, employeeData[key]);
-                });
-                payload = formData;
+                if (hasFiles) {
+                    const formData = new FormData();
+                    Object.keys(employeeData).forEach(key => {
+                        // Only append if it's not null/undefined
+                        if (employeeData[key] !== null && employeeData[key] !== undefined) {
+                            formData.append(key, employeeData[key]);
+                        }
+                    });
+                    payload = formData;
+                    headers = { 'Content-Type': 'multipart/form-data' };
+                }
+            } else {
                 headers = { 'Content-Type': 'multipart/form-data' };
             }
 
@@ -81,8 +86,22 @@ const EmployeeService = {
             let payload = updates;
             let headers = {};
 
-            // Check if updates is FormData
-            if (updates instanceof FormData) {
+            // If updates is a plain object, check if it contains any File objects
+            if (!(updates instanceof FormData)) {
+                const hasFiles = Object.values(updates).some(val => val instanceof File);
+
+                if (hasFiles) {
+                    const formData = new FormData();
+                    Object.keys(updates).forEach(key => {
+                        // Only append if it's not null/undefined
+                        if (updates[key] !== null && updates[key] !== undefined) {
+                            formData.append(key, updates[key]);
+                        }
+                    });
+                    payload = formData;
+                    headers = { 'Content-Type': 'multipart/form-data' };
+                }
+            } else {
                 headers = { 'Content-Type': 'multipart/form-data' };
             }
 

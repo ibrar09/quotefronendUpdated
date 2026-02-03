@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import logoSrc from '../../assets/Maaj-Logo 04.png';
 import API_BASE_URL from '../../config/api';
+import { TEXTURE_CUBES_BG } from '../../config/constants';
 
 const QuotationIntake = () => {
     const navigate = useNavigate();
@@ -97,7 +98,7 @@ const QuotationIntake = () => {
     };
 
     return (
-        <div className={`min-h-screen flex items-center justify-center p-4 transition-colors duration-500 ${themeStyles.container} bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]`}>
+        <div className={`min-h-screen flex items-center justify-center p-4 transition-colors duration-500 ${themeStyles.container} bg-cover`} style={{ backgroundImage: `url('${TEXTURE_CUBES_BG}')` }}>
             <div className={`max-w-md w-full rounded-2xl shadow-2xl overflow-hidden border-2 animate-fadeIn transition-all duration-300 ${darkMode ? 'bg-[#1f1f2e] border-[#00a8aa]' : 'bg-white border-black'}`}>
                 <div className={`p-6 text-white flex items-center gap-3 ${darkMode ? 'bg-[#00a8aa]' : 'bg-black'}`}>
                     <FileText size={24} className="text-blue-400" />

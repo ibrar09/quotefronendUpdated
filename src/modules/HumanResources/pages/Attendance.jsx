@@ -3,10 +3,11 @@ import { useTheme } from '../../../context/ThemeContext';
 import Webcam from 'react-webcam';
 import {
     MapPin, Clock, Camera as CameraIcon, CheckCircle,
-    XCircle, RefreshCw, Smartphone, Navigation, LogOut, X
+    XCircle, RefreshCw, Smartphone, Navigation, LogOut, X, Shield
 } from 'lucide-react';
 import { markAttendance, getCurrentAttendance, updateLiveLocation } from '../../UserPortal/services/portal.service';
 import { toast } from 'react-hot-toast';
+import SelfieCaptureModal from '../../UserPortal/components/SelfieCaptureModal';
 
 const Attendance = () => {
     const { darkMode } = useTheme();
@@ -28,10 +29,13 @@ const Attendance = () => {
     const [gpsLocation, setGpsLocation] = useState(null); // { lat, lng }
     const [gpsError, setGpsError] = useState(null);
     const [cameraError, setCameraError] = useState(null); // 'PERMISSION_DENIED' or null
+    const [selfieModalOpen, setSelfieModalOpen] = useState(false);
 
-    // Overtime State
+    // Overtime & Shift State
     const [isOvertime, setIsOvertime] = useState(false);
+    const [shiftType, setShiftType] = useState('MORNING'); // 'MORNING', 'SECOND', 'OVERTIME'
     const [hasCompletedRegularToday, setHasCompletedRegularToday] = useState(false);
+    const [shiftExpired, setShiftExpired] = useState(false);
 
     // --- On Mount: Sync with Server ---
     useEffect(() => {
@@ -75,35 +79,49 @@ const Attendance = () => {
         if (status === 'IN' && startTime) {
             console.log('⚡ Shift Active: Starting Timer & Background Tracking');
 
-            // 1. Shift Timer
-            const diffFn = () => Math.floor((new Date() - startTime) / 1000);
-            setShiftTimer(Math.max(0, diffFn()));
-            shiftInterval = setInterval(() => {
-                setShiftTimer(Math.max(0, diffFn()));
-            }, 1000);
+            // 1. Shift Timer & Auto-End Logic
+            const runTimer = () => {
+                const now = new Date();
+                const diff = Math.floor((now - startTime) / 1000);
+
+                // Hard Enforcement: Stop Regular Morning Shift at 17:00 (5 PM)
+                if (shiftType === 'MORNING' && now.getHours() >= 17) {
+                    setShiftExpired(true);
+                    // Calculate duration up to 17:00 sharp if it just happened
+                    const fivePM = new Date(now);
+                    fivePM.setHours(17, 0, 0, 0);
+                    const expiredDiff = Math.floor((fivePM - startTime) / 1000);
+                    setShiftTimer(Math.max(0, expiredDiff));
+                } else {
+                    setShiftTimer(Math.max(0, diff));
+                }
+            };
+
+            runTimer();
+            shiftInterval = setInterval(runTimer, 1000);
 
             // 2. Continuous Location Tracking (Trace everything)
             const sendUpdate = async () => {
                 try {
-                    console.log('📡 Background Tracking: Fetching GPS...');
-                    const loc = await getLocation();
-                    await updateLiveLocation({
-                        lat: loc.lat,
-                        lng: loc.lng,
-                        accuracy: loc.accuracy
-                    });
-                    console.log('✅ Background Tracking: Sync successful');
+                    // During background tracking, we still want location, but don't block the UI if it fails once
+                    const loc = await getLocation().catch(() => null);
+                    if (loc) {
+                        await updateLiveLocation({
+                            lat: loc.lat,
+                            lng: loc.lng,
+                            accuracy: loc.accuracy
+                        });
+                    }
                 } catch (err) {
                     console.error('❌ Background Tracking Sync Failed:', err);
                 }
             };
 
-            // Initial immediate update when starting/syncing
             sendUpdate();
-            // Then every 5 minutes
             trackingInterval = setInterval(sendUpdate, 5 * 60 * 1000);
         } else {
             setShiftTimer(0);
+            setShiftExpired(false);
         }
 
         return () => {
@@ -173,18 +191,12 @@ const Attendance = () => {
         });
     };
 
-    const handleCheckIn = async () => {
-        console.log('🚀 handleCheckIn triggered. Current imgSrc exists?', !!imgSrc, '| Camera Open?', showCamera);
-        if (!imgSrc) {
-            if (showCamera) {
-                console.log('📸 Camera is already open, triggering capture...');
-                capture();
-                return;
-            }
-            console.log('📸 No image found, opening camera...');
-            setShowCamera(true);
+    const handleCheckIn = async (photo = null) => {
+        if (!photo) {
+            setSelfieModalOpen(true);
             return;
         }
+
         setLoading(true);
         setGpsError(null);
         try {
@@ -192,13 +204,19 @@ const Attendance = () => {
             console.log('📍 Location verified. Sending to server...');
             setGpsLocation(loc);
 
+            // Anti-Cheating: Hard Block without GPS
+            if (!loc || !loc.lat || !loc.lng) {
+                throw new Error("Mandatory Location Required. Please enable GPS and try again.");
+            }
+
             const res = await markAttendance({
                 type: 'CHECK_IN',
                 location: { lat: loc.lat, lng: loc.lng },
                 accuracy: loc.accuracy,
-                image: imgSrc,
+                image: photo,
                 device_info: navigator.userAgent,
-                is_overtime: isOvertime || (currentTime.getHours() >= 17 || hasCompletedRegularToday)
+                is_overtime: shiftType === 'OVERTIME',
+                tag: shiftType
             });
 
             console.log('✅ Server Response:', res);
@@ -206,16 +224,16 @@ const Attendance = () => {
                 setStatus('IN');
                 setStartTime(new Date(res.attendance.clock_in));
                 setIsOvertime(res.attendance.tag === 'OVERTIME');
+                setShiftType(res.attendance.tag === 'OVERTIME' ? 'OVERTIME' : (res.attendance.tag === 'SECOND' ? 'SECOND' : 'MORNING'));
                 setImgSrc(null);
+                setSelfieModalOpen(false);
                 toast.success(res.attendance.tag === 'OVERTIME' ? "Overtime Started!" : "Checked In Successfully!");
             }
         } catch (error) {
             console.error('❌ Detailed Check-In Error:', error);
-            if (typeof error === 'string') {
-                setGpsError(error);
-            } else {
-                toast.error("Check In Failed: " + (error.response?.data?.message || 'Server Error'));
-            }
+            const msg = typeof error === 'string' ? error : (error.message || error.response?.data?.message || 'Server Error');
+            setGpsError(msg);
+            toast.error(msg);
         } finally {
             setLoading(false);
         }
@@ -225,15 +243,9 @@ const Attendance = () => {
         if (confirm("End your shift?")) {
             setLoading(true);
             try {
-                console.log('📡 Starting Check-Out Process...');
-                // Attempt to get location, but fall back if it fails so session can still end
-                let loc = { lat: null, lng: null, accuracy: null };
-                try {
-                    loc = await getLocation();
-                } catch (gpsErr) {
-                    console.warn("⚠️ GPS Failed during check-out, proceeding without coordinates:", gpsErr);
-                    toast.error("Location signal weak. Ending session without GPS.");
-                }
+                console.log('📡 Starting Check-Out Process (Mandatory GPS)...');
+                const loc = await getLocation();
+                setGpsLocation(loc);
 
                 await markAttendance({
                     type: 'CHECK_OUT',
@@ -303,11 +315,16 @@ const Attendance = () => {
                                 <div className="absolute inset-0 rounded-full border-4 border-white/40 animate-[ping_3s_infinite]"></div>
                                 <div className="text-center text-white">
                                     <span className="text-xs font-bold opacity-80 uppercase tracking-widest">
-                                        {isOvertime ? 'Overtime Time' : 'Shift Time'}
+                                        {shiftExpired ? 'Shift Expired' : (isOvertime ? 'Overtime Time' : 'Shift Time')}
                                     </span>
-                                    <div className="text-3xl font-mono font-black tabular-nums mt-1">
+                                    <div className={`text-3xl font-mono font-black tabular-nums mt-1 ${shiftExpired ? 'text-red-200 animate-pulse' : ''}`}>
                                         {formatTime(shiftTimer)}
                                     </div>
+                                    {shiftExpired && (
+                                        <p className="text-[10px] font-black uppercase mt-1 text-white/90">
+                                            Please Check Out to continue
+                                        </p>
+                                    )}
                                 </div>
                             </div>
                             <button
@@ -320,125 +337,79 @@ const Attendance = () => {
                         </>
                     ) : (
                         <>
-                            {showCamera ? (
-                                <div className="relative w-full h-64 bg-black rounded-2xl overflow-hidden mb-6">
-                                    <div className="absolute inset-0 flex items-center justify-center text-white/50 bg-gray-900 pointer-events-none">
-                                        <div className="animate-pulse">Loading Camera...</div>
-                                    </div>
-                                    <button
-                                        onClick={() => setShowCamera(false)}
-                                        className="absolute top-4 right-4 z-20 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors"
-                                    >
-                                        <X size={20} />
-                                    </button>
-                                    <Webcam
-                                        audio={false}
-                                        ref={webcamRef}
-                                        screenshotFormat="image/jpeg"
-                                        forceScreenshotSourceSize={true}
-                                        className="w-full h-full object-cover relative z-10"
-                                        videoConstraints={{ facingMode: "user" }}
-                                        onUserMedia={() => {
-                                            console.log('🎥 Webcam Stream Connected Successfully');
-                                            toast.success("Camera is ready!");
-                                        }}
-                                        onUserMediaError={(err) => {
-                                            console.error('🎥 Webcam Media Error:', err);
-                                            if (err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError') {
-                                                setCameraError('PERMISSION_DENIED');
-                                            } else {
-                                                toast.error("Camera Hardware Error: " + err.name);
-                                                setShowCamera(false);
-                                            }
-                                        }}
-                                    />
-                                    {cameraError === 'PERMISSION_DENIED' && (
-                                        <div className="absolute inset-0 z-20 bg-gray-900/95 flex flex-col items-center justify-center p-6 text-center text-white">
-                                            <CameraIcon size={48} className="text-red-500 mb-4" />
-                                            <h3 className="text-lg font-bold mb-2">Camera Access Blocked</h3>
-                                            <p className="text-xs text-gray-400 mb-6">
-                                                Please click the 🔓 icon in your browser's address bar and set Camera to <b>"Allow"</b>, then click Reset.
-                                            </p>
-                                            <button
-                                                onClick={() => {
-                                                    setCameraError(null);
-                                                    setShowCamera(false);
-                                                    setTimeout(() => setShowCamera(true), 100);
-                                                }}
-                                                className="px-6 py-2 bg-blue-600 rounded-lg text-sm font-bold active:scale-95 transition-transform"
-                                            >
-                                                Reset & Retry
-                                            </button>
-                                        </div>
-                                    )}
-                                    <button
-                                        onClick={capture}
-                                        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 p-4 bg-white rounded-full shadow-lg active:scale-90 transition-transform"
-                                    >
-                                        <div className="w-4 h-4 rounded-full bg-red-500"></div>
-                                    </button>
-                                </div>
-                            ) : imgSrc ? (
-                                <div className="relative w-40 h-40 mb-6 group cursor-pointer" onClick={retakePhoto}>
-                                    <img src={imgSrc} alt="Selfie" className="w-full h-full object-cover rounded-full border-4 border-blue-500 shadow-xl" />
-                                    <div className="absolute inset-0 bg-black/40 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <RefreshCw className="text-white" />
-                                    </div>
-                                    <div className="absolute bottom-0 right-0 bg-green-500 text-white p-1.5 rounded-full border-2 border-white">
-                                        <CheckCircle size={16} />
-                                    </div>
-                                </div>
-                            ) : (
-                                <div
-                                    onClick={() => setShowCamera(true)}
-                                    className={`w-40 h-40 mb-6 rounded-full flex flex-col items-center justify-center cursor-pointer border-4 border-dashed transition-all
+                            <div
+                                onClick={() => setSelfieModalOpen(true)}
+                                className={`w-40 h-40 mb-6 rounded-full flex flex-col items-center justify-center cursor-pointer border-4 border-dashed transition-all
                                     ${darkMode ? 'border-gray-700 hover:border-blue-500 hover:bg-gray-800' : 'border-gray-200 hover:border-blue-400 hover:bg-blue-50'}`}
-                                >
-                                    <CameraIcon size={40} className="text-gray-400 mb-2" />
-                                    <span className="text-xs font-bold text-gray-400">Tap to Take Selfie</span>
-                                </div>
-                            )}
+                            >
+                                <CameraIcon size={40} className="text-gray-400 mb-2" />
+                                <span className="text-xs font-bold text-gray-400">Tap to Take Selfie</span>
+                            </div>
 
-                            <div className="w-full space-y-3">
+                            <div className="w-full space-y-4">
+                                {/* Shift Selector */}
+                                <div className={`p-1.5 rounded-2xl flex gap-1 ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
+                                    {[
+                                        { id: 'MORNING', label: 'Morning (8-5)', icon: Clock },
+                                        { id: 'SECOND', label: 'Second Shift', icon: Smartphone },
+                                        { id: 'OVERTIME', label: 'Overtime', icon: CameraIcon }
+                                    ].map((t) => (
+                                        <button
+                                            key={t.id}
+                                            onClick={() => setShiftType(t.id)}
+                                            className={`flex-1 py-3 px-1 rounded-xl flex flex-col items-center gap-1 transition-all
+                                                ${shiftType === t.id
+                                                    ? 'bg-white text-blue-600 shadow-md scale-[1.02]'
+                                                    : 'text-gray-400 hover:text-gray-600'}`}
+                                        >
+                                            <t.icon size={16} strokeWidth={2.5} />
+                                            <span className="text-[9px] font-black uppercase tracking-tighter">{t.label}</span>
+                                        </button>
+                                    ))}
+                                </div>
+
                                 <button
-                                    onClick={handleCheckIn}
+                                    onClick={() => handleCheckIn()}
                                     disabled={loading}
                                     className={`w-full py-4 rounded-xl font-black text-lg shadow-xl flex items-center justify-center gap-2 transition-all active:scale-95
                                     ${loading
                                             ? 'bg-gray-200 text-gray-400 cursor-not-allowed dark:bg-gray-800'
-                                            : (imgSrc
-                                                ? (isOvertime || currentTime.getHours() >= 17 || hasCompletedRegularToday
-                                                    ? 'bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-orange-500/30'
-                                                    : 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-blue-500/30'
-                                                )
-                                                : 'bg-gray-900 text-white'
+                                            : (shiftType === 'OVERTIME'
+                                                ? 'bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-orange-500/30'
+                                                : 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-blue-500/30'
                                             )
                                         }`}
                                 >
                                     {loading
                                         ? 'Verifying...'
-                                        : (imgSrc
-                                            ? (isOvertime || currentTime.getHours() >= 17 || hasCompletedRegularToday
-                                                ? <><MapPin size={20} /> START OVERTIME</>
-                                                : <><MapPin size={20} /> START SHIFT</>
-                                            )
-                                            : (showCamera
-                                                ? <><CameraIcon size={20} /> SNAP PHOTO</>
-                                                : <><CameraIcon size={20} /> TAKE SELFIE</>
-                                            )
+                                        : (shiftType === 'OVERTIME'
+                                            ? <><MapPin size={20} /> START OVERTIME</>
+                                            : <><MapPin size={20} /> START {shiftType} SHIFT</>
                                         )
                                     }
                                 </button>
-                                {!imgSrc && !loading && (
-                                    <p className="text-xs text-center text-gray-400 font-medium">
-                                        * Selfie & GPS required to start
-                                    </p>
+                                {!loading && (
+                                    <div className="flex flex-col gap-1 items-center">
+                                        <p className="text-[10px] text-red-500 font-black uppercase tracking-widest flex items-center gap-1">
+                                            <Shield size={10} strokeWidth={3} /> Hard Enforcement Active
+                                        </p>
+                                        <p className="text-[9px] text-gray-400 font-medium">
+                                            GPS & Selfie Required • Precision Timing Enabled
+                                        </p>
+                                    </div>
                                 )}
                             </div>
                         </>
                     )}
                 </div>
             </div>
+
+            <SelfieCaptureModal
+                isOpen={selfieModalOpen}
+                onClose={() => setSelfieModalOpen(false)}
+                title={(isOvertime || currentTime.getHours() >= 17 || hasCompletedRegularToday) ? "Overtime Verification" : "Shift Verification"}
+                onCapture={(p) => handleCheckIn(p)}
+            />
 
             <div className="mt-8 grid grid-cols-2 gap-4 w-full opacity-60">
                 <div className="flex items-center gap-3 p-3 rounded-lg border dark:border-gray-700">
