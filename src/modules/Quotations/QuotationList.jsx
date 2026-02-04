@@ -60,7 +60,7 @@ const QuotationList = () => {
 
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
-    const LIMIT = 100; // Frontend limit per page
+    const LIMIT = 3000; // Increased to show all records (User has ~800+)
 
     useEffect(() => {
         const urlRegion = searchParams.get('region');
@@ -202,8 +202,13 @@ const QuotationList = () => {
     const fetchQuotations = async (pageNum = 1) => {
         setLoading(true);
         try {
-            // Passing pagination params AND filters
+            // [FIX] Pass filters to Backend for Server-Side Filtering
             let query = `${API_BASE_URL}/api/quotations?page=${pageNum}&limit=${LIMIT}`;
+
+            if (regionFilter !== 'ALL') query += `&region=${regionFilter}`;
+            if (statusFilter !== 'ALL') query += `&quote_status=${statusFilter}`;
+            if (brandFilter !== 'ALL') query += `&brand=${brandFilter}`;
+
             if (dateFilter) {
                 if (dateFilterType === 'month') query += `&month=${dateFilter}`;
                 else if (dateFilterType === 'year') query += `&year=${dateFilter}`;
