@@ -2,7 +2,16 @@
 // This file centralizes the API base URL for all axios requests
 // The URL is determined by the environment variable VITE_API_BASE_URL
 
-let API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5010';
+// [FIX] Hardcoded Production Fallback to ensure connection
+let API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+if (!API_BASE_URL) {
+    if (import.meta.env.MSG_MODE === 'production' || import.meta.env.PROD) {
+        API_BASE_URL = 'https://web-production-849199.up.railway.app';
+    } else {
+        API_BASE_URL = 'http://localhost:5010';
+    }
+}
 
 // Ensure the URL has a protocol and no trailing slash
 if (API_BASE_URL && !API_BASE_URL.startsWith('http') && !API_BASE_URL.includes('localhost')) {
