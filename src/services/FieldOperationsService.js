@@ -11,7 +11,7 @@ const FieldOperationsService = {
                 params: {
                     quote_status: filters.status && filters.status !== 'ALL'
                         ? filters.status
-                        : 'READY_TO_SEND,DRAFT,SENT' // Default to these 3
+                        : 'READY_TO_SEND,DRAFT,SENT,APPROVED,PO_RECEIVED' // Include APPROVED so work can be assigned
                 }
             });
 
