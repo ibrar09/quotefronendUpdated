@@ -173,21 +173,12 @@ const CommunicationHub = () => {
             <div className={`flex-1 flex flex-col ${mobileView === 'LIST' ? 'hidden md:flex' : 'flex'} relative bg-white`}>
                 {selectedJob ? (
                     <div className="flex flex-col h-full">
-                        {/* Mobile Back Button Overlay */}
-                        <div className="md:hidden absolute top-4 left-4 z-10">
-                            <button
-                                onClick={() => setMobileView('LIST')}
-                                className="p-2 bg-white/80 backdrop-blur rounded-full shadow-md text-slate-600"
-                            >
-                                <ArrowLeft size={20} />
-                            </button>
-                        </div>
-
                         <JobChat
                             key={selectedJob.id}
                             jobId={selectedJob.job_id}
                             title={selectedJob.brand}
                             quoteNo={selectedJob.quote_no}
+                            onBack={() => setMobileView('LIST')}
                         />
                     </div>
                 ) : (

@@ -121,13 +121,13 @@ const NewQuotation = () => {
 
         setHeader(prev => ({
           ...prev,
-          brand: prev.brand ? prev.brand : (store.brand || ''),
-          city: prev.city ? prev.city : (store.city || ''),
-          location: prev.location ? prev.location : (store.mall || ''),
+          brand: store.brand || prev.brand || '',
+          city: store.city || prev.city || '',
+          location: store.mall || prev.location || '',
           storeCcid: store.oracle_ccid,
-          attentionTo: prev.attentionTo ? prev.attentionTo : (store.fm_manager || store.fm_supervisor || ''),
-          region: prev.region ? prev.region : (store.region || ''),
-          openingDate: prev.openingDate ? prev.openingDate : (store.opening_date || ''),
+          attentionTo: store.fm_manager || store.fm_supervisor || prev.attentionTo || '',
+          region: store.region || prev.region || '',
+          openingDate: store.opening_date || prev.openingDate || '',
           description: prev.mrDesc || prev.description || ''
         }));
 

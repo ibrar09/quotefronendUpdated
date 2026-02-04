@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { io } from 'socket.io-client';
-import { Send, Image as ImageIcon, Video, Mic, X, Paperclip, CheckCheck, Trash2, CheckSquare, Square, MoreVertical, MessageSquare } from 'lucide-react';
+import { Send, Image as ImageIcon, Video, Mic, X, Paperclip, CheckCheck, Trash2, CheckSquare, Square, MoreVertical, MessageSquare, ArrowLeft } from 'lucide-react';
 import { useTheme } from '../../../context/ThemeContext';
 import API_BASE_URL from '../../../config/api';
 import axios from 'axios';
@@ -8,7 +8,7 @@ import { toast } from 'react-hot-toast';
 import MediaSidebar from './MediaSidebar';
 import { CHAT_BACKGROUND_IMAGE } from '../../../config/constants';
 
-const JobChat = ({ jobId, onClose, quoteNo, title, allowDelete = true }) => {
+const JobChat = ({ jobId, onClose, onBack, quoteNo, title, allowDelete = true }) => {
     const { darkMode } = useTheme();
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
@@ -295,7 +295,7 @@ const JobChat = ({ jobId, onClose, quoteNo, title, allowDelete = true }) => {
                 )}
 
                 <div
-                    className={`max-w-[85%] md:max-w-[70%] px-3 py-1.5 rounded-2xl relative shadow-sm transition-all
+                    className={`max-w-[90%] md:max-w-[70%] px-3 py-1.5 rounded-2xl relative shadow-sm transition-all
                         ${isSelected ? 'brightness-90 scale-[0.98]' : ''}
                         ${isOwn ? 'bg-[#dcf8c6] text-[#111b21] rounded-tr-none' : 'bg-white text-[#111b21] rounded-tl-none'}`}
                 >
@@ -380,6 +380,15 @@ const JobChat = ({ jobId, onClose, quoteNo, title, allowDelete = true }) => {
                 ) : (
                     <>
                         <div className="flex items-center gap-3">
+                            {onBack && (
+                                <button
+                                    onClick={onBack}
+                                    className="p-2 -ml-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-[#54656f] dark:text-[#aebac1] md:hidden"
+                                >
+                                    <ArrowLeft size={20} />
+                                </button>
+                            )}
+
                             <div className="flex flex-col min-w-0">
                                 <h3 className={`font-bold text-base truncate text-[#111b21]`}>
                                     {title || 'Job Chat'}

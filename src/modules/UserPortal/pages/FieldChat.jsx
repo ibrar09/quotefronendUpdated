@@ -230,21 +230,13 @@ const FieldChat = () => {
                     <AdminSupportChat onBack={() => setMobileView('LIST')} />
                 ) : activeTab === 'job' && selectedJob ? (
                     <div className="flex flex-col h-full w-full">
-                        {/* Mobile Back Overlay for JobChat */}
-                        <div className="md:hidden absolute top-3 left-3 z-20">
-                            <button
-                                onClick={() => setMobileView('LIST')}
-                                className="p-2 bg-white/90 dark:bg-gray-900/90 backdrop-blur rounded-full shadow-sm text-gray-600 dark:text-gray-300 border dark:border-gray-700"
-                            >
-                                <ArrowLeft size={18} />
-                            </button>
-                        </div>
                         <JobChat
                             key={selectedJob.assignment_id}
                             jobId={selectedJob.id} // Actual Job ID for DB relation
                             title={selectedJob.title || selectedJob.brand}
                             quoteNo={selectedJob.job_number}
                             allowDelete={false}
+                            onBack={() => setMobileView('LIST')}
                         />
                     </div>
                 ) : (

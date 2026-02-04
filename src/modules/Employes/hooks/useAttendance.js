@@ -46,12 +46,18 @@ export const useAttendance = (viewMode, selectedMonth, selectedYear) => {
 
                     grouped[empId].totalMinutes = grouped[empId].regMinutes + grouped[empId].otMinutes;
 
+                    const lat = r.clock_in_lat || r.clock_out_lat;
+                    const lng = r.clock_in_lng || r.clock_out_lng;
+                    const locationStr = lat && lng ? `${parseFloat(lat).toFixed(4)}, ${parseFloat(lng).toFixed(4)}` : '-';
+
+                    grouped[empId].location = locationStr; // Update main row location
+
                     grouped[empId].logs.push({
                         date: r.date,
                         type: r.tag === 'OVERTIME' ? 'overtime' : 'regular',
                         action: `${r.tag === 'OVERTIME' ? 'Overtime' : 'Regular'}: ${Math.floor(dur / 60)}h ${dur % 60}m`,
                         time: r.clock_in ? new Date(r.clock_in).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '-',
-                        location: r.date
+                        location: locationStr
                     });
                 });
                 setHistoryData(Object.values(grouped).sort((a, b) => b.totalMinutes - a.totalMinutes));
