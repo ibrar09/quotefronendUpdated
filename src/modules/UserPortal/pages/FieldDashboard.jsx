@@ -73,22 +73,47 @@ const FieldDashboard = () => {
 
         const loadingToast = toast.loading(type === 'CHECK_IN' ? (isOvertime ? 'Starting OT...' : 'Starting shift...') : 'Stopping shift...');
         try {
-            // Get Location
+            // Get Location with Retry Logic
             let location = null;
             if (navigator.geolocation) {
-                try {
-                    const pos = await new Promise((resolve, reject) => {
-                        navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 10000, enableHighAccuracy: true });
+                const getPosition = (options) => {
+                    return new Promise((resolve, reject) => {
+                        navigator.geolocation.getCurrentPosition(resolve, reject, options);
                     });
+                };
+
+                try {
+                    // Attempt 1: High Accuracy (GPS) - 20s timeout
+                    // console.log("📍 Attempting High Accuracy Location...");
+                    const pos = await getPosition({ timeout: 20000, enableHighAccuracy: true });
                     location = {
                         lat: pos.coords.latitude,
                         lng: pos.coords.longitude,
                         accuracy: pos.coords.accuracy
                     };
-                } catch (e) {
-                    console.warn("Location failed", e);
-                    toast.error("Location access required", { id: loadingToast });
-                    return;
+                } catch (err) {
+                    // console.warn("❌ High Accuracy Failed:", err);
+
+                    // Attempt 2: Low Accuracy (Network/Cell) - 20s timeout
+                    try {
+                        // console.log("⚠️ Retrying with Low Accuracy...");
+                        toast.loading("GPS weak, trying network location...", { id: loadingToast });
+                        const pos = await getPosition({ timeout: 20000, enableHighAccuracy: false });
+                        location = {
+                            lat: pos.coords.latitude,
+                            lng: pos.coords.longitude,
+                            accuracy: pos.coords.accuracy
+                        };
+                    } catch (finalErr) {
+                        console.error("❌ Location Failed Completely:", finalErr);
+                        let errorMsg = "Location failed.";
+                        if (finalErr.code === 1) errorMsg = "Location permission denied. Please enable it in browser settings.";
+                        else if (finalErr.code === 2) errorMsg = "Location unavailable. Check GPS/Network.";
+                        else if (finalErr.code === 3) errorMsg = "Location request timed out. Please move outdoors.";
+
+                        toast.error(errorMsg, { id: loadingToast });
+                        return; // Block if location fails completely (Business Rule)
+                    }
                 }
             }
 
