@@ -11,7 +11,8 @@ const FieldOperationsService = {
                 params: {
                     quote_status: filters.status && filters.status !== 'ALL'
                         ? filters.status
-                        : 'READY_TO_SEND,DRAFT,SENT,APPROVED,PO_RECEIVED' // Include APPROVED so work can be assigned
+                        : 'READY_TO_SEND,DRAFT,SENT,APPROVED,PO_RECEIVED', // Include APPROVED so work can be assigned
+                    limit: 3000 // Ensure we get all assignments (user has >700)
                 }
             });
 

@@ -82,18 +82,28 @@ const WorkAssignment = () => {
         loadPendingQuotations();
     }, [regionFilter, statusFilter]);
 
+    // Debounced Search
+    const [debouncedSearchQuery, setDebouncedSearchQuery] = useState('');
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setDebouncedSearchQuery(searchQuery);
+        }, 300); // 300ms debounce
+        return () => clearTimeout(timer);
+    }, [searchQuery]);
+
     // Search Filter
     useEffect(() => {
-        const lowerSearch = searchQuery.toLowerCase();
+        const lowerSearch = debouncedSearchQuery.toLowerCase();
         const filtered = pendingQuotes.filter(q =>
-            q.quote_no?.toLowerCase().includes(lowerSearch) ||
-            q.brand?.toLowerCase().includes(lowerSearch) ||
-            q.location?.toLowerCase().includes(lowerSearch) ||
-            q.mr_no?.toLowerCase().includes(lowerSearch) ||
-            q.city?.toLowerCase().includes(lowerSearch)
+            (q.quote_no || '').toLowerCase().includes(lowerSearch) ||
+            (q.brand || '').toLowerCase().includes(lowerSearch) ||
+            (q.location || '').toLowerCase().includes(lowerSearch) ||
+            (q.mr_no || '').toLowerCase().includes(lowerSearch) ||
+            (q.city || '').toLowerCase().includes(lowerSearch)
         );
         setFilteredQuotes(filtered);
-    }, [searchQuery, pendingQuotes]);
+    }, [debouncedSearchQuery, pendingQuotes]);
 
     const openAssignModal = (quote) => {
         setQuoteToAssign(quote);
