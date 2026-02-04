@@ -60,7 +60,8 @@ const QuotationList = () => {
 
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
-    const LIMIT = 3000; // Increased to show all records (User has ~800+)
+    const LIMIT = 200; // User requested 200 items per page
+
 
     useEffect(() => {
         const urlRegion = searchParams.get('region');

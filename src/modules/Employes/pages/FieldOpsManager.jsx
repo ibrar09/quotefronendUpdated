@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import API_BASE_URL from '../../../config/api'; // Check path distance: modules/Employes/pages -> src is ../../../
 import { useTheme } from '../../../context/ThemeContext';
 import {
     Map, List, Plus, Search, Filter, MoreHorizontal,
     Calendar, Clock, User, CheckCircle, AlertCircle,
-    ChevronRight, MapPin, Briefcase, RefreshCw, X
+    ChevronRight, MapPin, Briefcase, RefreshCw, X, Trash2
 } from 'lucide-react';
 import { MAPBOX_STATIC_PLACEHOLDER } from '../../../config/constants';
 
@@ -13,6 +15,22 @@ const FieldOpsManager = () => {
     const [showAssignModal, setShowAssignModal] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredJobs, setFilteredJobs] = useState([]);
+
+    // [NEW] Delete All Logic
+    const handleDeleteAll = async () => {
+        if (window.confirm('⚠️ DANGER: Are you sure you want to DELETE ALL QUOTATIONS and related data?\n\nThis action cannot be undone!')) {
+            if (window.confirm('Are you absolutely sure? Type OK to confirm.')) {
+                try {
+                    const res = await axios.delete(`${API_BASE_URL}/api/master/delete-all-quotations`);
+                    alert(res.data.message);
+                    setJobs([]); // Clear local state
+                } catch (error) {
+                    console.error(error);
+                    alert('Failed to delete data: ' + (error.response?.data?.error || error.message));
+                }
+            }
+        }
+    };
 
     // Mock Active Jobs (Expanded for Table)
     const [jobs, setJobs] = useState([
@@ -83,6 +101,15 @@ const FieldOpsManager = () => {
                             <Map size={18} />
                         </button>
                     </div>
+
+                    {/* [NEW] Delete All Button */}
+                    <button
+                        onClick={handleDeleteAll}
+                        className="p-2 rounded-lg bg-red-100 text-red-600 hover:bg-red-200 border border-red-200 transition-colors"
+                        title="Delete All Data"
+                    >
+                        <Trash2 size={18} />
+                    </button>
 
                     <button
                         onClick={() => setShowAssignModal(true)}

@@ -107,12 +107,17 @@ const FieldDashboard = () => {
                     } catch (finalErr) {
                         console.error("❌ Location Failed Completely:", finalErr);
                         let errorMsg = "Location failed.";
-                        if (finalErr.code === 1) errorMsg = "Location permission denied. Please enable it in browser settings.";
-                        else if (finalErr.code === 2) errorMsg = "Location unavailable. Check GPS/Network.";
-                        else if (finalErr.code === 3) errorMsg = "Location request timed out. Please move outdoors.";
+                        if (finalErr.code === 1) errorMsg = "Location permission denied.";
+                        else if (finalErr.code === 2) errorMsg = "Location unavailable.";
+                        else if (finalErr.code === 3) errorMsg = "Location request timed out.";
 
-                        toast.error(errorMsg, { id: loadingToast });
-                        return; // Block if location fails completely (Business Rule)
+                        // [FIX] Allow Manual Override if Location Fails
+                        if (window.confirm(`${errorMsg} \n\nDo you want to proceed without location tagging?`)) {
+                            location = null; // Send null location
+                        } else {
+                            toast.error("Shift start cancelled.", { id: loadingToast });
+                            return;
+                        }
                     }
                 }
             }
