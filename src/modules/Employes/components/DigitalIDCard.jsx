@@ -37,19 +37,45 @@ const DigitalIDCard = ({ employee, darkMode }) => {
         setIsPrinting(true);
         const element = document.getElementById('digital-id-card-content');
 
+        console.log('🖨️ [DigitalID] Print requested for:', employee.first_name);
+        if (!element) {
+            console.error('❌ [DigitalID] Element #digital-id-card-content NOT FOUND in DOM');
+            alert('Error: ID Card element not found. Please contact support.');
+            setIsPrinting(false);
+            return;
+        }
+
         try {
-            console.log('Starting ID Card Capture...');
+            console.log('📸 [DigitalID] Starting Capture...', {
+                width: element.offsetWidth,
+                height: element.offsetHeight,
+                images: element.getElementsByTagName('img').length
+            });
+
             // Wait a moment for images to be ready if needed, though they should be loaded
             const canvas = await html2canvas(element, {
                 useCORS: true,
+                allowTaint: true, // [FIX] Allow tainted images (e.g. from external URLs without perfect CORS)
                 scale: 4, // High Resolution for Print (300DPI equivalent)
                 backgroundColor: null, // Transparent background
                 logging: true,
+                imageTimeout: 15000, // [FIX] Wait longer for images
+                onclone: (doc) => {
+                    console.log('📸 [DigitalID] Cloned document for capture');
+                }
             });
 
+            console.log('✅ [DigitalID] Canvas captured successfully');
             const imgData = canvas.toDataURL('image/png');
+            console.log('✅ [DigitalID] Image data generated (Length: ' + imgData.length + ')');
 
             const printWindow = window.open('', '_blank');
+            if (!printWindow) {
+                console.error('❌ [DigitalID] Popup blocked! window.open returned null');
+                alert('Popup blocked! Please allow popups for this site to print.');
+                return;
+            }
+
             printWindow.document.write(`
                 <html>
                     <head>
@@ -76,14 +102,16 @@ const DigitalIDCard = ({ employee, darkMode }) => {
                         </style>
                     </head>
                     <body>
-                        <img src="${imgData}" onload="window.print(); window.close();" />
+                        <img src="${imgData}" onload="console.log('🖨️ [PrintWindow] Image loaded, triggering print'); window.print(); window.close();" onerror="console.error('❌ [PrintWindow] Image failed to load')" />
                     </body>
                 </html>
             `);
             printWindow.document.close();
+            console.log('✅ [DigitalID] Print window opened');
+
         } catch (error) {
-            console.error("Print Error:", error);
-            alert("Failed to generate ID card image. Please check console for details.");
+            console.error("❌ [DigitalID] Print Error Stack:", error);
+            alert("Failed to generate ID card image: " + error.message);
         } finally {
             setIsPrinting(false);
         }
